@@ -163,4 +163,18 @@ class CustomAuthController extends Controller
         }
         return redirect('/dashboard');
     }
+    public function parents_details()
+    {
+        if(Auth::check()){
+            return view('parents_details');
+        }
+        return redirect('/dashboard');
+    }
+    public function application_details()
+    {
+        if(Auth::check()){
+            return view('application_details');
+        }
+        return redirect('/dashboard');
+    }
 }
