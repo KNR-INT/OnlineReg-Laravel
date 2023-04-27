@@ -170,6 +170,14 @@ class CustomAuthController extends Controller
         }
         return redirect('/dashboard');
     }
+
+    public function upload_doc()
+    {
+        if(Auth::check()){
+            return view('upload_doc');
+        }
+        return redirect('/dashboard');
+    }
     public function application_details()
     {
         if(Auth::check()){
