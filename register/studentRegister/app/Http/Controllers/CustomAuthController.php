@@ -163,7 +163,7 @@ class CustomAuthController extends Controller
         }
         return redirect('/dashboard');
     }
- public function parents_details()
+    public function parents_details()
     {
         if(Auth::check()){
             return view('parents_details');
@@ -177,19 +177,4 @@ class CustomAuthController extends Controller
         }
         return redirect('/dashboard');
     }
-
-    public function payment()
-    {
-        if(Auth::check()){
-            return view('payment');
-        }
-        return redirect('/dashboard');
-    }
-
-    public function admitted()
-    {
-        if(Auth::check()){
-            return view('admitted');
-        }
-        return redirect('/dashboard');
-    }}
+}
