@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="style.css">
     
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
+    </head>
 </head>
 <body>
 
@@ -90,9 +97,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="sibling">
                     <span class="title">Sibling currently studying at NPS Yeshwanthpur</span>
+                    <input type="checkbox" checked data-toggle="toggle">
 
                     <div class="fields">
                         <div class="input-field">
@@ -145,13 +152,24 @@
                         <div>
 
                         </div>
+                        <div>
+                    <label> Upload recent photograph of the student*</label><br>
+                   
+
+                     <input  type="file" id="selectFile-stepone" style="display; none;"><img src="https://png.pngtree.com/element_our/20190601/ourmid/pngtree-upload-icon-image_1347930.jpg" alt="" height="40" width="40"> 
+                   <!-- <label>Selected File Name : NO File Selected</label> -->
+                        </div>
+
+                       
                     <button class="nextBtn">
-                        <span class="btnText">save and continue</span>
+                        <span class="btnText" onclick="window.location.href = 'parents_details'">save and continue</span>
                         <i class="uil uil-navigator"></i>
                     </button>
+                    <!-- <button class="btn btn-primary"  id="btn1" onclick="window.location.href = 'onlinereg'">
+continue</button> -->
                 
                 </div> 
-            <!-- </div> -->
+            </div> 
     
             <!-- <div class="form second">
                 <div class="details address">
@@ -236,7 +254,7 @@
                             <i class="uil uil-navigator"></i>
                         </button>
                     </div>
-                </div>  -->
+                </div> 
             </div>
         </form>
     </div>
@@ -434,4 +452,10 @@ nextBtn.addEventListener("click", ()=> {
 })
 
 backBtn.addEventListener("click", () => form.classList.remove('secActive'));
+
+
+$("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('un_checked'));
+    })
+
 </script>
