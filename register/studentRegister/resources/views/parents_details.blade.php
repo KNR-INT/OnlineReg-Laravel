@@ -46,7 +46,7 @@
                             <input type="text" class="form-control" placeholder="Enter Father Email Id" required>
                         </div>
                         <div class="form-group">
-                            <label> Father's Mother Tongue</label>
+                            <label style=" width:400px;"> Father's Mother Tongue</label><br>
                             <select required>
                                 <option disabled selected>Select  Father Mother Tongue</option>
                                 <option>Kannada</option>
@@ -72,7 +72,7 @@
                             <label>State*</label>
                             <input type="text"  class="form-control" placeholder="Enter state" required>
                         </div> <div class="form-group">
-                            <label>Country*</label>
+                            <label >Country*</label>
                             <!-- <input type="number" placeholder="Enter Residential Address" required> -->
                             <select required>
                                 <option disabled selected>Select</option>
@@ -151,7 +151,7 @@
                             <input type="number" class="form-control" placeholder="Enter Mother Email Id" required>
                         </div>
                         <div class="form-group">
-                            <label> Mothers's Mother Tongue</label>
+                            <label style=" width:400px;"> Mothers's Mother Tongue</label><br>
                             <select required>
                                 <option disabled selected>Select  Mother Mother Tongue</option>
                                 <option>Kannada</option>
@@ -240,11 +240,11 @@
             <div class="col">  
               <div class="form-check">  
 <button class=" btn btn-primary" 
-    onclick="window.location.href = ''">
+    onclick="window.location.href ='onlinereg'">
     Go back
     </button>
 
-<button class="btn btn-primary"  id="btn1" onclick="window.location.href = ''">
+<button class="btn btn-primary"  id="btn1" onclick="window.location.href = 'upload_doc'">
  Save & continue</button>
 
          </div>

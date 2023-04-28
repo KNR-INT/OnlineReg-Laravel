@@ -22,20 +22,12 @@
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                                 @endif
                             </div>
-                            <!-- <div class="form-group mb-3">
-                                <input type="password" placeholder="Password" id="password" class="form-control" name="password">
-                                @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                                @endif
-                            </div> -->
+                            
                             <div class="form-group mb-3">
                                 <div class="checkbox">
                                     <label><input type="checkbox" name="remember"> Remember Me</label>
                                 </div>
-                                <!-- <div class="col-md-12">
-                                <div class="d-flex justify-content-center" style="text-align:center; margin-top:30px;">
-                                 <div style="text-align:center" class="g-recaptcha col-md-13 " data-sitekey="6Lclm3klAAAAAC5yeu5bs5THdLo8THJZIhwXM61X" data-callback="enableBtn">
-                             </div><br> -->
+                                
                             </div>
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-dark btn-block">Sign up</button>

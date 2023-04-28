@@ -8,18 +8,12 @@
     <link rel="stylesheet" href="style.css">
     
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
-    </head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>   
 </head>
 <body>
 
     <div class="container">
-       <center><header>Student Registration</header></center>
+       <center><header><h2>Student Registration</header></h2></center>
 
         <form action="#">
             <div class="form first">
@@ -28,148 +22,137 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Name of the student*</label>
-                            <input type="text" placeholder="Enter Student name" required>
+                            <input type="text" placeholder="Enter Student name" required name="name">
                         </div>
                         <div class="input-field">
-                            <label>Gender</label>
+                            <label>Gender*</label>
                             <select required>
                                 <option disabled selected>Select gender</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                                <option>Others</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
                         <div class="input-field">
-                                    <label>Date of Birth</label>
+                                    <label>Date of Birth*</label>
                                     <input type="date" placeholder="Enter birth date" required>
                                 </div>
 
-                        <!-- <div class="input-field">
-                            <label>Mobile Number</label>
-                            <input type="number" placeholder="Enter mobile number" required>
-                        </div> -->
-
                         <div class="input-field">
-                            <label>Class</label>
+                            <label>Class*</label>
                             <select required>
                                 <option disabled selected>Select Class</option>
-                                <option>Montessori I</option>
-                                <option>Montessori II</option>
-                                <option>Montessori III</option>
+                                <option value="Mont_1">Montessori I</option>
+                                <option value="Mont_2" >Montessori II</option>
+                                <option value="Mont_3">Montessori III</option>
                             </select>
                         </div>
-
                         <div class="input-field">
-                            <label>Birth Place</label>
+                            <label>Birth Place*</label>
                             <input type="text" placeholder="Enter your Birth Place" required>
                         </div>
                         <div class="input-field">
-                            <label>Nationality</label>
+                            <label>Nationality*</label>
                             <select required>
                                 <option disabled selected>Select Nationality</option>
-                                <option>Indian</option>
-                                <option>American</option>
-                                <option>USA</option>
-                                <option>Others</option>
+                                <option value="Indian">Indian</option>
+                                <option value="American">American</option>
+                                <option value="USA">USA</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
-
                         <div class="input-field">
-                            <label>Religion</label>
+                            <label>Religion*</label>
                             <select required>
                                 <option disabled selected>Select Religion</option>
-                                <option>Hindu</option>
-                                <option>Muslium</option>
-                                <option>Christian</option>
-                                <option>Others</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Muslium">Muslium</option>
+                                <option value="Christian">Christian</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
 
                         <div class="input-field">
-                            <label>Mother Tongue</label>
+                            <label>Mother Tongue*</label>
                             <select required>
                                 <option disabled selected>Select Mother Tongue</option>
-                                <option>Kannada</option>
-                                <option>Tamil</option>
-                                <option>Telugu</option>
-                                <option>Hindi</option>
+                                <option value="Kannada">Kannada</option>
+                                <option value="Tamil">Tamil</option>
+                                <option value="Telugu">Telugu</option>
+                                <option value="Hindi">Hindi</option>
                             </select>
                         </div>
+                        <div class="input-field">
+                        </div>
+                    
                     </div>
                 </div>
+                    <br>
                 <div class="sibling">
                     <span class="title">Sibling currently studying at NPS Yeshwanthpur</span>
-                    <input type="checkbox" checked data-toggle="toggle">
 
                     <div class="fields">
                         <div class="input-field">
-                            <input type="number" placeholder="Enter name" required>
+                            <input type="text" placeholder="Enter name">
                         </div>
                         <div class="input-field">
-                            <input type="number" placeholder="Enter class" required>
+                            <input type="text" placeholder="Enter class and section">
+                        </div>
+                        <!-- <div class="input-field">
+                            <input type="text" placeholder="Enter section">
+                        </div> -->
+                        <div class="input-field">
+                            <input type="text" placeholder="Enter name">
                         </div>
                         <div class="input-field">
-                            <input type="number" placeholder="Enter section" required>
+                            <input type="text" placeholder="Enter class and section ">
                         </div>
-                        <div class="input-field">
-                            <input type="number" placeholder="Enter name" required>
-                        </div>
-                        <div class="input-field">
-                            <input type="number" placeholder="Enter class " required>
-                        </div>
-                        <div class="input-field">
-                            <input type="number" placeholder="Enter section" required>
-                        </div>
+                        <!-- <div class="input-field">
+                            <input type="text" placeholder="Enter section">
+                        </div> -->
                    
                         <div class="input-field">
                             <label>Is your child physically challenged?</label>
-                            <select required>
+                            <select required >
                             <option disabled selected>Is your child physically challenged?</option>
-                                <option>Yes</option>
-                                <option>No</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
                             </select>
-                        </div>
+                         </div>
                         <div class="input-field">
                     <label>Child has any special need/learning challenges?</label>
-                            <select required>
+                            <select required class="ms-auto" >
                      <option disabled selected>Child has any special need/learning challenges<option>
-                                <option>Yes</option>
-                                <option>No</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
                             </select>
                         </div>
+
                         <div class="input-field">
-                            <label>Aadhar of the Student</label>
+                            <label>Aadhar of the Student*</label>
                             <input type="text" placeholder="Enter Student Aadhar" required>
                         </div>
+
                         <div class="input-field">
-                            <label>Mode of transport</label>
-                            <select required>
-                            <option disabled selected>Mode of transport</option>
-                                <option>School Bus</option>
-                                <option>Private</option>
+                            <label>Mode of transport*</label>
+                            <select required><option disabled selected>Mode of transport</option>
+                                <option value="School_bus">School Bus</option>
+                                <option value="Private">Private</option>
                             </select>
-                        </div>
-                        <div>
-
-                        </div>
-                        <div>
-                    <label> Upload recent photograph of the student*</label><br>
-                   
-
-                     <input  type="file" id="selectFile-stepone" style="display; none;"><img src="https://png.pngtree.com/element_our/20190601/ourmid/pngtree-upload-icon-image_1347930.jpg" alt="" height="40" width="40"> 
-                   <!-- <label>Selected File Name : NO File Selected</label> -->
-                        </div>
-
-                       
-                    <button class="nextBtn">
-                        <span class="btnText" onclick="window.location.href = 'parents_details'">save and continue</span>
+                           </div>
+                        <br>
+                        <div class="input-field">
+                        <label> Upload a recent photograph of the Student * :</label>
+                        <input type="file" id="myFile" name="filename"> </input>
+                                </div>
+                        <br> 
+                        <button class="nextBtn">
+                        <span class="btnText" onclick="window.location.href='parents_details'">save and continue</span>
                         <i class="uil uil-navigator"></i>
-                    </button>
-                    <!-- <button class="btn btn-primary"  id="btn1" onclick="window.location.href = 'onlinereg'">
-continue</button> -->
+                       </button>
                 
                 </div> 
-            </div> 
+            </div>
     
             <!-- <div class="form second">
                 <div class="details address">
@@ -241,8 +224,11 @@ continue</button> -->
                             <label>Mother in Law</label>
                             <input type="text" placeholder="Mother in law name" required>
                         </div>
-                    </div>
+                    </div> -->
+ 
 
+
+                    <!-- importent
                     <div class="buttons">
                         <div class="backBtn">
                             <i class="uil uil-navigator"></i>
@@ -253,13 +239,18 @@ continue</button> -->
                             <span class="btnText">Submit</span>
                             <i class="uil uil-navigator"></i>
                         </button>
-                    </div>
+                    </div> -->
+
+
+
+
+
                 </div> 
             </div>
         </form>
     </div>
 
-    <!--<script src="script.js"></script>-->
+    <script src="script.js"></script>
 </body>
 </html>
 <style>
@@ -276,17 +267,17 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #4070f4;
+    /* background: #4070f4; */
 }
 .container{
     position: relative;
-    max-width: 1200px;
+    max-width: 1100px;
     width: 100%;
     border-radius: 6px;
     padding: 50px;
     margin: 15px;
-    background-color: #fff;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    background-color: #fffd;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 }
 .container header{
     position: relative;
@@ -313,14 +304,14 @@ body{
 }
 .container form .form{
     position: absolute;
-    background-color: #fff;
+    /* background-color: #fff; */
     transition: 0.3s ease;
 }
-.container form .form.second{
+/* .container form .form.second{
     opacity: 0;
     pointer-events: none;
     transform: translateX(100%);
-}
+} */
 form.secActive .form.second{
     opacity: 1;
     pointer-events: auto;
@@ -347,9 +338,9 @@ form.secActive .form.first{
 }
 form .fields .input-field{
     display: flex;
-    width: calc(100% / 3 - 15px);
+    width: calc(100% / 2 - 15px);
     flex-direction: column;
-    margin: 4px 0;
+    margin: 3px 0;
 }
 .input-field label{
     font-size: 12px;
@@ -452,10 +443,4 @@ nextBtn.addEventListener("click", ()=> {
 })
 
 backBtn.addEventListener("click", () => form.classList.remove('secActive'));
-
-
-$("input[data-bootstrap-switch]").each(function(){
-      $(this).bootstrapSwitch('state', $(this).prop('un_checked'));
-    })
-
 </script>
