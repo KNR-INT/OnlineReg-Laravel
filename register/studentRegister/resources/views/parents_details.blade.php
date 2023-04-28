@@ -235,6 +235,7 @@
         </form>
     </div>
     </div>
+    
     <div class="row justify-content-center mt-4">  
             <div class="col">  
               <div class="form-check">  
@@ -249,8 +250,9 @@
          </div>
          </div>
          </div>
-    
+        <?php @include('footer')?>
     <script src="script.js"></script>
+   
 </body>
 
 </html>

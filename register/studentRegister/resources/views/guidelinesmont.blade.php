@@ -115,6 +115,12 @@ I Agree
 </div>
 <br>
 
+
+
+
+
+
+
 <div>
 
 <button class=" btn btn-primary" 
@@ -122,8 +128,8 @@ I Agree
     Go to home
     </button>
 
-<button class="btn btn-primary"  id="btn1" onclick="window.location.href = 'onlinereg'">
-continue</button>
+<button  DISABLED class="btn btn-primary"  id="btn1" onclick="window.location.href = 'onlinereg'">
+continue </button>
 
          </div>
 
@@ -131,15 +137,14 @@ continue</button>
 		</div>
 	</div>
 <script>
-    $(function() {
-    $('#checkbox').click(function() {
+  $('#checkbox').click(function() {
         if ($(this).is(':checked')) {
-            $('#btn1').attr('enabled', 'true');
+        		$('#btn1').removeAttr('disabled');
+            
         } else {
-            $('#btn1').removeAttr('enabled');
+            $('#btn1').attr('disabled', 'disabled');
         }
     });
-});
 </script>
 
 </body>

@@ -37,7 +37,8 @@
                             
                             @csrf
                             <div class="d-flex justify-content-center">
-                <!-- <div class="col-md-8 &nbsp; ps-5"> -->
+                            <div class="col-md-6">
+
 
                                 <input type="text" placeholder="Email" id="email" class="form-control" name="email"
                                     autofocus>
@@ -45,7 +46,7 @@
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                                 @endif
                             </div>
-                            <!-- </div> -->
+                            </div>
                             <!-- <div class="form-group mb-3">
                                 <input type="password" placeholder="Password" id="password" class="form-control" name="password">
                                 @if ($errors->has('password'))
@@ -65,12 +66,12 @@
                              <div class="col-md-12">
                                 
                              <div class="d-flex justify-content-center" style="text-align:center; margin-top:30px;">
-                            <div style="text-align:center" class="g-recaptcha col-md-13 " data-sitekey="6LeUvnggAAAAABBDr_CIHhs3bKyQ5tNRhjWCGvy_"  data-callback="enableBtn">
+                            <div style="text-align:center"  class="g-recaptcha col-md-13 " data-sitekey="6LeUvnggAAAAABBDr_CIHhs3bKyQ5tNRhjWCGvy_"  data-callback="enableBtn">
                            </div>
                             </div>
                             <br>
-                            <div class="d-flex justify-content-center">
-                                <button type="submit" class="btn btn-dark btn-block">verify</button>
+                            <div class="d-flex justify-content-center"  >
+                                <button disabled="disabled" type="submit" id="button1" class="btn btn-dark btn-block">verify</button>
                             </div>
                         </form>
                     </div>
@@ -79,6 +80,13 @@
         </div>
     </div>
 </main>
+
+
+<script>
+              function enableBtn(){
+                  document.getElementById("button1").disabled = false;
+              }
+          </script>
    <!-- footer -->
 	<!-- <footer class="bg-li py-5">
 		<div class="container py-xl-5 py-lg-3">

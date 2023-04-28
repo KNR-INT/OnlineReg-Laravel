@@ -682,3 +682,4 @@ Submit</button>
         	<!-- </div> -->
 		</div>
 	</div>
+     @include('footer')
