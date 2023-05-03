@@ -25,11 +25,13 @@ class CustomAuthController extends Controller
         if ($user) {    
           Auth::login($user);    
   return redirect()->intended('otp');
-            //   ->with('message', 'Signed in!');            }
+            //   ->with('message', 'Signed in!');           
+         }
         else {    
             return redirect('/dashboard')->with('message', );   
         }    
-      }
+    }
+
  
     public function signup()
     {
