@@ -17,33 +17,15 @@ class CustomAuthController extends Controller
  
     public function index()
     {
-        // @extends('DIRECTORY.BLADE')
-        // $this-> load->view('resource/views/header');
-        return view('login');
+            return view('login');
     }  
-       
-    // public function login(Request $request)
-    // {
-    //     $request->validate([
-    //         'email' => 'required',
-    //         // 'password' => 'required',
-    //     ]);
-    
-    //     $credentials = $request->only('email');
-    //     if (Auth::attempt($credentials)) {
-    //         return redirect()->intended('dashboard')
-    //                     ->with('message', 'Signed in!');
-    //     }
-   
-    //     return redirect('/login')->with('message', 'Login details are not Found!');
-    // }
     public function login(Request $request) {    
         $email = $request->email;    
         $user = User::where('email', $email)->first();    
         if ($user) {    
           Auth::login($user);    
           return redirect()->intended('otp')
-              ->with('message', 'Signed in!');    
+              ->with('message', 'OTP sent successfully!');    
         }
         else {    
             return redirect('/dashboard')->with('message', );   

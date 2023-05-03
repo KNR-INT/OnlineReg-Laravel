@@ -18,13 +18,13 @@
     </head>
 
 <body>
+    
 
-<div class="container-fluid">
-               <!-- <div class="row mb-2"> -->
-                    <!-- left column -->
+<div class="container">
+              
                     <div class="row row-cols-auto">
                     <!-- general form elements -->
-                         <div class="card ">
+                         <div class="card " style="margin-right:500px;">
                    
 
                          <!-- form start -->
@@ -46,8 +46,8 @@
                             <input type="text" class="form-control" placeholder="Enter Father Email Id" required>
                         </div>
                         <div class="form-group">
-                            <label style=" width:400px;"> Father's Mother Tongue</label><br>
-                            <select required>
+                            <label> Father's Mother Tongue</label><br>
+                            <select required style="width:330px">
                                 <option disabled selected>Select  Father Mother Tongue</option>
                                 <option>Kannada</option>
                                 <option>Tamil</option>
@@ -59,7 +59,7 @@
                             <label>Residential Address*</label>
                             <input type="text" class="form-control" placeholder="Enter Residential Address" required>
                         </div>
-                        <br>
+                 
                         <div class="form-group">
                             <label>Area*</label>
                             <input type="text" class="form-control" placeholder="Enter Area" required>
@@ -72,9 +72,8 @@
                             <label>State*</label>
                             <input type="text"  class="form-control" placeholder="Enter state" required>
                         </div> <div class="form-group">
-                            <label >Country*</label>
-                            <!-- <input type="number" placeholder="Enter Residential Address" required> -->
-                            <select required>
+                            <label >Country*</label><br>
+                            <select required >
                                 <option disabled selected>Select</option>
                                 <option>India</option>
                                 <option>America</option>
@@ -98,6 +97,7 @@
                             <input type="number"  class="form-control" placeholder="Enter Residential Number" required>
                         </div>
                         <div class="form-group">
+                        <label>Enter Designation</label><br>
                              <!-- <input type="text" placeholder="Enter Designation" required> -->
                              <select required>
                                 <option disabled selected>Enter Designation</option>
@@ -120,20 +120,18 @@
                              <div class="form-group">
                             <label>Gross Annual Income (INR)*</label>
                             <input type="number"  class="form-control" placeholder="Enter Gross Annual Income" required>
+
                         </div>
+                        
             </form>
                          </div>
                     </div>  
-                    </div>  
+                    <!-- </div>   -->
             <br>
-            <div class="container-fluid">
-            <br>
-            <br>
-               <!-- <div class="row mb-2"> -->
-                    <!-- left column -->
+            <!-- <div class="container"> -->
                     <div class="row row-cols-auto">
                     <!-- general form elements -->
-                         <div class="card ">
+                         <div class="card " style="margin-right:500px;">
                          <!-- form start -->
                               <form>
                               <h3>Mother Details</h3>
@@ -160,16 +158,14 @@
                                 <option>Hindi</option>
                             </select>
                         </div>
+                        <div class="justify-content-sm-end">
+                            <label>Same as Fathers Details</label>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        </div>
                         <div class="form-group">
                             <label>Residential Address*</label>
                             <input type="text" class="form-control" placeholder="Enter Residential Address" required>
                         </div>
-                    
-<div class="justify-content-sm-end">
-    <label>Same as Fathers Details</label>
-    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-</div>
-
             </div>
             <div class="form-group">
                             <label>Area*</label>
@@ -183,7 +179,7 @@
                             <label>State*</label>
                             <input type="text" class="form-control" placeholder="Enter state" required>
                         </div> <div class="form-group">
-                            <label>Country*</label>
+                            <label>Country*</label><br>
                             <!-- <input type="number" placeholder="Enter Residential Address" required> -->
                             <select required>
                                 <option disabled selected>Select</option>
@@ -209,6 +205,7 @@
                             <input type="number" class="form-control" placeholder="Enter Residential Number" required>
                         </div>
                         <div class="form-group">
+                        <label>Enter Designation</label><br>
                              <!-- <input type="text" placeholder="Enter Designation" required> -->
                              <select required>
                                 <option disabled selected>Enter Designation</option>
@@ -235,6 +232,7 @@
         </form>
     </div>
     </div>
+
     <div class="row justify-content-center mt-4">  
             <div class="col">  
               <div class="form-check">  
@@ -274,13 +272,13 @@ body{
 }
 .container{
     position: relative;
-    max-width: 1200px;
+    max-width: 1000px;
     width: 100%;
     border-radius: 6px;
     padding: 50px;
     margin: 15px;
     background-color: #fff;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 }
 .container header{
     position: relative;
@@ -310,16 +308,7 @@ body{
     background-color: #fff;
     transition: 0.3s ease;
 }
-.container form .form.second{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(100%);
-}
-form.secActive .form.second{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
+
 form.secActive .form.first{
     opacity: 0;
     pointer-events: none;

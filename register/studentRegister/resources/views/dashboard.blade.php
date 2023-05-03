@@ -36,7 +36,7 @@
             <div class="col-md-4">
                      <div class="card">
                         <div class="alert alert-info">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="300" width="300">
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="300" width="370">
                         </div>
                     <div class="card-body">
                         
@@ -52,7 +52,7 @@
              <div class="card">
               
                         <div class="alert alert-info">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg        " alt="" height="300" width="300">     
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="300" width="370">     
                    </div>
                     <div class="card-body">
                        <h3 class="card-footer text-center"><a href="myapp" class="d-block">My Application </a></h3>
@@ -77,22 +77,6 @@
 				&nbsp;
 				&nbsp;
 				&nbsp;
-					<!-- <a text-align='left' href="https://npsypr.edu.in/careers/">
-                  <p>&nbsp;&nbsp;  Careers  </a> <a href="https://npsypr.edu.in/virtual-tour/"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Virtual&nbsp;Tour </p>
-                    </a> -->
-					<!-- &nbsp;
-                    &nbsp;
-					&nbsp;
-					&nbsp;
-					&nbsp;
-					&nbsp;
-					&nbsp; -->
-					
-					<!-- &nbsp;
-					&nbsp; -->
-					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-
 					<a text-align='center' style="margin:left:1px;">
 						<p> Phone : <a href = "tel:+91 8029501184">+91 8029501184</a>
          

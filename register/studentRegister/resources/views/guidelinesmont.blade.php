@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <html>
@@ -21,9 +20,6 @@
                         <a class="nav-link" href="{{ route('signout') }}">Logout</a>
                     </li>
                 </ul>
-            </div>
-            <a href="/" style="float: right;"><img height="20" width="20" color="white" src="{{URL::asset('/img/1st')}}"></a>
-        </div>
     </nav>
     
 <div>
@@ -37,60 +33,58 @@
 				&nbsp;
 				&nbsp;
 				&nbsp;
-       <h3>GUIDELINES AND CONTACT DETAILS</h3>
+      <center><h2><b>GUIDELINES AND CONTACT DETAILS</h2></center>
         <br>
-         <h3>ADMISSIONS</h3>
+         <h3><b>ADMISSIONS</b></h3>
         <br>
         <p>Welcome to National Public School, Yeshwanthpur, an institution which prepares and motivates the students for a rapidly changing world by
-         <br>    
+             
         instilling in them critical thinking skills, a global perspective and respect for core values of honesty, loyalty, perseverance and compassion.</p>
-        <br>
-        <p>Admission to National Public School, Yeshwanthpur, is open to all children from Pre-K, Kindergarten and Classes 1 to 9 & 11 and to I-5 Academy 
-            <br>
-        for Montessori.</p>
-        <br>
+        
+        <p>Admission to National Public School, Yeshwanthpur, is open to all children from Pre-K, Kindergarten and Classes 1 to 9 & 11 and to I-5 Academy for Montessori.</p>
+    
         <p>REGISTRATION FOR ADMISSION Registration form is available online on our website from 10/10/2022.Click Here</p>
-        <br>
-         <p>SUBMIT THE COMPLETED DOWNLOADED FORM ALONG WITH THE FOLLOWING DOCU1MENTS ATTESTED BY THE PARENTS 
-            <br>
+        
+         <p>SUBMIT THE COMPLETED DOWNLOADED FORM ALONG WITH THE FOLLOWING DOCUMENTS ATTESTED BY THE PARENTS 
+           
         DURING INTERACTION OR ENTRANCE EXAM:</p>
-        <br>
+  
         <p>1. Passport size photo of the student</p>
-        <br>
+   
         <p>2. Student’s Birth Certificate.</p>
-        <br>
+      
         <p>3. Immunisation Card (applicable upto Class 1)</p>
-        <br>
+
         <p>4. Covid Vaccination Certificate</p>
-        <br>
+ 
         <p>5. Student’s Aadhar Card.</p>
-        <br>
-        <p>6. Parents’ Aadhar Card.</p>
-        <br>
+       
+        <p>6. Parent’s Aadhar Card.</p>
+       
         <p>7. Registration Fee - ₹ 500/- (Online Payment)</p>
-        <br></br>
+        
         <p>We appreciate the interest evinced by the parents seeking admission to National Public School Yeshwanthpur. We would like to inform that we have 
             <br>
         very limited seats available for admission to all of the classes from Montessori, Pre-KG, KG and Classes 1 to 12. The seats will be available
         <br>
         in the open category according to the priority list given below:</p>
-        <br>
+    
         <p>1. The first priority is for siblings.</p>
-        <br>
+ 
         <p>2. The second priority is for children of our teachers and other staff members.</p>
-        <br>
+     
         <p>3. Priority for admission is also listed for Alumni of National Public School.</p>
-        <br>
+      
         <p>4. Subsequent seats will be open to others.</p>
-        <br>
+        
         <p>5. Applications for admission to Mont II, Mont III, KG II and classes 2-7 are based on vacancies.</p>
-        <br>
+      
         <p>6. Class 10 & Class 12 admissions are based on Interstate transfer.</p>
-        <br>
+   
         <p>To have an effective teaching & learning process, we maintain a limited class strength. Considering the limited number of seats available, it is
-         <br>   
+          
         expected that those who seek admission will realize and understand the constraints the institution faces.
-        <br>
+     
          Admission to classes 1 to 9 & 11 are finalized based on the performance in the written admission test conducted in the month of January 2022.</p>
          <p><b>
          Address for Communication :</b>
@@ -115,12 +109,6 @@ I Agree
 </div>
 <br>
 
-
-
-
-
-
-
 <div>
 
 <button class=" btn btn-primary" 
@@ -128,15 +116,12 @@ I Agree
     Go to home
     </button>
 
-<button  DISABLED class="btn btn-primary"  id="btn1" onclick="window.location.href = 'onlinereg'">
-continue </button>
+    <button  DISABLED class="btn btn-primary"  id="btn1" onclick="window.location.href = 'onlinereg'">continue </button>
 
          </div>
-
-        	<!-- </div> -->
 		</div>
 	</div>
-<script>
+    <script>
   $('#checkbox').click(function() {
         if ($(this).is(':checked')) {
         		$('#btn1').removeAttr('disabled');
@@ -150,7 +135,39 @@ continue </button>
 </body>
 </head>
 </html>
-<!-- @include('footer') -->
+
+
+<div class="justify-content-center" style="margin-top:100px;">
+		<div class="container-fluid">
+			<div class="justify-content-center px-md-3 position-relative text-center">
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				&nbsp;
+				&nbsp;
+					<a text-align='center' style="margin:left:1px;">
+						<p> Phone : <a href = "tel:+91 8029501184">+91 8029501184</a>
+         
+          , <a  href = "tel:tel:+91 8023571220" >+91 8023571220</a>
+          
+          <br/>
+          <a text-align='center' style="margin: left 1px;">
+          Email : <a href = "mailto:info@npsypr.com">info@npsypr.com</a>
+        
+          , <a href = "admissions@npsypr.com">admissions@npsypr.com</a>
+		  <br/>&nbsp;&nbsp;&nbsp;
+		  <a tect-align='center'>
+          © 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved.
+      
+Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</span><span style="color:#67AE3B">R</span> Tech Solutions.</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				
+				
+			</div>
+		</div>
+</div>
 </body>
 
 </html>
@@ -159,5 +176,3 @@ continue </button>
     <!-- <p>Document Body</p> -->
 </body>
 </html>
-
-
