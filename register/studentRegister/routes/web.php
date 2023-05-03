@@ -16,6 +16,8 @@ Route::post('postsignup', [CustomAuthController::class, 'signupsave'])->name('po
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 // Route::get('header', [CustomAuthController::class, 'header'])->name('header');
 // Route::post('header', [CustomAuthController::class, 'header'])->name('header'); 
+Route::get('home', [CustomAuthController::class, 'home']); 
+Route::post('home', [CustomAuthController::class, 'home']); 
 
 
 
@@ -57,3 +59,9 @@ Route::get('upload_doc', [CustomAuthController::class, 'upload_doc'])->name('upl
 
 Route::post('application_details', [CustomAuthController::class, 'application_details'])->name('application_details'); 
 Route::get('application_details', [CustomAuthController::class, 'application_details'])->name('application_details'); 
+
+Route::post('payment', [CustomAuthController::class, 'payment'])->name('payment'); 
+Route::get('payment', [CustomAuthController::class, 'payment'])->name('payment'); 
+
+Route::post('admitted', [CustomAuthController::class, 'admitted'])->name('admitted'); 
+Route::get('admitted', [CustomAuthController::class, 'admitted'])->name('admitted'); 

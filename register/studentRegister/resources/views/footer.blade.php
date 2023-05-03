@@ -24,18 +24,18 @@
 					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-					<a text-align='center' style="margin-left:500px;">
+					<a text-align='center' style="margin-left:100px;">
 						<p> Phone : <a href = "tel:+91 8029501184">+91 8029501184</a>
          
           , <a  href = "tel:tel:+91 8023571220" >+91 8023571220</a>
           
           <br/>
-          <a text-align='center' style="margin-left:470px;">
+          <a text-align='center' style="margin-left:100px;">
           Email : <a href = "mailto:info@npsypr.com">info@npsypr.com</a>
         
           , <a href = "admissions@npsypr.com">admissions@npsypr.com</a>
 		  <br/>&nbsp;&nbsp;&nbsp;
-		  <a tect-align='center' style="margin-left:350px;">
+		  <a tect-align='center' style="margin-left:200px;">
           © 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved.
       
 Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</span><span style="color:#67AE3B">R</span> Tech Solutions.</a>
@@ -51,11 +51,3 @@ Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</s
 	</div>
 	<!-- //copyright bottom -->
 
-</body>
-
-</html>
-</head>
-<body>
-    <!-- <p>Document Body</p> -->
-</body>
-</html>

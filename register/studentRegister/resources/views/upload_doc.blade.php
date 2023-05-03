@@ -1,3 +1,6 @@
+@include('header')
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +14,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>   
 </head>
 <body>
+   
     <div class="container">
     <center> <header><b><u><h2>Upload Documents</h2></u></header></center>
         <center>
@@ -134,8 +138,6 @@
             <br>
             <br>
             <br>
-        
-            
         <div class="row justify-content-center mt-4">  
             <div class="col">  
               <div class="form-check">  
@@ -151,11 +153,8 @@
          </div>
          </div>
          </center>
-
+         @include('footer')
             </div>
-
-
-
    <script src="script.js"></script>
    
 </body>

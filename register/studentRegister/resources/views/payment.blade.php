@@ -1,3 +1,5 @@
+
+@include('header')
 <html>
 <head>
 <!-- <title>Student Registration Form</title> -->
@@ -46,8 +48,9 @@
 <button class="btn btn-primary" style="margin-left:590px;" height="100px;" id="btn1" onclick="window.location.href = 'admitted'">
 Payment</button>
 </div>
+@include('footer') 
 </form>
-@include('footer')       
+      
 </body>  
 </html>
 <style>

@@ -1,3 +1,6 @@
+
+@include('header')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +11,16 @@
     <link rel="stylesheet" href="style.css">
     
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>   
-</head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>  
+  </head>
+  
 <body>
-
+   
     <div class="container">
-       <center><header><h2>Student Registration</header></h2></center>
-
+   
         <form action="#">
             <div class="form first">
                 <div class="details personal">
-                    <!-- <span class="title">Personal Details</span> -->
                     <div class="fields">
                         <div class="input-field">
                             <label>Name of the student*</label>
@@ -132,10 +134,11 @@
                             <label>Aadhar of the Student*</label>
                             <input type="text" placeholder="Enter Student Aadhar" required>
                         </div>
-
-                        <div class="input-field">
+                        <br>
+                        <div class="input-field" style="margin-left:30px;">
                             <label>Mode of transport*</label>
-                            <select required><option disabled selected>Mode of transport</option>
+                            <select required>
+                            <option disabled selected>Mode of transport</option>
                                 <option value="School_bus">School Bus</option>
                                 <option value="Private">Private</option>
                             </select>
@@ -149,11 +152,19 @@
                         <button class="nextBtn">
                         <span class="btnText" onclick="window.location.href='parents_details'">save and continue</span>
                         <i class="uil uil-navigator"></i>
+                        
                        </button>
-                
+                       <div>
+                       @include('footer')
+</div>
                 </div> 
             </div>
-    
+                </div> 
+            </div>
+           
+        </form>
+    </div>
+   
             <!-- <div class="form second">
                 <div class="details address">
                     <span class="title">Address Details</span>
@@ -240,19 +251,21 @@
                             <i class="uil uil-navigator"></i>
                         </button>
                     </div> -->
-
-
-
-
-
-                </div> 
+                    
+                 </div> 
+                
+                 
             </div>
+           
         </form>
+        
     </div>
 
     <script src="script.js"></script>
+    
 </body>
 </html>
+
 <style>
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
@@ -263,7 +276,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    min-height: 100vh;
+    min-height: 170vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -298,7 +311,7 @@ body{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 790px;
+    min-height: 800px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -444,3 +457,7 @@ nextBtn.addEventListener("click", ()=> {
 
 backBtn.addEventListener("click", () => form.classList.remove('secActive'));
 </script>
+<div>
+
+</div>
+

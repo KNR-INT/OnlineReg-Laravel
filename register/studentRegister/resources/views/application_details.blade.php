@@ -1,61 +1,26 @@
+@include('header') 
 <!DOCTYPE html>
 <html>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-
-<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-
-integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <body>
+     <div class="container">
 <div class="col-15">
-<div class="text-align: center;" >
-		
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;			
+<div class="text-align: center;" >	
+<center>		
 <label style="color:blue;">&nbsp;<h1 >NATIONAL PUBLIC SCHOOL</h1></label>
 <br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 <label style="color:blue;"><h3>YESHWANTHPUR</h3></label>
 <br>
-&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-<label style="color:blue;"><h4>Application For Registration</h4>
-
-			
+<label style="color:blue;"><h4>Application For Registration</h4>	
 <label style="color:blue;">&nbsp;<h2>Application Number</h2></label>
-<br>
+<br> 
 &#160;&#160;&#160;&#160;&#160;&#160;
-<label style="color:black;"><h3>YESHWANTHPUR</h3></label>
-<br>
-<label style="color:black;"><h4>Application For Registration</h4>
-</div>
+<label style="color:black;"><h3>YESHWANTHPUR</h3></label><br>
+<label style="color:black; margin-left:20px;"><h4>Application For Registration</h4>
+</div></center>
 </div>
 	
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-
-          <div class="container">
-               <div class="table table-bordered table-hover">
-                    <div class="row">
-                         <div class="col-15">
-                            
-                         <div class="table table-bordered table-hover">
-                              <div class="card-header">
-                                   <div class="d-flex border-bottom p-1 mb-3">
-                                             
-                                   </div>
-                                   
-                               
-
-
-</div>  
-
+ 
             
             
      
@@ -64,19 +29,13 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
            <div class="card-header" style="background-color:blue;height:50px;">
              <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
             
-             <label  style="color:white; margin-top:-5px;"><h5>Personal Details</h5>
+             <label  style="color:white; margin-top:-5px; margin-left:420px"><h5>Personal Details</h5>
           
-             <!-- curriculumname -->
-             <!-- sub_activity -->
-             <!-- activityname -->
-             <!-- sub_act -->
+             
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-
-                </button>
+               
               </div>
-            </div>
+            </div> 
              <div class="d-flex border-bottom p-1 mb-3">
              </div>
            
@@ -92,38 +51,38 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
                                                   </tr>
                                              </thead>
                                              <tbody>
-                                             <table align="left" cellpadding = "20">
+                                             <table align="left" cellpadding = "20" >
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
-<td>Name Of the Student</td>
+<td><b>Name Of the Student</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Last Name ---------------------------------------------------------->
 <tr>
-<td>Gender</td>
+<td><b>Gender</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
-<td>Nationality</td>
+<td><b>Nationality</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Email Id ---------------------------------------------------------->
 <tr>
-<td>Mother Tongue</td>
+<td><b>Mother Tongue</b></td>
 <td><input type="text" name="For_class" maxlength="100" /></td>
 </tr>
  
 <!----- Mobile Number ---------------------------------------------------------->
 <tr>
-<td>Aadhar Card No</td>
+<td><b>Aadhar Card No</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
@@ -133,34 +92,34 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
-<td>Date Of Birth</td>
+<td><b>Date Of Birth</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Last Name ---------------------------------------------------------->
 <tr>
-<td>Class</td>
+<td><b>Class</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
-<td>Religion</td>
+<td><b>Religion</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Email Id ---------------------------------------------------------->
 <tr>
-<td>Birth Place</td>
+<td><b>Birth Place</b></td>
 <td><input type="text" name="For_class" maxlength="100" /></td>
 </tr>
  
 <!----- Mobile Number ---------------------------------------------------------->
 <tr>
-<td>Mlode Of Transport</td>
+<td><b>Mlode Of Transport</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
@@ -170,24 +129,6 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 </tbody>
 </table>
 </div>
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-
-          <div class="container">
-               <div class="table table-bordered table-hover">
-                    <div class="row">
-                         <div class="col-15">
-                            
-                         <div class="table table-bordered table-hover">
-                              <div class="card-header">
-                                   <div class="d-flex border-bottom p-1 mb-3">
-                                             
-                                   </div>
-                                   
-                               
-
-
-</div>  
 
             
             
@@ -197,12 +138,9 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
            <div class="card-header" style="background-color:blue;height:50px;">
              <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
             
-             <label  style="color:white; margin-top:-5px;"><h5>Parent Details</h5>
+             <label  style="color:white; margin-top:-5px; margin-left:420px"><h5>Parent Details</h5>
           
-             <!-- curriculumname -->
-             <!-- sub_activity -->
-             <!-- activityname -->
-             <!-- sub_act -->
+           
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                   <i class="fas fa-minus"></i>
@@ -229,28 +167,28 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
-<td>Father Name</td>
+<td><b>Father Name</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Last Name ---------------------------------------------------------->
 <tr>
-<td>Mobile Number</td>
+<td><b>Mobile Number</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
-<td>Email Id</td>
+<td><b>Email Id</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Email Id ---------------------------------------------------------->
 <tr>
-<td> Mother Tongue</td>
+<td><b> Mother Tongue</b></td>
 <td><input type="text" name="For_class" maxlength="100" /></td>
 </tr>
  
@@ -260,56 +198,56 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 
 
 <tr>
-<td>Area</td>
+<td><b>Area</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>District</td>
+<td><b>District</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>State</td>
+<td><b>State</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Country</td>
+<td><b>Country</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Pincode</td>
+<td><b>Pincode</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Residential Address</td>
+<td><b>Residential Address</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Telephone(R)</td>
+<td><b>Telephone(R)</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Gross  annual Income(INR)</td>
+<td><b>Gross  annual Income(INR)</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
@@ -319,28 +257,28 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
-<td>Mother Name</td>
+<td><b>Mother Name</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Last Name ---------------------------------------------------------->
 <tr>
-<td>Mobile Number</td>
+<td><b>Mobile Number</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
-<td>Email Id</td>
+<td><b>Email Id</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Email Id ---------------------------------------------------------->
 <tr>
-<td> Mother Tongue</td>
+<td><b>Mother Tongue</b></td>
 <td><input type="text" name="For_class" maxlength="100" /></td>
 </tr>
  
@@ -350,56 +288,56 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 
 
 <tr>
-<td>Area</td>
+<td><b>Area</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>District</td>
+<td><b>District</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>State</td>
+<td><b>State</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Country</td>
+<td><b>Country</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Pincode</td>
+<td><b>Pincode</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Residential Address</td>
+<td><b>Residential Address</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Telephone(R)</td>
+<td><b>Telephone(R)</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
 </td>
 </tr>
 <tr>
-<td>Gross  annual Income(INR)</td>
+<td><b>Gross  annual Income(INR)</b></td>
 <td>
 <input type="text" name="Application_No" maxlength="10" />
 
@@ -410,44 +348,18 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 </div>
 
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
 
-          <div class="container">
-               <div class="table table-bordered table-hover">
-                    <div class="row">
-                         <div class="col-15">
-                            
-                         <div class="table table-bordered table-hover">
-                              <div class="card-header">
-                                   <div class="d-flex border-bottom p-1 mb-3">
-                                             
-                                   </div>
-                                   
-                               
-
-
-</div>  
-
-            
-            
      
           <div class="card ">
          
            <div class="card-header" style="background-color:blue;height:50px;">
              <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
             
-             <label  style="color:white; margin-top:-5px;"><h5>Company Details</h5>
+             <label  style="color:white; margin-top:-5px; margin-left:400px"><h5>Company Details</h5>
           
-             <!-- curriculumname -->
-             <!-- sub_activity -->
-             <!-- activityname -->
-             <!-- sub_act -->
+            
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-
-                </button>
+               
               </div>
             </div>
              <div class="d-flex border-bottom p-1 mb-3">
@@ -469,21 +381,21 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
-<td>Designation</td>
+<td><b>Designation</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Last Name ---------------------------------------------------------->
 <tr>
-<td>Company Name</td>
+<td><b>Company Name</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
-<td>Company address</td>
+<td><b>Company address</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
 </td>
 </tr>
@@ -493,21 +405,21 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
-<td>Designation</td>
+<td><b>Designation</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Last Name ---------------------------------------------------------->
 <tr>
-<td>Company Name</td>
+<td><b>Company Name</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
-<td>Company address</td>
+<td><b>Company address</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
 </td>
 </tr>
@@ -519,24 +431,6 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 
 
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-
-          <div class="container">
-               <div class="table table-bordered table-hover">
-                    <div class="row">
-                         <div class="col-15">
-                            
-                         <div class="table table-bordered table-hover">
-                              <div class="card-header">
-                                   <div class="d-flex border-bottom p-1 mb-3">
-                                             
-                                   </div>
-                                   
-                               
-
-
-</div>  
 
             
             
@@ -546,17 +440,14 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
            <div class="card-header" style="background-color:blue;height:50px;">
              <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
             
-             <label  style="color:white; margin-top:-5px;"><h5>Documents</h5>
+             <label  style="color:white; margin-top:-5px; margin-left:400px"><h5>Documents</h5>
           
              <!-- curriculumname -->
              <!-- sub_activity -->
              <!-- activityname -->
              <!-- sub_act -->
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-
-                </button>
+              
               </div>
             </div>
              <div class="d-flex border-bottom p-1 mb-3">
@@ -578,27 +469,27 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
-<td>1. Student Photo</td>
+<td><b>1. Student Photo</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
 <tr>
-<td>2. Birth Certificate</td>
+<td><b>2. Birth Certificate</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
 <tr>
-<td>3. Aadhar Passport</td>
+<td><b>3. Aadhar Passport</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
 <tr>
-<td>4. Father Aadhar</td>
+<td><b>4. Father Aadhar</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
 <tr>
-<td>5. Mother Aadhar</td>
+<td><b>5. Mother Aadhar</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
@@ -609,31 +500,31 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
-<td>Selected File Name</td>
-<td><img src="http://your.url/img/stuvi-logo.png" class="css-class" alt="alt text">
+<td><b>Selected File Name</b></td>
+<td><img src="http://your.url/img/stuvi-logo.png" class="css-class" alt="image">
 </td>
 </tr>
  
 <tr>
-<td>Selected File Name</td>
+<td><b>Selected File Name</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
 
 <tr>
-<td>Selected File Name</td>
+<td><b>Selected File Name</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
 
 <tr>
-<td>Selected File Name</td>
+<td><b>Selected File Name</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
 
 <tr>
-<td>Selected File Name</td>
+<td><b>Selected File Name</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
@@ -667,6 +558,16 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 </div>
 <br>
 
+
+
+<style>
+      .div.card.header{
+          color: white;   
+     }
+     .nav.main-header.navbar.navbar-expand.navbar-white.navbar-light{
+          background: white !important;   
+     }
+     </style>
 <div>
 
 <button class=" btn btn-primary" 
@@ -692,3 +593,4 @@ Submit</button>
     });
 </script>
 	</div>
+     @include('footer')

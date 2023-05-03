@@ -1,3 +1,6 @@
+@include('header')
+
+
 <html>
 <head>
 <title>Student Registration Form</title>
@@ -19,10 +22,10 @@
              <td> transactionId=19238418432748423</td>
            </tr>
 </table>
-
+@include('footer')
 </body>  
 </html>
-<div class="justify-content-center" style="margin-top:100px;">
+<!-- <div class="justify-content-center" style="margin-top:100px;">
 		<div class="container-fluid">
 			<div class="justify-content-center px-md-3 position-relative text-center">
 			<br>
@@ -38,19 +41,19 @@
           
           <br/>
           <a text-align='center' style="margin-left:580px;">
-          Email : <a href = "mailto:info@npsypr.com">info@npsypr.com</a>
+          <p>   Email : <a href = "mailto:info@npsypr.com">info@npsypr.com</a>
         
           , <a href = "admissions@npsypr.com">admissions@npsypr.com</a>
 		  <br/>&nbsp;&nbsp;&nbsp;
 		  <a tect-align='center'  style="margin-left:450px;">
-     © 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved.
+         @2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved.
       
 Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</span><span style="color:#67AE3B">R</span> Tech Solutions.</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				
 			</div>
 		</div>
-   </div>
+   </div> -->
 <style>
     #btn1 {background-color: #008CBA;}
     </style>

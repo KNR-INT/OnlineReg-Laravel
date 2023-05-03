@@ -42,8 +42,8 @@ class CustomAuthController extends Controller
         $user = User::where('email', $email)->first();    
         if ($user) {    
           Auth::login($user);    
-          return redirect()->intended('otp')
-              ->with('message', 'Signed in!');    
+          return redirect()->intended('otp');
+            //   ->with('message', 'Signed in!');    
         }
         else {    
             return redirect('/dashboard')->with('message', );   
@@ -158,10 +158,13 @@ class CustomAuthController extends Controller
     }
     public function onlinereg()
     {
+        
         if(Auth::check()){
             return view('onlinereg');
         }
+        
         return redirect('/dashboard');
+        
     }
     public function parents_details()
     {
@@ -182,6 +185,23 @@ class CustomAuthController extends Controller
     {
         if(Auth::check()){
             return view('application_details');
+        }
+        return redirect('/dashboard');
+    }
+
+
+    public function payment()
+    {
+        if(Auth::check()){
+            return view('payment');
+        }
+        return redirect('/dashboard');
+    }
+
+    public function admitted()
+    {
+        if(Auth::check()){
+            return view('admitted');
         }
         return redirect('/dashboard');
     }
