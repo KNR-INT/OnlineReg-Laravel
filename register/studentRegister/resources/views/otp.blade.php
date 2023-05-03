@@ -70,6 +70,13 @@
                      document.getElementById("button1").disabled = false;
                  }
              </script>
+
+
+<script>
+              function enableBtn(){
+                  document.getElementById("button1").disabled = false;
+              }
+          </script>
    <!-- footer -->
 	<!-- <footer class="bg-li py-5">
 		<div class="container py-xl-5 py-lg-3">

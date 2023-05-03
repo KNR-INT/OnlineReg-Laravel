@@ -1,5 +1,5 @@
-
-<!DOCTYPE html>
+@include('header')
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Laravel 9 Custom Auth Login and Registration</title>
@@ -23,7 +23,7 @@
             <a href="/" style="float: right;"><img height="20" width="20" color="white" src="{{URL::asset('/img/1st')}}"></a>
         </div>
     </nav>
-    
+     -->
 <div >
     <div class="container">
     <!-- <div class="justify-content-center     -->

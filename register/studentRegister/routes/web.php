@@ -16,6 +16,8 @@ Route::post('postsignup', [CustomAuthController::class, 'signupsave'])->name('po
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 // Route::get('header', [CustomAuthController::class, 'header'])->name('header');
 // Route::post('header', [CustomAuthController::class, 'header'])->name('header'); 
+Route::get('home', [CustomAuthController::class, 'home']); 
+Route::post('home', [CustomAuthController::class, 'home']); 
 
 
 

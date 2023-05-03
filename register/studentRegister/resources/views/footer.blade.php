@@ -7,8 +7,24 @@
 				&nbsp;
 				&nbsp;
 				&nbsp;
-				<a text-align='center' style="margin-left:100px;">
-						<p> Phone : <a href = "tel:+91 8029501184">+91 8029501184</a>
+&nbsp;
+					<!-- <a text-align='left' href="https://npsypr.edu.in/careers/">
+                  <p>&nbsp;&nbsp;  Careers  </a> <a href="https://npsypr.edu.in/virtual-tour/"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Virtual&nbsp;Tour </p>
+                    </a> -->
+					<!-- &nbsp;
+                    &nbsp;
+					&nbsp;
+					&nbsp;
+					&nbsp;
+					&nbsp;
+					&nbsp; -->
+					
+					<!-- &nbsp;
+					&nbsp; -->
+					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+					<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+					<a text-align='center' style="margin-left:100px;">						<p> Phone : <a href = "tel:+91 8029501184">+91 8029501184</a>
          
           , <a  href = "tel:tel:+91 8023571220" >+91 8023571220</a>
           
@@ -34,11 +50,3 @@ Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</s
 	</div>
 	<!-- //copyright bottom -->
 
-</body>
-
-</html>
-</head>
-<body>
-    <!-- <p>Document Body</p> -->
-</body>
-</html>

@@ -39,6 +39,7 @@
                             <div class="d-flex justify-content-center">
                             <div class="col-md-6">
 
+
                                 <input type="text" placeholder="Email" id="email" class="form-control" name="email"
                                     autofocus>
                                 @if ($errors->has('email'))
@@ -86,6 +87,13 @@
                      document.getElementById("button1").disabled = false;
                  }
              </script>
+
+
+<script>
+              function enableBtn(){
+                  document.getElementById("button1").disabled = false;
+              }
+          </script>
    <!-- footer -->
 	<!-- <footer class="bg-li py-5">
 		<div class="container py-xl-5 py-lg-3">

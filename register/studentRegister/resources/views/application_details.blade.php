@@ -1,18 +1,8 @@
+@include('header') 
 <!DOCTYPE html>
 <html>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-
-<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-
-integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 <body>
+     <div class="container">
 <div class="col-15">
 <div class="text-align: center;" >	
 <center>		
@@ -30,25 +20,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 </div>
 	
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-
-          <div class="container">
-               <div class="table table-bordered table-hover">
-                    <div class="row">
-                         <div class="col-15">
-                            
-                         <div class="table table-bordered table-hover">
-                              <div class="card-header">
-                                   <div class="d-flex border-bottom p-1 mb-3">
-                                             
-                                   </div>
-                                   
-                               
-
-
-</div>  
-
+ 
             
             
      
@@ -59,17 +31,11 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             
              <label  style="color:white; margin-top:-5px; margin-left:420px"><h5>Personal Details</h5>
           
-             <!-- curriculumname -->
-             <!-- sub_activity -->
-             <!-- activityname -->
-             <!-- sub_act -->
+             
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-
-                </button>
+               
               </div>
-            </div>
+            </div> 
              <div class="d-flex border-bottom p-1 mb-3">
              </div>
            
@@ -163,24 +129,6 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 </tbody>
 </table>
 </div>
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-
-          <div class="container">
-               <div class="table table-bordered table-hover">
-                    <div class="row">
-                         <div class="col-15">
-                            
-                         <div class="table table-bordered table-hover">
-                              <div class="card-header">
-                                   <div class="d-flex border-bottom p-1 mb-3">
-                                             
-                                   </div>
-                                   
-                               
-
-
-</div>  
 
             
             
@@ -192,10 +140,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             
              <label  style="color:white; margin-top:-5px; margin-left:420px"><h5>Parent Details</h5>
           
-             <!-- curriculumname -->
-             <!-- sub_activity -->
-             <!-- activityname -->
-             <!-- sub_act -->
+           
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                   <i class="fas fa-minus"></i>
@@ -403,27 +348,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 </div>
 
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
 
-          <div class="container">
-               <div class="table table-bordered table-hover">
-                    <div class="row">
-                         <div class="col-15">
-                            
-                         <div class="table table-bordered table-hover">
-                              <div class="card-header">
-                                   <div class="d-flex border-bottom p-1 mb-3">
-                                             
-                                   </div>
-                                   
-                               
-
-
-</div>  
-
-            
-            
      
           <div class="card ">
          
@@ -432,15 +357,9 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
             
              <label  style="color:white; margin-top:-5px; margin-left:400px"><h5>Company Details</h5>
           
-             <!-- curriculumname -->
-             <!-- sub_activity -->
-             <!-- activityname -->
-             <!-- sub_act -->
+            
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-
-                </button>
+               
               </div>
             </div>
              <div class="d-flex border-bottom p-1 mb-3">
@@ -512,24 +431,6 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 
 
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-
-          <div class="container">
-               <div class="table table-bordered table-hover">
-                    <div class="row">
-                         <div class="col-15">
-                            
-                         <div class="table table-bordered table-hover">
-                              <div class="card-header">
-                                   <div class="d-flex border-bottom p-1 mb-3">
-                                             
-                                   </div>
-                                   
-                               
-
-
-</div>  
 
             
             
@@ -546,10 +447,7 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
              <!-- activityname -->
              <!-- sub_act -->
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-
-                </button>
+              
               </div>
             </div>
              <div class="d-flex border-bottom p-1 mb-3">
@@ -660,6 +558,16 @@ integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WT
 </div>
 <br>
 
+
+
+<style>
+      .div.card.header{
+          color: white;   
+     }
+     .nav.main-header.navbar.navbar-expand.navbar-white.navbar-light{
+          background: white !important;   
+     }
+     </style>
 <div>
 
 <button class=" btn btn-primary" 
@@ -685,3 +593,4 @@ Submit</button>
     });
 </script>
 	</div>
+     @include('footer')
