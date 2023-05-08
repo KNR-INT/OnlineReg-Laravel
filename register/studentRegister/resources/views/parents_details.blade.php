@@ -1,51 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>nps</title>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-body {
-	background: #eeeeee;
-	font-family: 'Varela Round', sans-serif;
-}
-.navbar {
-	color: #fff;
-	background: blue !important;
-	padding: 5px 16px;
-	border-radius: 0;
-	border: none;
-	box-shadow: 0 0 4px rgba(0,0,0,0.5);
-}
-</style>
-
-
-<nav class="navbar navbar-expand-xl navbar-dark bg-dark navbar-default navbar-fixed-top ">
-            <a href="#" class="navbar">NPS YPR</a>  		
-			<span>NPS YPR</span>
-                <div class=" navbar-nav ml-auto ">
-                    <div class=" justify-content-end">
-                    <a href="homepage" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
-                    <a href="{{ route('signout') }}"  class="nav-item nav-link active"><i class="fa fa-power-off"></i><span>Logout</span></a>
-                     </div> -->
-<!--                 
-                </div>
-
-
-    </nav>
-
-    </body>
-</html> -->
-
-
 @include('header')
 <!DOCTYPE html>
 <html lang="en">
@@ -66,14 +18,12 @@ body {
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
     </head>
 <body>    
-<div class="container " >
+<div class="container">
 <div class="row" id="HASH">
 <div class="col-6">
                     <div class="row ">
-                         <!-- <div class="card "> -->
                               <form>
                               <h3>Father Details</h3>
-                                   <!-- <div class="card body"> -->
                                    
                         <div class="form-group">
                             <label>Father Name*</label>
@@ -85,7 +35,7 @@ body {
                         </div>
                         <div class="form-group">
                             <label>Father Email Id*</label>
-                            <input type="text" class="form-control" placeholder="Enter Father Email Id" required>
+                            <input type="email" class="form-control" placeholder="Enter Father Email Id" required>
                         </div>
                         <div class="form-group">
                             <label style=" width:400px;"> Father's Mother Tongue</label><br>
@@ -115,7 +65,6 @@ body {
                             <input type="text"  class="form-control" placeholder="Enter state" required>
                         </div> <div class="form-group">
                             <label >Country*</label><br>
-                            <!-- <input type="number" placeholder="Enter Residential Address" required> -->
                             <select required>
                                 <option disabled selected>Select</option>
                                 <option>India</option>
@@ -141,7 +90,6 @@ body {
                         </div>
                         <div class="form-group">
                         <label>Enter Designation</label><br>
-                             <!-- <input type="text" placeholder="Enter Designation" required> -->
                              <select required>
                                <option disabled selected>Enter Designation</option>
                                 <option>Private Sector</option>
@@ -172,23 +120,12 @@ body {
 
             </form>
 
-</div>
-                         <!-- </div> -->
-                    <!-- </div>   -->
-                   
+</div>             
             <br>
             <div class="col-6">
-                
-          
-               <!-- <div class="row mb-2"> -->
-                    <!-- left column -->
                     <div class="row">
-                    <!-- general form elements -->
-                         <!-- <div class="card "> -->
-                         <!-- form start -->
                               <form>
                               <h3>Mother Details</h3>
-                                   <!-- <div class="card body"> -->
                         <div class="form-group"> 
                             <label>Mother Name*</label>
                             <input type="text" class="form-control" placeholder="Enter Mother name" required>
@@ -198,13 +135,13 @@ body {
                             <input type="number" class="form-control" placeholder="Enter Mother mobile number" required>
                         </div>
                         <div class="form-group">
-                            <label>Father Email Id*</label>
-                            <input type="number" class="form-control" placeholder="Enter Mother Email Id" required>
+                            <label>Mother Email Id*</label>
+                            <input type="email" class="form-control" placeholder="Enter Mother Email Id" required>
                         </div>
                         <div class="form-group">
-                            <label style=" width:400px;"> Mothers's Mother Tongue</label><br>
+                            <label style=" width:400px;">Mothers's Mother Tongue</label><br>
                             <select required>
-                                <option disabled selected>Select  Mother Mother Tongue</option>
+                                <option disabled selected>Select Mother Mother Tongue</option>
                                 <option>Kannada</option>
                                 <option>Tamil</option>
                                 <option>Telugu</option>
@@ -224,7 +161,7 @@ body {
                             <label>Area*</label>
                             <input type="text" class="form-control" placeholder="Enter Area" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group"> 
                             <label>District*</label>
                             <input type="text"  class="form-control" placeholder="Enter District" required>
                         </div>
@@ -235,7 +172,6 @@ body {
                         
                         <div class="form-group">
                             <label>Country*</label><br>
-                            <!-- <input type="number" placeholder="Enter Residential Address" required> -->
                             <select required>
                                 <option disabled selected>Select</option>
                                 <option>India</option>
@@ -247,10 +183,7 @@ body {
                                 <option>France</option>
                                 <option>Italy</option>
                                 <option>Others</option>
-
                             </select>
-                        </div>
-<!-- </div> -->
                         <div class="form-group">
                             <label>Pincode*</label>
                             <input type="number" class="form-control" placeholder="Enter Pincode" required>
@@ -262,7 +195,7 @@ body {
                         </div>
                         <div class="form-group">
                         <label>Enter Designation</label><br>
-                             <!-- <input type="text" placeholder="Enter Designation" required> -->
+                            
                              <select required>
                                 <option disabled selected>Enter Designation</option>
                                 <option>Private Sector</option>
@@ -289,40 +222,22 @@ body {
                             <input type="number" class="form-control" placeholder="Enter Gross Annual Income" required>
                         </div>
         </form>
-    </div>
-    <!-- </div>
- 
-        <div> -->
-           
+    </div>           
 </div>
-
-
-    <div class="row justify-content-center mt-4">  
-            <div class="col">  
-              <div class="form-check">  
-<button class=" btn btn-primary" 
-    onclick="window.location.href ='onlinereg'">
-    Go back
-    </button>
-
-<button class="btn btn-primary"  id="btn1" onclick="window.location.href = 'upload_doc'">
- Save & continue</button>
-
-         </div>
-         </div>
-         
-         </div>
-       
-    <script src="script.js"></script>
-    </div>
-    @include('footer')
-</body>
-
+               <div class="row justify-content-center mt-4">  
+                     <div class="col">  
+                     <div class="form-check">  
+                     <button class=" btn btn-primary" onclick="window.location.href ='onlinereg'">Go back</button>
+                     <button class="btn btn-primary"  onclick="window.location.href = 'upload_doc'">Save & continue</button>
+                </div>
+         </div>    
+      </div>
+    </div> 
+    @include('footer')               
+</body> 
 </html>
 
-
 <style>
-/* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
     margin: 0;

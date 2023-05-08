@@ -15,10 +15,8 @@
   </head>
   
 <body>
-   
     <div class="container">
-   
-        <form action="#">
+         <form action="#" method="POST">
             <div class="form first">
                 <div class="details personal">
                     <div class="fields">
@@ -37,32 +35,32 @@
                         </div>
                         <div class="input-field">
                                     <label>Date of Birth*</label>
-                                    <input type="date" placeholder="Enter birth date" required>
+                                    <input type="date" placeholder="Enter birth date" required name="dob">
                                 </div>
 
-                        <div class="input-field">
-                            <label>Class*</label>
-                            <select required>
-                                <option disabled selected>Select Class</option>
-                                <option value="Mont_1">Montessori I</option>
-                                <option value="Mont_2" >Montessori II</option>
-                                <option value="Mont_3">Montessori III</option>
-                            </select>
-                        </div>
-                        <div class="input-field">
-                            <label>Birth Place*</label>
-                            <input type="text" placeholder="Enter your Birth Place" required>
-                        </div>
-                        <div class="input-field">
-                            <label>Nationality*</label>
-                            <select required>
-                                <option disabled selected>Select Nationality</option>
-                                <option value="Indian">Indian</option>
-                                <option value="American">American</option>
-                                <option value="USA">USA</option>
-                                <option value="Others">Others</option>
-                            </select>
-                        </div>
+                            <div class="input-field">
+                                <label>Class*</label>
+                                <select required>
+                                    <option disabled selected>Select Class</option>
+                                    <option value="Mont_1">Montessori I</option>
+                                    <option value="Mont_2" >Montessori II</option>
+                                    <option value="Mont_3">Montessori III</option>
+                                </select>
+                            </div>
+                                <div class="input-field">
+                                    <label>Birth Place*</label>
+                                    <input type="text" placeholder="Enter your Birth Place" required name="birth_place">
+                                </div>
+                                <div class="input-field">
+                                    <label>Nationality*</label>
+                                    <select required>
+                                        <option disabled selected>Select Nationality</option>
+                                        <option value="Indian">Indian</option>
+                                        <option value="American">American</option>
+                                        <option value="USA">USA</option>
+                                        <option value="Others">Others</option>
+                                    </select>
+                                </div>
                         <div class="input-field">
                             <label>Religion*</label>
                             <select required>
@@ -84,35 +82,29 @@
                                 <option value="Hindi">Hindi</option>
                             </select>
                         </div>
-                        <div class="input-field">
-                        </div>
+                            <div class="input-field">
+                            </div>
                     
                     </div>
                 </div>
                     <br>
-                <div class="sibling">
-                    <span class="title">Sibling currently studying at NPS Yeshwanthpur</span>
+                   <div class="sibling">
+                      <span class="title">Sibling currently studying at NPS Yeshwanthpur</span>
 
-                    <div class="fields">
+                      <div class="fields">
                         <div class="input-field">
                             <input type="text" placeholder="Enter name">
                         </div>
                         <div class="input-field">
                             <input type="text" placeholder="Enter class and section">
                         </div>
-                        <!-- <div class="input-field">
-                            <input type="text" placeholder="Enter section">
-                        </div> -->
                         <div class="input-field">
                             <input type="text" placeholder="Enter name">
                         </div>
                         <div class="input-field">
                             <input type="text" placeholder="Enter class and section ">
                         </div>
-                        <!-- <div class="input-field">
-                            <input type="text" placeholder="Enter section">
-                        </div> -->
-                   
+                      
                         <div class="input-field">
                             <label>Is your child physically challenged?</label>
                             <select required >
@@ -132,18 +124,18 @@
 
                         <div class="input-field">
                             <label>Aadhar of the Student*</label>
-                            <input type="text" placeholder="Enter Student Aadhar" required>
+                            <input type="text" placeholder="Enter Student Aadhar" required name="aadhar" >
                         </div>
                         <br>
-                        <div class="input-field" style="margin-left:30px;">
-                            <label>Mode of transport*</label>
-                            <select required>
-                            <option disabled selected>Mode of transport</option>
+                            <div class="input-field" style="margin-left:30px;">
+                                <label>Mode of transport*</label>
+                                <select required>
+                                <option disabled selected>Mode of transport</option>
                                 <option value="School_bus">School Bus</option>
                                 <option value="Private">Private</option>
-                            </select>
-                           </div>
-                        <br>
+                                </select>
+                            </div>
+                          <br>
                         <div class="input-field">
                         <label> Upload a recent photograph of the Student * :</label>
                         <input type="file" id="myFile" name="filename"> </input>
@@ -152,122 +144,13 @@
                         <button class="nextBtn">
                         <span class="btnText" onclick="window.location.href='parents_details'">save and continue</span>
                         <i class="uil uil-navigator"></i>
-                        
                        </button>
-                       <div>
-                       @include('footer')
-</div>
-                </div> 
-            </div>
-                </div> 
-            </div>
-           
-        </form>
-    </div>
-   
-            <!-- <div class="form second">
-                <div class="details address">
-                    <span class="title">Address Details</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Address Type</label>
-                            <input type="text" placeholder="Permanent or Temporary" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Nationality</label>
-                            <input type="text" placeholder="Enter nationality" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>State</label>
-                            <input type="text" placeholder="Enter your state" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>District</label>
-                            <input type="text" placeholder="Enter your district" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Block Number</label>
-                            <input type="number" placeholder="Enter block number" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Ward Number</label>
-                            <input type="number" placeholder="Enter ward number" required>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="details family">
-                    <span class="title">Family Details</span>
-
-                    <div class="fields">
-                        <div class="input-field">
-                            <label>Father Name</label>
-                            <input type="text" placeholder="Enter father name" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Mother Name</label>
-                            <input type="text" placeholder="Enter mother name" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Grandfather</label>
-                            <input type="text" placeholder="Enter grandfther name" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Spouse Name</label>
-                            <input type="text" placeholder="Enter spouse name" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Father in Law</label>
-                            <input type="text" placeholder="Father in law name" required>
-                        </div>
-
-                        <div class="input-field">
-                            <label>Mother in Law</label>
-                            <input type="text" placeholder="Mother in law name" required>
-                        </div>
-                    </div> -->
- 
-
-
-                    <!-- importent
-                    <div class="buttons">
-                        <div class="backBtn">
-                            <i class="uil uil-navigator"></i>
-                            <span class="btnText">Back</span>
-                        </div>
-                        
-                        <button class="sumbit">
-                            <span class="btnText">Submit</span>
-                            <i class="uil uil-navigator"></i>
-                        </button>
-                    </div> -->
-                    
-                 </div> 
-                
-                 
-            </div>
-           
-        </form>
-        
-    </div>
-
-    <script src="script.js"></script>
-    
-</body>
-</html>
+         <div>
+    </form>
+ </body>
+ </html>
 
 <style>
-/* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
     margin: 0;
@@ -280,11 +163,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: #4070f4; */
 }
 .container{
     position: relative;
-    max-width: 1100px;
+    max-width: 1000px;
     width: 100%;
     border-radius: 6px;
     padding: 50px;
@@ -317,31 +199,7 @@ body{
 }
 .container form .form{
     position: absolute;
-    /* background-color: #fff; */
     transition: 0.3s ease;
-}
-/* .container form .form.second{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(100%);
-} */
-form.secActive .form.second{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
-form.secActive .form.first{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-100%);
-}
-.container form .title{
-    display: block;
-    margin-bottom: 8px;
-    font-size: 16px;
-    font-weight: 500;
-    margin: 6px 0;
-    color: #333;
 }
 .container form .fields{
     display: flex;
@@ -371,17 +229,6 @@ form .fields .input-field{
     height: 42px;
     margin: 8px 0;
 }
-.input-field input :focus,
-.input-field select:focus{
-    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
-}
-.input-field select,
-.input-field input[type="date"]{
-    color: #707070;
-}
-.input-field input[type="date"]:valid{
-    color: #333;
-}
 .container form button, .backBtn{
     display: flex;
     align-items: center;
@@ -398,45 +245,7 @@ form .fields .input-field{
     transition: all 0.3s linear;
     cursor: pointer;
 }
-.container form .btnText{
-    font-size: 14px;
-    font-weight: 400;
-}
-form button:hover{
-    background-color: #265df2;
-}
-form button i,
-form .backBtn i{
-    margin: 0 6px;
-}
-form .backBtn i{
-    transform: rotate(180deg);
-}
-form .buttons{
-    display: flex;
-    align-items: center;
-}
-form .buttons button , .backBtn{
-    margin-right: 14px;
-}
 
-@media (max-width: 750px) {
-    .container form{
-        overflow-y: scroll;
-    }
-    .container form::-webkit-scrollbar{
-       display: none;
-    }
-    form .fields .input-field{
-        width: calc(100% / 2 - 15px);
-    }
-}
-
-@media (max-width: 550px) {
-    form .fields .input-field{
-        width: 100%;
-    }
-}
 </style>
 <script>
 const form = document.querySelector("form"),

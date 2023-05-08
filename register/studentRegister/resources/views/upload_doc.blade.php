@@ -150,10 +150,11 @@
         Save & continue</button>
 
          </div>
+         @include('footer')
          </div>
          </div>
          </center>
-         @include('footer')
+        
             </div>
    <script src="script.js"></script>
    
@@ -180,7 +181,7 @@ body{
 .container{
     position: relative;
     max-width: 1200px;
-    height:800px;
+    height:1000px;
     width: 90%;
     border-radius: 6px;
     padding: 50px;

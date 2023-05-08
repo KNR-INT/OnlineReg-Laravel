@@ -15,24 +15,23 @@ class CustomAuthController extends Controller
         return view('homepage');
     } 
  
-    public function index()
+    public function index()  
     {
             return view('login');
     }  
+    // login 
     public function login(Request $request) {    
         $email = $request->email;    
         $user = User::where('email', $email)->first();    
         if ($user) {    
           Auth::login($user);    
-  return redirect()->intended('otp');
-            //   ->with('message', 'Signed in!');           
-         }
-        else {    
-            return redirect('/dashboard')->with('message', );   
+          return redirect()->intended('otp');          
+         } 
+        else {     
+            return redirect('/dashboard')->with('message',);   
         }    
     }
-
- 
+        
     public function signup()
     {
         return view('registration');
@@ -42,8 +41,7 @@ class CustomAuthController extends Controller
     {  
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email|unique:users',
-            // 'password' => 'required|min:6',
+            'email' => 'required|email|unique:users', 
         ]);
             
         $data = $request->all();
@@ -51,7 +49,24 @@ class CustomAuthController extends Controller
           
         return redirect("dashboard");
     }
- 
+    // public function onlinereg(Request $request)
+    // {
+        // $request->validate([
+        //         'name' => 'name',
+        //         'gender' =>'gender',
+        //         'dob' => 'dob',
+        //         'class' =>'class',
+        //         'birth_place' => 'birth_place',
+        //         'nationality' =>'nationality',
+        //         'religion' =>'religion',
+        //         'mother_tongue' =>'mother_tongue',
+        //         'phy_clg' =>'phy_clg',
+        //         'slp_need' =>'slp_need',
+        //         'aadhar' =>'aadhar',
+        //         'transport' =>'transport',
+            
+        // ]);
+        
     public function create(array $data)
     {
       return User::create([
@@ -59,8 +74,23 @@ class CustomAuthController extends Controller
         'email' => $data['email'],
         
       ]);
-    }    
      
+    //   return onlinereg::create([
+    //     'name' => $data['name'],
+    //     'gender' => $data['gender'],
+    //     'dob' => $data['dob'],
+    //     'class' => $data['class'],
+    //     'birth_place' => $data['birth_place'],
+    //     'nationality' => $data['nationality'],
+    //     'religion' => $data['religion'],
+    //     'mother_tongue' => $data['mother_tongue'],
+    //     'phy_clg' => $data['phy_clg'],
+    //     'slp_need' => $data['slp_need'],
+    //     'aadhar' => $data['aadhar'],
+    //     'transport' => $data['transport'],
+        
+    //   ]);
+} 
     public function dashboard()
     {
         if(Auth::check()){
@@ -68,23 +98,12 @@ class CustomAuthController extends Controller
         }
         return redirect('/login');
     }
-     
     public function signOut() {
         Session::flush();
         Auth::logout();
    
-        return redirect('login');
-    }
-    // public function store(Request $request)
-    // {
-    //     $this->validate($request, [
-    //         'name' => 'required',
-    //         'email' => 'required|email',
-    //         'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
-    //     ]);
-   
-    //     dd('done');
-    // }
+        return redirect('home');
+    } 
     public function header() {
         return view('headerpage');
     }
@@ -107,7 +126,6 @@ class CustomAuthController extends Controller
         $otp = rand(1000,9999);
         Log::info("otp = ".$otp);
         $user = User::where('email','=',$request->email)->update(['otp' => $otp]);
-        // send otp to email using email api
         return response()->json([$user],200);
     }
     public function otp()
@@ -126,7 +144,7 @@ class CustomAuthController extends Controller
     }
     public function myapp()
     {
-        if(Auth::check()){
+        if(Auth::check()){  
             return view('myapp');
         }
         return redirect('/dashboard');
@@ -140,15 +158,13 @@ class CustomAuthController extends Controller
         return redirect('/dashboard');
     }
     public function onlinereg()
-    {
-        
+    {   
         if(Auth::check()){
-            return view('onlinereg');
+         return view('onlinereg');
         }
         
-        return redirect('/dashboard');
-        
-    }
+    return redirect('/dashboard');
+   }
     public function parents_details()
     {
         if(Auth::check()){
@@ -171,8 +187,6 @@ class CustomAuthController extends Controller
         }
         return redirect('/dashboard');
     }
-
-
     public function payment()
     {
         if(Auth::check()){
@@ -180,7 +194,6 @@ class CustomAuthController extends Controller
         }
         return redirect('/dashboard');
     }
-
     public function admitted()
     {
         if(Auth::check()){

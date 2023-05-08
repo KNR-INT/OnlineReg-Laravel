@@ -9,7 +9,7 @@
 <h3>Application Fee Payment For Academic Year 2022-23</h3>
 
  <br>
-<table align="center" cellpadding = "20">
+<table align="center" cellpadding = "10">
  
 <!----- First Name ---------------------------------------------------------->
 <tr id="a">

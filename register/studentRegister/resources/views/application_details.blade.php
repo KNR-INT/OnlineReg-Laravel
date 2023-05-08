@@ -17,12 +17,7 @@
 <label style="color:black;"><h3>YESHWANTHPUR</h3></label><br>
 <label style="color:black; margin-left:20px;"><h4>Application For Registration</h4>
 </div></center>
-</div>
-	
-
- 
-            
-            
+</div> 
      
           <div class="card ">
          
@@ -38,10 +33,6 @@
             </div> 
              <div class="d-flex border-bottom p-1 mb-3">
              </div>
-           
-
-
-             <!-- get_entry -->
                                    <div class="card-body table-responsive p-1">
                                         <table class="table table-bordered table-hover" id ="Applications">
                                              <thead>
@@ -283,10 +274,6 @@
 </tr>
  
 <!----- Mobile Number ---------------------------------------------------------->
-
-
-
-
 <tr>
 <td><b>Area</b></td>
 <td>
@@ -347,33 +334,22 @@
 </table>
 </div>
 
-
-
-     
           <div class="card ">
          
            <div class="card-header" style="background-color:blue;height:50px;">
              <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
             
              <label  style="color:white; margin-top:-5px; margin-left:400px"><h5>Company Details</h5>
-          
-            
+   
               <div class="card-tools">
                
               </div>
             </div>
              <div class="d-flex border-bottom p-1 mb-3">
              </div>
-           
-
-
-             <!-- get_entry -->
-                                   <div class="card-body table-responsive p-1">
+           <div class="card-body table-responsive p-1">
                                         <table class="table table-bordered table-hover" id ="Applications">
                                              <thead>
-                                            
-                                                
-                                                  
                                                   </tr>
                                              </thead>
                                              <tbody>
@@ -501,7 +477,7 @@
 <!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>Selected File Name</b></td>
-<td><img src="http://your.url/img/stuvi-logo.png" class="css-class" alt="image">
+<td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
@@ -529,10 +505,7 @@
 </td>
 </tr>
 
-
-
-
-</tbody>
+</body>
 </table>
 </div>
 </div>
@@ -541,25 +514,17 @@
 </html>
 <div class="justify-content-center" style="margin-top:50px; margin-left: 50px;">
 		<div class="container-fluid">
-<h3 style= "color:blue">DECLARATION BY PARENT/GUARDIAN</h3>
+<h3 style= "color:blue"><b>DECLARATION BY PARENT/GUARDIAN</h3>
 
 <p>I have read the rules and regulations of NPS YPR and I fully agree to abide by them so long as my child is a student at this school if selected.</p>
-<br>
 <p>I hereby declare that the information furnished above is true and correct to the best of my knowledge and I undertake to inform you of any changes therein, immediately.</p>
-<br>
 <p>Application once submitted connot be edited. Kindly note your application no : YPR/mont/2022/00981</p>
-</div>
-	</div>
-    <div class="icheck-primary d-inline">
+</div> 
+      <div class="icheck-primary d-inline">
             <input type='checkbox'  id="checkbox" name = "checkbox"> 
-<label for="checkbox">
-<b>I Agree</b>
-</label>
-</div>
-<br>
-
-
-
+             <label for="checkbox"><b>I Agree</b></label>
+	</div>
+ 
 <style>
       .div.card.header{
           color: white;   
@@ -568,20 +533,12 @@
           background: white !important;   
      }
      </style>
+
 <div>
-
-<button class=" btn btn-primary" 
-    onclick="window.location.href = 'onlinereg'">
-    Edit Application
-    </button>
-
-<button DISABLED class= "btn btn-primary"  id="btn1" onclick="window.location.href = 'payment'">
-Submit</button>
-
-         </div>
-
-        	<!-- </div> -->
-		</div>
+     <button class=" btn btn-primary" onclick="window.location.href = 'onlinereg'">Edit Application</button>
+     <button DISABLED class= "btn btn-primary"  id="btn1" onclick="window.location.href = 'payment'">Submit</button>
+</div>
+	
         <script>
   $('#checkbox').click(function() {
         if ($(this).is(':checked')) {

@@ -11,6 +11,65 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<body>
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+	<a href="#" class="navbar-brand">NPS YPR</a>  		
+	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+		</form>
+		<div class="navbar-nav ml-auto">
+			<a href="homepage" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+			<a href="{{ route('signout') }}"  class="nav-item nav-link active"><i class="fa fa-power-off"></i><span>Logout</span></a>
+			
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+</body>
+</html>
+<br></br>
+    
+<div >
+    <div class="container">
+    <div class="justify-content-center">
+             <div class="row ">
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-md-4">
+                     <div class="card">
+                        <div class="alert alert-info">
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="280" width="310">
+                        </div>
+                    <div class="card-body">
+                        
+                       <h4 class="card-footer text-center"><a href="newapp" class="d-block">New Application</a></h4>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-md-4">
+             
+             <div class="card">
+              
+                        <div class="alert alert-info">
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="280" width="310">     
+                   </div>
+                    <div class="card-body">
+                       <h4 class="card-footer text-center"><a href="myapp" class="d-block">My Application </a></h4>
+                      
+                    </div>
+                </div>
+            </div>
+             </div>
+
+             
+</div>
+</div>
+
+
+
 <style>
 body {
 	background: #eeeeee;
@@ -184,69 +243,5 @@ body {
 }
 </style>
 </head> 
-<body>
-<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-	<a href="#" class="navbar-brand">NPS YPR</a>  		
-	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<!-- Collection of nav links, forms, and other content for toggling -->
-	
-		</form>
-		<div class="navbar-nav ml-auto">
-			<a href="homepage" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
-			<a href="{{ route('signout') }}"  class="nav-item nav-link active"><i class="fa fa-power-off"></i><span>Logout</span></a>
-			
-				</div>
-			</div>
-		</div>
-	</div>
-</nav>
-</body>
-</html>
-<br></br>
-    
-<div >
-    <div class="container">
-    <!-- <div class="justify-content-center     -->
 
-
-    <div class="justify-content-center">
-             <div class="row ">
-            <div class="col-md-2">
-            </div>
-
-            <div class="col-md-4">
-                     <div class="card">
-                        <div class="alert alert-info">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="300" width="370">
-                        </div>
-                    <div class="card-body">
-                        
-                       <h4 class="card-footer text-center"><a href="newapp" class="d-block">New Application </a></h4>
-                       
-                                
-                    </div>
-                </div>
-             </div>
-
-               <div class="col-md-4">
-             
-             <div class="card">
-              
-                        <div class="alert alert-info">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="300" width="370">     
-                   </div>
-                    <div class="card-body">
-                       <h3 class="card-footer text-center"><a href="myapp" class="d-block">My Application </a></h3>
-                      
-                    </div>
-                </div>
-                <div class="col-md-2">
-            </div>
-             </div>
-
-             
-</div>
-</div>
 @include('footer')
