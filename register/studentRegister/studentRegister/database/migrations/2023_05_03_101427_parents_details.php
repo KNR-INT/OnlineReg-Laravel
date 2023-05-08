@@ -45,7 +45,7 @@ return new class extends Migration
             $table->string('mother_designation');
             $table->string('mother_company');
             $table->string('mother_company_address');
-            $table->string('mother_office_nnumber');
+            $table->string('mother_office_number');
             $table->string('mother_annual_income');
             $table->rememberToken();
             $table->timestamps();
