@@ -5,7 +5,7 @@ use App\Models\Student;
 
 use Illuminate\Http\Request;
 
-class studentController extends Controller
+class StudentController extends Controller
 {
     //
     function onlinereg()
