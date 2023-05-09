@@ -41,7 +41,7 @@
             <div class="col-md-4">
                      <div class="card">
                         <div class="alert alert-info">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="280" width="310">
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="250" width="310">
                         </div>
                     <div class="card-body">
                         
@@ -54,7 +54,7 @@
              <div class="card">
               
                         <div class="alert alert-info">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="280" width="310">     
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="250" width="310">     
                    </div>
                     <div class="card-body">
                        <h4 class="card-footer text-center"><a href="myapp" class="d-block">My Application </a></h4>

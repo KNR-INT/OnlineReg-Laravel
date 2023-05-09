@@ -1,11 +1,10 @@
 @include('header')
 <div >
-    <div class="container">
+    <div class="container" style="margin-top:40px;">
 
     <div class="d-flex align-items-start">
              <div class="row-ms-1">
-            </div>
-
+            </div>  
             <div class="row-ms-1">
                      <div class="card">
                         <div class="alert alert-info">

@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 
 Route::get('/', [CustomAuthController::class, 'home']); 
+
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
+Route::post('dashboard', [CustomAuthController::class, 'dashboard']);
  
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('postlogin', [CustomAuthController::class, 'login'])->name('postlogin'); 
