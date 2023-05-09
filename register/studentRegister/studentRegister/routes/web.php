@@ -2,7 +2,7 @@
  
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\studentController;
+use App\Http\Controllers\StudentController;
 
 use App\Models\student;
 
@@ -73,4 +73,4 @@ Route::post('create','CustomAuthController@insert');
 
 Route::get('students', [CustomAuthController::class, 'onlinereg']);
 // Route::get('update-student', [CustomAuthController::class, 'update']);
- Route::get('store-student', [studentController::class, 'store']);
+ Route::get('store-student', [StudentController::class, 'store']);
