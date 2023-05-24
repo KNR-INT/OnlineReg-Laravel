@@ -216,7 +216,7 @@ body {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <html>
 <head>
-    <title>Laravel 9 Custom Auth Login and Registration</title>
+    <title>Online Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -309,13 +309,16 @@ I Agree
 <br>
 
 <div>
-
+	<input type="hidden" id="class" value="<?php echo $_GET['class']; ?>">
+<?php 
+	$class = $_GET['class'];
+?>
 <button class=" btn btn-primary" 
     onclick="window.location.href = 'newapp'" value=" $email = User::where('id',$id)->email();">
     Go to home
     </button>
 
-    <button  DISABLED class="btn btn-primary"   id="btn1" onclick="window.location.href = 'onlinereg'">continue </button>
+    <button  DISABLED class="btn btn-submit btn-primary"   id="btn1" >continue </button>
          </div>
 		</div>
 	</div>
@@ -327,6 +330,11 @@ I Agree
         } else {
             $('#btn1').attr('disabled', 'disabled');
         }
+    });
+
+	$('.btn-submit').click(function() {
+        let class_name = document.getElementById("class").value;
+		window.location.href = "{{ url('onlinereg') }}/a?class="+class_name;
     });
 </script>
 

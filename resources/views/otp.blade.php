@@ -33,15 +33,15 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <form method="POST" action="{{ route('postlogin') }}">
+                        <form method="POST" action="{{ route('otp') }}">
                             
                             @csrf
                             <div class="d-flex justify-content-center">
                             <div class="col-md-6">
-                                <input type="text" placeholder="Enter the OTP" id="email" class="form-control" name="email"
+                                <input type="text" placeholder="Enter the OTP" id="otp" class="form-control" name="otp"
                                     autofocus>
-                                @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @if ($errors->has('message'))
+                                <span class="text-danger">{{ $errors->first('message') }}</span>
                                 @endif
                             </div>
 </div>

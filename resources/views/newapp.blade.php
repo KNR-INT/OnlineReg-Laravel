@@ -2,7 +2,7 @@
 <!-- <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 9 Custom Auth Login and Registration</title>
+    <title>Online Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -41,7 +41,7 @@
                         </div>
                     <div class="card-body">
                        <!-- <h3 class="card-footer text-center">Montessori</h3> -->
-                       <h3 class="card-footer text-center"><a href="guidelinesmont" class="d-block">Montessori </a></h3>
+                       <h3 class="card-footer text-center"><a href="{{ url('guidelinesmont/a?class=mont') }}" class="d-block">Montessori </a></h3>
                             
                                 
                     </div>
@@ -57,7 +57,7 @@
                    </div>
                     <div class="card-body">
                        
-                       <h3 class="card-footer text-center"><a href="guidelinesmont" class="d-block">Kindergarten </a></h3>
+                       <h3 class="card-footer text-center"><a href="{{ url('guidelinesmont/a?class=kinder') }}" class="d-block">Kindergarten </a></h3>
 
                       
                     </div>
@@ -82,7 +82,7 @@
                         </div>
                     <div class="card-body">
                        
-                       <h3 class="card-footer text-center"><a href="guidelinesmont" class="d-block">Grade 1-9 </a></h3>
+                       <h3 class="card-footer text-center"><a href="{{ url('guidelinesmont/a?class=1to9') }}" class="d-block">Grade 1-9 </a></h3>
 
                             
                                 
@@ -98,7 +98,7 @@
                         <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="250" width="250">     
                    </div>
                     <div class="card-body">
-                       <h3 class="card-footer text-center"><a href="guidelinesmont" class="d-block">Grade 11</a></h3>
+                       <h3 class="card-footer text-center"><a href="{{ url('guidelinesmont/a?class=11') }}" class="d-block">Grade 11</a></h3>
 
                        
                       

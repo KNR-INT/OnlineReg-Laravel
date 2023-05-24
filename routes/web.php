@@ -42,12 +42,12 @@ Route::get('newapp', [CustomAuthController::class, 'newapp'])->name('newapp');
 
 
 
-Route::post('guidelinesmont', [CustomAuthController::class, 'guidelinesmont'])->name('guidelinesmont'); 
-Route::get('guidelinesmont', [CustomAuthController::class, 'guidelinesmont'])->name('guidelinesmont'); 
+Route::post('guidelinesmont/{id}', [CustomAuthController::class, 'guidelinesmont'])->name('guidelinesmont'); 
+Route::get('guidelinesmont/{id}', [CustomAuthController::class, 'guidelinesmont'])->name('guidelinesmont'); 
 
 
-Route::post('onlinereg', [CustomAuthController::class, 'onlinereg'])->name('onlinereg'); 
-Route::get('onlinereg', [CustomAuthController::class, 'onlinereg'])->name('onlinereg'); 
+Route::post('onlinereg/{id}', [CustomAuthController::class, 'onlinereg'])->name('onlinereg'); 
+Route::get('onlinereg/{id}', [CustomAuthController::class, 'onlinereg'])->name('onlinereg'); 
 
 Route::post('parents_details', [CustomAuthController::class, 'parents_details'])->name('parents_details'); 
 Route::get('parents_details', [CustomAuthController::class, 'parents_details'])->name('parents_details'); 
