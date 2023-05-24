@@ -25,7 +25,7 @@
                         <div class="input-field">
                             <label>Name of the student*</label>
                             <input type="text" placeholder="Enter Student name"  id="name" name="name" >
-                            <span id="name_err" style="color:red;"></span>
+                            <span id="name_err" style="color:red;"></span> 
                         </div>
                         <div class="input-field">
                             <label>Gender*</label>

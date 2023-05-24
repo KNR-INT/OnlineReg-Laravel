@@ -56,7 +56,7 @@
                     <div class="card-body">
                        <h3 class="card-footer text-center"><a href="{{ url('guidelinesmont/a?class=11') }}" class="d-block">Grade 11</a></h3>
                     </div>
-                <div class="col-md-1">
+        
              </div>
             </div> 
            </div>      
