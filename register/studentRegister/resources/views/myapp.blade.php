@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 9 Custom Auth Login and Registration</title>
+    <title>NPS-YPR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -17,23 +17,22 @@
             <div class="col-md-4">
                      <div class="card">
                         <div class="alert alert-info">
-                        <img src="https://www.mavinlearning.com/wp-content/uploads/2017/12/Online_Employment_Application_Guide_New_User_Image_021_493505_7.jpg" alt="" height="250" width="300">
+                        <img src="https://cdn.onlinewebfonts.com/svg/img_367038.png" alt="" height="250" width="300">
                         </div>
                     <div class="card-body">
-                       <h4 class="card-footer text-center">Submitted Application</h4>    
+                       <h4 class="card-footer text-center"><a href="submited" class="d-block">Submitted Application</a></h4>    
                     </div>
                 </div>
              </div>
 
                <div class="col-md-4">
              
-             <div class="card" >
-              
-                        <div class="alert alert-info" ><img src="" alt="" height="250" width="300">     
-                   </div>
+             <div class="card">
+                        <div class="alert alert-info">
+                            <img src="https://cdn-icons-png.flaticon.com/512/74/74905.png" alt="" height="250" width="300">     
+                        </div>
                     <div class="card-body">
-                       <h4 class="card-footer text-center">Draft Application</h4>
-                      
+                       <h4 class="card-footer text-center"><a href="draft" class="d-block">Draft Application</a></h4> 
                     </div>
                 </div>
                 <div class="col-md-2">

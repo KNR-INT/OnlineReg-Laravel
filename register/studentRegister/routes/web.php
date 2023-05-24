@@ -35,6 +35,12 @@ Route::get('newapp', [CustomAuthController::class, 'newapp'])->name('newapp');
 Route::post('myapp', [CustomAuthController::class, 'myapp'])->name('myapp'); 
 Route::get('myapp', [CustomAuthController::class, 'myapp'])->name('myapp'); 
 
+Route::post('draft', [CustomAuthController::class, 'draft'])->name('draft'); 
+Route::get('draft', [CustomAuthController::class, 'draft'])->name('draft'); 
+
+Route::post('submitted', [CustomAuthController::class, 'submitted'])->name('submitted'); 
+Route::get('submitted', [CustomAuthController::class, 'submitted'])->name('submitted'); 
+
 Route::post('guidelinesmont', [CustomAuthController::class, 'guidelinesmont'])->name('guidelinesmont'); 
 Route::get('guidelinesmont', [CustomAuthController::class, 'guidelinesmont'])->name('guidelinesmont'); 
 
@@ -59,3 +65,6 @@ Route::get('payment', [CustomAuthController::class, 'payment'])->name('payment')
 
 Route::post('admitted', [CustomAuthController::class, 'admitted'])->name('admitted'); 
 Route::get('admitted', [CustomAuthController::class, 'admitted'])->name('admitted'); 
+
+
+Route::post('/toggle-visibility', 'YourController@toggleVisibility')->name('toggle.visibility');

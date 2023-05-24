@@ -150,7 +150,7 @@
         Save & continue</button>
 
          </div>
-         @include('footer')
+         @include('footer') 
          </div>
          </div>
          </center>

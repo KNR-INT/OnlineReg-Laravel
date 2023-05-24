@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-
+<title>NPS-YPR</title>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <!DOCTYPE html>
 <html>
@@ -10,10 +10,6 @@
 <main class="login-form">
 
     <div class="cotainer">
-    
-     
-     <!-- <img src="https://mdbootstrap.com/img/Others/documentation/1.webp" class="img-fluid"
-      alt="Responsive image">  -->
         
         <div class="justify-content-center">
             <div class="col-md-15">
@@ -54,7 +50,7 @@
                                </div>
                                <br>
                                <div class="d-flex justify-content-center"  >
-                                   <button disabled="disabled" type="submit" id="button1" class="btn btn-dark btn-block">verify</button>
+                                   <button disabled="disabled" type="submit" id="button1" class="btn btn-dark btn-block">Verify</button>
                                </div>
                            </form>
                        </div>
@@ -77,16 +73,7 @@
                   document.getElementById("button1").disabled = false;
               }
           </script>
-   <!-- footer -->
-	<!-- <footer class="bg-li py-5">
-		<div class="container py-xl-5 py-lg-3">
-			<div class="subscribe mx-auto">
-			
-		</div>
-	</footer> -->
-	<!-- //footer -->
-	<!-- copyright bottom -->
-	<!-- //copyright bottom -->
+
     @include('footer')
 </body>
 

@@ -15,7 +15,7 @@ class CustomAuthController extends Controller
         return view('homepage');
     } 
  
-    public function index()  
+    public function index()
     {
             return view('login');
     }  
@@ -40,13 +40,12 @@ class CustomAuthController extends Controller
     public function signupsave(Request $request)
     {  
         $request->validate([
-            'name' => 'required',
+            'name' => 'required', 
             'email' => 'required|email|unique:users', 
         ]);
             
         $data = $request->all();
         $check = $this->create($data);
-          
         return redirect("dashboard");
     }
     // public function onlinereg(Request $request)
@@ -58,11 +57,11 @@ class CustomAuthController extends Controller
         //         'class' =>'class',
         //         'birth_place' => 'birth_place',
         //         'nationality' =>'nationality',
-        //         'religion' =>'religion',
+        //         'religion' =>'religion',                                                                               
         //         'mother_tongue' =>'mother_tongue',
         //         'phy_clg' =>'phy_clg',
-        //         'slp_need' =>'slp_need',
-        //         'aadhar' =>'aadhar',
+        //         'slp_need' =>'slp_need',   
+        //         'aadhar' =>'aadhar',       
         //         'transport' =>'transport',
             
         // ]);
@@ -82,14 +81,14 @@ class CustomAuthController extends Controller
     //     'class' => $data['class'],
     //     'birth_place' => $data['birth_place'],
     //     'nationality' => $data['nationality'],
-    //     'religion' => $data['religion'],
-    //     'mother_tongue' => $data['mother_tongue'],
-    //     'phy_clg' => $data['phy_clg'],
-    //     'slp_need' => $data['slp_need'],
-    //     'aadhar' => $data['aadhar'],
-    //     'transport' => $data['transport'],
-        
-    //   ]);
+    //     'religion' => $data['religion'], 
+    //     'mother_tongue' => $data['mother_tongue'],   
+    //     'phy_clg' => $data['phy_clg'],             
+    //     'slp_need' => $data['slp_need'],          
+    //     'aadhar' => $data['aadhar'],                        
+    //     'transport' => $data['transport'],         
+    //   ]);                                                                  
+     
 } 
     public function dashboard()
     {
@@ -97,11 +96,10 @@ class CustomAuthController extends Controller
             return view('dashboard');
         }
         return redirect('/login');
-    }
+    } 
     public function signOut() {
         Session::flush();
-        Auth::logout();
-   
+        Auth::logout();        
         return redirect('home');
     } 
     public function header() {
@@ -139,13 +137,6 @@ class CustomAuthController extends Controller
     {
         if(Auth::check()){
             return view('newapp');
-        }
-        return redirect('/dashboard');
-    }
-    public function myapp()
-    {
-        if(Auth::check()){  
-            return view('myapp');
         }
         return redirect('/dashboard');
     }
@@ -201,4 +192,43 @@ class CustomAuthController extends Controller
         }
         return redirect('/dashboard');
     }
+    public function myapp()
+    {     
+        if(Auth::check()){  
+            return view('myapp');
+        }
+        return redirect('/dashboard');
+    }
+    public function draft()
+    {
+        if(Auth::check()){  
+            return view('draft');
+        }
+        return redirect('/myapp'); 
+    }
+    public function submited()
+    {
+        if(Auth::check()){  
+            return view('submited');
+        }
+        return redirect('/myapp');
+    }
+         
+    public function toggleVisibility(Request $request)
+{
+    // Retrieve the necessary data from the request (e.g., element ID, visibility status)
+
+    // Perform any necessary validation or authorization checks
+
+    // Update the visibility status in the database or any other logic you require
+
+    // Return a response indicating success or failure
 }
+
+
+
+}
+
+
+
+

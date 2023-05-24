@@ -1,4 +1,5 @@
 @include('header')
+<title>online Registration</title>
 <div >
     <div class="container" style="margin-top:40px;">
 
@@ -12,7 +13,6 @@
                         </div>
                     <div class="card-body">
                        <h3 class="card-footer text-center"><a href="guidelinesmont" class="d-block">Montessori </a></h3>
-                 
                     </div>
                 </div>
              </div>
@@ -36,7 +36,7 @@
                         <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="250" width="250">
                         </div>
                     <div class="card-body">
-                       <h3 class="card-footer text-center"><a href="guidelinesmont" class="d-block">Grade 1-9 </a></h3>    
+                       <h3 class="card-footer text-center"><a href="guidelinesmont" class="d-block">Grade 1-9</a></h3>    
                     </div>
                 </div>
              </div>
@@ -52,7 +52,7 @@
                     </div>
                 <div class="col-md-1">
              </div>
-            </div>
+            </div> 
            </div>      
  @include('footer')
 </body>

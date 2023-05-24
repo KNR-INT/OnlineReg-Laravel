@@ -2,71 +2,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/> 
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>-->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+</head>
+<body>
 
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js"></script>
-    </head>
-<body>    
 <div class="container">
-<div class="row" id="HASH">
-<div class="col-6">
-                    <div class="row ">
-                              <form>
-                              <h3>Father Details</h3>
-                                   
-                        <div class="form-group">
-                            <label>Father Name*</label>
-                            <input type="text"  class="form-control" placeholder="Enter Father name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Mobile Number*</label>
-                            <input type="number" class="form-control" placeholder="Enter Father mobile number" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Father Email Id*</label>
-                            <input type="email" class="form-control" placeholder="Enter Father Email Id" required>
-                        </div>
-                        <div class="form-group">
-                            <label style=" width:400px;"> Father's Mother Tongue</label><br>
-                            <select required class="form-select form-select-lg mb-3">
-                                <option disabled selected>Select  Father Mother Tongue</option>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th><h4><b>Father Details</b></h4></th>
+        <th><h4><b>Mother Details</b></h4></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td >Father Name*
+         <input type="text"  class="form-control" placeholder="Enter Father name" required></td>
+        <td>Mother Name*
+         <input type="text"  class="form-control" placeholder="Enter Father name" required></td>
+       </tr>
+      <tr>
+        <td>Mobile Number*
+         <input type="number" class="form-control" placeholder="Enter Father mobile number" required></td>
+        <td>Mobile Number*
+        <input type="number" class="form-control" placeholder="Enter Mother mobile number" required></td>
+      </tr>
+      <tr>
+        <td>Father Email Id*
+        <input type="text" class="form-control" placeholder="Enter Father Email Id" required></td>
+        <td>Father Email Id*
+         <input type="text" class="form-control" placeholder="Enter Mother Email Id" required></td>
+       </tr>
+       <tr>
+        <td> Father's Mother Tongue
+        <br>
+        <select required style="width: 440px;">
+                                <option disabled selected>Select  Father's Mother Tongue</option>
                                 <option>Kannada</option>
                                 <option>Tamil</option>
                                 <option>Telugu</option>
                                 <option>Hindi</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Residential Address*</label>
-                            <input type="text" class="form-control" placeholder="Enter Residential Address" required>
-                        </div>
-                 
-                        <div class="form-group">
-                            <label>Area*</label>
-                            <input type="text" class="form-control" placeholder="Enter Area" required>
-                        </div>
-                        <div class="form-group">
-                            <label>District*</label>
-                            <input type="text"  class="form-control" placeholder="Enter District" required>
-                        </div>
-                        <div class="form-group">
-                            <label>State*</label>
-                            <input type="text"  class="form-control" placeholder="Enter state" required>
-                        </div> <div class="form-group">
-                            <label >Country*</label><br>
-                            <select required>
-                                <option disabled selected>Select</option>
+                            </select></td>
+        <td> Mother's Mother Tongue
+        <br>
+         <select required style="width: 440px;">
+                                <option disabled selected>Select  Mother's Mother Tongue</option>
+                                <option>Kannada</option>
+                                <option>Tamil</option>
+                                <option>Telugu</option>
+                                <option>Hindi</option>
+                            </select></td>
+       </tr>
+       <tr>
+        <td>Residential Address*
+           <input type="text" class="form-control" placeholder="Enter Residential Address" required>
+        <td>Residential Address*
+          <input type="text" class="form-control" placeholder="Enter Residential Address" required></td>
+      </tr>
+      <tr>
+        <td>Area*
+            <input type="text" class="form-control" placeholder="Enter Area" required>
+        <td>Area*
+            <input type="text" class="form-control" placeholder="Enter Area" required></td>
+      </tr>
+       <tr>
+        <td>District*
+            <input type="text"  class="form-control" placeholder="Enter District" required>
+        <td>District*
+             <input type="text"  class="form-control" placeholder="Enter District" required></td>
+      </tr>
+        <tr>
+        <td>State*
+            <input type="text"  class="form-control" placeholder="Enter state" required>
+        <td>State*
+             <input type="text"  class="form-control" placeholder="Enter state" required></td>
+      </tr>
+       <tr>
+        <td>Country*
+        <br>
+           <select required style="width: 440px;">
+                                <option disabled selected>Select the country</option>
                                 <option>India</option>
                                 <option>America</option>
                                 <option>Australia</option>
@@ -78,19 +102,37 @@
                                 <option>Others</option>
 
                             </select>
-                        </div>
+        <td>Country*
+        <br>
+            <select required style="width: 440px;">
+                                <option disabled selected>Select the country</option>
+                                <option>India</option>
+                                <option>America</option>
+                                <option>Australia</option>
+                                <option>Brazil</option>
+                                <option>Canada</option>
+                                <option>Germany</option>
+                                <option>France</option>
+                                <option>Italy</option>
+                                <option>Others</option>
 
-                         <div class="form-group">
-                            <label>Pincode*</label>
-                            <input type="number" class="form-control" placeholder="Enter Pincode" required>
-                         </div> 
-                         <div class="form-group">
-                            <label>Residential Number</label>
-                            <input type="number"  class="form-control" placeholder="Enter Residential Number" required>
-                        </div>
-                        <div class="form-group">
-                        <label>Enter Designation</label><br>
-                             <select required>
+                            </select></td>
+                            <tr>
+        <td>Pincode*
+            <input type="number" class="form-control" placeholder="Enter Pincode" required>
+        <td>Pincode*
+             <input type="number" class="form-control" placeholder="Enter Pincode" required></td>
+      </tr>
+       <tr>
+          <td>Residential Number
+            <input type="number" class="form-control" placeholder="Enter Residential Number" required>
+        <td>Residential Number
+             <input type="number" class="form-control" placeholder="Enter Residential Number" required></td>
+      </tr>
+       <tr class="form-group">
+          <td>Enter Designation
+          <br>
+            <select class="form-select" required style="width: 440px;">
                                <option disabled selected>Enter Designation</option>
                                 <option>Private Sector</option>
                                 <option>Public sector</option>
@@ -98,142 +140,56 @@
                                 <option>Agriculture</option>
                                 <option>Others</option>
                                 </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Enter Company</label>
-                             <input type="text" class="form-control" placeholder="Enter Company" required>
-                            </div>
-                        <div class="form-group">
-                        <label>Enter Company Address</label>
-                             <input type="text" class="form-control"  placeholder="Enter Company Address" required>
-                             </div>
-                             <div class="form-group">
-                             <label>Enter Office Number</label>
-                             <input type="number"  class="form-control" placeholder="Enter Office Number" required>
-                             </div>
-                             <div class="form-group">
-                            <label>Gross Annual Income (INR)*</label>
-                            <input type="number"  class="form-control" placeholder="Enter Gross Annual Income" required>
-
-                        </div>
-                        </div>
-
-            </form>
-
-</div>             
-            <br>
-            <div class="col-6">
-                    <div class="row">
-                              <form>
-                              <h3>Mother Details</h3>
-                        <div class="form-group"> 
-                            <label>Mother Name*</label>
-                            <input type="text" class="form-control" placeholder="Enter Mother name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Mobile Number*</label>
-                            <input type="number" class="form-control" placeholder="Enter Mother mobile number" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Mother Email Id*</label>
-                            <input type="email" class="form-control" placeholder="Enter Mother Email Id" required>
-                        </div>
-                        <div class="form-group">
-                            <label style=" width:400px;">Mothers's Mother Tongue</label><br>
-                            <select required>
-                                <option disabled selected>Select Mother Mother Tongue</option>
-                                <option>Kannada</option>
-                                <option>Tamil</option>
-                                <option>Telugu</option>
-                                <option>Hindi</option>
-                            </select>
-                        </div>
-                        <div class="justify-content-sm-end">
-                            <label>Same as Fathers Details</label>
-                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                        </div>
-                        <div class="form-group">
-                            <label>Residential Address*</label>
-                            <input type="text" class="form-control" placeholder="Enter Residential Address" required>
-                        </div>
-          
-            <div class="form-group">
-                            <label>Area*</label>
-                            <input type="text" class="form-control" placeholder="Enter Area" required>
-                        </div>
-                        <div class="form-group"> 
-                            <label>District*</label>
-                            <input type="text"  class="form-control" placeholder="Enter District" required>
-                        </div>
-                        <div class="form-group">
-                            <label>State*</label>
-                            <input type="text" class="form-control" placeholder="Enter state" required>
-                        </div> 
-                        
-                        <div class="form-group">
-                            <label>Country*</label><br>
-                            <select required>
-                                <option disabled selected>Select</option>
-                                <option>India</option>
-                                <option>America</option>
-                                <option>Australia</option>
-                                <option>Brazil</option>
-                                <option>Canada</option>
-                                <option>Germany</option>
-                                <option>France</option>
-                                <option>Italy</option>
-                                <option>Others</option>
-                            </select>
-                        <div class="form-group">
-                            <label>Pincode*</label>
-                            <input type="number" class="form-control" placeholder="Enter Pincode" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Residential Number</label>
-                            <input type="number" class="form-control" placeholder="Enter Residential Number" required>
-                        </div>
-                        <div class="form-group">
-                        <label>Enter Designation</label><br>
-                            
-                             <select required>
-                                <option disabled selected>Enter Designation</option>
+        <td>Enter Designation
+        <br>
+             <select  class="form-select" required style="width: 440px;">
+                               <option disabled selected>Enter Designation</option>
                                 <option>Private Sector</option>
                                 <option>Public sector</option>
                                 <option>Bussiness</option>
                                 <option>Agriculture</option>
                                 <option>Others</option>
-                                </select>
-                        </div>
-                        <div class="form-group">
-                        <label>Enter Company</label>
-                             <input type="text" class="form-control" placeholder="Enter Company" required>
-                            </div>
-                        <div class="form-group">
-                        <label>Enter Company Address</label>
-                             <input type="text" class="form-control" placeholder="Enter Company Address" required>
-                             </div>
-                             <div class="form-group">
-                             <label>Enter Office Number</label>
-                             <input type="number" class="form-control" placeholder="Enter Office Number" required>
-                             </div>
-                             <div class="form-group">
-                            <label>Gross Annual Income (INR)*</label>
-                            <input type="number" class="form-control" placeholder="Enter Gross Annual Income" required>
-                        </div>
-        </form>
-    </div>           
+                                </select></td>
+      </tr>
+       <tr>
+          <td>Enter Company
+            <input type="number" class="form-control" placeholder="Enter Company" required>
+        <td>Enter Company
+             <input type="number" class="form-control" placeholder="Enter Company" required></td>
+      </tr>
+       <tr>
+          <td>Enter Company Address
+            <input type="number" class="form-control" placeholder="Enter Company" required>
+        <td>Enter Company Address
+             <input type="number" class="form-control" placeholder="Enter Company" required></td>
+      </tr>
+      <tr>
+          <td>Enter Office Number
+             <input type="text" class="form-control"  placeholder="Enter Office Number" required>
+        <td>Enter Office Number
+              <input type="text" class="form-control"  placeholder="Enter Office Number" required></td>
+      </tr>
+      <tr>
+          <td>Gross Annual Income (INR)*
+             <input type="text" class="form-control"  placeholder="Enter Gross Annual Income (INR)*" required>
+        <td>Gross Annual Income (INR)*
+              <input type="text" class="form-control"  placeholder="Enter Gross Annual Income (INR)*" required></td>
+      </tr>
+    </tbody>
+  </table>
+ <center><div class="col">  
+              <div class="form-check">  
+                <button class=" btn btn-primary" onclick="window.location.href ='onlinereg'">Go back</button>
+                <button class="btn btn-primary"  id="btn1" onclick="window.location.href = 'upload_doc'">Save & continue</button>
+             </div>
+          </div></center>
+  <div class="modal-footer justify-content-center ">  
+            @include('footer')
+        </div>
 </div>
-               <div class="row justify-content-center mt-4">  
-                     <div class="col">  
-                     <div class="form-check">  
-                     <button class=" btn btn-primary" onclick="window.location.href ='onlinereg'">Go back</button>
-                     <button class="btn btn-primary"  onclick="window.location.href = 'upload_doc'">Save & continue</button>
-                </div>
-         </div>    
-      </div>
-    </div> 
-    @include('footer')               
+
+</body>
+</html>                                                                                                                  
 </body> 
 </html>
 
@@ -254,7 +210,7 @@ body{
 }
 .container{
     position: relative;
-    max-width: 1000px;
+    max-width: 1050px;
     width: 100%;
     border-radius: 6px;
     padding: 50px;
