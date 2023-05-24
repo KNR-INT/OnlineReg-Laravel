@@ -16,89 +16,136 @@
 <body>
    
     <div class="container">
-   
-    <form action = "{{ url('store-student') }}" method = "get" enctype="multipart/form-data">
+    <!-- {{ url('store-student') }} -->
+    <form id="myForm" action="{{ url('store-student') }}">
     @csrf
-    <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
             <div class="form first">
                 <div class="details personal">
                     <div class="fields">
                         <div class="input-field">
                             <label>Name of the student*</label>
-         <input type="text" placeholder="Enter Student name" required id="name" name="name" >
-                            
+                            <input type="text" placeholder="Enter Student name"  id="name" name="name" >
+                            <span id="name_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Gender*</label>
-                            <select required id="gender" name="gender">
-                                <option disabled selected>Select gender</option>
+                            <select id="gender" name="gender">
+                                <option disabled selected value="">--SELECT--</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Others">Others</option>
                             </select>
-                            
+                            <span id="gender_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
-                       <label>Date of Birth*</label>
-               <input type="date" placeholder="Enter birth date" required id="dob" name="dob">
-                                   
-                                </div>
-
+                            <label>Date of Birth*</label>
+                            <input type="date" placeholder="Enter birth date"  id="dob" name="dob">
+                            <span id="dob_err" style="color:red;"></span>
+                        </div>
+                        <?php 
+                            $class = $_GET['class'];
+                        ?>
                         <div class="input-field">
                             <label>Class*</label>
-                            <select required id="class" name="class">
-                                <option disabled selected>Select Class</option>
-                                <option value="Mont_1">Montessori I</option>
-                                <option value="Mont_2" >Montessori II</option>
-                                <option value="Mont_3">Montessori III</option>
+                            <select  id="class" name="class">
+                                <option disabled selected value="">--SELECT--</option>
+                                <?php
+                                    if($class == "mont")
+                                    {
+                                    ?>
+                                    <option value="Montessori I">Montessori I</option>
+                                    <option value="Montessori II" >Montessori II</option>
+                                    <option value="Montessori II">Montessori III</option>
+                                    <?php
+                                    }
+                                    elseif($class == "kinder")
+                                    {
+                                    ?>
+                                    <option value="PRE-KG">PRE-KG</option>
+                                    <option value="Kindergarten I">Kindergarten I</option>
+                                    <option value="Kindergarten II" >Kindergarten II</option>
+                                    <?php
+                                    }
+                                    elseif($class == "1to9")
+                                    {
+                                    ?>
+                                    <option value="Grade 1">Grade 1</option>
+                                    <option value="Grade 2">Grade 2</option>
+                                    <option value="Grade 3">Grade 3</option>
+                                    <option value="Grade 4">Grade 4</option>
+                                    <option value="Grade 5">Grade 5</option>
+                                    <option value="Grade 6">Grade 6</option>
+                                    <option value="Grade 7">Grade 7</option>
+                                    <option value="Grade 8">Grade 8</option>
+                                    <option value="Grade 9">Grade 9</option>
+                                    <?php
+                                    }
+                                    elseif($class == "11")
+                                    {
+                                    ?>
+                                    <option value="Grade 11">Grade 11</option>
+                                    <?php
+                                    }
+                                ?>
+                                
                             </select>
-                            
+                            <span id="class_name_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Birth Place*</label>
-                            <input type="text" placeholder="Enter your Birth Place" required id="birth_place" name="birth_place">
+                            <input type="text" placeholder="Enter your Birth Place"  id="birth_place" name="birth_place">
+                            <span id="birth_place_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Nationality*</label>
-                            <select required id="nationality" name="nationality">
-                                <option disabled selected>Select Nationality</option>
+                            <select  id="nationality" name="nationality">
+                                <option disabled selected value="">--SELECT--</option>
                                 <option value="Indian">Indian</option>
                                 <option value="American">American</option>
                                 <option value="USA">USA</option>
                                 <option value="Others">Others</option>
                             </select>
+                            <span id="nationality_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Religion*</label>
-                            <select required id="religion" name="religion">
-                                <option disabled selected>Select Religion</option>
+                            <select  id="religion" name="religion">
+                                <option disabled selected value="">--SELECT--</option>
                                 <option value="Hindu">Hindu</option>
                                 <option value="Muslium">Muslium</option>
                                 <option value="Christian">Christian</option>
                                 <option value="Others">Others</option>
                             </select>
+                            <span id="religion_err" style="color:red;"></span>
                         </div>
-
                         <div class="input-field">
                             <label>Mother Tongue*</label>
-                            <select required id="mother_tongue" name="mother_tongue">
-                                <option disabled selected>Select Mother Tongue</option>
+                            <select id="mother_tongue" name="mother_tongue">
+                                <option disabled selected value="">--SELECT--</option>
                                 <option value="Kannada">Kannada</option>
                                 <option value="Tamil">Tamil</option>
                                 <option value="Telugu">Telugu</option>
                                 <option value="Hindi">Hindi</option>
                             </select>
+                            <span id="mother_tongue_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                         </div>
-                    
                     </div>
                 </div>
                     <br>
                 <div class="sibling">
-                    <span class="title">Sibling currently studying at NPS Yeshwanthpur</span>
-
+                    <span class="title">Sibling currently studying at NPS Yeshwanthpur
                     <div class="fields">
+                        <div class="input-field">
+                            <select id="sibling_change" name="sibling_change">
+                                <option disabled selected value="">--SELECT--</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div></span>
+                    <div class="fields siblings" hidden>
                         <div class="input-field">
                             <input type="text" placeholder="Enter name" id="sib1_name" name="sib1_name">
                         </div>
@@ -111,64 +158,235 @@
                         <div class="input-field">
                             <input type="text" placeholder="Enter class and section " id="sib2_cls_sec" name="sib2_cls_sec">
                         </div>
+<<<<<<< HEAD
+=======
+                    </div>
+                </div>
+                <div class="physical">
+                    <div class="fields">
+>>>>>>> fcd8af92a2c60c8d328234568883a987fa8f04f5
                         <div class="input-field">
                             <label>Is your child physically challenged?</label>
-                            <select required id="phy_clg" name="phy_clg">
-                            <option disabled selected>Is your child physically challenged?</option>
+                            <select  id="phy_clg" name="phy_clg">
+                                <option disabled selected value="">--SELECT--</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+                            <span id="phy_clg_err" style="color:red;"></span>
                          </div>
                          <div class="input-field">
                             <label>Child has any special need/learning challenges?</label>
-                            <select required id="slp_need" name="slp_need">
-                            <option disabled selected>Child has any special need/learning challenges?</option>
+                            <select  id="slp_need" name="slp_need">
+                                <option disabled selected value="">--SELECT--</option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
+<<<<<<< HEAD
                         </div>
+=======
+                            <span id="slp_need_err" style="color:red;"></span>
+                         </div>
+>>>>>>> fcd8af92a2c60c8d328234568883a987fa8f04f5
                         <div class="input-field">
                             <label>Aadhar of the Student*</label>
-                            <input type="text" placeholder="Enter Student Aadhar" required id="aadhar" name="aadhar">
+                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar">
+                            <span id="aadhar_err" style="color:red;"></span>
                         </div>
                         <br>
                         <div class="input-field" style="margin-left:30px;">
                             <label>Mode of transport*</label>
-                            <select required id="transport" name="transport">
-                            <option disabled selected>Mode of transport</option>
+                            <select  id="transport" name="transport">
+                                <option disabled selected value="">--SELECT--</option>
                                 <option value="School_bus">School Bus</option>
                                 <option value="Private">Private</option>
                             </select>
-                           </div>
+                            <span id="transport_err" style="color:red;"></span>
+                        </div>
                         <br>
                         <div class="input-field">
-                        <label> Upload a recent photograph of the Student * :</label>
-                        <input type="file" id="myFile" name="image"> </input>
-                                </div>
+                            <label> Upload a recent photograph of the Student * :</label>
+                            <input type="file" id="myFile" name="image"> </input>
+                            <!-- <span id="name_err" style="color:red;"></span> -->
+                        </div>
                         <br> 
-                        <button class="nextBtn" >
-                        <span class="btnText"  type="submit" onclick="window.location.href = 'parents_details'">save and continue</span>
-                        <i class="uil uil-navigator"></i>
-                        
-                       </button>
+                       <a class="btn btn-submit btn-outline-success float-center">Save and Continue <i class="uil uil-navigator"></i></a>
                        <div>
                        @include('footer')
+<<<<<<< HEAD
                         </div>
                       </div> 
             
-           
+=======
+</div>
+                </div> 
+            </div>
         </form>
+                </div> 
+            </div>
+>>>>>>> fcd8af92a2c60c8d328234568883a987fa8f04f5
+           
     </div>
+<<<<<<< HEAD
 
                
+=======
+                    
+                 </div> 
+                
+                 
+            </div>
+        
+    </div>
+>>>>>>> fcd8af92a2c60c8d328234568883a987fa8f04f5
 
     <script src="script.js"></script>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $('#sibling_change').change(function(){
+            let sibling_change = $(this).val();
+            if(sibling_change == "Yes")
+            {
+                $('div.siblings').removeAttr('hidden');
+            }
+            else if(sibling_change == "No")
+            {
+                $('div.siblings').attr('hidden', 'hidden');
+            }
+        });
+        $('.btn-submit').click(function(){
+            let name = document.getElementById("name").value;
+            let gender = document.getElementById("gender").value;
+            let dob = document.getElementById("dob").value;
+            let class_name = document.getElementById("class").value;
+            let birth_place = document.getElementById("birth_place").value;
+            let nationality = document.getElementById("nationality").value;
+            let religion = document.getElementById("religion").value;
+            let mother_tongue = document.getElementById("mother_tongue").value;
+            let phy_clg = document.getElementById("phy_clg").value;
+            let slp_need = document.getElementById("slp_need").value;
+            let aadhar = document.getElementById("aadhar").value;
+            let transport = document.getElementById("transport").value;
+            if(!name || !gender || !dob || !class_name || !birth_place || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport)
+            {
+                if(!name)
+                {
+                    document.getElementById("name_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("name_err").innerHTML = " ";
+                }
+
+                if(!gender)
+                {
+                    document.getElementById("gender_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("gender_err").innerHTML = " ";
+                }
+
+                if(!dob)
+                {
+                    document.getElementById("dob_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("dob_err").innerHTML = " ";
+                }
+
+                if(!class_name)
+                {
+                    document.getElementById("class_name_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("class_name_err").innerHTML = " ";
+                }
+
+                if(!birth_place)
+                {
+                    document.getElementById("birth_place_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("birth_place_err").innerHTML = " ";
+                }
+
+                if(!nationality)
+                {
+                    document.getElementById("nationality_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("nationality_err").innerHTML = " ";
+                }
+                
+                if(!religion)
+                {
+                    document.getElementById("religion_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("religion_err").innerHTML = " ";
+                }
+
+                if(!mother_tongue)
+                {
+                    document.getElementById("mother_tongue_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("mother_tongue_err").innerHTML = " ";
+                }
+
+                if(!phy_clg)
+                {
+                    document.getElementById("phy_clg_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("phy_clg_err").innerHTML = " ";
+                }
+
+                if(!slp_need)
+                {
+                    document.getElementById("slp_need_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("slp_need_err").innerHTML = " ";
+                }
+
+                if(!aadhar)
+                {
+                    document.getElementById("aadhar_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("aadhar_err").innerHTML = " ";
+                }
+
+                if(!transport)
+                {
+                    document.getElementById("transport_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("transport_err").innerHTML = " ";
+                }
+            // name,gender,dob,class,birth_place,nationality,religion,mother_tongue,phy_clg,slp_need,aadhar,transport
+            }
+            else
+            {
+                document.getElementById("myForm").submit();
+            }
+        });
+    </script>
 </body>
-</html>
+
 
 <style>
-/* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
     margin: 0;
@@ -181,12 +399,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: #4070f4; */
 }
 .container{
     position: relative;
     max-width: 1100px;
     width: 100%;
+    height: 100%;
     border-radius: 6px;
     padding: 50px;
     margin: 15px;
@@ -339,52 +557,4 @@ form .buttons button , .backBtn{
     }
 }
 </style>
-<script>
-const form = document.querySelector("form"),
-        nextBtn = form.querySelector(".nextBtn"),
-        backBtn = form.querySelector(".backBtn"),
-        allInput = form.querySelectorAll(".first input");
-
-
-nextBtn.addEventListener("click", ()=> {
-    allInput.forEach(input => {
-        if(input.value != ""){
-            form.classList.add('secActive');
-        }else{
-            form.classList.remove('secActive');
-        }
-    })
-})
-
-backBtn.addEventListener("click", () => form.classList.remove('secActive'));
-</script>
-<div>
-
-</div>
-
-<!-- <?php
-             $session = session()->all();
-            
-             print_r($session);
-            
-            
-             ?> -->
-
-<!-- 
-
-return onlinereg::create([
-        'name' => $data['name'],
-        'gender' => $data['gender'],
-        'dob' => $data['dob'],
-        'class' => $data['class'],
-        'birth_place' => $data['birth_place'],
-        'nationality' => $data['nationality'],
-        'religion' => $data['religion'],
-        'mother_tongue' => $data['mother_tongue'],
-        'phy_clg' => $data['phy_clg'],
-        'slp_need' => $data['slp_need'],
-        'aadhar' => $data['aadhar'],
-        'transport' => $data['transport'],
-        
-        
-      ]);
+</html>

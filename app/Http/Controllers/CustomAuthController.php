@@ -19,21 +19,44 @@ class CustomAuthController extends Controller
  
     public function index()
     {
-            return view('login');
+        return view('login');
     }  
+
     public function login(Request $request) {    
         $email = $request->email;    
-        session()->push('login.email', $email);
-        $user = User::where('email', $email)->first();    
-        if ($user) {    
-          Auth::login($user);    
-  return redirect()->intended('otp');
-         }
-        else {    
-            return redirect('/dashboard')->with('message', );   
-        }    
+        session()->push('login.email', $email); 
+        $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+        if(empty($users))
+        {
+            $created = date("Y-m-d h:i:s");
+            $data=array("email"=>$email,"created_at"=>$created);
+            DB::table('users')->insert($data);
+
+            $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+            $user_id = $users[0]->id;
+            session()->push('users.user_id', $user_id);
+            return view('otp');          
+        }
+        else
+        {
+            $user_id = $users[0]->id;
+            session()->push('users.user_id', $user_id);
+            return view('otp');          
+        }  
     }
 
+    public function otp(Request $request)
+    {
+        $otp = $request->otp;    
+        if($otp == '7878'){
+            return redirect('/dashboard');
+        }
+        else
+        {
+            return view('otp')
+            ->with('message','Invalid OTP');
+        }
+    }
  
     public function signup()
     {
@@ -63,10 +86,9 @@ class CustomAuthController extends Controller
      
     public function dashboard()
     {
-        if(Auth::check()){
-            return view('dashboard');
-        }
-        return redirect('/login');
+        $session = request()->session()->get('users.user_id');     
+        // echo ($session[0]);
+        return view('dashboard');
     }
      
     public function signOut() {
@@ -93,38 +115,22 @@ class CustomAuthController extends Controller
         }
     }
     
-    public function sendOtp(Request $request){
-    
+    public function sendOtp(Request $request)
+    {    
         $otp = rand(1000,9999);
         Log::info("otp = ".$otp);
         $user = User::where('email','=',$request->email)->update(['otp' => $otp]);
         return response()->json([$user],200);
     }
-    public function otp()
-    {
-        if(Auth::check()){
-            return view('otp');
-        }
-        return redirect('/dashboard');
-    }
+    
     public function newapp()
     {
-        $session_id = Session::getId();
-        if(Auth::check()){
-            return view('newapp');
-        }
-        return redirect('/dashboard');
+        return view('newapp');
     }
     
-    public function guidelinesmont(Request $request) {    
-        $email = $request->email;    
-        session()->push('login.email', $email);
-
-        $users = User::find(1)->email;
-        if(Auth::check()){
-                return view('guidelinesmont');
+    public function guidelinesmont() {   
+        return view('guidelinesmont');
     }
-}
     public function parents_details()
     {
         
@@ -167,21 +173,20 @@ class CustomAuthController extends Controller
     }
 
  public function onlinereg()
-        {
-            $session = request()->session()->get('login.email');            
-            $ses_email = $session[0];
-            $sess_email = new Student;
-            
-            $sess_email->email_id = $ses_email;
-            $sess_email->save();
-            $id = DB::table('students')->where('email_id',$ses_email) ->orderBy('updated_at', 'desc')->value('id');
-            echo $id;
-            session()->forget('login.id');
-            session()->push('login.id', $id);
-            $students = Student::all();
-            return view('onlinereg', compact('students'));
-
-        }
+    {
+        $session = request()->session()->get('login.email');            
+        $ses_email = $session[0];
+        $sessions = request()->session()->get('users.user_id');     
+        $ses_userid = $sessions[0];
+        $created = date("Y-m-d h:i:s");
+        $data=array("email_id"=>$ses_email,"user_id"=>$ses_userid,"created_at"=>$created,"status"=>"Draft");
+        DB::table('students')->insert($data);
+        $users = DB::select("SELECT * FROM `students` WHERE `email_id` = '$ses_email' ORDER BY `id` DESC LIMIT 1");
+        $user_id = $users[0]->id;
+        Session::forget('users.id');
+        session()->push('users.id', $user_id);
+        return view('onlinereg');
+    }
         public function myapp()
         {
             if(Auth::check()){  
