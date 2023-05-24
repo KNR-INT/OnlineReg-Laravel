@@ -17,10 +17,9 @@
    
     <div class="container">
    
-    <form action = "{{ url('store-student') }}" method = "get">
+    <form action = "{{ url('store-student') }}" method = "get" enctype="multipart/form-data">
     @csrf
     <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
-    
             <div class="form first">
                 <div class="details personal">
                     <div class="fields">
@@ -160,7 +159,7 @@
                         <br>
                         <div class="input-field">
                         <label> Upload a recent photograph of the Student * :</label>
-                        <input type="file" id="image" name="image"> </input>
+                        <input type="file" id="myFile" name="image"> </input>
                                 </div>
                         <br> 
                         <button class="nextBtn" >
@@ -475,7 +474,13 @@ backBtn.addEventListener("click", () => form.classList.remove('secActive'));
 
 </div>
 
-
+<!-- <?php
+             $session = session()->all();
+            
+             print_r($session);
+            
+            
+             ?> -->
 
 <!-- 
 

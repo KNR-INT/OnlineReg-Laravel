@@ -205,7 +205,7 @@ body {
             <!-- <a href="#" class="navbar">NPS YPR</a>  		 -->
 			<span>NPS YPR</span>
                 <div class="navbar-nav ml-auto">
-                    <a href="homepage" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+                    <a onclick="window.location.href ='dashboard'" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
                     <a href="{{ route('signout') }}"  class="nav-item nav-link active"><i class="fa fa-power-off"></i><span>Logout</span></a>
 				
 				</div>

@@ -187,14 +187,14 @@ body {
 <body>
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
 	<a href="#" class="navbar-brand">NPS YPR</a>  		
-	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-		<span class="navbar-toggler-icon"></span>
+	<!-- <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"> -->
+		<!-- <span class="navbar-toggler-icon"></span> -->
 	</button>
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	
 		</form>
 		<div class="navbar-nav ml-auto">
-			<a href="homepage" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+			<a onclick="window.location.href ='dashboard'" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
 			<a href="{{ route('signout') }}"  class="nav-item nav-link active"><i class="fa fa-power-off"></i><span>Logout</span></a>
 			
 				</div>
@@ -222,10 +222,7 @@ body {
                         <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="300" width="300">
                         </div>
                     <div class="card-body">
-                        
-                       <h4 class="card-footer text-center"><a href="newapp" class="d-block">New Application </a></h4>
-                       
-                                
+                       <h4 class="card-footer text-center"><a href="newapp" class="d-block">New Application </a></h4>       
                     </div>
                 </div>
              </div>

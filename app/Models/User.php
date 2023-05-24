@@ -41,7 +41,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-   
+    // public function student()
+    // {
+    //   $query = $this->db->get_where('onlinereg');
+    //   return $query->result();
+    // }
     }
 
 

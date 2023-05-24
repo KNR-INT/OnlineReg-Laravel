@@ -24,6 +24,7 @@ class CustomAuthController extends Controller
     }  
     public function login(Request $request) {    
         $email = $request->email;    
+        session()->push('login.email', $email);
         $user = User::where('email', $email)->first();    
         if ($user) {    
           Auth::login($user);    
@@ -57,11 +58,10 @@ class CustomAuthController extends Controller
  
     public function create(array $data)
     {
-      session(['email_id' => $data['email']]);
-      Session::put('email_id', $data['email']);
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
+        
         
       ]);
 
@@ -91,7 +91,7 @@ class CustomAuthController extends Controller
         $user  = User::where([['email','=',request('email')],['otp','=',request('otp')]])->first();
         if( $user){
             Auth::login($user, true);
-            User::where('email','=',$request->email)->update(['otp' => null]);
+            User::where('email','=',$request->email)->update(['otp' => 7878]);
             return view('home');
         }
         else{
@@ -116,7 +116,7 @@ class CustomAuthController extends Controller
     }
     public function newapp()
     {
-
+        $session_id = Session::getId();
         if(Auth::check()){
             return view('newapp');
         }
@@ -128,46 +128,30 @@ class CustomAuthController extends Controller
     //     Session::put('id', $id);
     //     return view('newapp');
     // }
-    public function myapp()
-    {
-        if(Auth::check()){
-            return view('myapp');
-        }
-        return redirect('/dashboard');
-    }
-    public function guidelinesmont(Request $request)
-    {
+   
+    // public function guidelinesmont()
+    // {
         // $id = DB::table('students')->get();
         // session('login');
         // session()->push('login.email', $email);
 
         // $id = DB::table('students')->get();
         //    $session_id = Session::getId();
-
-        // Session :: put('email_id',$email_id);
-        if(Auth::check()){
-            // $data = $request->session()->all();
-            // $value = $request->session()->get('email_id');
-            // print_r($data);
-            // print_r($value);
-            // $id = DB::table('users')->get($users);
-            // $request->session()->put('email_id', 'email_id'); 
-            // Session::get('id');
-            // Session::get('email_id');
-            return view('guidelinesmont');
-
-            // if($request->session()->has('my_name'))
-            //    echo $request->session()->get('my_name');
-            // else
-            //    echo 'No data in the session';
-
-            //    $request->session()->put('my_name','Virat Gandhi');
-            //    echo "Data has been added to session";
-        }
+        // if(Auth::check()){
+        //     return view('guidelinesmont');
+        // }
         
-        return redirect('/dashboard');
+        // return redirect('/dashboard');
+    // }
+    public function guidelinesmont(Request $request) {    
+        $email = $request->email;    
+        session()->push('login.email', $email);
+
+        $users = User::find(1)->email;
+        if(Auth::check()){
+                return view('guidelinesmont');
     }
-    
+}
     public function parents_details()
     {
         
@@ -188,10 +172,20 @@ class CustomAuthController extends Controller
     }
     public function application_details()
     {
-        if(Auth::check()){
-            return view('application_details');
-        }
-        return redirect('/dashboard');
+        $students = Student::all();
+        return view('application_details', compact('students'));
+
+// $data = Student :: find($id);
+//  if(!$data){
+
+//  }
+//         $students = Student::select('*')->take(1)->get();
+// return $students;
+
+        // if(Auth::check()){
+        //     return view('application_details');
+        // }
+        // return redirect('/dashboard');
     }
 
 
@@ -213,19 +207,50 @@ class CustomAuthController extends Controller
 
  public function onlinereg()
         {
+            $session = request()->session()->get('login.email');            
+            $ses_email = $session[0];
+            $sess_email = new Student;
+            
+            $sess_email->email_id = $ses_email;
+            // add more fields (all fields that users table contains without id)
+            $sess_email->save();
+            $id = DB::table('students')->where('email_id',$ses_email) ->orderBy('updated_at', 'desc')->value('id');
+            // $id = DB::table('students')->orderBy('updated_at', 'desc')->value('id');
+            echo $id;
+            session()->forget('login.id');
+            session()->push('login.id', $id);
             $students = Student::all();
             return view('onlinereg', compact('students'));
-        }
-        
+            
+            
 
-      
-        } 
-        
-        
-        
-        
-     
+
     
+          
+        }
+        public function myapp()
+        {
+            if(Auth::check()){  
+                return view('myapp');
+            }
+            return redirect('/dashboard');
+        }
+        public function draft()
+        {
+            if(Auth::check()){  
+                return view('draft');
+            }
+            return redirect('/myapp');
+        }
+        public function submited()
+        {
+            if(Auth::check()){  
+                return view('submited');
+            }
+            return redirect('/myapp');
+        }
 
+        
 
-
+        
+        }

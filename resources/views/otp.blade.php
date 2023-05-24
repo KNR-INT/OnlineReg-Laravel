@@ -54,7 +54,7 @@
                                </div>
                                <br>
                                <div class="d-flex justify-content-center"  >
-                                   <button disabled="disabled" type="submit" id="button1" class="btn btn-dark btn-block">verify</button>
+                                   <button disabled="disabled" type="submit" id="button1" class="btn btn-dark btn-block">Verify</button>
                                </div>
                            </form>
                        </div>

@@ -14,7 +14,9 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>   
 </head>
 <body>
-   
+<form method="post" action="{{ route('images.store') }}"  enctype="multipart/form-data">
+<!-- method="POST" enctype="multipart/form-data" -->
+    @csrf
     <div class="container">
     <center> <header><b><u><h2>Upload Documents</h2></u></header></center>
         <center>
@@ -23,13 +25,14 @@
                     <td  style="width:400px;">
                         <div class="input-field">
                             Upload Aadhar card * :  
-                            <input type="file" id="myFile" name="filename">
+                            <input type="file" id="myFile" name="image">
+                            <!-- <input type="file" name="image" class="form-control"> -->
                         </div>
                     </td>
                     <td>
                         <div class="input-field">
                             Upload Father's Aadhar card * :  
-                            <input type="file" id="myFile" name="filename">
+                            <input type="file" id="myFile1" name="image1">
                         </div>
                     </td>
                  </tr>
@@ -38,34 +41,34 @@
                     <td>
                         <div class="input-field">
                             Birth Certificate Of Student * :  
-                            <input type="file" id="myFile" name="filename">
+                            <input type="file" id="myFile2" name="image2">
                         </div>
                     </td>
                     <td>
                         <div class="input-field">
                             Upload Mother's Aadhar card* :  
-                            <input type="file" id="myFile" name="filename">
+                            <input type="file" id="myFile3" name="image3">
                         </div>
                     </td>
                 </tr><br>
-                <tr>
+                <!-- <tr>
                     <td>
                         <div class="input-field">
                             Upload Student's passport:  
-                            <input type="file" id="myFile" name="filename">
+                            <input type="file" id="myFile" name="image">
                         </div>
                     </td>
                     <td>
                         <div class="input-field">
                             Upload Previous year Marks Card's *:  
-                            <input type="file" id="myFile" name="filename">
+                            <input type="file" id="myFile" name="image">
                         </div>
                     </td>
-                </tr><br>
+                </tr><br> -->
             </table>
         </center>
         <br>
-        <center> <header><b><u><h3>Details of Schooling </h3></u></b></header></center>
+        <!-- <center> <header><b><u><h3>Details of Schooling </h3></u></b></header></center>
         <center>
             <table>
                 <tr>
@@ -134,7 +137,8 @@
                         </div>
                     </td>
                 </tr>
-            </table>
+            </table> -->
+            
             <br>
             <br>
             <br>
@@ -146,7 +150,8 @@
                         Go back
                         </button>
 
-        <button class="btn btn-primary"  id="btn1" onclick="window.location.href= 'application_details'">
+        <button  type="submit" class="btn btn-primary"  id="btn1" onclick="window.location.href= 'application_details'">
+        
         Save & continue</button>
 
          </div>
@@ -156,7 +161,7 @@
          @include('footer')
             </div>
    <script src="script.js"></script>
-   
+                            </form>
 </body>
 </html>
 

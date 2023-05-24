@@ -1,5 +1,29 @@
 @include('header')
-
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Laravel 9 Custom Auth Login and Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #0dcaf0;">
+        <div class="container">
+            <a class="navbar-brand mr-auto" href="#">National Public School</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('signout') }}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="/" style="float: right;"><img height="20" width="20" color="white" src="{{URL::asset('/img/1st')}}"></a>
+        </div>
+    </nav>
+     -->
 <div >
     <div class="container">
     <!-- <div class="justify-content-center     -->
@@ -15,12 +39,9 @@
                         <div class="alert alert-info">
                         <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg"  alt="" height="250" width="250">
                         </div>
-                        <!-- <div>
-    {{ Session::get('id') }}
-                         </div> -->
                     <div class="card-body">
                        <!-- <h3 class="card-footer text-center">Montessori</h3> -->
-                       <h3 class="card-footer text-center"><a href="guidelinesmont" value="_d" id="mont" name="mont" class="d-block js-submit">Montessori </a></h3>
+                       <h3 class="card-footer text-center"><a href="guidelinesmont" class="d-block">Montessori </a></h3>
                             
                                 
                     </div>
@@ -103,16 +124,3 @@
 </body>
 </html>
 
-<script>
-     $('.js-submit').click(function(){
-            var section = document.getElementById("section").value;
-           
-            
-            //  alert(academic);
-
-             window.location.href="('guidelinesmont/a?section=')"+section;
-
-            
-          
-        });
-        </script>

@@ -51,40 +51,44 @@
                                                   </tr>
                                              </thead>
                                              <tbody>
+                                             @foreach ($students as $item)
+                                             <input type="hidden" class='form-control id' id="{{ $item->id }}"  ></td>
+                                             
                                              <table align="left" cellpadding = "20" >
  
 <!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>Name Of the Student</b></td>
-<td><input type="text" name="Student_Name" maxlength="30"/>
+<td>{{ $item->name }}</td>
 </td>
+
 </tr>
  
 <!----- Last Name ---------------------------------------------------------->
 <tr>
 <td><b>Gender</b></td>
-<td><input type="text" name="Father_Name" maxlength="30"/>
+<td>{{ $item->gender }}</td>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td><b>Nationality</b></td>
-<td><input type="text" name="Mother_Name" maxlength="30"/>
+<td>{{ $item->nationality }}</td>
 </td>
 </tr>
  
 <!----- Email Id ---------------------------------------------------------->
 <tr>
 <td><b>Mother Tongue</b></td>
-<td><input type="text" name="For_class" maxlength="100" /></td>
+<td>{{ $item->mother_tongue }}</td>
 </tr>
  
 <!----- Mobile Number ---------------------------------------------------------->
 <tr>
 <td><b>Aadhar Card No</b></td>
 <td>
-<input type="text" name="Application_No" maxlength="10" />
+<td>{{ $item->aadhar }}</td>
 
 </td>
 </tr>
@@ -93,39 +97,39 @@
 <!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>Date Of Birth</b></td>
-<td><input type="text" name="Student_Name" maxlength="30"/>
+<td>{{ $item->dob }}</td>
 </td>
 </tr>
  
 <!----- Last Name ---------------------------------------------------------->
 <tr>
 <td><b>Class</b></td>
-<td><input type="text" name="Father_Name" maxlength="30"/>
+<td>{{ $item->class }}</td>
 </td>
 </tr>
  
 <!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td><b>Religion</b></td>
-<td><input type="text" name="Mother_Name" maxlength="30"/>
+<td>{{ $item->religion }}</td>
 </td>
 </tr>
  
 <!----- Email Id ---------------------------------------------------------->
 <tr>
 <td><b>Birth Place</b></td>
-<td><input type="text" name="For_class" maxlength="100" /></td>
+<td>{{ $item->birth_place }}</td>
 </tr>
  
 <!----- Mobile Number ---------------------------------------------------------->
 <tr>
-<td><b>Mlode Of Transport</b></td>
+<td><b>Mode Of Transport</b></td>
 <td>
-<input type="text" name="Application_No" maxlength="10" />
+<td>{{ $item->transport }}</td>
 
 </td>
 </tr>
-
+@endforeach
 </tbody>
 </table>
 </div>

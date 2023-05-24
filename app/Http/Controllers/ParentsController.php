@@ -50,5 +50,12 @@ class ParentsController extends Controller
         $parent->save();
         return redirect('/upload_doc');
     } 
+
+    
+    public function edit($id)
+    {
+        $parent =Parent1::find($id);
+        return $parent;
+    }
     
 }

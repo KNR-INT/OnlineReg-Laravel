@@ -13,13 +13,18 @@ class StudentController extends Controller
     {
         return view('onlinereg');
     }
-
-
-    
     public function store(Request $request)
     {
+        // $session = request()->session()->get('login.id');            
+        //     $ses_id = $session[0];
+
+
+            
+        // $ses_id = DB::table('students')
+        // ->where( $ses_id = $session[0])
+        // ->update(['options->enabled' => true]);
+        
         $student = new Student;
-        $student->email_id = $request->input('email_id');
         $student->name = $request->input('name');
         $student->gender = $request->input('gender');
         $student->dob = $request->input('dob');
@@ -45,10 +50,11 @@ class StudentController extends Controller
             $file->move('uploads/students/', $filename);
             $student->image = $filename;
         }
+
+
         $student->save();
         return redirect('/parents_details');
     } 
-
 
     
 }

@@ -178,15 +178,27 @@
       </tr>
     </tbody>
   </table>
-  <div class="modal-footer justify-content-center ">  
+  <!-- <div class="modal-footer justify-content-center ">  
             <div class="col">  
               <div class="form-check">  
                 <button class=" btn btn-primary" onclick="window.location.href ='onlinereg'">Go back</button>
                 <button class="btn btn-primary" type="submit" id="btn1" onclick="window.location.href = 'upload_doc'">Save & continue</button>
              </div>
           </div>
-        </div>
+        </div> -->
+
         </form>
+        
+        <center><div class="col">  
+              <div class="form-check">  
+                <button class=" btn btn-primary" onclick="window.location.href ='onlinereg'">Go back</button>
+                <button class="btn btn-primary"  id="btn1" onclick="window.location.href = 'upload_doc'">Save & continue</button>
+             </div></center>
+          
+                <div class="modal-footer justify-content-center">  
+                    @include('footer')
+                </div>
+
 </div>
 
 </body>
@@ -215,7 +227,7 @@ body{
 }
 .container{
     position: relative;
-    max-width: 1100px;
+    max-width: 1050px;
     width: 100%;
     border-radius: 6px;
     padding: 50px;
