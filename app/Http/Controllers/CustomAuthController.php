@@ -187,7 +187,9 @@ class CustomAuthController extends Controller
         session()->push('users.id', $user_id);
         return view('onlinereg');
     }
+    
         public function myapp()
+
         {
             if(Auth::check()){  
                 return view('myapp');

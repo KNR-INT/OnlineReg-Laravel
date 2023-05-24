@@ -158,13 +158,10 @@
                         <div class="input-field">
                             <input type="text" placeholder="Enter class and section " id="sib2_cls_sec" name="sib2_cls_sec">
                         </div>
-<<<<<<< HEAD
-=======
                     </div>
                 </div>
                 <div class="physical">
                     <div class="fields">
->>>>>>> fcd8af92a2c60c8d328234568883a987fa8f04f5
                         <div class="input-field">
                             <label>Is your child physically challenged?</label>
                             <select  id="phy_clg" name="phy_clg">
@@ -181,12 +178,8 @@
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
-<<<<<<< HEAD
-                        </div>
-=======
                             <span id="slp_need_err" style="color:red;"></span>
                          </div>
->>>>>>> fcd8af92a2c60c8d328234568883a987fa8f04f5
                         <div class="input-field">
                             <label>Aadhar of the Student*</label>
                             <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar">
@@ -212,24 +205,14 @@
                        <a class="btn btn-submit btn-outline-success float-center">Save and Continue <i class="uil uil-navigator"></i></a>
                        <div>
                        @include('footer')
-<<<<<<< HEAD
-                        </div>
-                      </div> 
-            
-=======
 </div>
                 </div> 
             </div>
         </form>
                 </div> 
             </div>
->>>>>>> fcd8af92a2c60c8d328234568883a987fa8f04f5
            
     </div>
-<<<<<<< HEAD
-
-               
-=======
                     
                  </div> 
                 
@@ -237,7 +220,6 @@
             </div>
         
     </div>
->>>>>>> fcd8af92a2c60c8d328234568883a987fa8f04f5
 
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -436,14 +418,9 @@ body{
 }
 .container form .form{
     position: absolute;
-    /* background-color: #fff; */
     transition: 0.3s ease;
 }
-/* .container form .form.second{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(100%);
-} */
+
 form.secActive .form.second{
     opacity: 1;
     pointer-events: auto;
