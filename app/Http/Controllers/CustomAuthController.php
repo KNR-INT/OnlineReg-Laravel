@@ -7,7 +7,6 @@ use Hash;
 use Session;
 use App\Models\User;
 use App\Models\Student;
-// use App\Models\student;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
  
@@ -29,7 +28,6 @@ class CustomAuthController extends Controller
         if ($user) {    
           Auth::login($user);    
   return redirect()->intended('otp');
-            //   ->with('message', 'Signed in!');           
          }
         else {    
             return redirect('/dashboard')->with('message', );   
@@ -47,7 +45,6 @@ class CustomAuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'unique:users,email_address,'.$user->id
-            // 'password' => 'required|min:6',
         ]);
             
         $data = $request->all();
@@ -61,10 +58,7 @@ class CustomAuthController extends Controller
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        
-        
       ]);
-
     }    
      
     public function dashboard()
@@ -104,7 +98,6 @@ class CustomAuthController extends Controller
         $otp = rand(1000,9999);
         Log::info("otp = ".$otp);
         $user = User::where('email','=',$request->email)->update(['otp' => $otp]);
-        // send otp to email using email api
         return response()->json([$user],200);
     }
     public function otp()
@@ -122,27 +115,7 @@ class CustomAuthController extends Controller
         }
         return redirect('/dashboard');
     }
-    // public function newapp(){
-
-    //     $id = DB::table('users')->get();
-    //     Session::put('id', $id);
-    //     return view('newapp');
-    // }
-   
-    // public function guidelinesmont()
-    // {
-        // $id = DB::table('students')->get();
-        // session('login');
-        // session()->push('login.email', $email);
-
-        // $id = DB::table('students')->get();
-        //    $session_id = Session::getId();
-        // if(Auth::check()){
-        //     return view('guidelinesmont');
-        // }
-        
-        // return redirect('/dashboard');
-    // }
+    
     public function guidelinesmont(Request $request) {    
         $email = $request->email;    
         session()->push('login.email', $email);
@@ -174,18 +147,6 @@ class CustomAuthController extends Controller
     {
         $students = Student::all();
         return view('application_details', compact('students'));
-
-// $data = Student :: find($id);
-//  if(!$data){
-
-//  }
-//         $students = Student::select('*')->take(1)->get();
-// return $students;
-
-        // if(Auth::check()){
-        //     return view('application_details');
-        // }
-        // return redirect('/dashboard');
     }
 
 
@@ -212,21 +173,14 @@ class CustomAuthController extends Controller
             $sess_email = new Student;
             
             $sess_email->email_id = $ses_email;
-            // add more fields (all fields that users table contains without id)
             $sess_email->save();
             $id = DB::table('students')->where('email_id',$ses_email) ->orderBy('updated_at', 'desc')->value('id');
-            // $id = DB::table('students')->orderBy('updated_at', 'desc')->value('id');
             echo $id;
             session()->forget('login.id');
             session()->push('login.id', $id);
             $students = Student::all();
             return view('onlinereg', compact('students'));
-            
-            
 
-
-    
-          
         }
         public function myapp()
         {
@@ -249,8 +203,4 @@ class CustomAuthController extends Controller
             }
             return redirect('/myapp');
         }
-
-        
-
-        
-        }
+  }

@@ -14,10 +14,6 @@
 <main class="login-form">
 
     <div class="cotainer">
-    
-     
-     <!-- <img src="https://mdbootstrap.com/img/Others/documentation/1.webp" class="img-fluid"
-      alt="Responsive image">  -->
         
         <div class="justify-content-center">
             <div class="col-md-15">

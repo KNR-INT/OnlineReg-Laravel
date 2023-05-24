@@ -10,11 +10,6 @@
 <main class="login-form">
 
     <div class="cotainer">
-    
-     
-     <!-- <img src="https://mdbootstrap.com/img/Others/documentation/1.webp" class="img-fluid"
-      alt="Responsive image">  -->
-        
         <div class="justify-content-center">
             <div class="col-md-15">
                 <div class="card">
@@ -77,23 +72,11 @@
                   document.getElementById("button1").disabled = false;
               }
           </script>
-   <!-- footer -->
-	<!-- <footer class="bg-li py-5">
-		<div class="container py-xl-5 py-lg-3">
-			<div class="subscribe mx-auto">
-			
-		</div>
-	</footer> -->
-	<!-- //footer -->
-	<!-- copyright bottom -->
-	<!-- //copyright bottom -->
+
     @include('footer')
 </body>
 
 </html>
 </head>
-<body>
-    <!-- <p>Document Body</p> -->
-</body>
 </html>
 @endsection

@@ -1,13 +1,12 @@
 <?php
  
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\ParentsController;
-use App\Http\Controllers\ImageUploadController;
-
-use App\Models\Student;
-use App\Models\Parent1;
+    use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\CustomAuthController;
+    use App\Http\Controllers\StudentController;
+    use App\Http\Controllers\ParentsController;
+    use App\Http\Controllers\ImageUploadController;
+    use App\Models\Student;
+    use App\Models\Parent1;
 
 Route::get('/', [CustomAuthController::class, 'home']); 
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 

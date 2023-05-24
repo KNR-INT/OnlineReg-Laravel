@@ -2,7 +2,6 @@
 @include('header')
 <html>
 <head>
-<!-- <title>Student Registration Form</title> -->
 </head>
 <body>
     <br>
@@ -10,33 +9,24 @@
 
  <br>
 <table align="center" cellpadding = "20">
- 
-<!----- First Name ---------------------------------------------------------->
+
 <tr id="a">
 <th>Student Name</th>
 <td>Virat</td>
 </tr>
- 
-<!----- Last Name ---------------------------------------------------------->
 <tr>
 <th>Father Name</th>
 <td>Kohli</td>
 </tr>
- 
-<!----- Date Of Birth -------------------------------------------------------->
 <tr id="a">
 <th>Mother Name</th>
 <td>Sarojini</td>
 </td>
 </tr>
- 
-<!----- Email Id ---------------------------------------------------------->
 <tr>
 <th>For Class</th>
 <td>Montessori I</td>
 </tr>
- 
-<!----- Mobile Number ---------------------------------------------------------->
 <tr id="a">
     <th>Application No</th>
     <td>2023-24/4567</td>

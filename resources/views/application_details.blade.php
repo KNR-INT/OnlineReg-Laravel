@@ -18,36 +18,18 @@
 <label style="color:black; margin-left:20px;"><h4>Application For Registration</h4>
 </div></center>
 </div>
-	
-
- 
-            
-            
-     
           <div class="card ">
-         
-           <div class="card-header" style="background-color:blue;height:50px;">
-             <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
-            
+           <div class="card-header" style="background-color:blue;height:50px;">            
              <label  style="color:white; margin-top:-5px; margin-left:420px"><h5>Personal Details</h5>
-          
-             
               <div class="card-tools">
                
               </div>
             </div> 
              <div class="d-flex border-bottom p-1 mb-3">
              </div>
-           
-
-
-             <!-- get_entry -->
-                                   <div class="card-body table-responsive p-1">
-                                        <table class="table table-bordered table-hover" id ="Applications">
-                                             <thead>
-                                            
-                                                
-                                                  
+                      <div class="card-body table-responsive p-1">
+                           <table class="table table-bordered table-hover" id ="Applications">
+                                             <thead>  
                                                   </tr>
                                              </thead>
                                              <tbody>
@@ -55,8 +37,6 @@
                                              <input type="hidden" class='form-control id' id="{{ $item->id }}"  ></td>
                                              
                                              <table align="left" cellpadding = "20" >
- 
-<!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>Name Of the Student</b></td>
 <td>{{ $item->name }}</td>
@@ -64,27 +44,23 @@
 
 </tr>
  
-<!----- Last Name ---------------------------------------------------------->
 <tr>
 <td><b>Gender</b></td>
 <td>{{ $item->gender }}</td>
 </td>
 </tr>
- 
-<!----- Date Of Birth -------------------------------------------------------->
+
 <tr>
 <td><b>Nationality</b></td>
 <td>{{ $item->nationality }}</td>
 </td>
 </tr>
  
-<!----- Email Id ---------------------------------------------------------->
-<tr>
+
 <td><b>Mother Tongue</b></td>
 <td>{{ $item->mother_tongue }}</td>
 </tr>
  
-<!----- Mobile Number ---------------------------------------------------------->
 <tr>
 <td><b>Aadhar Card No</b></td>
 <td>
@@ -94,28 +70,24 @@
 </tr>
 <table align="right" cellpadding = "20">
  
-<!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>Date Of Birth</b></td>
 <td>{{ $item->dob }}</td>
 </td>
 </tr>
  
-<!----- Last Name ---------------------------------------------------------->
 <tr>
 <td><b>Class</b></td>
 <td>{{ $item->class }}</td>
 </td>
 </tr>
  
-<!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td><b>Religion</b></td>
 <td>{{ $item->religion }}</td>
 </td>
 </tr>
  
-<!----- Email Id ---------------------------------------------------------->
 <tr>
 <td><b>Birth Place</b></td>
 <td>{{ $item->birth_place }}</td>
@@ -140,11 +112,7 @@
           <div class="card ">
          
            <div class="card-header" style="background-color:blue;height:50px;">
-             <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
-            
              <label  style="color:white; margin-top:-5px; margin-left:420px"><h5>Parent Details</h5>
-          
-           
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                   <i class="fas fa-minus"></i>
@@ -154,52 +122,37 @@
             </div>
              <div class="d-flex border-bottom p-1 mb-3">
              </div>
-           
-
-
-             <!-- get_entry -->
-                                   <div class="card-body table-responsive p-1">
-                                        <table class="table  table-hover" id ="Applications">
-                                             <thead>
-                                            
-                                                
-                                                  
-                                                  </tr>
+                    <div class="card-body table-responsive p-1">
+                        <table class="table  table-hover" id ="Applications">
+                            <thead>
+                                </tr>
                                              </thead>
                                              <tbody>
                                              <table align="left" cellpadding = "20">
  
-<!----- First Name ---------------------------------------------------------->
+
 <tr>
 <td><b>Father Name</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
-<!----- Last Name ---------------------------------------------------------->
 <tr>
 <td><b>Mobile Number</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
- 
-<!----- Date Of Birth -------------------------------------------------------->
+
 <tr>
 <td><b>Email Id</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
 </td>
 </tr>
- 
-<!----- Email Id ---------------------------------------------------------->
+
 <tr>
 <td><b> Mother Tongue</b></td>
 <td><input type="text" name="For_class" maxlength="100" /></td>
 </tr>
- 
-<!----- Mobile Number ---------------------------------------------------------->
-
-
-
 
 <tr>
 <td><b>Area</b></td>
@@ -259,38 +212,29 @@
 </tr>
 <table align="right" cellpadding = "20">
  
-<!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>Mother Name</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
-<!----- Last Name ---------------------------------------------------------->
 <tr>
 <td><b>Mobile Number</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
-<!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td><b>Email Id</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
 </td>
 </tr>
  
-<!----- Email Id ---------------------------------------------------------->
 <tr>
 <td><b>Mother Tongue</b></td>
 <td><input type="text" name="For_class" maxlength="100" /></td>
 </tr>
  
-<!----- Mobile Number ---------------------------------------------------------->
-
-
-
-
 <tr>
 <td><b>Area</b></td>
 <td>
@@ -357,8 +301,7 @@
           <div class="card ">
          
            <div class="card-header" style="background-color:blue;height:50px;">
-             <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
-            
+
              <label  style="color:white; margin-top:-5px; margin-left:400px"><h5>Company Details</h5>
           
             
@@ -368,10 +311,7 @@
             </div>
              <div class="d-flex border-bottom p-1 mb-3">
              </div>
-           
-
-
-             <!-- get_entry -->
+     
                                    <div class="card-body table-responsive p-1">
                                         <table class="table table-bordered table-hover" id ="Applications">
                                              <thead>
@@ -382,22 +322,19 @@
                                              </thead>
                                              <tbody>
                                              <table align="left" cellpadding = "20">
- 
-<!----- First Name ---------------------------------------------------------->
+
 <tr>
 <td><b>Designation</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
-<!----- Last Name ---------------------------------------------------------->
 <tr>
 <td><b>Company Name</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
-<!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td><b>Company address</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
@@ -407,21 +344,18 @@
 
 <table align="right" cellpadding = "20">
  
-<!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>Designation</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
  
-<!----- Last Name ---------------------------------------------------------->
 <tr>
 <td><b>Company Name</b></td>
 <td><input type="text" name="Father_Name" maxlength="30"/>
 </td>
 </tr>
  
-<!----- Date Of Birth -------------------------------------------------------->
 <tr>
 <td><b>Company address</b></td>
 <td><input type="text" name="Mother_Name" maxlength="30"/>
@@ -432,46 +366,27 @@
 </tbody>
 </table>
 </div>
-
-
-
-
-            
-            
-     
           <div class="card ">
-         
            <div class="card-header" style="background-color:blue;height:50px;">
-             <!-- <h3 class="card-title" style="color: #ffffff; ">  </h3> -->
-            
              <label  style="color:white; margin-top:-5px; margin-left:400px"><h5>Documents</h5>
-          
-             <!-- curriculumname -->
-             <!-- sub_activity -->
-             <!-- activityname -->
-             <!-- sub_act -->
               <div class="card-tools">
               
               </div>
             </div>
              <div class="d-flex border-bottom p-1 mb-3">
              </div>
-           
-
-
-             <!-- get_entry -->
-                                   <div class="card-body table-responsive p-1">
-                                        <table class="table table-bordered table-hover" id ="Applications">
-                                             <thead>
+        <div class="card-body table-responsive p-1">
+                <table class="table table-bordered table-hover" id ="Applications">
+                          <thead>
+                                 
+                          </tr>
+                          </thead>
+                               <tbody>
+                         <table align="left" cellpadding = "20">
                                             
                                                 
-                                                  
-                                                  </tr>
-                                             </thead>
-                                             <tbody>
-                                             <table align="left" cellpadding = "20">
+                                               
  
-<!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>1. Student Photo</b></td>
 <td><input type="text" name="Student_Name" maxlength="30"/>
@@ -502,7 +417,6 @@
 
 <table align="right" cellpadding = "20">
  
-<!----- First Name ---------------------------------------------------------->
 <tr>
 <td><b>Selected File Name</b></td>
 <td><img src="http://your.url/img/stuvi-logo.png" class="css-class" alt="image">
@@ -532,9 +446,6 @@
 <td><input type="text" name="Student_Name" maxlength="30"/>
 </td>
 </tr>
-
-
-
 
 </tbody>
 </table>
@@ -583,8 +494,6 @@
 Submit</button>
 
          </div>
-
-        	<!-- </div> -->
 		</div>
         <script>
   $('#checkbox').click(function() {
