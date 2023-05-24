@@ -24,7 +24,7 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Name of the student*</label>
-                            <input type="text" placeholder="Enter Student name"  id="name" name="name" >
+                            <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g, '').replace(/(\.*)\./g, '$1')" maxlength="20">
                             <span id="name_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
@@ -182,7 +182,7 @@
                          </div>
                         <div class="input-field">
                             <label>Aadhar of the Student*</label>
-                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar">
+                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\.*)\./g, '$1')" maxlength="12">
                             <span id="aadhar_err" style="color:red;"></span>
                         </div>
                         <br>
