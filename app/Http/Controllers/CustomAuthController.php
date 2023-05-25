@@ -7,7 +7,6 @@ use Hash;
 use Session;
 use App\Models\User;
 use App\Models\Student;
-// use App\Models\student;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
  
@@ -20,22 +19,44 @@ class CustomAuthController extends Controller
  
     public function index()
     {
-            return view('login');
+        return view('login');
     }  
+
     public function login(Request $request) {    
         $email = $request->email;    
-        session()->push('login.email', $email);
-        $user = User::where('email', $email)->first();    
-        if ($user) {    
-          Auth::login($user);    
-  return redirect()->intended('otp');
-            //   ->with('message', 'Signed in!');           
-         }
-        else {    
-            return redirect('/dashboard')->with('message', );   
-        }    
+        session()->push('login.email', $email); 
+        $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+        if(empty($users))
+        {
+            $created = date("Y-m-d h:i:s");
+            $data=array("email"=>$email,"created_at"=>$created);
+            DB::table('users')->insert($data);
+
+            $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+            $user_id = $users[0]->id;
+            session()->push('users.user_id', $user_id);
+            return view('otp');          
+        }
+        else
+        {
+            $user_id = $users[0]->id;
+            session()->push('users.user_id', $user_id);
+            return view('otp');          
+        }  
     }
 
+    public function otp(Request $request)
+    {
+        $otp = $request->otp;    
+        if($otp == '7878'){
+            return redirect('/dashboard');
+        }
+        else
+        {
+            return view('otp')
+            ->with('message','Invalid OTP');
+        }
+    }
  
     public function signup()
     {
@@ -47,7 +68,6 @@ class CustomAuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'unique:users,email_address,'.$user->id
-            // 'password' => 'required|min:6',
         ]);
             
         $data = $request->all();
@@ -61,18 +81,14 @@ class CustomAuthController extends Controller
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
-        
-        
       ]);
-
     }    
      
     public function dashboard()
     {
-        if(Auth::check()){
-            return view('dashboard');
-        }
-        return redirect('/login');
+        $session = request()->session()->get('users.user_id');     
+        // echo ($session[0]);
+        return view('dashboard');
     }
      
     public function signOut() {
@@ -99,59 +115,22 @@ class CustomAuthController extends Controller
         }
     }
     
-    public function sendOtp(Request $request){
-    
+    public function sendOtp(Request $request)
+    {    
         $otp = rand(1000,9999);
         Log::info("otp = ".$otp);
         $user = User::where('email','=',$request->email)->update(['otp' => $otp]);
-        // send otp to email using email api
         return response()->json([$user],200);
     }
-    public function otp()
-    {
-        if(Auth::check()){
-            return view('otp');
-        }
-        return redirect('/dashboard');
-    }
+    
     public function newapp()
     {
-        $session_id = Session::getId();
-        if(Auth::check()){
-            return view('newapp');
-        }
-        return redirect('/dashboard');
+        return view('newapp');
     }
-    // public function newapp(){
-
-    //     $id = DB::table('users')->get();
-    //     Session::put('id', $id);
-    //     return view('newapp');
-    // }
-   
-    // public function guidelinesmont()
-    // {
-        // $id = DB::table('students')->get();
-        // session('login');
-        // session()->push('login.email', $email);
-
-        // $id = DB::table('students')->get();
-        //    $session_id = Session::getId();
-        // if(Auth::check()){
-        //     return view('guidelinesmont');
-        // }
-        
-        // return redirect('/dashboard');
-    // }
-    public function guidelinesmont(Request $request) {    
-        $email = $request->email;    
-        session()->push('login.email', $email);
-
-        $users = User::find(1)->email;
-        if(Auth::check()){
-                return view('guidelinesmont');
+    
+    public function guidelinesmont() {   
+        return view('guidelinesmont');
     }
-}
     public function parents_details()
     {
         
@@ -174,18 +153,6 @@ class CustomAuthController extends Controller
     {
         $students = Student::all();
         return view('application_details', compact('students'));
-
-// $data = Student :: find($id);
-//  if(!$data){
-
-//  }
-//         $students = Student::select('*')->take(1)->get();
-// return $students;
-
-        // if(Auth::check()){
-        //     return view('application_details');
-        // }
-        // return redirect('/dashboard');
     }
 
 
@@ -206,29 +173,23 @@ class CustomAuthController extends Controller
     }
 
  public function onlinereg()
-        {
-            $session = request()->session()->get('login.email');            
-            $ses_email = $session[0];
-            $sess_email = new Student;
-            
-            $sess_email->email_id = $ses_email;
-            // add more fields (all fields that users table contains without id)
-            $sess_email->save();
-            $id = DB::table('students')->where('email_id',$ses_email) ->orderBy('updated_at', 'desc')->value('id');
-            // $id = DB::table('students')->orderBy('updated_at', 'desc')->value('id');
-            echo $id;
-            session()->forget('login.id');
-            session()->push('login.id', $id);
-            $students = Student::all();
-            return view('onlinereg', compact('students'));
-            
-            
-
-
+    {
+        $session = request()->session()->get('login.email');            
+        $ses_email = $session[0];
+        $sessions = request()->session()->get('users.user_id');     
+        $ses_userid = $sessions[0];
+        $created = date("Y-m-d h:i:s");
+        $data=array("email_id"=>$ses_email,"user_id"=>$ses_userid,"created_at"=>$created,"status"=>"Draft");
+        DB::table('students')->insert($data);
+        $users = DB::select("SELECT * FROM `students` WHERE `email_id` = '$ses_email' ORDER BY `id` DESC LIMIT 1");
+        $user_id = $users[0]->id;
+        Session::forget('users.id');
+        session()->push('users.id', $user_id);
+        return view('onlinereg');
+    }
     
-          
-        }
         public function myapp()
+
         {
             if(Auth::check()){  
                 return view('myapp');
@@ -249,8 +210,4 @@ class CustomAuthController extends Controller
             }
             return redirect('/myapp');
         }
-
-        
-
-        
-        }
+  }

@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>Student Registration Form</title>
+<title>Online Registration</title>
 
 </head>
  
@@ -41,12 +41,12 @@
           , <a href = "admissions@npsypr.com">admissions@npsypr.com</a>
 		  <br/>&nbsp;&nbsp;&nbsp;
 		  <a tect-align='center' style="margin-left:350px;">
-          © 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved.
+          ï¿½ 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved.
       
 Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</span><span style="color:#67AE3B">R</span> Tech Solutions.</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				
-				<!-- © 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved. Designed by KNR Tech Solutions. -->
+				<!-- ï¿½ 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved. Designed by KNR Tech Solutions. -->
 				<!-- <a text-align='right' href="https://npsypr.edu.in/facilities/">
                   <p> Facilities </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php#">Contact Us </p></a>
                     	 -->

@@ -14,10 +14,6 @@
 <main class="login-form">
 
     <div class="cotainer">
-    
-     
-     <!-- <img src="https://mdbootstrap.com/img/Others/documentation/1.webp" class="img-fluid"
-      alt="Responsive image">  -->
         
         <div class="justify-content-center">
             <div class="col-md-15">
@@ -30,7 +26,7 @@
 }
 </style>
 <div class="d-flex justify-content-center"  >
-<img  urlsrc="C:\xampp\htdocs\studentRegister_old\Laravel_Online-reg\resources\views\photos\national-public-school-yeshwanthpur_nps-2_1629264439.jpg" alt="" height="100" width="100">
+<img urlsrc="C:\xampp\htdocs\studentRegister_old\Laravel_Online-reg\resources\views\photos\national-public-school-yeshwanthpur_nps-2_1629264439.jpg" alt="" height="100" width="100">
                                </div>
                     <h3 class="card-header text-center">National Public School</h3>
                  
