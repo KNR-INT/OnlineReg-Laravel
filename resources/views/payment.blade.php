@@ -9,6 +9,7 @@
 <h3>Application Fee Payment For Academic Year 2022-23</h3>
 
  <br>
+ <div>
 <table align="center" cellpadding = "20">
  
 <!----- First Name ---------------------------------------------------------->
@@ -42,9 +43,10 @@
     <td>2023-24/4567</td>
 </tr>
 </table>
-<div>
-    <br>
-    <br>
+</div>
+<br>
+<div class="justify-content-center">
+    
 <button class="btn btn-primary" style="margin-left:550px;" height="100px;" id="btn1" onclick="window.location.href = 'admitted'">
 Payment</button>
 </div>
@@ -76,8 +78,8 @@ table{
   font-style: normal;
   font-weight: normal;
   text-align:; 
-  width:700px;
-  height:100px;
+  width:450px;
+  height:80px;
   background-color: white; 
   border-collapse: collapse; 
    
@@ -89,4 +91,25 @@ table{
 table.inner{
   border: 0px;
 }
+
+</style>
+<style>
+    h2{
+  font-family: Calibri; 
+  font-size: 35pt;         
+  font-style:normal; 
+  font-weight:bold; 
+  color:Black;
+  text-align: center; 
+}
+
+h4{
+  font-family: Calibri; 
+  color:Black; 
+  font-size:20pt; 
+  text-align:center; 
+  width:500px;
+  background-color:lightgrey; 
+}
+
 </style>

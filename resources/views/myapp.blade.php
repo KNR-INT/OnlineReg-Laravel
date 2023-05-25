@@ -16,7 +16,7 @@
             <div class="col-md-4">
                      <div class="card">
                         <div class="alert alert-info">
-                        <img src="https://cdn.onlinewebfonts.com/svg/img_367038.png" alt="" height="250" width="300">
+                        <img src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-128.png" alt="" height="250" width="300">
                         </div>
                     <div class="card-body">
                        <h4 class="card-footer text-center"><a href="submited" class="d-block">Submitted Application</a></h4>    
@@ -28,7 +28,7 @@
              
              <div class="card">
                         <div class="alert alert-info">
-                            <img src="https://cdn-icons-png.flaticon.com/512/74/74905.png" alt="" height="250" width="300">     
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScktb13kYfHlGx0r1xm0ZAAc7PCyVrWdNfcw&usqp=CAU" alt="" height="250" width="300">     
                         </div>
                     <div class="card-body">
                        <h4 class="card-footer text-center"><a href="draft" class="d-block">Draft Application</a></h4> 

@@ -315,7 +315,7 @@ I Agree
     Go to home
     </button>
 
-    <button  DISABLED class="btn btn-primary"   id="btn1" onclick="window.location.href = 'onlinereg'">continue </button>
+    <button  DISABLED class="btn btn-primary"   id="btn1" onclick="window.location.href = 'onlinereg'">Continue </button>
          </div>
 		</div>
 	</div>
@@ -335,7 +335,7 @@ I Agree
 </html>
 
 
-<div class="justify-content-center" style="margin-top:100px;">
+<!-- <div class="justify-content-center" style="margin-top:100px;">
 		<div class="container-fluid">
 			<div class="justify-content-center px-md-3 position-relative text-center">
 				&nbsp;
@@ -357,7 +357,7 @@ I Agree
           , <a href = "admissions@npsypr.com">admissions@npsypr.com</a>
 		  <br/>&nbsp;&nbsp;&nbsp;
 		  <a tect-align='center'>
-          © 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved.
+          © 2013 - 2023 by NPS Yeshwanthpur. All Rights Reserved.
       
 Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</span><span style="color:#67AE3B">R</span> Tech Solutions.</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -365,7 +365,8 @@ Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</s
 				
 			</div>
 		</div>
-</div>
+</div> -->
+@include('footer')
 </body>
 
 </html>

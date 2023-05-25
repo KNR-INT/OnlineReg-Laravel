@@ -23,6 +23,7 @@ body {
 	border-radius: 0;
 	border: none;
 	box-shadow: 0 0 4px rgba(0,0,0,0.5);
+	overflow: auto;
 }
 /* .navbar img {
 	border-radius: 50%;
@@ -202,6 +203,7 @@ body {
 </nav> -->
 <!-- <nav class="navbar navbar-expand-xl navbar-dark bg-dark"> -->
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark navbar-default navbar-fixed-top ">
+	
             <!-- <a href="#" class="navbar">NPS YPR</a>  		 -->
 			<span>NPS YPR</span>
                 <div class="navbar-nav ml-auto">

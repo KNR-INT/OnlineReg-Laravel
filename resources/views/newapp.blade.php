@@ -1,31 +1,24 @@
 @include('header')
-<!-- <!DOCTYPE html>
+
+     <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 9 Custom Auth Login and Registration</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #0dcaf0;">
-        <div class="container">
-            <a class="navbar-brand mr-auto" href="#">National Public School</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('signout') }}">Logout</a>
-                    </li>
-                </ul>
-            </div>
-            <a href="/" style="float: right;"><img height="20" width="20" color="white" src="{{URL::asset('/img/1st')}}"></a>
-        </div>
-    </nav>
-     -->
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="My Application Description">
+    <meta name="author" content="Sammy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+<br>
+<form>
 <div >
-    <div class="container">
+    <div class="d-flex justify-content-center">
     <!-- <div class="justify-content-center     -->
 
 
@@ -112,7 +105,7 @@
 </div>
 </div>
 
-
+</form>
 	<!-- //copyright bottom -->
  @include('footer')
 </body>

@@ -9,7 +9,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="My Application Description">
+    <meta name="author" content="Sammy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
 
 <main class="login-form">
 
@@ -30,7 +36,7 @@
 }
 </style>
 <div class="d-flex justify-content-center"  >
-<img  urlsrc="C:\xampp\htdocs\studentRegister_old\Laravel_Online-reg\resources\views\photos\national-public-school-yeshwanthpur_nps-2_1629264439.jpg" alt="" height="100" width="100">
+<img src = "https://www.schoolmykids.com/smk-media/2018/10/National-Public-School-Indiranagar-Bangalore.png" alt="" height="100" width="100">
                                </div>
                     <h3 class="card-header text-center">National Public School</h3>
                  
@@ -62,7 +68,7 @@
                                </div>
                                <br>
                                <div class="d-flex justify-content-center"  >
-                                   <button disabled="disabled" type="submit" id="button1" class="btn btn-dark btn-block">verify</button>
+                                   <button disabled="disabled" type="submit" id="button1" class="btn btn-dark btn-block">Verify</button>
                                </div>
                            </form>
                        </div>

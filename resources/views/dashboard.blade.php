@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Beautiful Bootstrap Navbar with Menu Icons</title>
+<title></title>
+<meta name="description" content="My Application Description">
+    <meta name="author" content="Sammy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -218,24 +222,24 @@ body {
 
             <div class="col-md-4">
                      <div class="card">
-                        <div class="alert alert-info">
+                        <div class="alert alert-info mt-6">
                         <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="300" width="300">
                         </div>
                     <div class="card-body">
-                       <h4 class="card-footer text-center"><a href="newapp" class="d-block">New Application </a></h4>       
+                       <h4 class="card-footer text-center"><a href="newapp" >New Application </a></h4>       
                     </div>
                 </div>
              </div>
-
+<br></br>
                <div class="col-md-4">
              
              <div class="card">
               
-                        <div class="alert alert-info">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg        " alt="" height="300" width="300">     
+                        <div class="alert alert-info mt-6">
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="300" width="300">     
                    </div>
                     <div class="card-body">
-                       <h4 class="card-footer text-center"><a href="myapp" class="d-block">My Application </a></h4>
+                       <h4 class="card-footer text-center"><a href="myapp" >My Application </a></h4>
                       
                     </div>
                 </div>
@@ -246,4 +250,9 @@ body {
              
 </div>
 </div>
+<style>
+	.card{
+    margin-bottom: 10px;
+}
+</style>
 @include('footer')
