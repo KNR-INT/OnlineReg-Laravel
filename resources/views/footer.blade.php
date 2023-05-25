@@ -35,7 +35,7 @@
           , <a href = "admissions@npsypr.com">admissions@npsypr.com</a>
 		  <br/>&nbsp;&nbsp;&nbsp;
 		  <a tect-align='center' style="margin-left:200px;">
-          © 2013 - 2022 by NPS Yeshwanthpur. All Rights Reserved.
+          © 2022 - 2023 by NPS Yeshwanthpur. All Rights Reserved.
       
 Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</span><span style="color:#67AE3B">R</span> Tech Solutions.</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

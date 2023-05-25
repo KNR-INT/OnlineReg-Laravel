@@ -24,7 +24,7 @@
                 <div class="details personal">
                     <div class="fields">
                         <div class="input-field">
-                            <label>Name of the student*</label>
+                            <label>Name of the Student*</label>
          <input type="text" placeholder="Enter Student name" required id="name" name="name" >
                             
                         </div>
@@ -95,11 +95,11 @@
                     </div>
                 </div>
                     <br>
+                   
                 <div class="sibling">
-                    <span class="title">Sibling currently studying at NPS Yeshwanthpur</span>
-
+                    <span class="title">Sibling currently studying at NPS Yeshwanthpur</span>   
                     <div class="fields">
-                        <div class="input-field">
+                        <div class="input-field" disabled="disabled">
                             <input type="text" placeholder="Enter name" id="sib1_name" name="sib1_name">
                         </div>
                         <div class="input-field">
@@ -119,7 +119,7 @@
                         </div> -->
                    
                         <div class="input-field">
-                            <label>Is your child physically challenged?</label>
+                            <label>Is your child Physically Challenged?</label>
                             <select required id="phy_clg" name="phy_clg">
                             <option disabled selected>Is your child physically challenged?</option>
                                 <option value="Yes">Yes</option>
@@ -127,7 +127,7 @@
                             </select>
                          </div>
                          <div class="input-field">
-                            <label>Child has any special need/learning challenges?</label>
+                            <label>Child has any Special need/Learning Challenges?</label>
                             <select required id="slp_need" name="slp_need">
                             <option disabled selected>Child has any special need/learning challenges?</option>
                                 <option value="Yes">Yes</option>
@@ -163,7 +163,7 @@
                                 </div>
                         <br> 
                         <button class="nextBtn" >
-                        <span class="btnText"  type="submit" onclick="window.location.href = 'parents_details'">save and continue</span>
+                        <span class="btnText"  type="submit" onclick="window.location.href = 'parents_details'">Save and Continue</span>
                         <i class="uil uil-navigator"></i>
                         
                        </button>
