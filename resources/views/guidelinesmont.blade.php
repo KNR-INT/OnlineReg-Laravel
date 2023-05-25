@@ -131,7 +131,7 @@ I Agree
 ?>
 <button class=" btn btn-primary" 
     onclick="window.location.href = 'newapp'" value=" $email = User::where('id',$id)->email();">
-    Go to home
+    Go to Home
     </button>
 
        <button  DISABLED class="btn btn-submit btn-primary"   id="btn1" >continue </button>
@@ -181,7 +181,11 @@ I Agree
           , <a href = "admissions@npsypr.com">admissions@npsypr.com</a>
 		  <br/>&nbsp;&nbsp;&nbsp;
 		  <a tect-align='center'>
+<<<<<<< HEAD
           © 2013 - 2023 by NPS Yeshwanthpur. All Rights Reserved.
+=======
+          © 2022 - 2023 by NPS Yeshwanthpur. All Rights Reserved.
+>>>>>>> bbecb60316cc55eb91a229b16c503471ba3d8ed0
       
 Designed by <span style="color:#E31E25">K</span><span style="color:#19A9E4">N</span><span style="color:#67AE3B">R</span> Tech Solutions.</a>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

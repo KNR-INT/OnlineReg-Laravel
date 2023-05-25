@@ -23,7 +23,7 @@
                 <div class="details personal">
                     <div class="fields">
                         <div class="input-field">
-                            <label>Name of the student*</label>
+                            <label>Name of the Student*</label>
                             <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g, '').replace(/(\.*)\./g, '$1')" maxlength="20">
                             <span id="name_err" style="color:red;"></span>
                         </div>
@@ -134,10 +134,11 @@
                     </div>
                 </div>
                     <br>
+                   
                 <div class="sibling">
-                    <span class="title">Sibling currently studying at NPS Yeshwanthpur
+
                     <div class="fields">
-                        <div class="input-field">
+                        <div class="input-field" disabled="disabled">
                             <select id="sibling_change" name="sibling_change">
                                 <option disabled selected value="">--SELECT--</option>
                                 <option value="Yes">Yes</option>
@@ -163,7 +164,7 @@
                 <div class="physical">
                     <div class="fields">
                         <div class="input-field">
-                            <label>Is your child physically challenged?</label>
+                            <label>Is your child Physically Challenged?</label>
                             <select  id="phy_clg" name="phy_clg">
                                 <option disabled selected value="">--SELECT--</option>
                                 <option value="Yes">Yes</option>
@@ -172,7 +173,7 @@
                             <span id="phy_clg_err" style="color:red;"></span>
                          </div>
                          <div class="input-field">
-                            <label>Child has any special need/learning challenges?</label>
+                            <label>Child has any Special need/Learning Challenges?</label>
                             <select  id="slp_need" name="slp_need">
                                 <option disabled selected value="">--SELECT--</option>
                                 <option value="Yes">Yes</option>
@@ -202,8 +203,7 @@
                             <!-- <span id="name_err" style="color:red;"></span> -->
                         </div>
                         <br> 
-                       <a class="btn btn-submit btn-outline-success float-center">Save and Continue <i class="uil uil-navigator"></i></a>
-                       <div>
+						<a class="btn btn-submit btn-outline-success float-center">Save and Continue <i class="uil uil-navigator"></i></a>                       <div>
                        @include('footer')
 </div>
                 </div> 
