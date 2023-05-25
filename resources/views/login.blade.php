@@ -9,15 +9,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="My Application Description">
+    <meta name="author" content="Sammy">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
 
 <main class="login-form">
 
     <div class="cotainer">
-    
-     
-     <!-- <img src="https://mdbootstrap.com/img/Others/documentation/1.webp" class="img-fluid"
-      alt="Responsive image">  -->
         
         <div class="justify-content-center">
             <div class="col-md-15">
@@ -29,6 +31,9 @@
   background-color: #cccccc;
 }
 </style>
+<div class="d-flex justify-content-center"  >
+                               </div>
+                    <h3 class="card-header text-center">National Public School</h3>
 <!-- <div class="d-flex justify-content-center"  >
 <img  src="public/Image/logo.jpg">
                                </div> -->

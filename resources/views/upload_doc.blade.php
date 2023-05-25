@@ -6,16 +6,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
     <link rel="stylesheet" href="style.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>   
 </head>
 <body>
 <form method="post" action="{{ route('images.store') }}"  enctype="multipart/form-data">
-<!-- method="POST" enctype="multipart/form-data" -->
     @csrf
     <div class="container">
         <div>
@@ -58,7 +58,6 @@
                         <div class="input-field">
                             Upload Aadhar card * :  
                             <input type="file" id="myFile" name="image">
-                            <!-- <input type="file" name="image" class="form-control"> -->
                         </div>
                     </td>
                     <td>
@@ -83,94 +82,10 @@
                         </div>
                     </td>
                 </tr><br>
-                <!-- <tr>
-                    <td>
-                        <div class="input-field">
-                            Upload Student's passport:  
-                            <input type="file" id="myFile" name="image">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field">
-                            Upload Previous year Marks Card's *:  
-                            <input type="file" id="myFile" name="image">
-                        </div>
-                    </td>
-                </tr><br> -->
+        
             </table>
         </center>
         <br>
-        <!-- <center> <header><b><u><h3>Details of Schooling </h3></u></b></header></center>
-        <center>
-            <table>
-                <tr>
-                    <td >
-                        <div class="input-field">
-                            From Year   <br>
-                            <input type="date" placeholder="From date" required>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field">
-                        From Class   <br>
-                        <select name="drop" id="drop">
-                                   <option disabled selected>From Class :</option><option value="1">1</option>
-                                   <option value="2">2</option><option value="3">3</option>
-                                   <option value="4">4</option><option value="4">4</option>
-                                   <option value="5">5</option><option value="6">6</option>
-                                   <option value="7">7</option><option value="8">8</option>
-                                   <option value="9">9</option><option value="10">10</option>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field">
-                        To Year   <br>
-                        <input type="date" placeholder="To date" required>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field">
-                           To Class   <br>
-                           <select name="drop" id="drop">
-                                   <option disabled selected>To Class :    </option><option value="1">1</option>
-                                   <option value="2">2</option><option value="3">3</option>
-                                   <option value="4">4</option><option value="4">4</option>
-                                   <option value="5">5</option><option value="6">6</option>
-                                   <option value="7">7</option><option value="8">8</option>
-                                   <option value="9">9</option><option value="10">10</option>
-                                   </select>
-                    
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width:250px;">
-                        <div class="input-field">
-                        School Name <br>  
-                        <input type="text" name="" id="" placeholder="School Name" >
-                        </div>
-                    </td>
-                    <td style="width:250px;">
-                        <div class="input-field">
-                        City <br>
-                        <input type="text" name="" id="" placeholder="City">  
-                        </div>
-                    </td>
-                    <td style="width:250px;">
-                        <div class="input-field">
-                            State  <br>
-                            <input type="text" name="" id="" placeholder="State">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field">
-                            Country  <br>
-                            <input type="text" name="" id="" placeholder="Country">
-                        </div>
-                    </td>
-                </tr>
-            </table> -->
-            
             <br>
             <br>
             <br>

@@ -15,16 +15,9 @@ class StudentController extends Controller
     }
     public function store(Request $request)
     {
-        // $session = request()->session()->get('login.id');            
-        //     $ses_id = $session[0];
-
-
-            
-        // $ses_id = DB::table('students')
-        // ->where( $ses_id = $session[0])
-        // ->update(['options->enabled' => true]);
-        
-        $student = new Student;
+        $sessions = request()->session()->get('users.id');     
+        $ses_userid = $sessions[0];
+        $student = Student::find($ses_userid) ;
         $student->name = $request->input('name');
         $student->gender = $request->input('gender');
         $student->dob = $request->input('dob');
@@ -41,7 +34,6 @@ class StudentController extends Controller
         $student->slp_need = $request->input('slp_need');
         $student->aadhar = $request->input('aadhar');
         $student->transport = $request->input('transport');
-        // $student->upload_img = $request->input('upload_img');
         if($request->hasfile('image'))
         {
             $file = $request->file('image');
@@ -51,8 +43,7 @@ class StudentController extends Controller
             $student->image = $filename;
         }
 
-
-        $student->save();
+        $student->update();
         return redirect('/parents_details');
     } 
 
