@@ -17,11 +17,6 @@
 <main class="login-form">
 
     <div class="cotainer">
-    
-     
-     <!-- <img src="https://mdbootstrap.com/img/Others/documentation/1.webp" class="img-fluid"
-      alt="Responsive image">  -->
-        
         <div class="justify-content-center">
             <div class="col-md-15">
                 <div class="card">
@@ -40,15 +35,15 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <form method="POST" action="{{ route('postlogin') }}">
+                        <form method="POST" action="{{ route('otp') }}">
                             
                             @csrf
                             <div class="d-flex justify-content-center">
                             <div class="col-md-6">
-                                <input type="text" placeholder="Enter the OTP" id="email" class="form-control" name="email"
+                                <input type="text" placeholder="Enter the OTP" id="otp" class="form-control" name="otp"
                                     autofocus>
-                                @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @if ($errors->has('message'))
+                                <span class="text-danger">{{ $errors->first('message') }}</span>
                                 @endif
                             </div>
 </div>
@@ -84,23 +79,11 @@
                   document.getElementById("button1").disabled = false;
               }
           </script>
-   <!-- footer -->
-	<!-- <footer class="bg-li py-5">
-		<div class="container py-xl-5 py-lg-3">
-			<div class="subscribe mx-auto">
-			
-		</div>
-	</footer> -->
-	<!-- //footer -->
-	<!-- copyright bottom -->
-	<!-- //copyright bottom -->
+
     @include('footer')
 </body>
 
 </html>
 </head>
-<body>
-    <!-- <p>Document Body</p> -->
-</body>
 </html>
 @endsection

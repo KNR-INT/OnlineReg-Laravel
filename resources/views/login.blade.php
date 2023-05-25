@@ -20,10 +20,6 @@
 <main class="login-form">
 
     <div class="cotainer">
-    
-     
-     <!-- <img src="https://mdbootstrap.com/img/Others/documentation/1.webp" class="img-fluid"
-      alt="Responsive image">  -->
         
         <div class="justify-content-center">
             <div class="col-md-15">
@@ -36,7 +32,6 @@
 }
 </style>
 <div class="d-flex justify-content-center"  >
-<img src = "https://www.schoolmykids.com/smk-media/2018/10/National-Public-School-Indiranagar-Bangalore.png" alt="" height="100" width="100">
                                </div>
                     <h3 class="card-header text-center">National Public School</h3>
                  

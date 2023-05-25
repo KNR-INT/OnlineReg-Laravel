@@ -10,13 +10,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title></title>
+<meta charset="utf-8">
     <meta name="description" content="My Application Description">
     <meta name="author" content="Sammy">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"></head>
 <body>
 <br>
 <br>
@@ -33,9 +31,7 @@
 </table>
 </center>
 </form>
-@include('footer')
-
-<style>
+@include('footer')<style>
     #btn1 {background-color: #008CBA;}
     </style>
 <style>
