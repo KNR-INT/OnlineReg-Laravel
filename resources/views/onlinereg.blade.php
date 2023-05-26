@@ -11,27 +11,58 @@
     
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>  
+    
   </head>
   
 <body>
+    <div>
    
     <div class="container">
-    <!-- {{ url('store-student') }} -->
-    <!-- <form id="myForm" action="{{ url('store-student') }}" > -->
-    <form action = "{{ url('store-student') }}" method = "post" enctype="multipart/form-data">
-    @csrf
-            <div class="form first">
+<form id="myForm" action="{{ url('store-student') }}" enctype="multipart/form-data">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+ <section class="step-wizard">
+        <ul class="step-wizard-list">
+            <li class="step-wizard-item current-item">
+                <span class="progress-count">1</span>
+               
+            </li>
+            <li class="step-wizard-item">
+                <span class="progress-count">2</span>
+               
+            </li>
+            <li class="step-wizard-item">
+                <span class="progress-count">3</span>
+               
+            </li>
+            <li class="step-wizard-item ">
+                <span class="progress-count">4</span>
+                
+            </li>
+             <li class="step-wizard-item ">
+                <span class="progress-count">5</span>
+                
+            </li>
+             <li class="step-wizard-item">
+                <span class="progress-count">6</span>
+               
+            </li>
+        </ul>
+    </section>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form first">
                 <div class="details personal">
                     <div class="fields">
                         <div class="input-field">
                             <label>Name of the student*</label>
-                            <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g, '').replace(/(\.*)\./g, '$1')" maxlength="20">
+                            <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g,' ').replace(/(\.*)\./g, '$1')" maxlength="20">
                             <span id="name_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Gender*</label>
                             <select id="gender" name="gender">
-                                <option disabled selected value="">--SELECT--</option>
+                                <option disabled selected value="">--SELECT--</option>SS
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Others">Others</option>
@@ -183,7 +214,7 @@
                          </div>
                         <div class="input-field">
                             <label>Aadhar of the Student*</label>
-                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\.*)\./g, '$1')" maxlength="12">
+                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="12">
                             <span id="aadhar_err" style="color:red;"></span>
                         </div>
                         <br>
@@ -199,9 +230,11 @@
                         <br>
                         <div class="input-field">
                             <label> Upload a recent photograph of the Student * :</label>
-                            <input type="file" id="myFile" name="image"> </input>
+                            <input type="file" id="myFile" name="image" required> </input>
                             <!-- <span id="name_err" style="color:red;"></span> -->
                         </div>
+                        <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
+                        <input type="hidden" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
                         <br> 
                        <a  type="submit" class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
                        <div>
@@ -212,7 +245,8 @@
         </form>
                 </div> 
             </div>
-           
+           </div>
+        </form>
     </div>
                     
                  </div> 
@@ -248,6 +282,7 @@
             let phy_clg = document.getElementById("phy_clg").value;
             let slp_need = document.getElementById("slp_need").value;
             let aadhar = document.getElementById("aadhar").value;
+            let appli_id = document.getElementById("appli_id").value;
             let transport = document.getElementById("transport").value;
             if(!name || !gender || !dob || !class_name || !birth_place || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport)
             {
@@ -360,8 +395,13 @@
                 }
             // name,gender,dob,class,birth_place,nationality,religion,mother_tongue,phy_clg,slp_need,aadhar,transport
             }
+            else if(aadhar.length != 12)
+            {
+                document.getElementById("aadhar_err").innerHTML = "InCorrect Aadhaar Number";
+            }
             else
             {
+                document.getElementById("aadhar_err").innerHTML = " ";
                 document.getElementById("myForm").submit();
             }
         });
@@ -370,6 +410,121 @@
 
 
 <style>
+    /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+} */
+
+.step-wizard {
+    /* background-color:  #00008B;
+    background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%); */
+    height: 10vh;
+    width: 10%;
+    display: center;
+    justify-content: center;
+    align-items: center;
+}
+.step-wizard-list{
+    /* background: #fff;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    color: #333;
+    list-style-type: none;
+    border-radius: 10px; */
+    display: flex;
+    padding: 20px 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.step-wizard-item{
+    padding: 0 20px;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 170px;
+    position: relative;
+}
+.step-wizard-item + .step-wizard-item:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 19px;
+    background:  #1338BE;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+.progress-count{
+    height: 40px;
+    width:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index:10;
+    color: transparent;
+}
+.progress-count:after{
+    content: "";
+    height: 40px;
+    width: 40px;
+    background:  #1338BE;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -10;
+}
+.progress-count:before{
+    content: "";
+    height: 10px;
+    width: 20px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%) rotate(-45deg);
+    transform-origin: center center;
+}
+.progress-label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.current-item .progress-count:before,
+.current-item ~ .step-wizard-item .progress-count:before{
+    display: none;
+}
+.current-item ~ .step-wizard-item .progress-count:after{
+    height:10px;
+    width:10px;
+}
+.current-item ~ .step-wizard-item .progress-label{
+    opacity: 0.5;
+}
+.current-item .progress-count:after{
+    background: #ff0000;
+    border: 2px solid #ff0000;
+}
+.current-item .progress-count{
+    color: #1338BE;
+}
+/* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
     margin: 0;
@@ -413,7 +568,7 @@ body{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 800px;
+    min-height: 1050px;
     background-color: #fff;
     overflow: hidden;
 }

@@ -131,24 +131,18 @@ class CustomAuthController extends Controller
     public function guidelinesmont() {   
         return view('guidelinesmont');
     }
-    public function parents_details()
-    {
-        
-        if(Auth::check()){
-            return view('parents_details');
-        }
-        
-        return redirect('/dashboard');
-        
-    }
+    
 
-    public function upload_doc()
-    {
-        if(Auth::check()){
+    public function parents_details(){
+        return view('parents_details');
+       }
+
+
+    public function upload_doc(){
             return view('upload_doc');
         }
-        return redirect('/dashboard');
-    }
+
+
     public function application_details()
     {
         $students = Student::all();
@@ -195,28 +189,22 @@ class CustomAuthController extends Controller
         }
         public function draft()
         {
-            $sessions = request()->session()->get('users.user_id');   
+$sessions = request()->session()->get('users.user_id');   
             // print_r($sessions);
             $ses_userid = $sessions[0];
 
             $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Draft' AND `user_id` = '$ses_userid'");
 
-                return view('draft', compact('student'));
-           
-        }
+                return view('draft', compact('student'));        }
         public function submited()
         {
-            
-            $sessions = request()->session()->get('users.user_id');   
+ $sessions = request()->session()->get('users.user_id');   
             // print_r($sessions);
             $ses_userid = $sessions[0];
 
             $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Submitted ' AND `user_id` = '$ses_userid'");
            
 
-                return view('submited ', compact('student'));
-                
-           
-        }
+                return view('submited ', compact('student'));        }
 
   }

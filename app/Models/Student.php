@@ -10,7 +10,7 @@ class Student extends Model
 {
     use HasFactory;
     protected $table = 'students';
-    protected $fillable =[
+    protected $fillable =['link_class',
     'name',
     'gender',
     'dob',

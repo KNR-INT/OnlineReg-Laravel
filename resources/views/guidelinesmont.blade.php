@@ -126,6 +126,12 @@ I Agree
 
 <div>
 	<input type="hidden" id="class" value="<?php echo $_GET['class']; ?>">
+
+    <?php
+    $sessions = request()->session()->get('users.id');     
+    $ses_userid = $sessions[0]; 
+    ?>
+	<input type="hidden" id="appli_id" value="<?php echo $ses_userid; ?>">
 <?php 
 	$class = $_GET['class'];
 ?>
@@ -150,7 +156,8 @@ I Agree
 
 	$('.btn-submit').click(function() {
         let class_name = document.getElementById("class").value;
-		window.location.href = "{{ url('onlinereg') }}/a?class="+class_name;
+        let appli_id = document.getElementById("appli_id").value;
+		window.location.href = "{{ url('onlinereg') }}/a?class="+class_name+"&appli_id="+appli_id;
     });
 </script>
 

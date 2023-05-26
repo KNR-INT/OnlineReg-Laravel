@@ -47,6 +47,18 @@
         </div>
       </div>
                     <!-- <h3 class="card-header text-center">National Public School</h3> -->
+<!-- <div class="d-flex justify-content-center"  >
+<img  src="public/Image/logo.jpg">
+                               </div> -->
+                               <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+         <img  src="public/Image/logo.jpg">
+        </div>
+        <div class="card-body">
+          <h2>National Public School</h2></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+                    <!-- <h3 class="card-header text-center">National Public School</h3> -->
                  
                     @if(\Session::has('message'))
                         <div class="alert alert-info">
@@ -59,9 +71,7 @@
                             @csrf
                             <div class="d-flex justify-content-center">
                             <div class="col-md-6">
-
-
-                                <input type="text" placeholder="Email" id="email" class="form-control" name="email"
+                           <input type="text" placeholder="Email" id="email" class="form-control" name="email"
                                     autofocus>
                                 @if ($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -99,6 +109,24 @@
                   document.getElementById("button1").disabled = false;
               }
           </script>
+          <style>
+          img {
+  display: flex;
+  margin-left: 35%;
+  margin-right: 35%;
+  width: 25%;
+          }
+  h3 {
+  font-family: Calibri; 
+  color:Black; 
+  font-size:20pt; 
+  text-align:center; 
+  width:500px;
+  /* background-color:lightgrey;  */
+}
+
+
+</style>
    <!-- footer -->
 	<!-- <footer class="bg-li py-5">
 		<div class="container py-xl-5 py-lg-3">

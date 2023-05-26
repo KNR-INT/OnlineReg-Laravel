@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Parent1 extends Model
 {
     use HasFactory;
-    protected $table = 'parents_details';
+    protected $table = 'students';
     protected $fillable =['father_name',
     'father_mob',
     'father_email_verified_at',

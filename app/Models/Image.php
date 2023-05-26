@@ -9,12 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
-    protected $table = 'upload_docs';
-    protected $fillable =['image',
-    'birth_cer',
+    protected $table = 'student';
+    protected $fillable =[
+        'image',
+        'student_adr',
     'father_aadhar',
+    'birth_cer',
     'mother_aadhar',
-    'stu_passport',
     'pre_year_markcard',
     'from_year',
     'to_year',
@@ -24,8 +25,6 @@ class Image extends Model
     'country',
     'city',
     'state',
-    'created_at',
-    'updated_at',
 ];
 
 }

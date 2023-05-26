@@ -16,6 +16,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"></head>
 <body>
+  <div>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+ <section class="step-wizard">
+        <ul class="step-wizard-list">
+            <li class="step-wizard-item ">
+                <span class="progress-count">1</span>
+               
+            </li>
+            <li class="step-wizard-item ">
+                <span class="progress-count">2</span>
+               
+            </li>
+            <li class="step-wizard-item">
+                <span class="progress-count">3</span>
+               
+            </li>
+            <li class="step-wizard-item ">
+                <span class="progress-count">4</span>
+                
+            </li>
+             <li class="step-wizard-item ">
+                <span class="progress-count">5</span>
+                
+            </li>
+             <li class="step-wizard-item current-item">
+                <span class="progress-count">6</span>
+               
+            </li>
+        </ul>
+    </section>
 <br>
 <br>
 

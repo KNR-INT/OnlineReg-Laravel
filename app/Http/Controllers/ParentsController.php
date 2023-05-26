@@ -7,16 +7,17 @@ use Illuminate\Http\Request;
 
 class ParentsController extends Controller
 {
-    //
     function parents_details()
     {
         return view('parents_details');
     }
     public function store(Request $request)
     {
-        $parent = new Parent1;
+        $sessions = request()->session()->get('users.id');     
+        $ses_userid = $sessions[0];
+        $parent = Parent1::find($ses_userid);
         $parent->father_name = $request->input('father_name');
-        $parent->father_mob = $request->input('father_mob ');
+        $parent->father_mob = $request->input('father_mob');
         $parent->father_email_verified_at = $request->input('father_email_verified_at');
         $parent->father_mother_tongue = $request->input('father_mother_tongue');
         $parent->father_residential_address = $request->input('father_residential_address');
@@ -47,15 +48,15 @@ class ParentsController extends Controller
         $parent->mother_company_address = $request->input('mother_company_address');
         $parent->mother_office_number = $request->input('mother_office_number');
         $parent->mother_annual_income = $request->input('mother_annual_income');
-        $parent->save();
-        return redirect('/upload_doc');
-    } 
+        $class = $request->input('page_type');
+        $parent->update();
+        return redirect('/upload_doc/a?class='.$class);
 
-    
+    } 
     public function edit($id)
     {
-        $parent =Parent1::find($id);
-        return $parent;
+        $Parent->update();
+        return redirect('/upload_doc');
     }
     
 }
