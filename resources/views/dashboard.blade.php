@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Online Registration</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -241,4 +240,43 @@ body {
 </style>
 </head> 
 
+ <div class="justify-content-center">
+             <div class="row ">
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-md-4">
+                     <div class="card">
+                        <div class="alert alert-info mt-6">
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="300" width="300">
+                        </div>
+                    <div class="card-body">
+                       <h4 class="card-footer text-center"><a href="newapp" >New Application </a></h4>       
+                    </div>
+                </div>
+             </div>
+<br></br>
+               <div class="col-md-4">
+             
+             <div class="card">
+              
+                        <div class="alert alert-info mt-6">
+                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="300" width="300">     
+                   </div>
+                    <div class="card-body">
+                       <h4 class="card-footer text-center"><a href="myapp" >My Application </a></h4>
+                      
+                    </div>
+                </div>
+                <div class="col-md-2">
+            </div>
+             </div>
+
+             
+</div>
+</div><style>
+	.card{
+    margin-bottom: 10px;
+}
+</style>
 @include('footer')

@@ -9,30 +9,17 @@
 <div >
     <div class="container">
     <div class="justify-content-center" style="margin-top:40px;">
-                <div class="row ">
-                  <div class="col-md-2">
-                     </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="alert alert-info">
-                                <img src="https://img.freepik.com/premium-vector/green-check-mark-icon-symbol-logo-circle-tick-symbol-green-color-vector-illustration_685751-503.jpg?w=2000" alt="" height="250" width="300">
-                                </div>
-                               <div class="card-body">
-                            <h4 class="card-footer text-center"><a href="submited" class="d-block">Submitted Application</a></h4>    
-                            </div>
+<div class="row ">
+            <div class="col-md-2">
+            </div>
+
+            <div class="col-md-4">
+                     <div class="card">
+                        <div class="alert alert-info">
+                        <img src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-128.png" alt="" height="250" width="300">
                         </div>
                     </div>
 
-                 <div class="col-md-4">
-                        <div class="card">
-                            <div class="alert alert-info">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn5TJ8F5Jzcd_gBSlpEUDjLoTd54GxMHPVLA&usqp=CAU" alt="" height="250" width="300">     
-                                    </div>
-                                    <div class="card-body">
-                                    <h4 class="card-footer text-center"><a href="draft" class="d-block">Draft Application</a></h4> 
-                                </div>
-                             </div>
-                            <div class="col-md-2">
                         </div>
                     </div>
                 </div>  

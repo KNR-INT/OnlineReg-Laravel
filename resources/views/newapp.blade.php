@@ -1,7 +1,5 @@
 @include('header')
-<title>online Registration</title>
-<div >
-    <div class="container" style="margin-top:40px;">
+<title>online Registration</title><div >
 
     <div class="d-flex align-items-start">
              <div class="row-ms-1">
@@ -58,9 +56,8 @@
                     </div>
         
              </div>
-            </div> 
-           </div>      
- @include('footer')
+  </div> 
+           </div>   @include('footer')
 </body>
 </html>
 

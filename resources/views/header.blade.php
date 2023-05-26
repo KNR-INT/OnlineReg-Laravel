@@ -23,6 +23,7 @@ body {
 	border-radius: 0;
 	border: none;
 	box-shadow: 0 0 4px rgba(0,0,0,0.5);
+	overflow: auto;
 }
 
 </style>
