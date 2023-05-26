@@ -48,11 +48,11 @@ Route::get('guidelinesmont/{id}', [CustomAuthController::class, 'guidelinesmont'
 Route::post('onlinereg/{id}', [CustomAuthController::class, 'onlinereg'])->name('onlinereg'); 
 Route::get('onlinereg/{id}', [CustomAuthController::class, 'onlinereg'])->name('onlinereg'); 
 
-Route::post('parents_details', [CustomAuthController::class, 'parents_details'])->name('parents_details'); 
-Route::get('parents_details', [CustomAuthController::class, 'parents_details'])->name('parents_details'); 
+Route::post('parents_details/{id}', [CustomAuthController::class, 'parents_details'])->name('parents_details'); 
+Route::get('parents_details/{id}', [CustomAuthController::class, 'parents_details'])->name('parents_details'); 
 
-Route::post('upload_doc', [CustomAuthController::class, 'upload_doc'])->name('upload_doc'); 
-Route::get('upload_doc', [CustomAuthController::class, 'upload_doc'])->name('upload_doc'); 
+Route::post('upload_doc/{id}', [CustomAuthController::class, 'upload_doc'])->name('upload_doc'); 
+Route::get('upload_doc/{id}', [CustomAuthController::class, 'upload_doc'])->name('upload_doc'); 
 
 
 Route::post('application_details', [CustomAuthController::class, 'application_details'])->name('application_details'); 

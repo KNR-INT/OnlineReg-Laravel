@@ -16,21 +16,20 @@
 <body>
    
     <div class="container">
-    <!-- {{ url('store-student') }} -->
-    <form id="myForm" action="{{ url('store-student') }}">
+    <form id="myForm" action="{{ url('store-student') }}" enctype="multipart/form-data">
     @csrf
             <div class="form first">
                 <div class="details personal">
                     <div class="fields">
                         <div class="input-field">
                             <label>Name of the student*</label>
-                            <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g, '').replace(/(\.*)\./g, '$1')" maxlength="20">
+                            <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g,' ').replace(/(\.*)\./g, '$1')" maxlength="20">
                             <span id="name_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Gender*</label>
                             <select id="gender" name="gender">
-                                <option disabled selected value="">--SELECT--</option>
+                                <option disabled selected value="">--SELECT--</option>SS
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Others">Others</option>
@@ -182,7 +181,7 @@
                          </div>
                         <div class="input-field">
                             <label>Aadhar of the Student*</label>
-                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\.*)\./g, '$1')" maxlength="12">
+                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="12">
                             <span id="aadhar_err" style="color:red;"></span>
                         </div>
                         <br>
@@ -198,9 +197,11 @@
                         <br>
                         <div class="input-field">
                             <label> Upload a recent photograph of the Student * :</label>
-                            <input type="file" id="myFile" name="image"> </input>
+                            <input type="file" id="myFile" name="image" required> </input>
                             <!-- <span id="name_err" style="color:red;"></span> -->
                         </div>
+                        <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
+                        <input type="hidden" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
                         <br> 
                        <a class="btn btn-submit btn-outline-success float-center">Save and Continue <i class="uil uil-navigator"></i></a>
                        <div>
@@ -247,6 +248,7 @@
             let phy_clg = document.getElementById("phy_clg").value;
             let slp_need = document.getElementById("slp_need").value;
             let aadhar = document.getElementById("aadhar").value;
+            let appli_id = document.getElementById("appli_id").value;
             let transport = document.getElementById("transport").value;
             if(!name || !gender || !dob || !class_name || !birth_place || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport)
             {
@@ -359,8 +361,13 @@
                 }
             // name,gender,dob,class,birth_place,nationality,religion,mother_tongue,phy_clg,slp_need,aadhar,transport
             }
+            else if(aadhar.length != 12)
+            {
+                document.getElementById("aadhar_err").innerHTML = "InCorrect Aadhaar Number";
+            }
             else
             {
+                document.getElementById("aadhar_err").innerHTML = " ";
                 document.getElementById("myForm").submit();
             }
         });
@@ -412,7 +419,7 @@ body{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 800px;
+    min-height: 1050px;
     background-color: #fff;
     overflow: hidden;
 }

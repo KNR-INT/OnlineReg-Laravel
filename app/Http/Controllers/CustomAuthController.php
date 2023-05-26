@@ -131,24 +131,18 @@ class CustomAuthController extends Controller
     public function guidelinesmont() {   
         return view('guidelinesmont');
     }
-    public function parents_details()
-    {
-        
-        if(Auth::check()){
-            return view('parents_details');
-        }
-        
-        return redirect('/dashboard');
-        
-    }
+    
 
-    public function upload_doc()
-    {
-        if(Auth::check()){
+    public function parents_details(){
+        return view('parents_details');
+       }
+
+
+    public function upload_doc(){
             return view('upload_doc');
         }
-        return redirect('/dashboard');
-    }
+
+
     public function application_details()
     {
         $students = Student::all();
@@ -198,14 +192,14 @@ class CustomAuthController extends Controller
         }
         public function draft()
         {
-            if(Auth::check()){  
+           {  
                 return view('draft');
             }
             return redirect('/myapp');
         }
         public function submited()
         {
-            if(Auth::check()){  
+            {  
                 return view('submited');
             }
             return redirect('/myapp');

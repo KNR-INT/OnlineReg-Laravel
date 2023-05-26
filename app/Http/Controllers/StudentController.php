@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Student;
+use App\Models\Image;
 
 
 use Illuminate\Http\Request;
@@ -34,17 +35,21 @@ class StudentController extends Controller
         $student->slp_need = $request->input('slp_need');
         $student->aadhar = $request->input('aadhar');
         $student->transport = $request->input('transport');
-        if($request->hasfile('image'))
-        {
-            $file = $request->file('image');
-            $extenstion = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extenstion;
-            $file->move('uploads/students/', $filename);
-            $student->image = $filename;
-        }
+        $student->link_class = $request->input('page_type');
+        
 
         $student->update();
-        return redirect('/parents_details');
+
+        // $data= new Image();
+        // $file= $request->file('image');
+        // $filename= date('YmdHi').$file->getClientOriginalName();
+        //     $file-> move(public_path('public/Image'), $filename);
+        //     $data['image']= $filename;appli_id
+        
+        $class = $request->input('page_type');
+        $appli_id = $request->input('appli_id');
+
+        return redirect('/parents_details/a?class='.$class.'&appli_id='.$appli_id);
     } 
 
     
