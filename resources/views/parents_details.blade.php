@@ -13,7 +13,7 @@
 <body>
 
 <div class="container">
-<form action = "{{ url('store-parent') }}" method = "get">
+<form action = "{{ url('store-parent') }}" >
   <table class="table table-responsive">
     <thead>
       <tr>

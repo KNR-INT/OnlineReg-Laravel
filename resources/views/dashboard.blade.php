@@ -18,11 +18,11 @@
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
 	<a href="#" class="navbar-brand">NPS YPR</a>  		
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-		<span class="navbar-toggler-icon"></span>
+
 	</button>
 		</form>
 		<div class="navbar-nav ml-auto">
-			<a href="homepage" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
+			<a href="dashboard"  class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a>
 			<a href="{{ route('signout') }}"  class="nav-item nav-link active"><i class="fa fa-power-off"></i><span>Logout</span></a>
 			
 				</div>
@@ -244,40 +244,7 @@ body {
 </style>
 </head> 
 
- <div class="justify-content-center">
-             <div class="row ">
-            <div class="col-md-2">
-            </div>
-
-            <div class="col-md-4">
-                     <div class="card">
-                        <div class="alert alert-info mt-6">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="300" width="300">
-                        </div>
-                    <div class="card-body">
-                       <h4 class="card-footer text-center"><a href="newapp" >New Application </a></h4>       
-                    </div>
-                </div>
-             </div>
-<br></br>
-               <div class="col-md-4">
-             
-             <div class="card">
-              
-                        <div class="alert alert-info mt-6">
-                        <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Computer%20Lab.jpg" alt="" height="300" width="300">     
-                   </div>
-                    <div class="card-body">
-                       <h4 class="card-footer text-center"><a href="myapp" >My Application </a></h4>
-                      
-                    </div>
-                </div>
-                <div class="col-md-2">
-            </div>
-             </div>
-
-             
-</div>
+ 
 </div><style>
 	.card{
     margin-bottom: 10px;

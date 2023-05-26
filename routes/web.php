@@ -104,3 +104,5 @@ Route::get('students', [CustomAuthController::class, 'application_details']);
 
 
 Route::get('/users/{id}','CustomAuthController@show');
+
+

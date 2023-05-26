@@ -57,8 +57,12 @@
                 <div class="col-md-1">
              </div>
   </div> 
-           </div>   @include('footer')
+           </div> 
+           </div> 
+           </div> 
+               
+           
 </body>
 </html>
-
+@include('footer')
 

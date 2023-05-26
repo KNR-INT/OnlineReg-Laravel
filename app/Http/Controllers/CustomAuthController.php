@@ -191,23 +191,32 @@ class CustomAuthController extends Controller
         public function myapp()
 
         {
-            if(Auth::check()){  
-                return view('myapp');
-            }
-            return redirect('/dashboard');
+            return view('myapp');
         }
         public function draft()
         {
-            if(Auth::check()){  
-                return view('draft');
-            }
-            return redirect('/myapp');
+            $sessions = request()->session()->get('users.user_id');   
+            // print_r($sessions);
+            $ses_userid = $sessions[0];
+
+            $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Draft' AND `user_id` = '$ses_userid'");
+
+                return view('draft', compact('student'));
+           
         }
         public function submited()
         {
-            if(Auth::check()){  
-                return view('submited');
-            }
-            return redirect('/myapp');
+            
+            $sessions = request()->session()->get('users.user_id');   
+            // print_r($sessions);
+            $ses_userid = $sessions[0];
+
+            $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Submitted ' AND `user_id` = '$ses_userid'");
+           
+
+                return view('submited ', compact('student'));
+                
+           
         }
+
   }
