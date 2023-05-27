@@ -20,9 +20,6 @@ Route::post('home', [CustomAuthController::class, 'home']);
 
 
 
-Route::get('register', [CustomAuthController::class, 'index']);
-Route::post('register', [CustomAuthController::class, 'store']);
-
 Route::post('login', [CustomAuthController::class, 'login'])->name('newlogin');
 Route::get('otp', [CustomAuthController::class, 'otp'])->name('otp'); 
 

@@ -66,38 +66,41 @@
                                                   </tr>
                                              </thead>
                                              <tbody>
-                                             @foreach ($students as $item)
-                                             <input type="hidden" class='form-control id' id="{{ $item->id }}"  ></td>
+                                             <?php 
+                            $id = $_GET['appli_id'];
+                            $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
+                            ?>
+                                             <input type="hidden" class='form-control id' id="{{ $student->id }}"  ></td>
                                              
                                              <table align="left" cellpadding = "20" >
 <tr>
 <td><b>Name Of the Student</b></td>
-<td>{{ $item->name }}</td>
+<td>{{ $student->name }}</td>
 </td>
 
 </tr>
  
 <tr>
 <td><b>Gender</b></td>
-<td>{{ $item->gender }}</td>
+<td>{{ $student->gender }}</td>
 </td>
 </tr>
 
 <tr>
 <td><b>Nationality</b></td>
-<td>{{ $item->nationality }}</td>
+<td>{{ $student->nationality }}</td>
 </td>
 </tr>
  
 
 <td><b>Mother Tongue</b></td>
-<td>{{ $item->mother_tongue }}</td>
+<td>{{ $student->mother_tongue }}</td>
 </tr>
  
 <tr>
 <td><b>Aadhar Card No</b></td>
 <td>
-<td>{{ $item->aadhar }}</td>
+<td>{{ $student->aadhar }}</td>
 
 </td>
 </tr>
@@ -105,36 +108,35 @@
  
 <tr>
 <td><b>Date Of Birth</b></td>
-<td>{{ $item->dob }}</td>
+<td>{{ $student->dob }}</td>
 </td>
 </tr>
  
 <tr>
 <td><b>Class</b></td>
-<td>{{ $item->class }}</td>
+<td>{{ $student->class }}</td>
 </td>
 </tr>
  
 <tr>
 <td><b>Religion</b></td>
-<td>{{ $item->religion }}</td>
+<td>{{ $student->religion }}</td>
 </td>
 </tr>
  
 <tr>
 <td><b>Birth Place</b></td>
-<td>{{ $item->birth_place }}</td>
+<td>{{ $student->birth_place }}</td>
 </tr>
  
 <!----- Mobile Number ---------------------------------------------------------->
 <tr>
 <td><b>Mode Of Transport</b></td>
 <td>
-<td>{{ $item->transport }}</td>
+<td>{{ $student->transport }}</td>
 
 </td>
 </tr>
-@endforeach
 </tbody>
 </table>
 </div>

@@ -19,6 +19,39 @@
 <div class="container">
 <form id="myForm" action = "{{ url('store-parent') }}">
   <table class="table table-responsive">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+ <section class="step-wizard">
+        <ul class="step-wizard-list">
+            <li class="step-wizard-item ">
+                <span class="progress-count">1</span>
+               
+            </li>
+            <li class="step-wizard-item current-item">
+                <span class="progress-count">2</span>
+               
+            </li>
+            <li class="step-wizard-item">
+                <span class="progress-count">3</span>
+               
+            </li>
+            <li class="step-wizard-item ">
+                <span class="progress-count">4</span>
+                
+            </li>
+             <li class="step-wizard-item ">
+                <span class="progress-count">5</span>
+                
+            </li>
+             <li class="step-wizard-item">
+                <span class="progress-count">6</span>
+               
+            </li>
+        </ul>
+    </section>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  
     <thead>
       <tr>
         <th><h4><b>Father Details</b></h4></th>
@@ -130,15 +163,15 @@
                 <br>
                     <select required id="mother_country" name="mother_country" style="width: 440px;">
                     <option disabled selected value="">--SELECT--</option>
-                <option value="India"<?php if($student[0]->transport == "India"){   echo "SELECTED"; } ?>>India</option>
-                 <option value="America"<?php if($student[0]->transport == "America"){ echo "SELECTED"; } ?>>America</option>
-                <option value="Australia"<?php if($student[0]->transport == "Australia"){ echo "SELECTED"; } ?>>Australia</option>
-                <option value="School_bus"<?php if($student[0]->transport == "School_bus"){ echo "SELECTED"; } ?>>Brazil</option>
-                <option value="School_bus"<?php if($student[0]->transport == "School_bus"){ echo "SELECTED"; } ?>>Canada</option>
-                <option value="School_bus"<?php if($student[0]->transport == "School_bus"){ echo "SELECTED"; } ?>>Germany</option>
-                <option value="School_bus"<?php if($student[0]->transport == "School_bus"){ echo "SELECTED"; } ?>>France</option>
-                <option value="School_bus"<?php if($student[0]->transport == "School_bus"){ echo "SELECTED"; } ?>>Italy</option>
-                <option value="School_bus"<?php if($student[0]->transport == "School_bus"){ echo "SELECTED"; } ?>>Others</option>
+                <option value="India"<?php if($student[0]->mother_country == "India"){   echo "SELECTED"; } ?>>India</option>
+                 <option value="America"<?php if($student[0]->mother_country == "America"){ echo "SELECTED"; } ?>>America</option>
+                <option value="Australia"<?php if($student[0]->mother_country == "Australia"){ echo "SELECTED"; } ?>>Australia</option>
+                <option value="Brazil"<?php if($student[0]->mother_country == "Brazil"){ echo "SELECTED"; } ?>>Brazil</option>
+                <option value="Canada"<?php if($student[0]->mother_country == "Canada"){ echo "SELECTED"; } ?>>Canada</option>
+                <option value="Germany"<?php if($student[0]->mother_country == "Germany"){ echo "SELECTED"; } ?>>Germany</option>
+                <option value="France"<?php if($student[0]->mother_country == "France"){ echo "SELECTED"; } ?>>France</option>
+                <option value="Italy"<?php if($student[0]->mother_country == "Italy"){ echo "SELECTED"; } ?>>Italy</option>
+                <option value="Others"<?php if($student[0]->mother_country == "Others"){ echo "SELECTED"; } ?>>Others</option>
                      </select><span id="mother_country_err" style="color:red;"></span></td>
             </tr>
 
@@ -536,6 +569,120 @@
 
 
 <style>
+    /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+} */
+
+.step-wizard {
+    /* background-color:  #00008B;
+    background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%); */
+    height: 10vh;
+    width: 10%;
+    display: center;
+    justify-content: center;
+    align-items: center;
+}
+.step-wizard-list{
+    /* background: #fff;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    color: #333;
+    list-style-type: none;
+    border-radius: 10px; */
+    display: flex;
+    padding: 20px 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.step-wizard-item{
+    padding: 0 20px;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive:1;
+    flex-grow: 1;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 170px;
+    position: relative;
+}
+.step-wizard-item + .step-wizard-item:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 19px;
+    background:  #1338BE;
+    width: 100%;
+    height: 2px;
+    transform: translateX(-50%);
+    z-index: -10;
+}
+.progress-count{
+    height: 40px;
+    width:40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 auto;
+    position: relative;
+    z-index:10;
+    color: transparent;
+}
+.progress-count:after{
+    content: "";
+    height: 40px;
+    width: 40px;
+    background:  #1338BE;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -10;
+}
+.progress-count:before{
+    content: "";
+    height: 10px;
+    width: 20px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%) rotate(-45deg);
+    transform-origin: center center;
+}
+.progress-label{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.current-item .progress-count:before,
+.current-item ~ .step-wizard-item .progress-count:before{
+    display: none;
+}
+.current-item ~ .step-wizard-item .progress-count:after{
+    height:10px;
+    width:10px;
+}
+.current-item ~ .step-wizard-item .progress-label{
+    opacity: 0.5;
+}
+.current-item .progress-count:after{
+    background: #ff0000;
+    border: 2px solid #ff0000;
+}
+.current-item .progress-count{
+    color: #1338BE;
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *SSStable,tr,td
 {

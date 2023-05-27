@@ -60,7 +60,7 @@
                             $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
                             ?>
                             <label>Name of the student*</label>
-                            <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g,' ').replace(/(\.*)\./g, '$1')" maxlength="20" value="<?php echo $student[0]->name; ?>">
+                            <input type="text" placeholder="Enter Student name"  id="name" name="name" maxlength="20" value="<?php echo $student[0]->name; ?>" onchange="namevalidate()">
                             <span id="name_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
@@ -267,6 +267,27 @@
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        // function namevalidate() {
+        //     let name = document.getElementById("name").value;
+        //     if(!/^[a-zA-Z]*$/g.test(name)) {
+        //         document.getElementById("name_err").innerHTML = "Contains only alphabets";
+        //     }
+        //     else {
+        //         document.getElementById("name_err").innerHTML = "";
+        //     }
+            
+        // }
+
+        $('#name').on('change', function() {
+            if (/^[a-zA-Z]*$/g.test($(this).val())) {
+                document.getElementById("name_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("name_err").innerHTML = "Contains only alphabets";
+                // Contain other characters also
+            }
+        })
+
         $('#sibling_change').change(function(){
             let sibling_change = $(this).val();
             if(sibling_change == "Yes")
@@ -291,11 +312,15 @@
             let slp_need = document.getElementById("slp_need").value;
             let aadhar = document.getElementById("aadhar").value;
             let transport = document.getElementById("transport").value;
-            if(!name || !gender || !dob || !class_name || !birth_place || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport)
+            if(!name || !/^[a-zA-Z]*$/g.test(name) || !gender || !dob || !class_name || !birth_place || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport)
             {
                 if(!name)
                 {
                     document.getElementById("name_err").innerHTML = "This is Required Field";
+                }
+                else if(!/^[a-zA-Z]*$/g.test(name))
+                {
+                    document.getElementById("name_err").innerHTML = "Contains only alphabets";
                 }
                 else
                 {

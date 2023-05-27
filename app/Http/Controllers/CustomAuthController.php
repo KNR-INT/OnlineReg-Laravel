@@ -38,7 +38,7 @@ class CustomAuthController extends Controller
             return view('otp');          
         }
         else
-        {
+        { 
             $user_id = $users[0]->id;
             session()->push('users.user_id', $user_id);
             return view('otp');          
@@ -186,7 +186,7 @@ class CustomAuthController extends Controller
         // session()->push('users.id', $user_id);
         // return view('onlinereg');
         echo json_encode($user_id);
-        exit();
+        exit(); 
     }
     
         public function myapp()

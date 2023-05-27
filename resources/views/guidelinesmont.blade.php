@@ -126,7 +126,7 @@ I Agree
 
 <div>
 	<input type="hidden" id="class" value="<?php echo $_GET['class']; ?>">
-	<input type="hidden" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+	<input type="hidden" id="appli_id" value="">
 
 <?php 
 	$class = $_GET['class'];

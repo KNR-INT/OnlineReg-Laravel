@@ -23,7 +23,7 @@
  <section class="step-wizard">
         <ul class="step-wizard-list">
             <li class="step-wizard-item">
-                <span class="progress-count">1</span>
+                <span class="progress-count" background="green">1</span>
                
             </li>
             <li class="step-wizard-item">
