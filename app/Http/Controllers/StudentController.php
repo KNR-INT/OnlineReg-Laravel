@@ -16,9 +16,9 @@ class StudentController extends Controller
     }
     public function store(Request $request)
     {
-        $sessions = request()->session()->get('users.id');     
-        $ses_userid = $sessions[0];
-        $student = Student::find($ses_userid) ;
+       
+        $appli_id = $request->input('appli_id');
+        $student = Student::find($appli_id) ;
         $student->name = $request->input('name');
         $student->gender = $request->input('gender');
         $student->dob = $request->input('dob');
@@ -47,9 +47,9 @@ class StudentController extends Controller
         //     $data['image']= $filename;appli_id
         
         $class = $request->input('page_type');
-        $appli_id = $request->input('appli_id');
+        // $appli_id = $request->input('appli_id');
 
-        return redirect('/parents_details/a?class='.$class.'&appli_id='.$appli_id);
+        return redirect('/parents_details/a?class='.$class."&appli_id=".$appli_id);
     } 
 
     

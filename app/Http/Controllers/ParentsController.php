@@ -13,9 +13,8 @@ class ParentsController extends Controller
     }
     public function store(Request $request)
     {
-        $sessions = request()->session()->get('users.id');     
-        $ses_userid = $sessions[0];
-        $parent = Parent1::find($ses_userid);
+        $appli_id = $request->input('appli_id');
+        $parent = Parent1::find($appli_id);
         $parent->father_name = $request->input('father_name');
         $parent->father_mob = $request->input('father_mob');
         $parent->father_email_verified_at = $request->input('father_email_verified_at');
@@ -50,8 +49,7 @@ class ParentsController extends Controller
         $parent->mother_annual_income = $request->input('mother_annual_income');
         $class = $request->input('page_type');
         $parent->update();
-        return redirect('/upload_doc/a?class='.$class);
-
+        return redirect('/upload_doc/a?class='.$class."&appli_id=".$appli_id);
     } 
     public function edit($id)
     {

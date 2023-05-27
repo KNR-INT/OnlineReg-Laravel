@@ -1,36 +1,32 @@
 @include('header')
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>   
-</head>
-<body>
-
-
-        
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>  
+    
+  </head>
+  
+<body>  <div> 
+    <div class="container">
+<form id="myForm" action="{{ url('store-image') }}" enctype="multipart/form-data">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-<form action="{{ url('store-image') }}" enctype="multipart/form-data">
-   
-    <div class="container">
-    <section class="step-wizard">
+ <section class="step-wizard">
         <ul class="step-wizard-list">
-            <li class="step-wizard-item ">
+            <li class="step-wizard-item">
                 <span class="progress-count">1</span>
                
             </li>
-            <li class="step-wizard-item ">
+            <li class="step-wizard-item">
                 <span class="progress-count">2</span>
                
             </li>
@@ -52,72 +48,59 @@
             </li>
         </ul>
     </section>
-    <center> <header><b><u><h2>Upload Documents</h2></u></header></center>
-        <center>
-            <table style="justify-content:space-between;">
-
-                <tr>
-                    <td  style="width:400px;">
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="form first">
+                <div class="details personal">
+                    <div class="fields">
                         <div class="input-field">
-                            Upload Student Aadhar card * :  
+                            <?php 
+                            $id = $_GET['appli_id'];
+                            $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
+                            ?>
+                            <label>Upload Student Aadhar card * :</label>
                             <input type="file" id="Student_Aadhar_card" name="Student_Aadhar_card">
                             <span id="Student_Aadhar_card_err" style="color:red;"></span>
                         </div>
-                    </td>
-                    <td>
                         <div class="input-field">
-                            Upload Father's Aadhar card * :  
+                            <label>Upload Father's Aadhar card * :</label>
                             <input type="file" id="Fathers_Aadhar_card" name="Fathers_Aadhar_card">
                             <span id="Fathers_Aadhar_card_err" style="color:red;"></span>
                         </div>
-                    </td>
-                 </tr>
-                 <br>
-                 <tr>
-                    <td>
                         <div class="input-field">
-                            Birth Certificate Of Student * :  
-              <input type="file" id="Birth_Certificate_Of_Student"name="Birth_Certificate_Of_Student">
+                            <label>Birth Certificate Of Student * :</label>
+                            <input type="file" id="Birth_Certificate_Of_Student"name="Birth_Certificate_Of_Student">
                             <span id="Birth_Certificate_Of_Student_err" style="color:red;"></span>
                         </div>
-                    </td>
-                    <td>
                         <div class="input-field">
-                            Upload Mother's Aadhar card* :  
+                            <label> Upload Mother's Aadhar card* : </label>
                             <input type="file" id="Mothers_Aadhar_card" name="Mothers_Aadhar_card">
                             <span id="Mothers_Aadhar_card_err" style="color:red;"></span>
                         </div>
-                    </td>
-                </tr><br>
-                <tr>
-                    <td>
 
-                    </td>
-                    <?php
-                    $class = $_GET['class'];
-                    if($class == '1to9' || $class == '11')
-                    {
-                    ?>
-                    <div>
+               <?php
+                  $class = $_GET['class'];
+                 if($class == '1to9' || $class == '11')
+                        {
+                         ?>
                         <div class="input-field">
-                            Upload Previous year Marks Card's *:  
+                        <label> Upload Previous year Marks Card's *: </label>
                             <input type="file" id="myFile" name="Previous_year_Marks_Cards ">
                             <span id="Previous_year_Marks_Cards_err" style="color:red;"></span>
                         </div>
-                    </div>
                     <?php
                     }
                     ?>
-                </tr><br>
-            </table>
-        </center>
-        <br>
-        <?php
-                    if($class == '1to9' || $class == '11')
-                    {
-                    ?>
-        <center> <header><b><u><h3>Details of Schooling </h3></u></b></header></center>
-        <center>
+
+          
+                </div> 
+            </div>
+                
+            <?php 
+                if($class == '1to9' || $class == '11')
+                {
+                ?>
+                <center> <header><b><u><h3>Details of Schooling </h3></u></b></header></center>
+          <center>
             <table>
                 <tr>
                     <td >
@@ -183,36 +166,30 @@
             <?php
                     }
                     ?>
-            <br>
-            <br>
-            <br>   
-                </form>
-                <center>  
-             <button class="btn btn-back btn-primary"> Go back </button>
-             <button class="btn btn-submit btn-primary"> Save & continue</button>
               </center>
- 
-      
-         @include('footer')
-
-         <input type="text" id="class" value="<?php echo $_GET['class']; ?>">
-	        <input type="text" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+              <input type="hidden" id="class" value="<?php echo $_GET['class']; ?>">
+	        <input type="hidden" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+            <br>
+            <br>
+             <center>
+                       <a class="btn btn-back btn-outline-success float-center ">Go Back</a>
+                       <a class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
+                       <div></center>
+                       @include('footer')
             </div>
-        <div>
-            <script>
-                $('.btn-back').click(function(){
-            let class_name = document.getElementById("class").value;
-        let appli_id = document.getElementById("appli_id").value;
-	   alert(appli_id);
-		window.location.href = "{{ url('parents_details') }}/a?class="+class_name+"&appli_id="+appli_id;
-        });
-            </script>
+                </div> 
+                </div>
+    <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        
-
+        $('.btn-back').click(function(){
+            let class_name = document.getElementById("class").value;
+            let appli_id = document.getElementById("appli_id").value;
+            // alert(appli_id);
+            window.location.href = "{{ url('parents_details') }}/a?class="+class_name+"&appli_id="+appli_id;
+        });
         $('.btn-submit').click(function(){
-            alert("ok");
+            // alert("ok");
             
             const Student_Aadhar_card = document.getElementById("Student_Aadhar_card").value;
             const Fathers_Aadhar_card = document.getElementById("Fathers_Aadhar_card").value;
@@ -276,11 +253,20 @@
             }
         });
     </script>
-
+</body>
 
 
 <style>
-      .step-wizard {
+    /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Poppins", sans-serif;
+} */
+
+.step-wizard {
     /* background-color:  #00008B;
     background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%); */
     height: 10vh;
@@ -385,31 +371,29 @@
 .current-item .progress-count{
     color: #1338BE;
 }
+/* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-sec{
-    justify-content: space-between;
-}
 body{
-    min-height: 60vh;
+    min-height: 170vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .container{
     position: relative;
-    max-width: 1200px;
-    height:800px;
-    width: 90%;
+    max-width: 1100px;
+    width: 100%;
+    height: 100%;
     border-radius: 6px;
     padding: 50px;
     margin: 15px;
-    background-color: #fffdff;
+    background-color: #fffd;
     box-shadow: 0 5px 10px rgba(0,0,0,0.5);
 }
 .container header{
@@ -430,10 +414,8 @@ body{
 }
 .container form{
     position: relative;
-    margin-top: 5px;
-    min-height: 790px;
-    display: flex;
-    justify-content:space-between;
+    margin-top: 16px;
+    min-height: 1050px;
     background-color: #fff;
     overflow: hidden;
 }
@@ -442,6 +424,16 @@ body{
     transition: 0.3s ease;
 }
 
+form.secActive .form.second{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
 .container form .title{
     display: block;
     margin-bottom: 8px;
@@ -458,11 +450,15 @@ body{
 }
 form .fields .input-field{
     display: flex;
-    width: calc(100% / 2-15px);
+    width: calc(100% / 2 - 15px);
     flex-direction: column;
-    margin: 4px 0;
+    margin: 3px 0;
 }
-
+.input-field label{
+    font-size: 12px;
+    font-weight: 500;
+    color: #2e2e2e;
+}
 .input-field input, select{
     outline: none;
     font-size: 14px;
@@ -473,6 +469,17 @@ form .fields .input-field{
     padding: 0 15px;
     height: 42px;
     margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field select,
+.input-field input[type="date"]{
+    color: #707070;
+}
+.input-field input[type="date"]:valid{
+    color: #333;
 }
 .container form button, .backBtn{
     display: flex;
@@ -508,7 +515,26 @@ form .buttons{
     display: flex;
     align-items: center;
 }
+form .buttons button , .backBtn{
+    margin-right: 14px;
+}
 
+@media (max-width: 750px) {
+    .container form{
+        overflow-y: scroll;
+    }
+    .container form::-webkit-scrollbar{
+       display: none;
+    }
+    form .fields .input-field{
+        width: calc(100% / 2 - 15px);
+    }
+}
+
+@media (max-width: 550px) {
+    form .fields .input-field{
+        width: 100%;
+    }
+}
 </style>
-</body>
 </html>

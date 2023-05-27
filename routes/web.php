@@ -82,7 +82,6 @@ Route::post('create','CustomAuthController@insert');
 Route::get('students', [CustomAuthController::class, 'onlinereg']);
 Route::get('store-student', [StudentController::class, 'store']);
 Route::get('store-parent', [ParentsController::class, 'store']);
-Route::get('parents_details', [ParentsController::class, 'parents_details']);
 Route::get('get-data/{store-parent}', [ParentsController::class, 'edit']);
 
 
@@ -94,13 +93,13 @@ Route::get('get-data/{store-parent}', [ParentsController::class, 'edit']);
 Route::get('/add-image',[ImageUploadController::class,'addImage'])->name('images.add');
 
 //For storing an image
-Route::post('/store-image',[ImageUploadController::class,'storeImage'])
-->name('images.store');
+Route::get('/store-image',[ImageUploadController::class,'storeImage'])->name('images.store');
 
 //For showing an image
 Route::get('/view-image',[ImageUploadController::class,'upload_doc'])->name('images.view');
 
 Route::get('students', [CustomAuthController::class, 'application_details']);
+Route::get('create-id', [CustomAuthController::class, 'create_id']);
 
 
 Route::get('/users/{id}','CustomAuthController@show');

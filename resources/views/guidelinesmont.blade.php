@@ -126,12 +126,8 @@ I Agree
 
 <div>
 	<input type="hidden" id="class" value="<?php echo $_GET['class']; ?>">
+	<input type="hidden" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
 
-    <?php
-    $sessions = request()->session()->get('users.id');     
-    $ses_userid = $sessions[0]; 
-    ?>
-	<input type="hidden" id="appli_id" value="<?php echo $ses_userid; ?>">
 <?php 
 	$class = $_GET['class'];
 ?>
@@ -147,7 +143,23 @@ I Agree
     <script>
   $('#checkbox').click(function() {
         if ($(this).is(':checked')) {
+		let class_name = document.getElementById("class").value;
+
         		$('#btn1').removeAttr('disabled');
+        		$('#checkbox').attr('disabled', 'disabled');
+
+			   $.ajax({
+                                   url: "{{ url('create-id') }}",
+                                   type: "GET",
+                                   data: {
+                                        class_name: class_name,
+                                   },
+                                   dataType: 'json',
+                                   success: function(response) {
+								// alert(response)
+                                        document.getElementById("appli_id").value = response;
+                                   }
+                              });
             
         } else {
             $('#btn1').attr('disabled', 'disabled');
@@ -157,6 +169,7 @@ I Agree
 	$('.btn-submit').click(function() {
         let class_name = document.getElementById("class").value;
         let appli_id = document.getElementById("appli_id").value;
+	//    alert(appli_id);
 		window.location.href = "{{ url('onlinereg') }}/a?class="+class_name+"&appli_id="+appli_id;
     });
 </script>

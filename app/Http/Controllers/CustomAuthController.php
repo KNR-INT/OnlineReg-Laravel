@@ -139,7 +139,7 @@ class CustomAuthController extends Controller
 
 
     public function upload_doc(){
-            return view('upload_doc');
+            return view('upload_image');
         }
 
 
@@ -168,6 +168,11 @@ class CustomAuthController extends Controller
 
  public function onlinereg()
     {
+        return view('onlinereg');
+    }
+
+    public function create_id()
+    {
         $session = request()->session()->get('login.email');            
         $ses_email = $session[0];
         $sessions = request()->session()->get('users.user_id');     
@@ -177,9 +182,11 @@ class CustomAuthController extends Controller
         DB::table('students')->insert($data);
         $users = DB::select("SELECT * FROM `students` WHERE `email_id` = '$ses_email' ORDER BY `id` DESC LIMIT 1");
         $user_id = $users[0]->id;
-        Session::forget('users.id');
-        session()->push('users.id', $user_id);
-        return view('onlinereg');
+        // Session::forget('users.id');
+        // session()->push('users.id', $user_id);
+        // return view('onlinereg');
+        echo json_encode($user_id);
+        exit();
     }
     
         public function myapp()

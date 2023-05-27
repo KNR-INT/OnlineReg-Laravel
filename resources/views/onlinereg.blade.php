@@ -55,23 +55,26 @@
                 <div class="details personal">
                     <div class="fields">
                         <div class="input-field">
+                            <?php 
+                            $id = $_GET['appli_id'];
+                            $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
+                            ?>
                             <label>Name of the student*</label>
-                            <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g,' ').replace(/(\.*)\./g, '$1')" maxlength="20">
+                            <input type="text" placeholder="Enter Student name"  id="name" name="name" oninput="this.value = this.value.replace(/[^A-Za-z.]/g,' ').replace(/(\.*)\./g, '$1')" maxlength="20" value="<?php echo $student[0]->name; ?>">
                             <span id="name_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Gender*</label>
                             <select id="gender" name="gender">
                                 <option disabled selected value="">--SELECT--</option>SS
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Others">Others</option>
+                                <option value="Boy" <?php if($student[0]->gender == "Boy"){ echo "SELECTED"; } ?>>Boy</option>
+                                <option value="Girl" <?php if($student[0]->gender == "Girl"){ echo "SELECTED"; } ?>>Girl</option>
                             </select>
                             <span id="gender_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Date of Birth*</label>
-                            <input type="date" placeholder="Enter birth date"  id="dob" name="dob">
+                            <input type="date" placeholder="Enter birth date"  id="dob" name="dob" value="<?php echo $student[0]->dob; ?>">
                             <span id="dob_err" style="color:red;"></span>
                         </div>
                         <?php 
@@ -85,37 +88,41 @@
                                     if($class == "mont")
                                     {
                                     ?>
-                                    <option value="Montessori I">Montessori I</option>
-                                    <option value="Montessori II" >Montessori II</option>
-                                    <option value="Montessori II">Montessori III</option>
+                                    <option value="Montessori I"<?php if($student[0]->class == "Montessori I"){ echo "SELECTED"; } ?>>Montessori I</option>
+
+                                    <option value="Montessori II" <?php if($student[0]->class == "Montessori II"){ echo "SELECTED"; } ?> >Montessori II</option>
+
+                                    <option value="Montessori III" <?php if($student[0]->class == "Montessori III"){ echo "SELECTED"; } ?>>Montessori III</option>
                                     <?php
                                     }
                                     elseif($class == "kinder")
                                     {
                                     ?>
-                                    <option value="PRE-KG">PRE-KG</option>
-                                    <option value="Kindergarten I">Kindergarten I</option>
-                                    <option value="Kindergarten II" >Kindergarten II</option>
+                                    <option value="PRE-KG"<?php if($student[0]->class == "PRE-KG"){ echo "SELECTED"; } ?>>PRE-KG</option>
+
+                                    <option value="Kindergarten I"<?php if($student[0]->class == "Kindergarten I"){ echo "SELECTED"; } ?>>Kindergarten I</option>
+
+                                    <option value="Kindergarten II" <?php if($student[0]->class == "Kindergarten II"){ echo "SELECTED"; } ?>>Kindergarten II</option>
                                     <?php
                                     }
                                     elseif($class == "1to9")
                                     {
                                     ?>
-                                    <option value="Grade 1">Grade 1</option>
-                                    <option value="Grade 2">Grade 2</option>
-                                    <option value="Grade 3">Grade 3</option>
-                                    <option value="Grade 4">Grade 4</option>
-                                    <option value="Grade 5">Grade 5</option>
-                                    <option value="Grade 6">Grade 6</option>
-                                    <option value="Grade 7">Grade 7</option>
-                                    <option value="Grade 8">Grade 8</option>
-                                    <option value="Grade 9">Grade 9</option>
+                                    <option value="Grade 1"<?php if($student[0]->class == "Grade 1"){ echo "SELECTED"; } ?>>Grade 1</option>
+                                    <option value="Grade 2"<?php if($student[0]->class == "Grade 2"){ echo "SELECTED"; } ?>>Grade 2</option>
+                                    <option value="Grade 3"<?php if($student[0]->class == "Grade 3"){ echo "SELECTED"; } ?>>Grade 3</option>
+                                    <option value="Grade 4"<?php if($student[0]->class == "Grade 4"){ echo "SELECTED"; } ?>>Grade 4</option>
+                                    <option value="Grade 5"<?php if($student[0]->class == "Grade 5"){ echo "SELECTED"; } ?>>Grade 5</option>
+                                    <option value="Grade 6"<?php if($student[0]->class == "Grade 6"){ echo "SELECTED"; } ?>>Grade 6</option>
+                                    <option value="Grade 7"<?php if($student[0]->class == "Grade 7"){ echo "SELECTED"; } ?>>Grade 7</option>
+                                    <option value="Grade 8"<?php if($student[0]->class == "Grade 8"){ echo "SELECTED"; } ?>>Grade 8</option>
+                                    <option value="Grade 9"<?php if($student[0]->class == "Grade 9"){ echo "SELECTED"; } ?>>Grade 9</option>
                                     <?php
                                     }
                                     elseif($class == "11")
                                     {
                                     ?>
-                                    <option value="Grade 11">Grade 11</option>
+                                    <option value="Grade 11" <?php if($student[0]->class == "Grade 11"){ echo "SELECTED"; } ?>>Grade 11</option>
                                     <?php
                                     }
                                 ?>
@@ -125,17 +132,17 @@
                         </div>
                         <div class="input-field">
                             <label>Birth Place*</label>
-                            <input type="text" placeholder="Enter your Birth Place"  id="birth_place" name="birth_place">
+                            <input type="text" placeholder="Enter your Birth Place"  id="birth_place" name="birth_place" value="<?php echo $student[0]->birth_place; ?>">
                             <span id="birth_place_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Nationality*</label>
                             <select  id="nationality" name="nationality">
                                 <option disabled selected value="">--SELECT--</option>
-                                <option value="Indian">Indian</option>
-                                <option value="American">American</option>
-                                <option value="USA">USA</option>
-                                <option value="Others">Others</option>
+                                <option value="Indian" <?php if($student[0]->nationality == "Indian"){ echo "SELECTED"; } ?>>Indian</option>
+                                <option value="American"<?php if($student[0]->nationality == "American"){ echo "SELECTED"; } ?>>American</option>
+                                <option value="USA"<?php if($student[0]->nationality == "USA"){ echo "SELECTED"; } ?>>USA</option>
+                                <option value="Others"<?php if($student[0]->nationality == "Others"){ echo "SELECTED"; } ?>>Others</option>
                             </select>
                             <span id="nationality_err" style="color:red;"></span>
                         </div>
@@ -143,10 +150,10 @@
                             <label>Religion*</label>
                             <select  id="religion" name="religion">
                                 <option disabled selected value="">--SELECT--</option>
-                                <option value="Hindu">Hindu</option>
-                                <option value="Muslium">Muslium</option>
-                                <option value="Christian">Christian</option>
-                                <option value="Others">Others</option>
+                                <option value="Hindu" <?php if($student[0]->religion == "Hindu"){ echo "SELECTED"; } ?>>Hindu</option>
+                                <option value="Muslium"<?php if($student[0]->religion == "Muslium"){ echo "SELECTED"; } ?>>Muslium</option>
+                                <option value="Christian"<?php if($student[0]->religion == "Christian"){ echo "SELECTED"; } ?>>Christian</option>
+                                <option value="Others"<?php if($student[0]->religion == "Others"){ echo "SELECTED"; } ?>>Others</option>
                             </select>
                             <span id="religion_err" style="color:red;"></span>
                         </div>
@@ -154,10 +161,10 @@
                             <label>Mother Tongue*</label>
                             <select id="mother_tongue" name="mother_tongue">
                                 <option disabled selected value="">--SELECT--</option>
-                                <option value="Kannada">Kannada</option>
-                                <option value="Tamil">Tamil</option>
-                                <option value="Telugu">Telugu</option>
-                                <option value="Hindi">Hindi</option>
+                                <option value="Kannada"<?php if($student[0]->mother_tongue == "Kannada"){ echo "SELECTED"; } ?>>Kannada</option>
+                                <option value="Tamil"<?php if($student[0]->mother_tongue == "Tamil"){ echo "SELECTED"; } ?>>Tamil</option>
+                                <option value="Telugu"<?php if($student[0]->mother_tongue == "Telugu"){ echo "SELECTED"; } ?>>Telugu</option>
+                                <option value="Hindi"<?php if($student[0]->mother_tongue == "Hindi"){ echo "SELECTED"; } ?>>Hindi</option>
                             </select>
                             <span id="mother_tongue_err" style="color:red;"></span>
                         </div>
@@ -198,8 +205,8 @@
                             <label>Is your child physically challenged?</label>
                             <select  id="phy_clg" name="phy_clg">
                                 <option disabled selected value="">--SELECT--</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
+                                <option value="Yes" <?php if($student[0]->phy_clg == "Yes"){ echo "SELECTED"; } ?>>Yes</option>
+                                <option value="No" <?php if($student[0]->phy_clg == "No"){ echo "SELECTED"; } ?>>No</option>
                             </select>
                             <span id="phy_clg_err" style="color:red;"></span>
                          </div>
@@ -207,14 +214,14 @@
                             <label>Child has any special need/learning challenges?</label>
                             <select  id="slp_need" name="slp_need">
                                 <option disabled selected value="">--SELECT--</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
+                                <option value="Yes" <?php if($student[0]->slp_need == "Yes"){ echo "SELECTED"; } ?>>Yes</option>
+                                <option value="No" <?php if($student[0]->slp_need == "No"){ echo "SELECTED"; } ?>>No</option>
                             </select>
                             <span id="slp_need_err" style="color:red;"></span>
                          </div>
                         <div class="input-field">
                             <label>Aadhar of the Student*</label>
-                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="12">
+                            <input type="text" placeholder="Enter Student Aadhar"  id="aadhar" name="aadhar" value="<?php echo $student[0]->aadhar; ?>" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="12">
                             <span id="aadhar_err" style="color:red;"></span>
                         </div>
                         <br>
@@ -222,8 +229,8 @@
                             <label>Mode of transport*</label>
                             <select  id="transport" name="transport">
                                 <option disabled selected value="">--SELECT--</option>
-                                <option value="School_bus">School Bus</option>
-                                <option value="Private">Private</option>
+                                <option value="School_bus"<?php if($student[0]->transport == "School_bus"){ echo "SELECTED"; } ?>>School Bus</option>
+                                <option value="Private"<?php if($student[0]->transport == "Private"){ echo "SELECTED"; } ?>>Private</option>
                             </select>
                             <span id="transport_err" style="color:red;"></span>
                         </div>
@@ -234,7 +241,8 @@
                             <!-- <span id="name_err" style="color:red;"></span> -->
                         </div>
                         <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
-                        <input type="hidden" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+                        <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+                        
                         <br> 
                        <a  type="submit" class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
                        <div>
@@ -282,7 +290,6 @@
             let phy_clg = document.getElementById("phy_clg").value;
             let slp_need = document.getElementById("slp_need").value;
             let aadhar = document.getElementById("aadhar").value;
-            let appli_id = document.getElementById("appli_id").value;
             let transport = document.getElementById("transport").value;
             if(!name || !gender || !dob || !class_name || !birth_place || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport)
             {
