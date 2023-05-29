@@ -48,8 +48,11 @@ class ParentsController extends Controller
         $parent->mother_office_number = $request->input('mother_office_number');
         $parent->mother_annual_income = $request->input('mother_annual_income');
         $class = $request->input('page_type');
+
+        $student->link_class = $request->input('page_type');
+
         $parent->update();
-        return redirect('/upload_doc/a?class='.$class."&appli_id=".$appli_id);
+ return redirect('/upload_doc/a?class='.$class.'&appli_id='.$appli_id);    
     } 
     public function edit($id)
     {

@@ -245,5 +245,4 @@ body {
 	.card{
     margin-bottom: 10px;
 }
-</style>
-@include('footer')
+</style>@include('footer')
