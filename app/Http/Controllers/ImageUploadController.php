@@ -2,47 +2,66 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Image;
+use App\Models\Student;
 class ImageUploadController extends Controller
 {
+    //Add image
     public function addImage(){
         return view('add_image');
     }
     //Store image
     public function storeImage(Request $request){
-        $data= new Image();
+        //  echo public_path('public\Image');
+            $appli_id = $request->input('appli_id');
+            $class = $request->input('class');
+            if ($request->file('student_aadhar_card')) {
+               $file= $request->file('Fathers_Aadhar_card');
+                $file= $request->file('Birth_Certificate_Of_Student');
+                $file= $request->file('Mothers_Aadhar_card');
+                $file= $request->file('Previous_year_Marks_Cards');
 
-            $file= $request->file('image');
-            $file1= $request->file('image1');
-            $file2= $request->file('image2');
-            $file3= $request->file('image3');
+               
+            }
+            $student = Student::find($appli_id);
 
-            
-            $filename= date('YmdHi').$file->getClientOriginalName();
-            $file-> move(public_path('public/Image'), $filename);
-            $data['student_adr']= $filename;
+        $data= new Student();
 
-            $filename1= date('YmdHi').$file1->getClientOriginalName();
-            $file1-> move(public_path('public/Image'), $filename1);
-            $data['father_aadhar']= $filename1;
+    
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+        ]);
 
-            $filename2= date('YmdHi').$file2->getClientOriginalName();
-            $file2-> move(public_path('public/Image'), $filename2);
-            $data['birth_cer']= $filename2;
+        if ($request->file('image')->isValid()) {
+            $imageName = $appli_id . '_filename.' . $request->image->extension();
+            $request->image->move(public_path('public\Image'), $imageName);
 
-            $filename3= date('YmdHi').$file3->getClientOriginalName();
-            $file3-> move(public_path('public/Image'), $filename3);
-            $data['mother_aadhar']= $filename3;
-            
-        $data->save();
-        return redirect('/application_details/a?class='.$class); 
+                $student->student_adr=$imageName;
+                $student->father_aadhar=$imageName;
+                $student->birth_cer=$imageName;
+                $student->mother_aadhar=$imageName;
+                $student->pre_year_markcard=$imageName;
+
+               
+                
+
+ 
+
+     $student->update();
+           
+        } 
+                   
+        $class = $request->input('page_type');
+     
+         return redirect('/application_details/a?class='.$class."&appli_id=".$appli_id); 
+                
+       
     }
-
-        public function edit($id)
-        {
-            $Parent->update();
-            return redirect('/application_details');
+		//View image
+        public function upload_doc(){
+            $imageData= Image::all();
+            return view('application_details');
         }
-      
+        
+
+    }   
    
-}

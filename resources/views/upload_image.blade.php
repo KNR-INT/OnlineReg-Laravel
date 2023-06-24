@@ -16,14 +16,15 @@
   
 <body>  <div> 
     <div class="container">
-<form id="myForm" action="{{ url('store-image') }}" enctype="multipart/form-data">
+<form id="myForm"  action="{{ url('storeImage') }}" method="post" enctype="multipart/form-data">
+    @csrf
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
  <section class="step-wizard">
         <ul class="step-wizard-list">
             <li class="step-wizard-item">
-                <span class="progress-count" background="green">1</span>
+                <span class="progress-count">1</span>
                
             </li>
             <li class="step-wizard-item">
@@ -58,25 +59,36 @@
                             $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
                             ?>
                             <label>Upload Student Aadhar card * :</label>
-                            <input type="file" id="Student_Aadhar_card" name="Student_Aadhar_card">
+                            <input type="file" id="Student_Aadhar_card" name="image"  onchange="preview()" >
+                            <img id="blah" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Student_Aadhar_card_err" style="color:red;"></span>
                         </div>
+
+                      
+
+
                         <div class="input-field">
                             <label>Upload Father's Aadhar card * :</label>
-                            <input type="file" id="Fathers_Aadhar_card" name="Fathers_Aadhar_card">
+                            <input type="file" id="Fathers_Aadhar_card" name="image1"  onchange="preview1()">
+                            <img id="blah1" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Fathers_Aadhar_card_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Birth Certificate Of Student * :</label>
-                            <input type="file" id="Birth_Certificate_Of_Student"name="Birth_Certificate_Of_Student">
+                            <input type="file" id="Birth_Certificate_Of_Student"name="image2"  onchange="preview2()">
+                            <img id="blah2" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Birth_Certificate_Of_Student_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label> Upload Mother's Aadhar card* : </label>
-                            <input type="file" id="Mothers_Aadhar_card" name="Mothers_Aadhar_card">
+                            <input type="file" id="Mothers_Aadhar_card" name="image3"   onchange="preview3()">
+                            <img id="blah3" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Mothers_Aadhar_card_err" style="color:red;"></span>
                         </div>
 
+
+
+                        
                <?php
                   $class = $_GET['class'];
                  if($class == '1to9' || $class == '11')
@@ -84,7 +96,7 @@
                          ?>
                         <div class="input-field">
                         <label> Upload Previous year Marks Card's *: </label>
-                            <input type="file" id="myFile" name="Previous_year_Marks_Cards ">
+                            <input type="file" id="Previous_year_Marks_Cards" name="Previous_year_Marks_Cards ">
                             <span id="Previous_year_Marks_Cards_err" style="color:red;"></span>
                         </div>
                     <?php
@@ -167,8 +179,8 @@
                     }
                     ?>
               </center>
-              <input type="hidden" id="class" value="<?php echo $_GET['class']; ?>">
-	        <input type="hidden" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+                <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
+                <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
             <br>
             <br>
              <center>
@@ -179,15 +191,124 @@
             </div>
                 </div> 
                 </div>
+<script>
+    function preview() {
+   blah.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview1() {
+   blah1.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview2() {
+   blah2.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview3() {
+   blah3.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+      function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah1')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah2')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah3')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission
+    var formData = new FormData();
+    var imageFile = document.getElementById('Student_Aadhar_card').files[0];
+     var imageFile = document.getElementById('Fathers_Aadhar_card').files[1];
+      var imageFile = document.getElementById('Birth_Certificate_Of_Student').files[2];
+       var imageFile = document.getElementById('Mothers_Aadhar_card').files[3];
+       var imageFile = document.getElementById('Previous_year_Marks_Cards').files[4];
+    formData.append('image', imageFile);
+
+    axios.post('/upload-image', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then(function(response) {
+        // Handle the response here
+        console.log(response);
+    })
+    .catch(function(error) {
+        // Handle error
+        console.log(error);
+    });
+});
+</script>
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $('.btn-back').click(function(){
-            let class_name = document.getElementById("class").value;
+            let class_name = document.getElementById("page_type").value;
             let appli_id = document.getElementById("appli_id").value;
-            // alert(appli_id);
             window.location.href = "{{ url('parents_details') }}/a?class="+class_name+"&appli_id="+appli_id;
         });
+        
         $('.btn-submit').click(function(){
             // alert("ok");
             

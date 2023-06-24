@@ -62,7 +62,7 @@
                 </div>
             </div>
              </div>
-             
+			 @include('footer')    
 </div>
 </div>
 
@@ -245,4 +245,4 @@ body {
 	.card{
     margin-bottom: 10px;
 }
-</style>@include('footer')
+</style>

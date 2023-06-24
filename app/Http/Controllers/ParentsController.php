@@ -49,7 +49,7 @@ class ParentsController extends Controller
         $parent->mother_annual_income = $request->input('mother_annual_income');
         $class = $request->input('page_type');
 
-        $student->link_class = $request->input('page_type');
+        // $student->link_class = $request->input('page_type');
 
         $parent->update();
  return redirect('/upload_doc/a?class='.$class.'&appli_id='.$appli_id);    

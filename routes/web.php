@@ -5,6 +5,19 @@
     use App\Http\Controllers\StudentController;
     use App\Http\Controllers\ParentsController;
     use App\Http\Controllers\ImageUploadController;
+    use App\Http\Controllers\MailController;
+    use App\Http\Controllers\OtpController;
+    use App\Http\Controllers\OtpMailController;
+    use App\Http\Controllers\OtpMail;
+    use App\Http\Controllers\WebsiteController;
+    use Illuminate\Support\Facades\Hash;
+    use App\Http\Controllers\PaytmController;
+    use App\Models\PaytmWallet;
+
+
+
+
+
     use App\Models\Student;
     use App\Models\Parent1;
 
@@ -21,6 +34,10 @@ Route::post('home', [CustomAuthController::class, 'home']);
 
 
 Route::post('login', [CustomAuthController::class, 'login'])->name('newlogin');
+
+
+
+
 Route::get('otp', [CustomAuthController::class, 'otp'])->name('otp'); 
 
 Route::post('otp', [CustomAuthController::class, 'otp'])->name('otp'); 
@@ -52,14 +69,17 @@ Route::post('upload_doc/{id}', [CustomAuthController::class, 'upload_doc'])->nam
 Route::get('upload_doc/{id}', [CustomAuthController::class, 'upload_doc'])->name('upload_doc'); 
 
 
-Route::post('application_details', [CustomAuthController::class, 'application_details'])->name('application_details'); 
-Route::get('application_details', [CustomAuthController::class, 'application_details'])->name(''); 
+Route::post('application_details/{id}', [CustomAuthController::class, 'application_details'])->name('application_details'); 
+Route::get('application_details/{id}', [CustomAuthController::class, 'application_details'])->name(''); 
 
-Route::post('payment', [CustomAuthController::class, 'payment'])->name('payment'); 
-Route::get('payment', [CustomAuthController::class, 'payment'])->name('payment'); 
 
-Route::post('admitted', [CustomAuthController::class, 'admitted'])->name('admitted'); 
-Route::get('admitted', [CustomAuthController::class, 'admitted'])->name('admitted'); 
+Route::get('image/{filename}', 'CustomAuthController@displayImage')->name('image.displayImage');
+
+Route::post('payment/{id}', [CustomAuthController::class, 'payment'])->name('payment'); 
+Route::get('payment/{id}', [CustomAuthController::class, 'payment'])->name('payment'); 
+
+Route::post('admitted/{id}', [CustomAuthController::class, 'admitted'])->name('admitted'); 
+Route::get('admitted/{id}', [CustomAuthController::class, 'admitted'])->name('admitted'); 
 
 Route::post('myapp', [CustomAuthController::class, 'myapp'])->name('myapp'); 
 Route::get('myapp', [CustomAuthController::class, 'myapp'])->name('myapp'); 
@@ -78,27 +98,30 @@ Route::post('create','CustomAuthController@insert');
 
 Route::get('students', [CustomAuthController::class, 'onlinereg']);
 Route::get('store-student', [StudentController::class, 'store']);
+
 Route::get('store-parent', [ParentsController::class, 'store']);
 Route::get('get-data/{store-parent}', [ParentsController::class, 'edit']);
-
-
-  
-  
+ 
 // Route::get('image-upload', [ ImageUploadController::class, 'upload_doc' ])->name('image.upload');
 // Route::post('image-upload', [ ImageUploadController::class, 'imageUploadPost' ])->name('image.upload.post');
-
 Route::get('/add-image',[ImageUploadController::class,'addImage'])->name('images.add');
 
 //For storing an image
-Route::get('/store-image',[ImageUploadController::class,'storeImage'])->name('images.store');
+Route::post('/storeImage',[ImageUploadController::class,'storeImage']);
+Route::get('/update-applino',[StudentController::class,'updateapplino']);
 
 //For showing an image
 Route::get('/view-image',[ImageUploadController::class,'upload_doc'])->name('images.view');
-
 Route::get('students', [CustomAuthController::class, 'application_details']);
 Route::get('create-id', [CustomAuthController::class, 'create_id']);
 
 
 Route::get('/users/{id}','CustomAuthController@show');
 
+Route::get('/generate-otp/{email}', [OtpController::class, 'generateOtp']);
+Route::get('/index', [WebsiteController::class, 'index']); 
 
+//Paytm Payment
+Route::get('paytm-payment',[PaytmController::Class, 'paytmPayment'])->name('paytm.payment');
+Route::get('paytm-callback',[PaytmController::Class, 'paytmCallback'])->name('paytm.callback');
+Route::get('paytm-purchase',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');

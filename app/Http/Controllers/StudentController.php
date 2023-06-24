@@ -36,21 +36,58 @@ class StudentController extends Controller
         $student->aadhar = $request->input('aadhar');
         $student->transport = $request->input('transport');
         $student->link_class = $request->input('page_type');
+        $student->sec_language = $request->input('sec_language');
+        $student->third_language = $request->input('third_language');
         
 
-        $student->update();
 
-        // $data= new Image();
-        // $file= $request->file('image');
-        // $filename= date('YmdHi').$file->getClientOriginalName();
-        //     $file-> move(public_path('public/Image'), $filename);
-        //     $data['image']= $filename;appli_id
-        
+        // $requestData = $request->all();
+        // $fileName = time().$request->file('image')->getClientOriginalName();
+        // $path = $request->file('image')->storeAs(public_path('public\Image'));
+        // $requestData["image"] = '/storage/'.$path;
+        // Student::create($requestData);
+
+
+        // if (isset($request['file']) && $request['file']['error'] === UPLOAD_ERR_OK) {
+        //     // File is available, continue with processing
+        //     $file = $request['file'];
+        //     $filename = $file['image'];
+        //     // Rest of your code
+        // } else {
+        //     // Handle the case where no file was uploaded or an error occurred
+        // }
+
+
+
+
+        // if ($request->file('upload')) {
+        //     $file= $request->file('upload');
+        // }
+        // $request->validate([
+        //     'image' => 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+        // ]);
+        //   if ($request->file('image')->isValid()) {
+        //     $imageName = $appli_id . '_filename.' . $request->image->extension();
+        //     $request->image->move(public_path('public\Image'), $imageName);
+        //   $student->image=$imageName;
+
+            
+          $student->update();
+             
         $class = $request->input('page_type');
-        // $appli_id = $request->input('appli_id');
-
         return redirect('/parents_details/a?class='.$class."&appli_id=".$appli_id);
-    } 
+    }   
 
+    public function updateapplino(Request $request)
+    {
+       
+        $appli_id = $request->input('appli_id');
+        $student = Student::find($appli_id) ;
+        $student->application_no = $request->input('appli_no');
+        $student->update();
+             
+        $class = $request->input('page_type');
+        return redirect('/payment/a?class='.$class."&appli_id=".$appli_id);
+    }
     
 }
