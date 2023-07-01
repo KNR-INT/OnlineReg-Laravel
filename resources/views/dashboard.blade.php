@@ -42,6 +42,8 @@
                         <div class="alert alert-info">
                         <img src="https://cache.careers360.mobi/media/schools/social-media/media-gallery/8350/2019/7/20/National%20Public%20School-Art_Craft.jpg" alt="" height="250" width="310">
                         </div>
+                    <div class="card-body">
+                        
                     <div class="card-body"> 
                        <h4 class="card-footer text-center"><a href="newapp" class="d-block">New Application</a></h4>
                        </div>
@@ -62,6 +64,7 @@
             </div>
 			<center> @include('footer')  </center>  
              </div>
+             
 			
 </div>
 </div>
@@ -245,4 +248,5 @@ body {
 	.card{
     margin-bottom: 10px;
 }
+</style>@include('footer')
 </style>

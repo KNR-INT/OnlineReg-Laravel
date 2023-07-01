@@ -16,6 +16,7 @@
   
 <body>  <div> 
     <div class="container">
+
         
 <form id="myForm"  action="{{ url('storeImage') }}" method="post" enctype="multipart/form-data">
     @csrf
@@ -61,9 +62,8 @@
                             $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
                             ?>
                             <label>Upload Student Aadhar card * :</label>
-                            <input type="file" id="Student_Aadhar_card" name="image"  onchange="preview()" >
-                            <img id="blah" src="#"  style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
-                            <span id="Student_Aadhar_card_err" style="color:red;"></span>
+<input type="file" id="Student_Aadhar_card" name="image"  onchange="preview()" >
+                            <img id="blah" src="#"  style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">                            <span id="Student_Aadhar_card_err" style="color:red;"></span>
                         </div>
 
                       
@@ -339,7 +339,7 @@
                     </td>
                 </tr>
             </table>
-            $(document).on('click', '.remove-input-field', function () {
+ $(document).on('click', '.remove-input-field', function () {
         $(this).parents('tr').remove();
     });
 </script>
@@ -446,6 +446,114 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
         console.log(response);
     })
     .catch(function(error) {
+        console.log(error);
+    });
+});
+</script><script>
+    function preview() {
+   blah.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview1() {
+   blah1.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview2() {
+   blah2.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview3() {
+   blah3.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+      function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah1')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah2')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah3')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission
+    var formData = new FormData();
+    var imageFile = document.getElementById('Student_Aadhar_card').files[0];
+     var imageFile = document.getElementById('Fathers_Aadhar_card').files[1];
+      var imageFile = document.getElementById('Birth_Certificate_Of_Student').files[2];
+       var imageFile = document.getElementById('Mothers_Aadhar_card').files[3];
+       var imageFile = document.getElementById('Previous_year_Marks_Cards').files[4];
+    formData.append('image', imageFile);
+
+    axios.post('/upload-image', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then(function(response) {
+        // Handle the response here
+        console.log(response);
+    })
+    .catch(function(error) {
+        // Handle error
         console.log(error);
     });
 });

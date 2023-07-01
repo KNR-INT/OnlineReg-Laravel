@@ -79,7 +79,14 @@
                             ?>
  <div>
 <table align="center" cellpadding = "20">
+<form action="">
+     <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
+    
+        <input type="hidden" id="appli_no" name="appli_no" value="NPSYPR/<?php echo $student[0]->class; ?>/0<?php echo $student[0]->id; ?>">
+        <input type="hidden" id="status" name="status" value="Submitted">
+        <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
 
+    </form>
 <tr id="a">
 <th>Student Name</th>
 <td><input type="text"  value="<?php echo $student[0]->name; ?>" readonly></td>
@@ -118,8 +125,7 @@ Payment</button>
         $('.btn-submit').click(function(){
             document.getElementById("myForm").submit();
         });
-</script>
-</body>  
+</script></body>  
 </html>
 <style>
     .step-wizard {

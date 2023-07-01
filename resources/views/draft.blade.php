@@ -17,7 +17,14 @@
         @foreach ($student as $item)
 
                                              <table align="left" cellpadding = "10"  cellspacing="10" border="1">
+
+
+                                        
+
+
 <tr>
+<td><img src="/images/carrot.jpg" alt="carrot" width="200"></td>
+
 <td>Name ={{ $item->name }}</td>
 
 

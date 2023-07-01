@@ -41,9 +41,52 @@ class StudentController extends Controller
         
 
         $student->update();
+
+        // $data= new Image();
+        // $file= $request->file('image');
+        // $filename= date('YmdHi').$file->getClientOriginalName();
+        //     $file-> move(public_path('public/Image'), $filename);
+        //     $data['image']= $filename;appli_id
         
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         $class = $request->input('page_type');
+        // $appli_id = $request->input('appli_id');
+
         return redirect('/parents_details/a?class='.$class."&appli_id=".$appli_id);
+    } 
     }   
     public function updateapplino(Request $request)
     {
@@ -68,5 +111,17 @@ class StudentController extends Controller
         return redirect('/admitted/a?class='.$class."&appli_id=".$appli_id);
         // $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Submitted ' AND `user_id` = '$ses_userid'");
 
+    
     }
+
+
+
+
+
+
+
+
+
+
+
 }

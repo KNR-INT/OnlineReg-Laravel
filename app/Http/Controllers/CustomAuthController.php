@@ -3,12 +3,31 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
-use Hash;
 use Session;
 use App\Models\User;
 use App\Models\Student;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Mail\WelcomeEmail;
+use App\Mail\OtpMail;
+use App\Mail\OtpController;
+use App\Models\Mail;
+
+// use Illuminate\Support\Facades\Mail;
+use App\Mail\MyMailable;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Mailable;
+use Illuminate\Queue\SerializesModels;
+use App\Models\Otp;
+
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+
+
+
+
  
 class CustomAuthController extends Controller
 {
@@ -26,6 +45,7 @@ class CustomAuthController extends Controller
         $email = $request->email;    
         session()->push('login.email', $email); 
         $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+
         if(empty($users))
         {
             $created = date("Y-m-d h:i:s");
@@ -35,20 +55,73 @@ class CustomAuthController extends Controller
             $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
             $user_id = $users[0]->id;
             session()->push('users.user_id', $user_id);
+
+            $otp_number = mt_rand(100000, 999999);
+            $data=['name'=>"Dear Parent,",'otp'=>$otp_number];
+            $user['to']=$email;
+            // Mail :: send('otpgeneration',$data,function($messages)use($user){
+            //     $messages->to($user['to']);
+            //     $messages->subject('OTP for NPSYPR');
+            // });
+    
+            // Otp::create(['email'=>$email,'otp' => $otp]);
+            $otp1 = new Otp;
+            $otp1->sendTOEmail($otp_number,'padmajaac07@gmail.com');
             return view('otp');          
         }
         else
         { 
-            $user_id = $users[0]->id;
-            session()->push('users.user_id', $user_id);
-            return view('otp');          
+            // $created = date("Y-m-d h:i:s");
+            // $data=array("email"=>$email,"created_at"=>$created);
+            // DB::table('users')->insert($data);
+
+            // $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+            // $user_id = $users[0]->id;
+            // session()->push('users.user_id', $user_id);
+
+            $otp_number = mt_rand(100000, 999999);
+            $data=['name'=>"Dear Parent,",'otp'=>$otp_number];
+            $user['to']=$email;
+            // Mail :: send('otpgeneration',$data,function($messages)use($user){
+            //     $messages->to($user['to']);
+            //     $messages->subject('OTP for NPSYPR');
+            // });
+    
+            // Otp::create(['email'=>$email,'otp' => $otp]);
+            $otp1 = new Otp;
+            $otp1->sendTOEmail($otp_number,$email);
+            return view('otp');    
+
+
+
+            // $otp_number = mt_rand(100000, 999999);
+            // $data=['name'=>"Dear Parent,",'otp'=>$otp];
+            // $user['to']=$email;
+            // Mail :: send('otpgeneration',$data,function($messages)use($user){
+            //     $messages->to($user['to']);
+            //     $messages->subject('OTP for NPSYPR');
+            // });
+    
+            // Otp::create(['email'=>$email,'otp' => $otp]);
+            // $otp1 = new Otp;
+            // $otp1->sendTOEmail($otp_number,$email);
+            // return view('otp');
+
+            
+            // $user_id = $users[0]->id;
+            // session()->push('users.user_id', $user_id);
+            // return view('otp');          
         }  
     }
 
     public function otp(Request $request)
     {
-        $otp = $request->otp;    
-        if($otp == '7878'){
+        $otp = $request->otp;  
+        $session = request()->session()->get('login.email');            
+        $ses_email = $session[0];
+        $users = DB::select("SELECT * FROM `otp` WHERE `email` = '$ses_email' ORDER BY `id` DESC LIMIT 1");
+        $db_otp = $users[0]->otp;
+        if($otp == $db_otp){
             return redirect('/dashboard');
         }
         else
@@ -57,6 +130,7 @@ class CustomAuthController extends Controller
             ->with('message','Invalid OTP');
         }
     }
+
  
     public function signup()
     {
@@ -152,12 +226,10 @@ public function application_details(Request $request)
    return redirect('payment/a?class='.$class."&appli_id=".$appli_id);
 }
 
-
 public function payment()
 {
     return view('payment');
 }
-
 public function admitted(Request $request)
 {
    
@@ -211,6 +283,21 @@ $sessions = request()->session()->get('users.user_id');
             $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Submitted ' AND `user_id` = '$ses_userid'");
            
 
-                return view('submited ', compact('student'));        }
+                return view('submited ', compact('student'));    
+                }
 
+
+                public function displayImage($imageName)
+                {
+                    $path = public_path('public\Image' . $imageName);
+            // $request->image->move(public_path('public\Image'), $imageName);
+                    if (!File::exists($path)) {
+                        abort(404);
+                    }
+                    $file = File::get($path);
+                    $type = File::mimeType($path);
+                    $response = Response::make($file, 200);
+                    $response->header("Content-Type", $type);
+                 return $response;
+                }
   }

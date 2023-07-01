@@ -85,7 +85,7 @@
   </div>
 </div>
    </main>
-   
+
 <script>
     // $('#otp').on('change', function() {
     //         if (/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test($(this).val())) {
