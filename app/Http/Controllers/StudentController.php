@@ -36,21 +36,37 @@ class StudentController extends Controller
         $student->aadhar = $request->input('aadhar');
         $student->transport = $request->input('transport');
         $student->link_class = $request->input('page_type');
+        $student->sec_language = $request->input('sec_language');
+        $student->third_language = $request->input('third_language');
         
 
         $student->update();
-
-        // $data= new Image();
-        // $file= $request->file('image');
-        // $filename= date('YmdHi').$file->getClientOriginalName();
-        //     $file-> move(public_path('public/Image'), $filename);
-        //     $data['image']= $filename;appli_id
         
         $class = $request->input('page_type');
-        // $appli_id = $request->input('appli_id');
-
         return redirect('/parents_details/a?class='.$class."&appli_id=".$appli_id);
-    } 
+    }   
+    public function updateapplino(Request $request)
+    {
+       
+        $appli_id = $request->input('appli_id');
+        $student = Student::find($appli_id) ;
+        $student->application_no = $request->input('appli_no');
+        $student->update();
+             
+        $class = $request->input('page_type');
+        return redirect('/payment/a?class='.$class."&appli_id=".$appli_id);
+    }
+    public function updateadmitted(Request $request)
+    {
+       
+        $appli_id = $request->input('appli_id');
+        $student = Student::find($appli_id) ;
+        $student->application_no = $request->input('appli_no');
+        $student->update();
+             
+        $class = $request->input('page_type');
+        return redirect('/admitted/a?class='.$class."&appli_id=".$appli_id);
+        // $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Submitted ' AND `user_id` = '$ses_userid'");
 
-    
+    }
 }

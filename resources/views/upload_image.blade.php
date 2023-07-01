@@ -16,14 +16,16 @@
   
 <body>  <div> 
     <div class="container">
-<form id="myForm" action="{{ url('store-image') }}" enctype="multipart/form-data">
+        
+<form id="myForm"  action="{{ url('storeImage') }}" method="post" enctype="multipart/form-data">
+    @csrf
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
  <section class="step-wizard">
         <ul class="step-wizard-list">
             <li class="step-wizard-item">
-                <span class="progress-count" background="green">1</span>
+                <span class="progress-count">1</span>
                
             </li>
             <li class="step-wizard-item">
@@ -48,8 +50,9 @@
             </li>
         </ul>
     </section>
+    <center> <header><b><u><h2>Upload Documents</h2></u></header></center>           
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="form first">
+     <div class="form first">
                 <div class="details personal">
                     <div class="fields">
                         <div class="input-field">
@@ -58,25 +61,36 @@
                             $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
                             ?>
                             <label>Upload Student Aadhar card * :</label>
-                            <input type="file" id="Student_Aadhar_card" name="Student_Aadhar_card">
+                            <input type="file" id="Student_Aadhar_card" name="image"  onchange="preview()" >
+                            <img id="blah" src="#"  style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Student_Aadhar_card_err" style="color:red;"></span>
                         </div>
+
+                      
+
+
                         <div class="input-field">
                             <label>Upload Father's Aadhar card * :</label>
-                            <input type="file" id="Fathers_Aadhar_card" name="Fathers_Aadhar_card">
+                            <input type="file" id="Fathers_Aadhar_card" name="image1"  onchange="preview1()">
+                            <img id="blah1" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Fathers_Aadhar_card_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label>Birth Certificate Of Student * :</label>
-                            <input type="file" id="Birth_Certificate_Of_Student"name="Birth_Certificate_Of_Student">
+                            <input type="file" id="Birth_Certificate_Of_Student"name="image2"  onchange="preview2()">
+                            <img id="blah2" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Birth_Certificate_Of_Student_err" style="color:red;"></span>
                         </div>
                         <div class="input-field">
                             <label> Upload Mother's Aadhar card* : </label>
-                            <input type="file" id="Mothers_Aadhar_card" name="Mothers_Aadhar_card">
+                            <input type="file" id="Mothers_Aadhar_card" name="image3"   onchange="preview3()">
+                            <img id="blah3" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Mothers_Aadhar_card_err" style="color:red;"></span>
                         </div>
 
+
+
+                        
                <?php
                   $class = $_GET['class'];
                  if($class == '1to9' || $class == '11')
@@ -84,7 +98,7 @@
                          ?>
                         <div class="input-field">
                         <label> Upload Previous year Marks Card's *: </label>
-                            <input type="file" id="myFile" name="Previous_year_Marks_Cards ">
+                            <input type="file" id="Previous_year_Marks_Cards" name="Previous_year_Marks_Cards ">
                             <span id="Previous_year_Marks_Cards_err" style="color:red;"></span>
                         </div>
                     <?php
@@ -94,17 +108,177 @@
           
                 </div> 
             </div>
-                
             <?php 
                 if($class == '1to9' || $class == '11')
                 {
                 ?>
                 <center> <header><b><u><h3>Details of Schooling </h3></u></b></header></center>
           <center>
-            <table>
-                <tr>
+          <table class="table table-bordered" id="dynamicAddRemove">
+
+          <table class="table table-bordered" id="dynamicAddRemove">
+    <!-- Table rows for dynamically added data -->
+    <tbody id="dynamicRows">
+        <tr>
+            <td>
+                <div class="input-field"> From Year   <br>
+                    <input type="date" name="from_date[]" placeholder="From date" required>
+                </div>
+            </td>
+            <td>
+                <div class="input-field"> From Class   <br>
+                    <select name="from_class[]" class="from-class" required>
+                        <option disabled selected value="">From Class :</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <!-- Add more options here -->
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="input-field">To Year   <br>
+                    <input type="date" name="to_date[]" placeholder="To date" required>
+                </div>
+            </td>
+            <td>
+                <div class="input-field">To Class   <br>
+                    <select name="to_class[]" class="to-class" required>
+                        <option disabled selected value="">To Class :</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <!-- Add more options here -->
+                    </select>
+                </div>
+            </td>
+            <tr>
+                    <td style="width:250px;">
+                        <div class="input-field">School Name <br>  
+                        <input type="text" name="" id="" placeholder="School Name" >
+                        </div>
+                    </td>
+                    <td style="width:250px;">
+                        <div class="input-field">City <br>
+                        <input type="text" name="" id="" placeholder="City">  
+                        </div>
+                    </td>
+                    <td style="width:250px;">
+                        <div class="input-field">State  <br>
+                            <input type="text" name="" id="" placeholder="State">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="input-field">Country  <br>
+                            <input type="text" name="" id="" placeholder="Country">
+                        </div>
+                    </td>
+                </tr>
+            <td>
+                <button type="button" class="btn btn-danger remove-row">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+    <!-- Button to add new row -->
+    <tfoot>
+        <tr>
+            <td colspan="5">
+                <button type="button" class="btn btn-outline-warning add-row">Add</button>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Add row on click of "Add" button
+        $('.add-row').click(function () {
+            var row = '<tr>' +
+                '<td>' +
+                '<div class="input-field"> From Year   <br>' +
+                '<input type="date" name="from_date[]" placeholder="From date" required>' +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<div class="input-field"> From Class   <br>' +
+                '<select name="from_class[]" class="from-class" required>' +
+                '<option disabled selected value="">From Class :</option>' +
+                '<option value="1">1</option>' +
+                '<option value="2">2</option>' +
+                '</select>' +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<div class="input-field">To Year   <br>' +
+                '<input type="date" name="to_date[]" placeholder="To date" required>' +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<div class="input-field">To Class   <br>' +
+                '<select name="to_class[]" class="to-class" required>' +
+                '<option disabled selected value="">To Class :</option>' +
+                '<option value="1">1</option>' +
+                '<option value="2">2</option>' +
+                '</select>' +
+                '</div>' +
+                '</td>' +
+                '<tr></tr>'+
+                '<td>' +
+                '<div class="input-field"> School Name  <br>' +
+                '<input type="text" name="" id="" placeholder="School Name" >' +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<div class="input-field"> City  <br>' +
+                '<input type="text" name="" id="" placeholder="City" >' +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<div class="input-field">State   <br>' +
+                '<input type="text" name="" id="" placeholder="State" >'  +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<div class="input-field">Country  <br>' +
+                '<input type="text" name="" id="" placeholder="Country" >'  +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<button type="button" class="btn btn-danger remove-row">Remove</button>' +
+                '</td>' +
+                '</tr>';  
+                
+            $('#dynamicRows').append(row);
+        });
+
+        // Remove row on click of "Remove" button
+        $(document).on('click', '.remove-row', function () {
+            $(this).closest('tr').remove();
+        });
+    });
+</script>
+
+            
+            <?php
+                    }
+                    ?>
+              </center>
+                <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
+                <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+            <br>
+            <br>
+             <center>
+                       <a class="btn btn-back btn-outline-success float-center ">Go Back</a>
+                       <a class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
+                       <div></center>
+                       @include('footer')
+            </div>
+                </div> 
+                </div>
+
+                <script type="text/javascript">var i = 0;$("#dynamic-ar").click(function () {++i;
+        $("#dynamicAddRemove").append  <tr>
                     <td >
-                        <div class="input-field"> From Year   <br>
+                        <div class="input-field [' + i +
+            '][From Year]"> From Year  <br>
                             <input type="date" placeholder="From date" required>
                         </div>
                     </td>
@@ -125,6 +299,7 @@
                         <input type="date" placeholder="To date" required>
                         </div>
                     </td>
+
                     <td>
                         <div class="input-field">To Class   <br>
                            <select name="drop" id="drop">
@@ -139,6 +314,8 @@
                         </div>
                     </td>
                 </tr>
+                <button type="button" name="add" id="dynamic-ar" class="btn btn-outline-warning">Add</button></td>
+
                 <tr>
                     <td style="width:250px;">
                         <div class="input-field">School Name <br>  
@@ -162,40 +339,132 @@
                     </td>
                 </tr>
             </table>
-            
-            <?php
-                    }
-                    ?>
-              </center>
-              <input type="hidden" id="class" value="<?php echo $_GET['class']; ?>">
-	        <input type="hidden" id="appli_id" value="<?php echo $_GET['appli_id']; ?>">
-            <br>
-            <br>
-             <center>
-                       <a class="btn btn-back btn-outline-success float-center ">Go Back</a>
-                       <a class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
-                       <div></center>
-                       @include('footer')
-            </div>
-                </div> 
-                </div>
+            $(document).on('click', '.remove-input-field', function () {
+        $(this).parents('tr').remove();
+    });
+</script>
+<script>
+    function preview() {
+   blah.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview1() {
+   blah1.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview2() {
+   blah2.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+    function preview3() {
+   blah3.src=URL.createObjectURL(event.target.files[0]);
+}
+
+</script>
+<script>
+      function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah1')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah2')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah3')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+
+                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission
+    var formData = new FormData();
+    var imageFile = document.getElementById('Student_Aadhar_card').files[0];
+     var imageFile = document.getElementById('Fathers_Aadhar_card').files[1];
+      var imageFile = document.getElementById('Birth_Certificate_Of_Student').files[2];
+       var imageFile = document.getElementById('Mothers_Aadhar_card').files[3];
+       var imageFile = document.getElementById('Previous_year_Marks_Cards').files[4];
+    formData.append('image', imageFile);
+
+    axios.post('/upload-image', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then(function(response) {
+        console.log(response);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+});
+</script>
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $('.btn-back').click(function(){
-            let class_name = document.getElementById("class").value;
+            let class_name = document.getElementById("page_type").value;
             let appli_id = document.getElementById("appli_id").value;
-            // alert(appli_id);
             window.location.href = "{{ url('parents_details') }}/a?class="+class_name+"&appli_id="+appli_id;
         });
+        
         $('.btn-submit').click(function(){
-            // alert("ok");
-            
             const Student_Aadhar_card = document.getElementById("Student_Aadhar_card").value;
             const Fathers_Aadhar_card = document.getElementById("Fathers_Aadhar_card").value;
             const Birth_Certificate_Of_Student = document.getElementById("Birth_Certificate_Of_Student").value;
             const Mothers_Aadhar_card = document.getElementById("Mothers_Aadhar_card").value;
-            // const Previous_year_Marks_Cards = document.getElementById("Previous_year_Marks_Cards").value;
+         // const Previous_year_Marks_Cards = document.getElementById("Previous_year_Marks_Cards").value;
             // || !Previous_year_Marks_Cards
             if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card )
             {
@@ -234,8 +503,6 @@
                 {
                     document.getElementById("Mothers_Aadhar_card_err").innerHTML = " ";
                 }
-
-
                 // if(!Previous_year_Marks_Cards)
                 // {
                 //     document.getElementById("Previous_year_Marks_Cards_err").innerHTML = "This is Required Field";
@@ -243,15 +510,15 @@
                 // else
                 // {
                 //     document.getElementById("Previous_year_Marks_Cards_err").innerHTML = " ";
-                // }
+                // } CB 
                 
-            }
+            }            
 
         else
             {
                 document.getElementById("myForm").submit();
             }
-        });
+        });  
     </script>
 </body>
 
@@ -371,7 +638,6 @@ body {
 .current-item .progress-count{
     color: #1338BE;
 }
-/* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 *{
     margin: 0;
@@ -415,9 +681,10 @@ body{
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 1050px;
+    height:100%;
+    min-height: 1600px;
     background-color: #fff;
-    overflow: hidden;
+    // overflow: hidden;
 }
 .container form .form{
     position: absolute;
@@ -427,12 +694,12 @@ body{
 form.secActive .form.second{
     opacity: 1;
     pointer-events: auto;
-    transform: translateX(0);
+    transform: translateX(0); 
 }
 form.secActive .form.first{
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
 .container form .title{
     display: block;
@@ -519,7 +786,7 @@ form .buttons button , .backBtn{
     margin-right: 14px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 850px) {
     .container form{
         overflow-y: scroll;
     }

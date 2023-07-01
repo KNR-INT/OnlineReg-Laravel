@@ -7,6 +7,7 @@
     use App\Http\Controllers\ImageUploadController;
     use App\Models\Student;
     use App\Models\Parent1;
+    use App\Http\Controllers\PaytmController;
 
 Route::get('/', [CustomAuthController::class, 'home']); 
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
@@ -52,14 +53,14 @@ Route::post('upload_doc/{id}', [CustomAuthController::class, 'upload_doc'])->nam
 Route::get('upload_doc/{id}', [CustomAuthController::class, 'upload_doc'])->name('upload_doc'); 
 
 
-Route::post('application_details', [CustomAuthController::class, 'application_details'])->name('application_details'); 
-Route::get('application_details', [CustomAuthController::class, 'application_details'])->name(''); 
+Route::post('application_details/{id}', [CustomAuthController::class, 'application_details'])->name('application_details'); 
+Route::get('application_details/{id}', [CustomAuthController::class, 'application_details'])->name(''); 
 
-Route::post('payment', [CustomAuthController::class, 'payment'])->name('payment'); 
-Route::get('payment', [CustomAuthController::class, 'payment'])->name('payment'); 
+Route::post('payment/{id}', [CustomAuthController::class, 'payment'])->name('payment'); 
+Route::get('payment/{id}', [CustomAuthController::class, 'payment'])->name('payment'); 
 
-Route::post('admitted', [CustomAuthController::class, 'admitted'])->name('admitted'); 
-Route::get('admitted', [CustomAuthController::class, 'admitted'])->name('admitted'); 
+Route::post('admitted/{id}', [CustomAuthController::class, 'admitted'])->name('admitted'); 
+Route::get('admitted/{id}', [CustomAuthController::class, 'admitted'])->name('admitted'); 
 
 Route::post('myapp', [CustomAuthController::class, 'myapp'])->name('myapp'); 
 Route::get('myapp', [CustomAuthController::class, 'myapp'])->name('myapp'); 
@@ -78,6 +79,7 @@ Route::post('create','CustomAuthController@insert');
 
 Route::get('students', [CustomAuthController::class, 'onlinereg']);
 Route::get('store-student', [StudentController::class, 'store']);
+
 Route::get('store-parent', [ParentsController::class, 'store']);
 Route::get('get-data/{store-parent}', [ParentsController::class, 'edit']);
 
@@ -90,15 +92,30 @@ Route::get('get-data/{store-parent}', [ParentsController::class, 'edit']);
 Route::get('/add-image',[ImageUploadController::class,'addImage'])->name('images.add');
 
 //For storing an image
-Route::get('/store-image',[ImageUploadController::class,'storeImage'])->name('images.store');
+Route::post('/storeImage',[ImageUploadController::class,'storeImage']);
+Route::get('/update-applino',[StudentController::class,'updateapplino']);
+
 
 //For showing an image
 Route::get('/view-image',[ImageUploadController::class,'upload_doc'])->name('images.view');
-
 Route::get('students', [CustomAuthController::class, 'application_details']);
 Route::get('create-id', [CustomAuthController::class, 'create_id']);
 
 
 Route::get('/users/{id}','CustomAuthController@show');
 
+// /For storing an image
+Route::post('/storeImage',[ImageUploadController::class,'storeImage']);
+Route::get('/update-applino',[StudentController::class,'updateapplino']);
+Route::get('/update-updateadmitted',[StudentController::class,'updateadmitted']);
 
+
+//For showing an image
+Route::get('/view-image',[ImageUploadController::class,'upload_doc'])->name('images.view');
+Route::get('students', [CustomAuthController::class, 'application_details']);
+Route::get('create-id', [CustomAuthController::class, 'create_id']);
+
+//Paytm Payment
+Route::get('paytm-payment',[PaytmController::Class, 'paytmPayment'])->name('paytm.payment');
+Route::get('paytm-callback',[PaytmController::Class, 'paytmCallback'])->name('paytm.callback');
+Route::get('paytm-purchase',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');

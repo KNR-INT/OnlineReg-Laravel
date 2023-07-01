@@ -38,7 +38,7 @@
 </tr> 
 <tr>
  
- <td><a  class="d-block">submitted</a></td>
+ <td><a  class="d-block primary">submitted</a></td>
  </tr>  
         @endforeach
         </tbody>

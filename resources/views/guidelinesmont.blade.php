@@ -131,12 +131,9 @@ I Agree
 <?php 
 	$class = $_GET['class'];
 ?>
-<button class=" btn btn-primary" 
-    onclick="window.location.href = 'newapp'" value=" $email = User::where('id',$id)->email();">
-    Go to Home
-    </button>
-
-       <button  DISABLED class="btn btn-submit btn-primary"   id="btn1" >continue </button>
+<button class=" btn btn-primary" onclick="window.location.href = '{{ url ('dashboard')}}'" value=" $email = User::where('id',$id)->email();">Go to Home</button>
+    <!-- <a href="{{ url ('dashboard')}}" class="nav-item nav-link active"><i class="fa fa-home"></i><span>Home</span></a> -->
+       <button  DISABLED class="btn btn-submit btn-primary" id="btn1" >continue </button>
          </div>
 		</div>
 	</div>

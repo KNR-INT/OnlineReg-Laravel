@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
   <title>Online Registration</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,41 +17,8 @@
  ?>
 
 <div class="container">
-<form action = "{{ url('store-parent') }}" method = "get">
+    
 <form id="myForm" action = "{{ url('store-parent') }}">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <table class="table table-responsive">
   <table class="table table-responsive">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -96,135 +62,104 @@
     <tbody>
       <tr>
         <td >Father Name*
-         <input type="text"  class="form-control" placeholder="Enter Father name" required id="father_name" name="father_name"></td>
-         <input type="text"  class="form-control" placeholder="Enter Father name" required id="father_name" name="father_name">
-         <input type="text"  class="form-control" placeholder="Enter Father name" required id="father_name" name="father_name" value="<?php echo $student[0]->father_name;?>">
+         <input type="text"  class="form-control" placeholder="Enter Father name" required id="father_name" name="father_name" maxlength=50; value="<?php echo $student[0]->father_name;?>" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
          <span id="father_name_err" style="color:red;"></span></td>
         <td>Mother Name*
-         <input type="text"  class="form-control" placeholder="Enter Father name" required id="mother_name" name="mother_name"></td>
-         <input type="text"  class="form-control" placeholder="Enter Mother name" required id="mother_name" name="mother_name">
-         <input type="text"  class="form-control" placeholder="Enter Mother name" required id="mother_name" name="mother_name" value="<?php echo $student[0]->mother_name;?>">
+         <input type="text"  class="form-control" placeholder="Enter Mother name" required id="mother_name" name="mother_name" maxlength=50; value="<?php echo $student[0]->mother_name;?>" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
          <span id="mother_name_err" style="color:red;"></span></td>
 
        </tr>
 
       <tr>
         <td>Mobile Number*
-         <input type="number" class="form-control" placeholder="Enter Father mobile number" required id="father_mob" name="father_mob"></td>
-         <input type="text" class="form-control" placeholder="Enter Father mobile number" required id="father_mob" name="father_mob" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"><span id="father_mob_err" style="color:red;"></span></td>
-         <input type="text" class="form-control" placeholder="Enter Father mobile number" required id="father_mob" name="father_mob" value="<?php echo $student[0]->father_mob;?>" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"><span id="father_mob_err" style="color:red;"></span></td>
-        <td>Mobile Number*
-        <input type="number" class="form-control" placeholder="Enter Mother mobile number" required id="mother_mob" name="mother_mob"></td>
-        <input type="text" class="form-control" placeholder="Enter Mother mobile number" required id="mother_mob" name="mother_mob" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"><span id="mother_mob_err" style="color:red;"></span></td>
-        <input type="text" class="form-control" placeholder="Enter Mother mobile number" required id="mother_mob" name="mother_mob" value="<?php echo $student[0]->mother_mob;?>" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"><span id="mother_mob_err" style="color:red;"></span></td>
+         <input type="text" class="form-control" placeholder="Enter Father mobile number" required id="father_mob" name="father_mob" value="<?php echo $student[0]->father_mob;?>" maxlength="10"><span id="father_mob_err" style="color:red;"></span></td>
+         <td>Mobile Number*
+        <input type="text" class="form-control" placeholder="Enter Mother mobile number" required id="mother_mob" name="mother_mob" value="<?php echo $student[0]->mother_mob;?>" maxlength="10"><span id="mother_mob_err" style="color:red;"></span></td>
       </tr>
 
 
       <tr>
         <td>Father Email Id*
-        <input type="text" class="form-control" placeholder="Enter Father Email Id" required id="father_email_verified_at" name="father_email_verified_at"></td>
-        <input type="text" class="form-control" placeholder="Enter Father Email Id" required id="father_email_verified_at" name="father_email_verified_at"><span id="father_email_verified_at_err" style="color:red;"></span></td>
         <input type="text" class="form-control" placeholder="Enter Father Email Id" required id="father_email_verified_at" name="father_email_verified_at" value="<?php echo $student[0]->father_email_verified_at;?>"><span id="father_email_verified_at_err" style="color:red;"></span></td>
         <td>Mother Email Id*
-         <input type="text" class="form-control" placeholder="Enter Mother Email Id" required id="mother_email_verified_at" name="mother_email_verified_at"></td>
-         <input type="text" class="form-control" placeholder="Enter Mother Email Id" required id="mother_email_verified_at" name="mother_email_verified_at"><span id="mother_email_verified_at_err" style="color:red;"></span></td>
          <input type="text" class="form-control" placeholder="Enter Mother Email Id" required id="mother_email_verified_at" name="mother_email_verified_at" value="<?php echo $student[0]->mother_email_verified_at;?>"><span id="mother_email_verified_at_err" style="color:red;"></span></td>
        </tr>
 
 
        <tr>
-        <td> Father's Mother Tongue
         <td> Father's Mother Tongue*
         <br>
         <select required id="father_mother_tongue" name="father_mother_tongue" style="width: 440px;">
-                                <option disabled selected>Select  Father's Mother Tongue</option>
         <option disabled selected value="">--SELECT--</option>
-                                <option>Kannada</option>
-                                <option>Tamil</option>
-                                <option>Telugu</option>
-                                <option>Hindi</option>
-                            </select></td>
-        <td> Mother's Mother Tongue
-        <br>
-         <select required id="mother_mother_tongue" name="mother_mother_tongue" style="width: 440px;">
-                                <option disabled selected>Select  Mother's Mother Tongue</option>
-                                <option>Kannada</option>
-                                <option>Tamil</option>
-                                <option>Telugu</option>
-                                <option>Hindi</option>
-                            </select></td>
-                            </select><span id="father_mother_tongue_err" style="color:red;"></span></td>
-                                <option value="Kannada"<?php if($student[0]->father_mother_tongue == "Kannada"){ echo "SELECTED"; } ?>>Kannada</option>
-                                <option value="Tamil"<?php if($student[0]->father_mother_tongue == "Tamil"){ echo "SELECTED"; } ?>>Tamil</option>
-                                <option value="Telugu"<?php if($student[0]->father_mother_tongue == "Telugu"){ echo "SELECTED"; } ?>>Telugu</option>
-                                <option value="Hindi"<?php if($student[0]->father_mother_tongue == "Hindi"){ echo "SELECTED"; } ?>>Hindi</option>
-                                <option value="Others"<?php if($student[0]->father_mother_tongue == "Others"){ echo "SELECTED"; } ?>>Others</option>
-                          </select><span id="father_mother_tongue_err" style="color:red;"></span></td>
-                <td> Mother's Mother Tongue*
+        <option value="Kannada"<?php if($student[0]->father_mother_tongue == "Kannada"){ echo "SELECTED"; } ?>>Kannada</option>
+        <option value="Tamil"<?php if($student[0]->father_mother_tongue == "Tamil"){ echo "SELECTED"; } ?>>Tamil</option>
+         <option value="Telugu"<?php if($student[0]->father_mother_tongue == "Telugu"){ echo "SELECTED"; } ?>>Telugu</option>
+         <option value="Hindi"<?php if($student[0]->father_mother_tongue == "Hindi"){ echo "SELECTED"; } ?>>Hindi</option>
+         <option value="Assamese"<?php if($student[0]->father_mother_tongue == "Assamese"){ echo "SELECTED"; } ?>>Assamese</option>
+         <option value="Bengali"<?php if($student[0]->father_mother_tongue == "Bengali"){ echo "SELECTED"; } ?>>Bengali</option>
+         <option value="English"<?php if($student[0]->father_mother_tongue == "English"){ echo "SELECTED"; } ?>>English</option>
+         <option value="Marathi"<?php if($student[0]->father_mother_tongue == "Marathi"){ echo "SELECTED"; } ?>>Marathi</option>
+         <option value="Urdu"<?php if($student[0]->father_mother_tongue == "Urdu"){ echo "SELECTED"; } ?>>Urdu</option>
+         <option value="Malayalam"<?php if($student[0]->father_mother_tongue == "Malayalam"){ echo "SELECTED"; } ?>>Malayalam</option>
+         <option value="Gujarathi"<?php if($student[0]->father_mother_tongue == "Gujarathi"){ echo "SELECTED"; } ?>>Gujarathi</option>
+         <option value="Others"<?php if($student[0]->father_mother_tongue == "Others"){ echo "SELECTED"; } ?>>Others</option>
+          </select><span id="father_mother_tongue_err" style="color:red;"></span></td>
+           <td> Mother's Mother Tongue*
                 <br>
-                    <select required id="mother_mother_tongue" name="mother_mother_tongue" style="width: 440px;">
-                    <option disabled selected value="">--SELECT--</option>
-                                            <option>Kannada</option>
-                                            <option>Tamil</option>
-                                            <option>Telugu</option>
-                                            <option>Hindi</option>
-                                    </select><span id="mother_mother_tongue_err" style="color:red;"></span>
-                             <option value="Kannada"<?php if($student[0]->mother_mother_tongue == "Kannada"){ echo "SELECTED"; } ?>>Kannada</option>
-                             <option value="Tamil"<?php if($student[0]->mother_mother_tongue == 
-                             "Tamil"){ echo "SELECTED"; } ?>>Tamil</option>
-                             <option value="Telugu"<?php if($student[0]->mother_mother_tongue == "Telugu"){ echo "SELECTED"; } ?>>Telugu</option>
-                             <option value="Hindi"<?php if($student[0]->mother_mother_tongue == 
-                             "Hindi"){ echo "SELECTED"; } ?>>Hindi</option>
-                             <option value="Others"<?php if($student[0]->mother_mother_tongue == "Others"){ echo "SELECTED"; } ?>>Others</option>
+         <select required id="mother_mother_tongue" name="mother_mother_tongue" style="width: 440px;">
+         <option disabled selected value="">--SELECT--</option>
+        <option value="Kannada"<?php if($student[0]->mother_mother_tongue == "Kannada"){ echo "SELECTED"; } ?>>Kannada</option>
+        <option value="Tamil"<?php if($student[0]->mother_mother_tongue == "Tamil"){ echo "SELECTED"; } ?>>Tamil</option>
+         <option value="Telugu"<?php if($student[0]->mother_mother_tongue == "Telugu"){ echo "SELECTED"; } ?>>Telugu</option>
+         <option value="Hindi"<?php if($student[0]->mother_mother_tongue == "Hindi"){ echo "SELECTED"; } ?>>Hindi</option>
+         <option value="Assamese"<?php if($student[0]->mother_mother_tongue == "Assamese"){ echo "SELECTED"; } ?>>Assamese</option>
+         <option value="Bengali"<?php if($student[0]->mother_mother_tongue == "Bengali"){ echo "SELECTED"; } ?>>Bengali</option>
+         <option value="English"<?php if($student[0]->mother_mother_tongue == "English"){ echo "SELECTED"; } ?>>English</option>
+         <option value="Marathi"<?php if($student[0]->mother_mother_tongue == "Marathi"){ echo "SELECTED"; } ?>>Marathi</option>
+         <option value="Urdu"<?php if($student[0]->mother_mother_tongue == "Urdu"){ echo "SELECTED"; } ?>>Urdu</option>
+         <option value="Malayalam"<?php if($student[0]->mother_mother_tongue == "Malayalam"){ echo "SELECTED"; } ?>>Malayalam</option>
+         <option value="Gujarathi"<?php if($student[0]->mother_mother_tongue == "Gujarathi"){ echo "SELECTED"; } ?>>Gujarathi</option>
+         <option value="Others"<?php if($student[0]->mother_mother_tongue == "Others"){ echo "SELECTED"; } ?>>Others</option>
                      </select><span id="mother_mother_tongue_err" style="color:red;"></span>
                  </td>
        </tr>
-
-
+      
        <tr>
         <td>Residential Address*
-           <input type="text" class="form-control" placeholder="Enter Residential Address" required id="father_residential_address" name="father_residential_address">
-           <input type="text" class="form-control" placeholder="Enter Residential Address" required id="father_residential_address" name="father_residential_address"><span id="father_residential_address_err" style="color:red;"></span></td>
            <input type="text" class="form-control" placeholder="Enter Residential Address" required id="father_residential_address" name="father_residential_address" value="<?php echo $student[0]->father_residential_address;?>"><span id="father_residential_address_err" style="color:red;"></span></td>
         <td>Residential Address*
-          <input type="text" class="form-control" placeholder="Enter Residential Address" required id="mother_residential_address" name="mother_residential_address"></td>
-          <input type="text" class="form-control" placeholder="Enter Residential Address" required id="mother_residential_address" name="mother_residential_address"><span id="mother_residential_address_err" style="color:red;"></span></td>
           <input type="text" class="form-control" placeholder="Enter Residential Address" required id="mother_residential_address" name="mother_residential_address" value="<?php echo $student[0]->mother_residential_address;?>"><span id="mother_residential_address_err" style="color:red;"></span></td>
       </tr>
+      <tr>
+        <td>
+        
+        </td>
+        <td>
+           <b>Same as Father details</b> <input type="checkbox" class="mother_details" id="mother_details" name="mother_details"> 
+        </td>
+       </tr>
 
 
       <tr>
         <td>Area*
-            <input type="text" class="form-control" placeholder="Enter Area" required id="father_area" name="father_area">
-            <input type="text" class="form-control" placeholder="Enter Area" required id="father_area" name="father_area"><span id="father_area_err" style="color:red;"></span></td>
             <input type="text" class="form-control" placeholder="Enter Area" required id="father_area" name="father_area" value="<?php echo $student[0]->father_area;?>"><span id="father_area_err" style="color:red;"></span></td>
         <td>Area*
-            <input type="text" class="form-control" placeholder="Enter Area" required id="mother_area" name="mother_area"></td>
-            <input type="text" class="form-control" placeholder="Enter Area" required id="mother_area" name="mother_area"><span id="mother_area_err" style="color:red;"></span></td>
             <input type="text" class="form-control" placeholder="Enter Area" required id="mother_area" name="mother_area" value="<?php echo $student[0]->mother_area;?>"><span id="mother_area_err" style="color:red;"></span></td>
       </tr>
 
 
        <tr>
         <td>District*
-            <input type="text"  class="form-control" placeholder="Enter District" required id="father_district" name="father_district">
-            <input type="text"  class="form-control" placeholder="Enter District" required id="father_district" name="father_district"><span id="father_district_err" style="color:red;"></span></td>
             <input type="text"  class="form-control" placeholder="Enter District" required id="father_district" name="father_district" value="<?php echo $student[0]->father_district;?>"><span id="father_district_err" style="color:red;"></span></td>
         <td>District*
-             <input type="text"  class="form-control" placeholder="Enter District" required id="mother_district" name="mother_district"></td>
-             <input type="text"  class="form-control" placeholder="Enter District" required id="mother_district" name="mother_district"><span id="mother_district_err" style="color:red;"></span></td>
              <input type="text"  class="form-control" placeholder="Enter District" required id="mother_district" name="mother_district" value="<?php echo $student[0]->mother_district;?>"><span id="mother_district_err" style="color:red;"></span></td>
       </tr>
 
 
         <tr>
         <td>State*
-            <input type="text"  class="form-control" placeholder="Enter state" required id="	father_state" name="father_state">
-            <input type="text"  class="form-control" placeholder="Enter state" required id="father_state" name="father_state"><span id="father_state_err" style="color:red;"></span></td>
             <input type="text"  class="form-control" placeholder="Enter state" required id="father_state" name="father_state" value="<?php echo $student[0]->father_state;?>"><span id="father_state_err" style="color:red;"></span></td>
         <td>State*
-             <input type="text"  class="form-control" placeholder="Enter state" required id="mother_state" name="mother_state"></td>
-             <input type="text"  class="form-control" placeholder="Enter state" required id="mother_state" name="mother_state"><span id="mother_state_err" style="color:red;"></span></td>
              <input type="text"  class="form-control" placeholder="Enter state" required id="mother_state" name="mother_state" value="<?php echo $student[0]->mother_state;?>"><span id="mother_state_err" style="color:red;"></span></td>
       </tr>
 
@@ -233,113 +168,53 @@
         <td>Country*
         <br>
            <select required id="father_country" name="father_country" style="width: 440px;">
-                                <option disabled selected>Select the country</option>
            <option disabled selected value="">--SELECT--</option>
-                                <option>India</option>
-                                <option>America</option>
-                                <option>Australia</option>
-                                <option>Brazil</option>
-                                <option>Canada</option>
-                                <option>Germany</option>
-                                <option>France</option>
-                                <option>Italy</option>
-                                <option>Others</option>
-                 <option value="India"<?php if($student[0]->father_country == 
-                                "India"){ echo "SELECTED"; } ?>>India</option>
-                 <option value="America"<?php if($student[0]->father_country == "America"){ echo "SELECTED"; } ?>>America</option>
-                <option value="Australia"<?php if($student[0]->father_country == "Australia"){ echo "SELECTED"; } ?>>Australia</option>
-                <option value="Brazil"<?php if($student[0]->father_country == "Brazil"){ echo "SELECTED"; } ?>>Brazil</option>
-                <option value="Canada"<?php if($student[0]->father_country == "Canada"){ echo "SELECTED"; } ?>>Canada</option>
-                 <option value="Germany"<?php if($student[0]->father_country == "Germany"){ echo "SELECTED"; } ?>>Germany</option>
-                <option value="France"<?php if($student[0]->father_country ==    "France"){ echo "SELECTED"; } ?>>France</option>
-                 <option value="Italy"<?php if($student[0]->father_country ==     "Italy"){ echo "SELECTED"; } ?>>Italy</option>
-                <option value="Others"<?php if($student[0]->father_country == "Others"){ echo "SELECTED"; } ?>>Others</option>
+                 <option value="India"<?php if($student[0]->father_country =="India"){ echo "SELECTED"; } ?>>India</option>
+                 <option value="America"<?php if($student[0]->father_country =="America"){ echo "SELECTED"; } ?>>America</option>
+                <option value="Australia"<?php if($student[0]->father_country =="Australia"){ echo "SELECTED"; } ?>>Australia</option>
+                <option value="Brazil"<?php if($student[0]->father_country =="Brazil"){ echo "SELECTED"; } ?>>Brazil</option>
+                <option value="Canada"<?php if($student[0]->father_country =="Canada"){ echo "SELECTED"; } ?>>Canada</option>
+                 <option value="Germany"<?php if($student[0]->father_country =="Germany"){ echo "SELECTED"; } ?>>Germany</option>
+                <option value="France"<?php if($student[0]->father_country =="France"){ echo "SELECTED"; } ?>>France</option>
+                 <option value="Italy"<?php if($student[0]->father_country =="Italy"){ echo "SELECTED"; } ?>>Italy</option>
+                <option value="Others"<?php if($student[0]->father_country =="Others"){ echo "SELECTED"; } ?>>Others</option>
 
-                            </select>
-        <td>Country*
-        <br>
-            <select required id="mother_country" name="mother_country" style="width: 440px;">
-                                <option disabled selected>Select the country</option>
-                                <option>India</option>
-                                <option>America</option>
-                                <option>Australia</option>
-                                <option>Brazil</option>
-                                <option>Canada</option>
-                                <option>Germany</option>
-                                <option>France</option>
-                                <option>Italy</option>
-                                <option>Others</option>
                             </select><span id="father_country_err" style="color:red;"></span></td>
                 <td>Country*
                 <br>
                     <select required id="mother_country" name="mother_country" style="width: 440px;">
                     <option disabled selected value="">--SELECT--</option>
-                                        <option>India</option>
-                                        <option>America</option>
-                                        <option>Australia</option>
-                                        <option>Brazil</option>
-                                        <option>Canada</option>
-                                        <option>Germany</option>
-                                        <option>France</option>
-                                        <option>Italy</option>
-                                        <option>Others</option>
-
-                            </select></td>
-                            <tr>
-                                    </select><span id="mother_country_err" style="color:red;"></span></td>
                 <option value="India"<?php if($student[0]->mother_country == "India"){   echo "SELECTED"; } ?>>India</option>
-                 <option value="America"<?php if($student[0]->mother_country == "America"){ echo "SELECTED"; } ?>>America</option>
-                <option value="Australia"<?php if($student[0]->mother_country == "Australia"){ echo "SELECTED"; } ?>>Australia</option>
-                <option value="Brazil"<?php if($student[0]->mother_country == "Brazil"){ echo "SELECTED"; } ?>>Brazil</option>
-                <option value="Canada"<?php if($student[0]->mother_country == "Canada"){ echo "SELECTED"; } ?>>Canada</option>
-                <option value="Germany"<?php if($student[0]->mother_country == "Germany"){ echo "SELECTED"; } ?>>Germany</option>
-                <option value="France"<?php if($student[0]->mother_country == "France"){ echo "SELECTED"; } ?>>France</option>
-                <option value="Italy"<?php if($student[0]->mother_country == "Italy"){ echo "SELECTED"; } ?>>Italy</option>
+                 <option value="America"<?php if($student[0]->mother_country =="America"){ echo "SELECTED"; } ?>>America</option>
+                <option value="Australia"<?php if($student[0]->mother_country =="Australia"){ echo "SELECTED"; } ?>>Australia</option>
+                <option value="Brazil"<?php if($student[0]->mother_country =="Brazil"){ echo "SELECTED"; } ?>>Brazil</option>
+                <option value="Canada"<?php if($student[0]->mother_country =="Canada"){ echo "SELECTED"; } ?>>Canada</option>
+                <option value="Germany"<?php if($student[0]->mother_country =="Germany"){ echo "SELECTED"; } ?>>Germany</option>
+                <option value="France"<?php if($student[0]->mother_country =="France"){ echo "SELECTED"; } ?>>France</option>
+                <option value="Italy"<?php if($student[0]->mother_country =="Italy"){ echo "SELECTED"; } ?>>Italy</option>
                 <option value="Others"<?php if($student[0]->mother_country == "Others"){ echo "SELECTED"; } ?>>Others</option>
                      </select><span id="mother_country_err" style="color:red;"></span></td>
-
             </tr>
-
-
+        
          <tr>
         <td>Pincode*
-            <input type="number" class="form-control" placeholder="Enter Pincode" required id="father_pincode" name="father_pincode">
-            <input type="text" class="form-control" placeholder="Enter Pincode" required id="father_pincode" name="father_pincode" 
-            <input type="text" class="form-control" placeholder="Enter Pincode" required id="father_pincode" name="father_pincode" value="<?php echo $student[0]->father_pincode;?>" 
-            oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="6"><span id="father_pincode_err" style="color:red;"></span></td>
+            <input type="text" class="form-control" placeholder="Enter Pincode" required id="father_pincode" name="father_pincode" value="<?php echo $student[0]->father_pincode;?>"  maxlength="8"><span id="father_pincode_err" style="color:red;"></span></td>
         <td>Pincode*
-             <input type="number" class="form-control" placeholder="Enter Pincode" required id="mother_pincode" name="mother_pincode"></td>
-             <input type="text" class="form-control" placeholder="Enter Pincode" required id="mother_pincode" name="mother_pincode"
-             <input type="text" class="form-control" placeholder="Enter Pincode" required id="mother_pincode" name="mother_pincode"value="<?php echo $student[0]->mother_pincode;?>"
-             oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="6"><span id="mother_pincode_err" style="color:red;"></span></td>
+             <input type="text" class="form-control" placeholder="Enter Pincode" required id="mother_pincode" name="mother_pincode"value="<?php echo $student[0]->mother_pincode;?>"  maxlength="8"><span id="mother_pincode_err" style="color:red;"></span></td>
       </tr>
-
 
        <tr>
-          <td>Residential Number
-            <input type="number" class="form-control" placeholder="Enter Residential Number" required id="father_residential_no" name="father_residential_no">
-        <td>Residential Number
-             <input type="number" class="form-control" placeholder="Enter Residential Number" required id="mother_residential_no" name="mother_residential_no"></td>
           <td>Residential Number*
-            <input type="text" class="form-control" placeholder="Enter Residential Number" required id="father_residential_no" name="father_residential_no" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="12"><span id="father_residential_no_err" style="color:red;"></span></td>
-            <input type="text" class="form-control" placeholder="Enter Residential Number" required id="father_residential_no" name="father_residential_no" value="<?php echo $student[0]->father_residential_no;?>"  oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="12"><span id="father_residential_no_err" style="color:red;"></span></td>
-        <td>Residential Number*
-             <input type="text" class="form-control" placeholder="Enter Residential Number" required id="mother_residential_no" name="mother_residential_no" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="12"><span id="mother_residential_no_err" style="color:red;"></span></td>
-             <input type="text" class="form-control" placeholder="Enter Residential Number" required id="mother_residential_no" name="mother_residential_no" value="<?php echo $student[0]->mother_residential_no;?>"  oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="12"><span id="mother_residential_no_err" style="color:red;"></span></td>
+            <input type="text" class="form-control" placeholder="Enter Residential Number" required id="father_residential_no" name="father_residential_no" value="<?php echo $student[0]->father_residential_no;?>" maxlength="11"><span id="father_residential_no_err" style="color:red;"></span></td>
+          <td>Residential Number*
+             <input type="text" class="form-control" placeholder="Enter Residential Number" required id="mother_residential_no" name="mother_residential_no" value="<?php echo $student[0]->mother_residential_no;?>" maxlength="11"><span id="mother_residential_no_err" style="color:red;"></span></td>
       </tr>
-
+               
        <tr class="form-group">
-          <td>Enter Designation
           <td>Enter Designation*
           <br>
             <select class="form-select" required id="father_designation" name="father_designation" style="width: 440px;">
-                               <option disabled selected>Enter Designation</option>
             <option disabled selected value="">--SELECT--</option>
-                                <option>Private Sector</option>
-                                <option>Public sector</option>
-                                <option>Bussiness</option>
-                                <option>Agriculture</option>
-                                <option>Others</option>
               <option value="Private Sector"<?php if($student[0]->father_designation == "Private Sector"){ echo "SELECTED"; } ?>>Private Sector</option>
               <option value="Public sector"<?php if($student[0]->father_designation == "Public sector"){ echo "SELECTED"; } ?>>Public sector</option>
              <option value="Bussiness"<?php if($student[0]->father_designation == "Bussiness"){ echo "SELECTED"; } ?>>Bussiness</option>
@@ -350,123 +225,237 @@
                             </td>
         <td>Enter Designation
         <br>
-             <select  class="form-select" required id="father_designation" name="father_designation"style="width: 440px;">
-                               <option disabled selected>Enter Designation</option>
              <select  class="form-select" required id="mother_designation" name="mother_designation"style="width: 440px;">
              <option disabled selected value="">--SELECT--</option>
-                                <option>Private Sector</option>
-                                <option>Public sector</option>
-                                <option>Bussiness</option>
-                                <option>Agriculture</option>
-                                <option>Others</option>
                  <option value="Private Sector"<?php if($student[0]->mother_designation == "Private Sector"){ echo "SELECTED"; } ?>>Private Sector</option>
-    <option value="Public sector"<?php if($student[0]->mother_designation == "Public sector"){ echo "SELECTED"; } ?>>Public sector</option>
+                 <option value="Public sector"<?php if($student[0]->mother_designation == "Public sector"){ echo "SELECTED"; } ?>>Public sector</option>
                  <option value="Bussiness"<?php if($student[0]->mother_designation == "Bussiness"){ echo "SELECTED"; } ?>>Bussiness</option>
                  <option value="Agriculture"<?php if($student[0]->mother_designation == "Agriculture"){ echo "SELECTED"; } ?>>Agriculture</option>
                  <option value="Others"<?php if($student[0]->mother_designation == "Others"){ echo "SELECTED"; } ?>>Others</option>
-                                </select></td>
+             </select></td>
+      </tr>
+
+       <tr>
+          <td>Enter Company Name*
+            <input type="text" class="form-control" placeholder="Enter Company Name" required id="father_company" name="father_company" value="<?php echo $student[0]->father_company;?>" ><span id="father_company_err" style="color:red;"></span></td>
+        <td>Enter Company Name
+             <input type="text" class="form-control" placeholder="Enter Company Name" required id="mother_company" name="mother_company" value="<?php echo $student[0]->mother_company;?>" ></td>
       </tr>
 
 
        <tr>
-          <td>Enter Company
-            <input type="text" class="form-control" placeholder="Enter Company" required id="father_company" name="father_company">
-          <td>Enter Company*
-            <input type="text" class="form-control" placeholder="Enter Company" required id="father_company" name="father_company"><span id="father_company_err" style="color:red;"></span></td>
-            <input type="text" class="form-control" placeholder="Enter Company" required id="father_company" name="father_company" value="<?php echo $student[0]->father_company;?>"><span id="father_company_err" style="color:red;"></span></td>
-        <td>Enter Company
-             <input type="text" class="form-control" placeholder="Enter Company" required id="mother_company" name="mother_company"></td>
-             <input type="text" class="form-control" placeholder="Enter Company" required id="mother_company" name="mother_company" value="<?php echo $student[0]->mother_company;?>"></td>
-      </tr>
-
-
-       <tr>
-          <td>Enter Company Address
-            <input type="text" class="form-control" placeholder="Enter Company" required id="father_company_address" name="father_company_address">
           <td>Enter Company Address*
-            <input type="text" class="form-control" placeholder="Enter Company" required id="father_company_address" name="father_company_address"><span id="father_company_address_err" style="color:red;"></span></td>
-            <input type="text" class="form-control" placeholder="Enter Company" required id="father_company_address" name="father_company_address" value="<?php echo $student[0]->father_company_address;?>"><span id="father_company_address_err" style="color:red;"></span></td>
+            <input type="text" class="form-control" placeholder="Enter Company" required id="father_company_address" name="father_company_address" value="<?php echo $student[0]->father_company_address;?>" ><span id="father_company_address_err" style="color:red;"></span></td>
         <td>Enter Company Address
-             <input type="text" class="form-control" placeholder="Enter Company" required id="mother_company_address" name="mother_company_address"></td>
-             <input type="text" class="form-control" placeholder="Enter Company" required id="mother_company_address" name="mother_company_address" value="<?php echo $student[0]->mother_company_address;?>"></td>
+             <input type="text" class="form-control" placeholder="Enter Company" required id="mother_company_address" name="mother_company_address" value="<?php echo $student[0]->mother_company_address;?>" ></td>
       </tr>
 
 
       <tr>
-          <td>Enter Office Number
-             <input type="number" class="form-control"  placeholder="Enter Office Number" required id="father_office_number" name="father_office_number">
           <td>Enter Office Number*
-             <input type="text" class="form-control"  placeholder="Enter Office Number" required id="father_office_number" name="father_office_number" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"><span id="father_office_number_err" style="color:red;"></span></td>
              <input type="text" class="form-control"  placeholder="Enter Office Number" required id="father_office_number" name="father_office_number" value="<?php echo $student[0]->father_office_number;?>" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"><span id="father_office_number_err" style="color:red;"></span></td>
         <td>Enter Office Number
-              <input type="number" class="form-control"  placeholder="Enter Office Number" required id="mother_office_number" name="mother_office_number"></td>
-              <input type="text" class="form-control"  placeholder="Enter Office Number" required id="mother_office_number" name="mother_office_number" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"></td>
               <input type="text" class="form-control"  placeholder="Enter Office Number" required id="mother_office_number" name="mother_office_number" value="<?php echo $student[0]->mother_office_number;?>" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"></td>
       </tr>
 
 
       <tr>
           <td>Gross Annual Income (INR)*
-             <input type="text" class="form-control"  placeholder="Enter Gross Annual Income (INR)*" required id="father_annual_income" name="father_annual_income">
-        <td>Gross Annual Income (INR)*
-              <input type="text" class="form-control"  placeholder="Enter Gross Annual Income (INR)*" required id="mother_annual_income" name="mother_annual_income"></td>
-             <input type="text" class="form-control"  placeholder="Enter Gross Annual Income" required id="father_annual_income" name="father_annual_income" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"><span id="father_annual_income_err" style="color:red;"></span></td>
              <input type="text" class="form-control"  placeholder="Enter Gross Annual Income" required id="father_annual_income" name="father_annual_income" value="<?php echo $student[0]->father_annual_income;?>" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"><span id="father_annual_income_err" style="color:red;"></span></td>
         <td>Gross Annual Income (INR)
-              <input type="text" class="form-control"  placeholder="Enter Gross Annual Income" required id="mother_annual_income" name="mother_annual_income" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"></td>
               <input type="text" class="form-control"  placeholder="Enter Gross Annual Income" required id="mother_annual_income" name="mother_annual_income" value="<?php echo $student[0]->mother_annual_income;?>" oninput="this.value = this.value.replace(/[^0-9.]/g,'').replace(/(\.*)\./g, '$1')" maxlength="10"></td>
       </tr>
       <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class'];?>">
-
       <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
-
     </tbody>
   </table>
-  <!-- <div class="modal-footer justify-content-center ">  
-            <div class="col">  
-              <div class="form-check">  
-                <button class=" btn btn-primary" onclick="window.location.href ='onlinereg'">Go back</button>
-                <button class="btn btn-primary" type="submit" id="btn1" onclick="window.location.href = 'upload_doc'">Save & continue</button>
-             </div>
-          </div>
-        </div> -->
-
-
-
-
-
-
-
-
-
-
-
         </form>
-        
         <center><div class="col">  
               <div class="form-check">  
-                <button class=" btn btn-primary" onclick="window.location.href ='onlinereg'">Go back</button>
-                <button class="btn btn-primary"  id="btn1" onclick="window.location.href = 'upload_doc'">Save & continue</button>
                 <button class=" btn btn-back btn-primary">Go back</button>
                 <button class="btn btn-submit btn-primary">Save & continue</button>
              </div></center>
-          
-                <div class="modal-footer justify-content-center">  
-                    @include('footer')
+           
+                <center> @include('footer')  </center>  
                 </div>
-
 </div>
-
   <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+
+         $('#father_name').on('change', function() {
+            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
+                document.getElementById("father_name_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("father_name_err").innerHTML = "Only alphabets are allowed";
+                // Contain other characters also
+            }
+        });
+
+        $('#mother_name').on('change', function() {
+            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
+                document.getElementById("mother_name_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("mother_name_err").innerHTML = "Only alphabets are allowed";
+                // Contain other characters also
+            }
+        });
+
+        $('#father_mob').on('change', function() {
+            if (/^(0|91)?[6-9][0-9]{9}$/.test($(this).val())) {
+                document.getElementById("father_mob_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("father_mob_err").innerHTML = "Invalid Mobile Number";
+                // Contain other characters also
+            }
+        });
+        $('#mother_mob').on('change', function() {
+            if (/^(0|91)?[6-9][0-9]{9}$/.test($(this).val())) {
+                document.getElementById("mother_mob_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("mother_mob_err").innerHTML = "Invalid Mobile Number";
+                // Contain other characters also
+            }
+        });
+
+        $('#father_email_verified_at').on('change', function() {
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(this).val())) {
+                document.getElementById("father_email_verified_at_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("father_email_verified_at_err").innerHTML = "Invalid Gmail ID";
+                // Contain other characters also
+            }
+        });
+        $('#mother_email_verified_at').on('change', function() {
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(this).val())) {
+                document.getElementById("mother_email_verified_at_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("mother_email_verified_at_err").innerHTML = "Invalid Gmail ID";
+                // Contain other characters also
+            }
+        });
+
+
+        $('#father_district').on('change', function() {
+            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
+                document.getElementById("father_district_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("father_district_err").innerHTML = "Only alphabets are allowed";
+                // Contain other characters also
+            }
+        });
+        $('#mother_district').on('change', function() {
+            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
+                document.getElementById("mother_district_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("mother_district_err").innerHTML = "Only alphabets are allowed";
+                // Contain other characters also
+            }
+        });
+
+        $('#father_state').on('change', function() {
+            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
+                document.getElementById("father_state_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("father_state_err").innerHTML = "Only alphabets are allowed";
+                // Contain other characters also
+            }
+        });
+        $('#mother_state').on('change', function() {
+            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
+                document.getElementById("mother_state_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("mother_state_err").innerHTML = "Only alphabets are allowed";
+                // Contain other characters also
+            }
+        });
+
+        $('#father_pincode').on('change', function() {
+            if (/^(\d{4}|\d{6})$/.test($(this).val())) {
+                document.getElementById("father_pincode_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("father_pincode_err").innerHTML = "Invalid Pincode";
+                // Contain other characters also
+            }
+        });
+        $('#mother_pincode').on('change', function() {
+            if (/^(\d{4}|\d{6})$/.test($(this).val())) {
+                document.getElementById("mother_pincode_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("mother_pincode_err").innerHTML = "Invalid Pincode ";
+                // Contain other characters also
+            }
+        });
+  
+        $('#father_residential_no').on('change', function() {
+            if (/^(0|91)?[6-9][0-9]{9}$/.test($(this).val())) {
+                document.getElementById("father_residential_no_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("father_residential_no_err").innerHTML = "Invalid Residential Number";
+                // Contain other characters also
+            }
+        });
+        $('#mother_residential_no').on('change', function() {
+            if (/^(0|91)?[6-9][0-9]{9}$/.test($(this).val())) {
+                document.getElementById("mother_residential_no_err").innerHTML = "";
+                // Contain numbers only
+            } else {
+                document.getElementById("mother_residential_no_err").innerHTML = "Invalid Residential Number";
+                // Contain other characters also
+            }
+        });
+    
+        $('.mother_details').click(function(){
+            if ($(this).is(':checked')) {
+                let father_residential_address = document.getElementById("father_residential_address").value;
+                let father_area = document.getElementById("father_area").value;
+                let father_district = document.getElementById("father_district").value;
+                let father_state = document.getElementById("father_state").value;
+                let father_country = document.getElementById("father_country").value;
+                let father_pincode = document.getElementById("father_pincode").value;
+                let father_residential_no = document.getElementById("father_residential_no").value;
+
+                document.getElementById("mother_residential_address").value = father_residential_address;
+                document.getElementById("mother_area").value = father_area;
+                document.getElementById("mother_district").value = father_district;
+                document.getElementById("mother_state").value = father_state;
+                document.getElementById("mother_country").value = father_country;
+                document.getElementById("mother_pincode").value = father_pincode;
+                document.getElementById("mother_residentail_no").value = father_residential_no;
+
+            }
+
+            else{
+                document.getElementById("mother_residential_address").value ="";
+                document.getElementById("mother_area").value ="";
+                document.getElementById("mother_district").value ="";
+                document.getElementById("mother_state").value ="";
+                document.getElementById("mother_country").value ="";
+                document.getElementById("mother_pincode").value ="";
+                document.getElementById("mother_residentail_no").value ="";
+            }
+        });
+
         $('.btn-back').click(function(){
             let page_type = document.getElementById("page_type").value;
-            window.location.href ="{{ url('onlinereg/a?class=') }}"+page_type;
             let appli_id = document.getElementById("appli_id").value;
             window.location.href ="{{ url('onlinereg/a?class=') }}"+page_type+"&appli_id="+appli_id;
         });
         $('.btn-submit').click(function(){
+            
             let father_name = document.getElementById("father_name").value;
             let father_mob = document.getElementById("father_mob").value;
             let father_email_verified_at = document.getElementById("father_email_verified_at").value;
@@ -483,7 +472,7 @@
             let father_company_address = document.getElementById("father_company_address").value;
             let father_office_number = document.getElementById("father_office_number").value;
             let father_annual_income = document.getElementById("father_annual_income").value;
-
+   
             let mother_name = document.getElementById("mother_name").value;
             let mother_mob = document.getElementById("mother_mob").value;
             let mother_email_verified_at = document.getElementById("mother_email_verified_at").value;
@@ -500,15 +489,17 @@
             let mother_company_address = document.getElementById("mother_company_address").value;
             let mother_office_number = document.getElementById("mother_office_number").value;
             let mother_annual_income = document.getElementById("mother_annual_income").value;
-
-            if(!father_name || !father_mob || !father_email_verified_at || !father_mother_tongue || !father_residential_address || !father_area 
-            || !father_district || !father_state || !father_country || !father_pincode || !father_residential_no || !father_designation|| !father_company 
-            || !father_company_address || !father_office_number || !father_annual_income || !mother_name || !mother_mob || !mother_email_verified_at || !mother_mother_tongue || !mother_residential_address || !mother_area 
-            || !mother_district || !mother_state || !mother_country || !mother_pincode || !mother_residential_no)
+              
+            //   
+            if(!father_name ||!/^[a-zA-Z ]*$/g.test(father_name) || !father_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_mob) || !father_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at)|| !father_mother_tongue || !father_residential_address || !father_area|| !father_district ||!/^[a-zA-Z ]*$/g.test(father_district) || !father_state ||!/^[a-zA-Z ]*$/g.test(father_state) || !father_country || !father_pincode ||!/^(\d{4}|\d{6})$/.test(father_pincode)|| !father_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_residential_no)  || !father_designation|| !father_company  || !father_company_address || !father_office_number || !father_annual_income || !mother_name ||!/^[a-zA-Z ]*$/g.test(mother_name) || !mother_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_mob) || !mother_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mother_email_verified_at) || !mother_mother_tongue || !mother_residential_address || !mother_area  || !mother_district ||!/^[a-zA-Z ]*$/g.test(mother_district)|| !mother_state ||!/^[a-zA-Z ]*$/g.test(mother_state) || !mother_country || !mother_pincode ||!/^(\d{4}|\d{6})$/.test(mother_pincode)|| !mother_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_residential_no)   )
             {
                 if(!father_name)
                 {
                     document.getElementById("father_name_err").innerHTML = "This is Required Field";
+                }
+                else if(!/^[a-zA-Z ]*$/g.test(father_name))
+                {
+                    document.getElementById("father_name_err").innerHTML = "Only alphabets are allowed";
                 }
                 else
                 {
@@ -519,6 +510,10 @@
                 {
                     document.getElementById("father_mob_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^(0|91)?[6-9][0-9]{9}$/.test(father_mob))
+                {
+                    document.getElementById("father_mob_err").innerHTML = "Only Numbers are allowed";
+                }
                 else
                 {
                     document.getElementById("father_mob_err").innerHTML = " ";
@@ -528,6 +523,11 @@
                 {
                     document.getElementById("father_email_verified_at_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at))
+                {
+                    document.getElementById("father_email_verified_at_err").innerHTML = "Invalid Email ID";
+                }
+
                 else
                 {
                     document.getElementById("father_email_verified_at_err").innerHTML = " ";
@@ -564,6 +564,10 @@
                 {
                     document.getElementById("father_district_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^[a-zA-Z ]*$/g.test(father_district))
+                {
+                    document.getElementById("father_name_err").innerHTML = "Only alphabets are allowed";
+                }
                 else
                 {
                     document.getElementById("father_district_err").innerHTML = " ";
@@ -572,6 +576,10 @@
                 if(!father_state)
                 {
                     document.getElementById("father_state_err").innerHTML = "This is Required Field";
+                }
+                else if(!/^[a-zA-Z ]*$/g.test(father_district))
+                {
+                    document.getElementById("father_state_err").innerHTML = "Only alphabets are allowed";
                 }
                 else
                 {
@@ -591,6 +599,10 @@
                 {
                     document.getElementById("father_pincode_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^(\d{4}|\d{6})$/.test(father_pincode))
+                {
+                    document.getElementById("father_pincode_err").innerHTML = "Invalid Pincode";
+                }
                 else
                 {
                     document.getElementById("father_pincode_err").innerHTML = " ";
@@ -599,6 +611,10 @@
                 if(!father_residential_no)
                 {
                     document.getElementById("father_residential_no_err").innerHTML = "This is Required Field";
+                }
+                else if(!/^(0|91)?[6-9][0-9]{9}$/.test(father_residential_no))
+                {
+                    document.getElementById("father_residential_no_err").innerHTML = "Only Numbers are allowed";
                 }
                 else
                 {
@@ -653,6 +669,11 @@
                 {
                     document.getElementById("mother_name_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^[a-zA-Z ]*$/g.test(mother_name))
+                {
+                    document.getElementById("mother_name_err").innerHTML = "Only alphabets are allowed";
+                }
+                
                 else
                 {
                     document.getElementById("mother_name_err").innerHTML = " ";
@@ -662,6 +683,10 @@
                 {
                     document.getElementById("mother_mob_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^(0|91)?[6-9][0-9]{9}$/.test(mother_mob))
+                {
+                    document.getElementById("mother_mob_err").innerHTML = "Only Numbers are allowed";
+                }
                 else
                 {
                     document.getElementById("mother_mob_err").innerHTML = " ";
@@ -670,6 +695,10 @@
                 if(!mother_email_verified_at)
                 {
                     document.getElementById("mother_email_verified_at_err").innerHTML = "This is Required Field";
+                }
+                else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mother_email_verified_at))
+                {
+                    document.getElementById("mother_email_verified_at_err").innerHTML = "Invalid Email ID";
                 }
                 else
                 {
@@ -707,6 +736,10 @@
                 {
                     document.getElementById("mother_district_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^[a-zA-Z ]*$/g.test(mother_district))
+                {
+                    document.getElementById("mother_district_err").innerHTML = "Only alphabets are allowed";
+                }
                 else
                 {
                     document.getElementById("mother_district_err").innerHTML = " ";
@@ -715,6 +748,10 @@
                 if(!mother_state)
                 {
                     document.getElementById("mother_state_err").innerHTML = "This is Required Field";
+                }
+                else if(!/^[a-zA-Z ]*$/g.test(mother_state))
+                {
+                    document.getElementById("mother_state_err").innerHTML = "Only alphabets are allowed";
                 }
                 else
                 {
@@ -734,6 +771,10 @@
                 {
                     document.getElementById("mother_pincode_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^(\d{4}|\d{6})$/.test(mother_pincode))
+                {
+                    document.getElementById("mother_pincode_err").innerHTML = "Invalid Email ID";
+                }
                 else
                 {
                     document.getElementById("mother_pincode_err").innerHTML = " ";
@@ -743,6 +784,10 @@
                 {
                     document.getElementById("mother_residential_no_err").innerHTML = "This is Required Field";
                 }
+                else if(!/^(0|91)?[6-9][0-9]{9}$/.test(mother_residential_no))
+                {
+                    document.getElementById("mother_residential_no_err").innerHTML = "Only Numbers are allowed";
+                }
                 else
                 {
                     document.getElementById("mother_residential_no_err").innerHTML = " ";
@@ -750,9 +795,18 @@
 
          
             }
+            
+          
+            // else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at))
+            // // /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+            // {
+            //     alert("okssss")
+            //     document.getElementById("father_email_verified_at").innerHTML = "InValid  Email id";
+            // }
+                
             else
-            {
-                document.getElementById("myForm").submit();
+            {   
+                document.getElementById("myForm").submit(); 
             }
         });
     </script>
@@ -763,8 +817,6 @@
 
 
 <style>
-/* ===== Google Font Import - Poppins ===== */
-
     /* * {
     margin: 0;
     padding: 0;
@@ -1055,25 +1107,4 @@ form .buttons button , .backBtn{
 .input.form.group{
     width:20%;
 }
-</style>
-
-<script>
-const form = document.querySelector("form"),
-        nextBtn = form.querySelector(".nextBtn"),
-        backBtn = form.querySelector(".backBtn"),
-        allInput = form.querySelectorAll(".first input");
-
-
-nextBtn.addEventListener("click", ()=> {
-    allInput.forEach(input => {
-        if(input.value != ""){
-            form.classList.add('secActive');
-        }else{
-            form.classList.remove('secActive');
-        }
-    })
-})
-
-backBtn.addEventListener("click", () => form.classList.remove('secActive'));
-</script>
 </style>

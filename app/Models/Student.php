@@ -27,7 +27,14 @@ class Student extends Model
     'slp_need',
     'aadhar',
     'transport',
-    'image'
+    'image',
+    'sec_language',
+    'third_language',
+    'student_adr',
+    'father_aadhar',
+    'birth_cer',
+    'mother_aadhar',
+    'pre_year_markcard'
 ];
    
 }

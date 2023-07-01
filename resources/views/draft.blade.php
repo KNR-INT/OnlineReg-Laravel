@@ -9,7 +9,7 @@
     <div class="container">
         <div class="justify-content-center" style="margin-top:40px;">
         <h2><b>We are showing the Draft Application</b></h2>
-        </div>
+        </div> 
         <div class="card-body table-responsive p-1">
                            <table class="table table-bordered table-hover" id ="Applications">
                                              
@@ -25,11 +25,11 @@
 </tr>
  
 <tr>
-<td>Class={{ $item->class }}</td>
+<td>Class={{ $item->class }}</td> 
 
 </td>
 
-</tr>  
+</tr>       
 <tr>
 <td>Application Id={{ $item->id }}</td>
 

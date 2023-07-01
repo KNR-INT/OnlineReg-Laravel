@@ -138,34 +138,32 @@ class CustomAuthController extends Controller
        }
 
 
-    public function upload_doc(){
-            return view('upload_image');
-        }
-
-
-    public function application_details()
-    {
-        $students = Student::all();
-        return view('application_details', compact('students'));
+       public function upload_doc(){
+        return view('upload_image');
     }
 
 
-    public function payment()
-    {
-        if(Auth::check()){
-            return view('payment');
-        }
-        return redirect('/dashboard');
-    }
+public function application_details(Request $request)
+{
+    $appli_id = $request->input('appli_id');
+    $class = $request->input('page_type');
+    $students = Student::all();
+    return view('application_details', compact('students'));
+   return redirect('payment/a?class='.$class."&appli_id=".$appli_id);
+}
 
-    public function admitted()
-    {
-        if(Auth::check()){
-            return view('admitted');
-        }
-        return redirect('/dashboard');
-    }
 
+public function payment()
+{
+    return view('payment');
+}
+
+public function admitted(Request $request)
+{
+   
+  
+    return view('admitted');
+}
  public function onlinereg()
     {
         return view('onlinereg');
@@ -182,6 +180,7 @@ class CustomAuthController extends Controller
         DB::table('students')->insert($data);
         $users = DB::select("SELECT * FROM `students` WHERE `email_id` = '$ses_email' ORDER BY `id` DESC LIMIT 1");
         $user_id = $users[0]->id;
+        
         // Session::forget('users.id');
         // session()->push('users.id', $user_id);
         // return view('onlinereg');

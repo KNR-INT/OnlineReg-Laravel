@@ -21,7 +21,7 @@
   <div>
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-
+&nbsp;&nbsp;&nbsp;&nbsp;
  <section class="step-wizard">
         <ul class="step-wizard-list">
             <li class="step-wizard-item ">
@@ -53,42 +53,72 @@
     <br>
 <h3>Application Fee Payment For Academic Year 2022-23</h3>
 
+
+<?php 
+                            $id = $_GET['appli_id'];
+                            $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
+                            ?>
+                            
  <br>
+
+
+ <form id="myForm" action="{{ url('update-updateadmitted') }}" enctype="multipart/form-data">
+        <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
+    
+        <input type="hidden" id="appli_no" name="appli_no" value="NPSYPR/<?php echo $student[0]->class;?>/0<?php echo $student[0]->id; ?>">
+
+        <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+
+    </form>
+    <?php 
+                            $class = $_GET['class'];
+                        ?>
+                                             <?php 
+                            $id = $_GET['appli_id'];
+                            $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
+                            ?>
  <div>
 <table align="center" cellpadding = "20">
 
 <tr id="a">
 <th>Student Name</th>
-<td>Virat</td>
+<td><input type="text"  value="<?php echo $student[0]->name; ?>" readonly></td>
 </tr>
 <tr>
 <th>Father Name</th>
-<td>Kohli</td>
+<td><input type="text" value="<?php echo $student[0]->father_name ?>" readonly></td>
 </tr>
 <tr id="a">
 <th>Mother Name</th>
-<td>Sarojini</td>
+<td><input type="text" value="<?php echo $student[0]->mother_name ?>" readonly></td>
 </td>
 </tr>
 <tr>
 <th>For Class</th>
-<td>Montessori I</td>
+<td><input type="text" value="<?php echo $student[0]->class ?>" readonly></td>
 </tr>
 <tr id="a">
     <th>Application No</th>
-    <td>2023-24/4567</td>
+    <td><?php echo $student[0]->class; ?>/0<?php echo $student[0]->id; ?></td>
 </tr>
 </table>
 </div>
+
 <br>
 <div class="justify-content-center">
     
-<button class="btn btn-primary" style="margin-left:550px;" height="100px;" id="btn1" onclick="window.location.href = 'admitted'">
+<button class="btn  btn-submit btn-primary" style="margin-left:750px;" height="100px;" id="btn1" >
 Payment</button>
+
+
 </div>
 @include('footer') 
 </form>
-     
+<script>
+        $('.btn-submit').click(function(){
+            document.getElementById("myForm").submit();
+        });
+</script>
 </body>  
 </html>
 <style>
@@ -254,3 +284,5 @@ h4{
 }
 
 </style>
+
+
