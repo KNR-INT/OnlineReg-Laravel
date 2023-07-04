@@ -13,16 +13,22 @@ class MyMailable extends Mailable
 
     
     public $emails;
-    public function __construct($emails){
-        $this->emails = $emails;
+    public function __construct($details){
+        // $this->emails = $emails;
+        $this->details = $details;
     }
 
     public function build()
     {
-        return $this->subject('OTP for Application Submission to NPS YPR')
-                    ->view('otpgeneration')  
-                    ->with('otpgeneration', $this->emails);  
+        // return $this->subject('OTP for Application Submission to NPS YPR')
+        //             ->view('otpgeneration')  
+        //             ->with('otpgeneration', $this->emails);  
+                    return $this->from('test.email@knrint.in', 'Sender Name')
+                    ->subject('Your Subject')
+                    ->markdown('otpgeneration')
+                    ->with('details', $this->details);
+    }
 
     }
-}
+
 ?>

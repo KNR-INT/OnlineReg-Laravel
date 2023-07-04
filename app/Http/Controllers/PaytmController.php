@@ -1,21 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 
 namespace App\Http\Controllers;
@@ -30,7 +12,7 @@ class PaytmController extends Controller
      *
      * @return Response
      */
-    public function paytmPayment(Request $request)
+    public function PaytmPayment(Request $request)
     {
         $payment = PaytmWallet::with('receive');
         $payment->prepare([
@@ -83,4 +65,3 @@ class PaytmController extends Controller
         return view('paytm.payment-page');
     } 
 }
-

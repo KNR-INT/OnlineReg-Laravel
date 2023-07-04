@@ -16,7 +16,8 @@ define('LARAVEL_START', microtime(true));
 */
 
 require __DIR__.'/vendor/autoload.php';
-
+require_once('vendor/autoload.php');
+    define('PROJECT','path/to/paytm-pg');
 $app = require_once __DIR__.'/bootstrap/app.php';
 
 /*

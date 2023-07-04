@@ -13,6 +13,7 @@
     use Illuminate\Support\Facades\Hash;
     use App\Http\Controllers\PaytmController;
     use App\Models\PaytmWallet;
+    use App\Mail\MyMailable;
 
 
 
@@ -20,7 +21,7 @@
 
     use App\Models\Student;
     use App\Models\Parent1;
-    use App\Http\Controllers\PaytmController;
+    
 
 Route::get('/', [CustomAuthController::class, 'home']); 
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
@@ -136,3 +137,18 @@ Route::get('create-id', [CustomAuthController::class, 'create_id']);
 Route::get('paytm-payment',[PaytmController::Class, 'paytmPayment'])->name('paytm.payment');
 Route::get('paytm-callback',[PaytmController::Class, 'paytmCallback'])->name('paytm.callback');
 Route::get('paytm-purchase',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');
+
+Route::get('/postlogin-otpgenerator', function () {
+    $details = [
+        'title' => 'Test Email',
+        'body' => 'This is a test email from Laravel with SMTP configuration.',
+    ];
+
+    try {
+        Mail::to('nikhiln0712@gmail.com')->send(new MyMailable($details));
+
+        return "Test email sent successfully!";
+    } catch (\Exception $e) {
+        return "Failed to send test email. Error: " . $e->getMessage();
+    }
+});

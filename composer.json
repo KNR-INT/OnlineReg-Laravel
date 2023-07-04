@@ -4,15 +4,7 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
-    "require": {
-        "php": "^8.0.2",
-        "anandsiddharth/laravel-paytm-wallet": "^2.0",
-        "guzzlehttp/guzzle": "^7.2",
-        "josiasmontag/laravel-recaptchav3": "^1.0",
-        "laravel/framework": "^9.19",
-        "laravel/sanctum": "^3.0",
-        "laravel/tinker": "^2.7"
-    },
+    
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
@@ -22,11 +14,15 @@
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
+    "require": {
+    
+        "paytm/paytm-pg": "*"
+        
+},
+    
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+        "paytmpg\\": "vendor/paytm/paytm-pg"
         }
     },
     "autoload-dev": {
@@ -64,4 +60,7 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true
+
+
+    
 }
