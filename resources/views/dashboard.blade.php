@@ -44,7 +44,6 @@
                         </div>
                     <div class="card-body">
                         
-                    <div class="card-body"> 
                        <h4 class="card-footer text-center"><a href="newapp" class="d-block">New Application</a></h4>
                        </div>
                    </div>
@@ -62,10 +61,8 @@
                     </div>
                 </div>
             </div>
-			<center> @include('footer')  </center>  
              </div>
              
-			
 </div>
 </div>
 
@@ -249,4 +246,3 @@ body {
     margin-bottom: 10px;
 }
 </style>@include('footer')
-</style>

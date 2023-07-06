@@ -14,9 +14,11 @@
     use App\Http\Controllers\PaytmController;
     use App\Models\PaytmWallet;
     use App\Mail\MyMailable;
-
-
-
+    use Illuminate\Support\Facades\Mail;
+    use Illuminate\Mail\Message;
+    use Illuminate\Mail\Mailer;
+    use Illuminate\Http\Request;
+    use Symfony\Component\Mime\Address;
 
 
     use App\Models\Student;
@@ -26,7 +28,7 @@
 Route::get('/', [CustomAuthController::class, 'home']); 
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
-Route::post('postlogin', [CustomAuthController::class, 'login'])->name('postlogin'); 
+// Route::post('postlogin', [CustomAuthController::class, 'login'])->name('postlogin'); 
 Route::get('signup', [CustomAuthController::class, 'signup'])->name('register-user');
 Route::post('postsignup', [CustomAuthController::class, 'signupsave'])->name('postsignup'); 
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout'); 
@@ -152,3 +154,72 @@ Route::get('/postlogin-otpgenerator', function () {
         return "Failed to send test email. Error: " . $e->getMessage();
     }
 });
+Route::get('/sparkpost', function () {
+    Mail::send('emails.test', [], function ($message) {
+        $message
+            ->from('from@yourdomain.com', 'Your Name')
+            ->to('to@otherdomain.com', 'Receiver Name')
+            ->subject('From SparkPost with ❤');
+    });
+});
+
+
+// Route::get('postlogin', function (Request $request) {
+//     $email = $request->input('email');
+//     $data = [
+//         'name' => $email,
+//     ];
+
+//     Mail::send('emails.test', $data, function (Message $message) {
+//         $message->to('padmajaac07@gmail.com')
+//             ->subject('Test Email');
+//     });
+
+//     return 'Email sent successfully!';
+// })->name('postlogin');
+
+
+
+
+
+Route::get('/postlogin', function (Request $request) {
+    $email = $request->input('email'); // Assuming the email is sent as a query parameter
+
+    $data = [
+        'name' => $email,
+        'otp_number' => mt_rand(100000, 999999),
+    ];
+
+    Mail::send('emails.test', $data, function (Message $message) use ($email) {
+        $message->to($email)
+            ->subject('Test Email');
+    });
+
+    // $otp_number = 123456; // Assigning a value to the variable
+
+    // Using the variable
+    echo "The OTP number is: " . $data['otp_number'];
+
+    return view('otp');
+})->name('postlogin');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

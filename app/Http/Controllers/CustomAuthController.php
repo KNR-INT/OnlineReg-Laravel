@@ -116,21 +116,27 @@ class CustomAuthController extends Controller
 
     public function otp(Request $request)
     {
-        $otp = $request->otp;  
-        $session = request()->session()->get('login.email');            
-        $ses_email = $session[0];
-        $users = DB::select("SELECT * FROM `otp` WHERE `email` = '$ses_email' ORDER BY `id` DESC LIMIT 1");
-        $db_otp = $users[0]->otp;
-        if($otp == $db_otp){
-            return redirect('/dashboard');
+        $otp = $request->otp;
+        $session = request()->session()->get('login.email');
+    
+        if (!empty($session)) {
+            $ses_email = $session[0];
+            $users = DB::select("SELECT * FROM `otp` WHERE `email` = '$ses_email' ORDER BY `id` DESC LIMIT 1");
+    
+            if (!empty($users)) {
+                $db_otp = $users[0]->otp;
+    
+                if ($otp == $db_otp) {
+                    return redirect('/dashboard');
+                } else {
+                    return view('dashboard')->with('message', 'Invalid OTP');
+                }
+            }
         }
-        else
-        {
-            return view('otp')
-            ->with('message','Invalid OTP');
-        }
+    
+        return view('dashboard')->with('message', 'Invalid session');
     }
-
+    
  
     public function signup()
     {
@@ -300,6 +306,7 @@ $sessions = request()->session()->get('users.user_id');
                     $response->header("Content-Type", $type);
                  return $response;
                 }
+                
                 public function login(Request $request) {    
                     $email = $request->email;    
                     session()->push('login.email', $email); 
@@ -324,7 +331,7 @@ $sessions = request()->session()->get('users.user_id');
                         // });
                 
                         // Otp::create(['email'=>$email,'otp' => $otp]);
-                        $otp1 = new Otp;
+                        $otp1 = new Mail;
                         $otp1->sendTOEmail($otp_number,'padmajaac07@gmail.com');
                         return view('otp');          
                     }
@@ -347,7 +354,7 @@ $sessions = request()->session()->get('users.user_id');
                         // });
                 
                         // Otp::create(['email'=>$email,'otp' => $otp]);
-                        $otp1 = new Otp;
+                        $otp1 = new Mail;
                         $otp1->sendTOEmail($otp_number,$email);
                         return view('otp');    
             

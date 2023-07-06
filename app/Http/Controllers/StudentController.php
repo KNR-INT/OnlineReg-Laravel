@@ -47,47 +47,12 @@ class StudentController extends Controller
         // $filename= date('YmdHi').$file->getClientOriginalName();
         //     $file-> move(public_path('public/Image'), $filename);
         //     $data['image']= $filename;appli_id
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         $class = $request->input('page_type');
         // $appli_id = $request->input('appli_id');
 
         return redirect('/parents_details/a?class='.$class."&appli_id=".$appli_id);
     } 
-    }   
+    
     public function updateapplino(Request $request)
     {
        

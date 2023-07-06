@@ -11,7 +11,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 
-class Otp extends Model
+class Message extends Model
 {
     use HasFactory;
 
@@ -32,7 +32,7 @@ class Otp extends Model
             'body' => 'Your OTP is : '. $otp_number
         ];
         
-        Mail::to($email)->send(new MyMailable($data));
+        Mail::to($email)->send(new Message($data));
         // Mail::to($email)->send(new SendMail($mail_details));
         // return response(["status" => 200, "message" => "OTP sent successfully"]);
     }

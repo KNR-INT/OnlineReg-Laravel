@@ -48,7 +48,7 @@
                         </div>
                     @endif
                     <div class="card-body">
-                        <form method="POST" action="{{ route('postlogin') }}">
+                        <form method="GET" action="{{ route('postlogin') }}">
                             
                             @csrf
                             <div class="d-flex justify-content-center">
