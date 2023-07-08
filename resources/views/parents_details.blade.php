@@ -17,7 +17,7 @@
  ?>
 
 <div class="container">
-<form action = "{{ url('store-parent') }}" method = "get">
+    
 <form id="myForm" action = "{{ url('store-parent') }}">
   <table class="table table-responsive">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -62,7 +62,7 @@
     <tbody>
       <tr>
         <td >Father Name*
-  <input type="text"  class="form-control" placeholder="Enter Father name" required id="father_name" name="father_name" maxlength=50; value="<?php echo $student[0]->father_name;?>" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
+         <input type="text"  class="form-control" placeholder="Enter Father name" required id="father_name" name="father_name" maxlength=50; value="<?php echo $student[0]->father_name;?>" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
          <span id="father_name_err" style="color:red;"></span></td>
         <td>Mother Name*
          <input type="text"  class="form-control" placeholder="Enter Mother name" required id="mother_name" name="mother_name" maxlength=50; value="<?php echo $student[0]->mother_name;?>" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1);">
@@ -72,18 +72,15 @@
 
       <tr>
         <td>Mobile Number*
-<input type="text" class="form-control" placeholder="Enter Father mobile number" required id="father_mob" name="father_mob" value="<?php echo $student[0]->father_mob;?>" maxlength="10"><span id="father_mob_err" style="color:red;"></span></td>
+         <input type="text" class="form-control" placeholder="Enter Father mobile number" required id="father_mob" name="father_mob" value="<?php echo $student[0]->father_mob;?>" maxlength="10"><span id="father_mob_err" style="color:red;"></span></td>
          <td>Mobile Number*
-        <input type="text" class="form-control" placeholder="Enter Mother mobile number" required id="mother_mob" name="mother_mob" value="<?php echo $student[0]->mother_mob;?>" maxlength="10"><span id="mother_mob_err" style="color:red;"></span></td>      </tr>
+        <input type="text" class="form-control" placeholder="Enter Mother mobile number" required id="mother_mob" name="mother_mob" value="<?php echo $student[0]->mother_mob;?>" maxlength="10"><span id="mother_mob_err" style="color:red;"></span></td>
+      </tr>
 
 
       <tr>
         <td>Father Email Id*
-<<<<<<< .mine
         <input type="text" class="form-control" placeholder="Enter Father Email Id" required id="father_email_verified_at" name="father_email_verified_at" value="<?php echo $student[0]->father_email_verified_at;?>"><span id="father_email_verified_at_err" style="color:red;"></span></td>
-=======
-        <input type="text" class="form-control" placeholder="Enter Father Email Id" required id="father_email_verified_at" name="father_email_verified_at" value="<?php if(!empty($student)){ echo $student[0]->father_email_verified_at;}?>"><span id="father_email_verified_at_err" style="color:red;"></span></td>
->>>>>>> .theirs
         <td>Mother Email Id*
          <input type="text" class="form-control" placeholder="Enter Mother Email Id" required id="mother_email_verified_at" name="mother_email_verified_at" value="<?php echo $student[0]->mother_email_verified_at;?>"><span id="mother_email_verified_at_err" style="color:red;"></span></td>
        </tr>
@@ -94,7 +91,7 @@
         <br>
         <select required id="father_mother_tongue" name="father_mother_tongue" style="width: 440px;">
         <option disabled selected value="">--SELECT--</option>
-<option value="Kannada"<?php if($student[0]->father_mother_tongue == "Kannada"){ echo "SELECTED"; } ?>>Kannada</option>
+        <option value="Kannada"<?php if($student[0]->father_mother_tongue == "Kannada"){ echo "SELECTED"; } ?>>Kannada</option>
         <option value="Tamil"<?php if($student[0]->father_mother_tongue == "Tamil"){ echo "SELECTED"; } ?>>Tamil</option>
          <option value="Telugu"<?php if($student[0]->father_mother_tongue == "Telugu"){ echo "SELECTED"; } ?>>Telugu</option>
          <option value="Hindi"<?php if($student[0]->father_mother_tongue == "Hindi"){ echo "SELECTED"; } ?>>Hindi</option>
@@ -122,7 +119,8 @@
          <option value="Urdu"<?php if($student[0]->mother_mother_tongue == "Urdu"){ echo "SELECTED"; } ?>>Urdu</option>
          <option value="Malayalam"<?php if($student[0]->mother_mother_tongue == "Malayalam"){ echo "SELECTED"; } ?>>Malayalam</option>
          <option value="Gujarathi"<?php if($student[0]->mother_mother_tongue == "Gujarathi"){ echo "SELECTED"; } ?>>Gujarathi</option>
-         <option value="Others"<?php if($student[0]->mother_mother_tongue == "Others"){ echo "SELECTED"; } ?>>Others</option>                     </select><span id="mother_mother_tongue_err" style="color:red;"></span>
+         <option value="Others"<?php if($student[0]->mother_mother_tongue == "Others"){ echo "SELECTED"; } ?>>Others</option>
+                     </select><span id="mother_mother_tongue_err" style="color:red;"></span>
                  </td>
        </tr>
       
@@ -132,6 +130,14 @@
         <td>Residential Address*
           <input type="text" class="form-control" placeholder="Enter Residential Address" required id="mother_residential_address" name="mother_residential_address" value="<?php echo $student[0]->mother_residential_address;?>"><span id="mother_residential_address_err" style="color:red;"></span></td>
       </tr>
+      <tr>
+        <td>
+        
+        </td>
+        <td>
+           <b>Same as Father details</b> <input type="checkbox" class="mother_details" id="mother_details" name="mother_details"> 
+        </td>
+       </tr>
 
 
       <tr>
@@ -163,7 +169,7 @@
         <br>
            <select required id="father_country" name="father_country" style="width: 440px;">
            <option disabled selected value="">--SELECT--</option>
-<option value="India"<?php if($student[0]->father_country =="India"){ echo "SELECTED"; } ?>>India</option>
+                 <option value="India"<?php if($student[0]->father_country =="India"){ echo "SELECTED"; } ?>>India</option>
                  <option value="America"<?php if($student[0]->father_country =="America"){ echo "SELECTED"; } ?>>America</option>
                 <option value="Australia"<?php if($student[0]->father_country =="Australia"){ echo "SELECTED"; } ?>>Australia</option>
                 <option value="Brazil"<?php if($student[0]->father_country =="Brazil"){ echo "SELECTED"; } ?>>Brazil</option>
@@ -178,7 +184,7 @@
                 <br>
                     <select required id="mother_country" name="mother_country" style="width: 440px;">
                     <option disabled selected value="">--SELECT--</option>
- <option value="India"<?php if($student[0]->mother_country == "India"){   echo "SELECTED"; } ?>>India</option>
+                <option value="India"<?php if($student[0]->mother_country == "India"){   echo "SELECTED"; } ?>>India</option>
                  <option value="America"<?php if($student[0]->mother_country =="America"){ echo "SELECTED"; } ?>>America</option>
                 <option value="Australia"<?php if($student[0]->mother_country =="Australia"){ echo "SELECTED"; } ?>>Australia</option>
                 <option value="Brazil"<?php if($student[0]->mother_country =="Brazil"){ echo "SELECTED"; } ?>>Brazil</option>
@@ -187,7 +193,7 @@
                 <option value="France"<?php if($student[0]->mother_country =="France"){ echo "SELECTED"; } ?>>France</option>
                 <option value="Italy"<?php if($student[0]->mother_country =="Italy"){ echo "SELECTED"; } ?>>Italy</option>
                 <option value="Others"<?php if($student[0]->mother_country == "Others"){ echo "SELECTED"; } ?>>Others</option>
-                     </select><span id="mother_country_err" style="color:red;"></span></td>                     </select><span id="mother_country_err" style="color:red;"></span></td>
+                     </select><span id="mother_country_err" style="color:red;"></span></td>
             </tr>
         
          <tr>
@@ -199,39 +205,42 @@
 
        <tr>
           <td>Residential Number*
- <input type="text" class="form-control" placeholder="Enter Residential Number" required id="father_residential_no" name="father_residential_no" value="<?php echo $student[0]->father_residential_no;?>" maxlength="11"><span id="father_residential_no_err" style="color:red;"></span></td>
+            <input type="text" class="form-control" placeholder="Enter Residential Number" required id="father_residential_no" name="father_residential_no" value="<?php echo $student[0]->father_residential_no;?>" maxlength="11"><span id="father_residential_no_err" style="color:red;"></span></td>
           <td>Residential Number*
-             <input type="text" class="form-control" placeholder="Enter Residential Number" required id="mother_residential_no" name="mother_residential_no" value="<?php echo $student[0]->mother_residential_no;?>" maxlength="11"><span id="mother_residential_no_err" style="color:red;"></span></td>      </tr>
+             <input type="text" class="form-control" placeholder="Enter Residential Number" required id="mother_residential_no" name="mother_residential_no" value="<?php echo $student[0]->mother_residential_no;?>" maxlength="11"><span id="mother_residential_no_err" style="color:red;"></span></td>
+      </tr>
                
        <tr class="form-group">
           <td>Enter Designation*
           <br>
             <select class="form-select" required id="father_designation" name="father_designation" style="width: 440px;">
             <option disabled selected value="">--SELECT--</option>
- <option value="Private Sector"<?php if($student[0]->father_designation == "Private Sector"){ echo "SELECTED"; } ?>>Private Sector</option>
+              <option value="Private Sector"<?php if($student[0]->father_designation == "Private Sector"){ echo "SELECTED"; } ?>>Private Sector</option>
               <option value="Public sector"<?php if($student[0]->father_designation == "Public sector"){ echo "SELECTED"; } ?>>Public sector</option>
              <option value="Bussiness"<?php if($student[0]->father_designation == "Bussiness"){ echo "SELECTED"; } ?>>Bussiness</option>
              <option value="Agriculture"<?php if($student[0]->father_designation == "Agriculture"){ echo "SELECTED"; } ?>>Agriculture</option>
-             <option value="Others"<?php if($student[0]->father_designation == "Others"){ echo "SELECTED"; } ?>>Others</option>                                </select>
+             <option value="Others"<?php if($student[0]->father_designation == "Others"){ echo "SELECTED"; } ?>>Others</option>
+                                </select>
                                 <span id="father_designation_err" style="color:red;"></span>
                             </td>
         <td>Enter Designation
         <br>
              <select  class="form-select" required id="mother_designation" name="mother_designation"style="width: 440px;">
              <option disabled selected value="">--SELECT--</option>
-<option value="Private Sector"<?php if($student[0]->mother_designation == "Private Sector"){ echo "SELECTED"; } ?>>Private Sector</option>
+                 <option value="Private Sector"<?php if($student[0]->mother_designation == "Private Sector"){ echo "SELECTED"; } ?>>Private Sector</option>
                  <option value="Public sector"<?php if($student[0]->mother_designation == "Public sector"){ echo "SELECTED"; } ?>>Public sector</option>
                  <option value="Bussiness"<?php if($student[0]->mother_designation == "Bussiness"){ echo "SELECTED"; } ?>>Bussiness</option>
                  <option value="Agriculture"<?php if($student[0]->mother_designation == "Agriculture"){ echo "SELECTED"; } ?>>Agriculture</option>
                  <option value="Others"<?php if($student[0]->mother_designation == "Others"){ echo "SELECTED"; } ?>>Others</option>
-</select></td>      </tr>
+             </select></td>
+      </tr>
 
        <tr>
-    <input type="text" class="form-control" placeholder="Enter Company" required id="mother_company" name="mother_company" value="<?php echo $student[0]->mother_company;?>"></td>
           <td>Enter Company Name*
             <input type="text" class="form-control" placeholder="Enter Company Name" required id="father_company" name="father_company" value="<?php echo $student[0]->father_company;?>" ><span id="father_company_err" style="color:red;"></span></td>
         <td>Enter Company Name
-             <input type="text" class="form-control" placeholder="Enter Company Name" required id="mother_company" name="mother_company" value="<?php echo $student[0]->mother_company;?>" ></td>      </tr>
+             <input type="text" class="form-control" placeholder="Enter Company Name" required id="mother_company" name="mother_company" value="<?php echo $student[0]->mother_company;?>" ></td>
+      </tr>
 
 
        <tr>
@@ -260,7 +269,7 @@
       <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
     </tbody>
   </table>
-</form>
+        </form>
         <center><div class="col">  
               <div class="form-check">  
                 <button class=" btn btn-back btn-primary">Go back</button>
@@ -314,7 +323,7 @@
         });
 
         $('#father_email_verified_at').on('change', function() {
-            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(this).val())) {
+            if (/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test($(this).val())) {
                 document.getElementById("father_email_verified_at_err").innerHTML = "";
                 // Contain numbers only
             } else {
@@ -323,184 +332,7 @@
             }
         });
         $('#mother_email_verified_at').on('change', function() {
-            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(this).val())) {
-                document.getElementById("mother_email_verified_at_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("mother_email_verified_at_err").innerHTML = "Invalid Gmail ID";
-                // Contain other characters also
-            }
-        });
-
-
-        $('#father_district').on('change', function() {
-            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
-                document.getElementById("father_district_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("father_district_err").innerHTML = "Only alphabets are allowed";
-                // Contain other characters also
-            }
-        });
-        $('#mother_district').on('change', function() {
-            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
-                document.getElementById("mother_district_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("mother_district_err").innerHTML = "Only alphabets are allowed";
-                // Contain other characters also
-            }
-        });
-
-        $('#father_state').on('change', function() {
-            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
-                document.getElementById("father_state_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("father_state_err").innerHTML = "Only alphabets are allowed";
-                // Contain other characters also
-            }
-        });
-        $('#mother_state').on('change', function() {
-            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
-                document.getElementById("mother_state_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("mother_state_err").innerHTML = "Only alphabets are allowed";
-                // Contain other characters also
-            }
-        });
-
-        $('#father_pincode').on('change', function() {
-            if (/^(\d{4}|\d{6})$/.test($(this).val())) {
-                document.getElementById("father_pincode_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("father_pincode_err").innerHTML = "Invalid Pincode";
-                // Contain other characters also
-            }
-        });
-        $('#mother_pincode').on('change', function() {
-            if (/^(\d{4}|\d{6})$/.test($(this).val())) {
-                document.getElementById("mother_pincode_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("mother_pincode_err").innerHTML = "Invalid Pincode ";
-                // Contain other characters also
-            }
-        });
-  
-        $('#father_residential_no').on('change', function() {
-            if (/^(0|91)?[6-9][0-9]{9}$/.test($(this).val())) {
-                document.getElementById("father_residential_no_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("father_residential_no_err").innerHTML = "Invalid Residential Number";
-                // Contain other characters also
-            }
-        });
-        $('#mother_residential_no').on('change', function() {
-            if (/^(0|91)?[6-9][0-9]{9}$/.test($(this).val())) {
-                document.getElementById("mother_residential_no_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("mother_residential_no_err").innerHTML = "Invalid Residential Number";
-                // Contain other characters also
-            }
-        });
-    
-        $('.mother_details').click(function(){
-            if ($(this).is(':checked')) {
-                let father_residential_address = document.getElementById("father_residential_address").value;
-                let father_area = document.getElementById("father_area").value;
-                let father_district = document.getElementById("father_district").value;
-                let father_state = document.getElementById("father_state").value;
-                let father_country = document.getElementById("father_country").value;
-                let father_pincode = document.getElementById("father_pincode").value;
-                let father_residential_no = document.getElementById("father_residential_no").value;
-
-                document.getElementById("mother_residential_address").value = father_residential_address;
-                document.getElementById("mother_area").value = father_area;
-                document.getElementById("mother_district").value = father_district;
-                document.getElementById("mother_state").value = father_state;
-                document.getElementById("mother_country").value = father_country;
-                document.getElementById("mother_pincode").value = father_pincode;
-                document.getElementById("mother_residentail_no").value = father_residential_no;
-
-            }<<<<<<< .mine
-            else{
-                document.getElementById("mother_residential_address").value ="";
-                document.getElementById("mother_area").value ="";
-                document.getElementById("mother_district").value ="";
-                document.getElementById("mother_state").value ="";
-                document.getElementById("mother_country").value ="";
-                document.getElementById("mother_pincode").value ="";
-                document.getElementById("mother_residentail_no").value ="";
-            }
-        });
-=======
-        </form>
-        <center><div class="col">  
-              <div class="form-check">  
-                <button class=" btn btn-back btn-primary">Go back</button>
-                <button class="btn btn-submit btn-primary">Save & continue</button>
-             </div></center>
-          
-                <div class="modal-footer justify-content-center">  
-                    @include('footer')
-                </div>
->>>>>>> .theirs
-
-         $('#father_name').on('change', function() {
-            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
-                document.getElementById("father_name_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("father_name_err").innerHTML = "Only alphabets are allowed";
-                // Contain other characters also
-            }
-        });
-
-        $('#mother_name').on('change', function() {
-            if (/^[a-zA-Z ]*$/g.test($(this).val())) {
-                document.getElementById("mother_name_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("mother_name_err").innerHTML = "Only alphabets are allowed";
-                // Contain other characters also
-            }
-        });
-
-        $('#father_mob').on('change', function() {
-            if (/^(0|91)?[6-9][0-9]{9}$/.test($(this).val())) {
-                document.getElementById("father_mob_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("father_mob_err").innerHTML = "Invalid Mobile Number";
-                // Contain other characters also
-            }
-        });
-        $('#mother_mob').on('change', function() {
-            if (/^(0|91)?[6-9][0-9]{9}$/.test($(this).val())) {
-                document.getElementById("mother_mob_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("mother_mob_err").innerHTML = "Invalid Mobile Number";
-                // Contain other characters also
-            }
-        });
-
-        $('#father_email_verified_at').on('change', function() {
-            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(this).val())) {
-                document.getElementById("father_email_verified_at_err").innerHTML = "";
-                // Contain numbers only
-            } else {
-                document.getElementById("father_email_verified_at_err").innerHTML = "Invalid Gmail ID";
-                // Contain other characters also
-            }
-        });
-        $('#mother_email_verified_at').on('change', function() {
-            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(this).val())) {
+            if (/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test($(this).val())) {
                 document.getElementById("mother_email_verified_at_err").innerHTML = "";
                 // Contain numbers only
             } else {
@@ -659,7 +491,7 @@
             let mother_annual_income = document.getElementById("mother_annual_income").value;
               
             //   
-            if(!father_name ||!/^[a-zA-Z ]*$/g.test(father_name) || !father_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_mob) || !father_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at)|| !father_mother_tongue || !father_residential_address || !father_area|| !father_district ||!/^[a-zA-Z ]*$/g.test(father_district) || !father_state ||!/^[a-zA-Z ]*$/g.test(father_state) || !father_country || !father_pincode ||!/^(\d{4}|\d{6})$/.test(father_pincode)|| !father_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_residential_no)  || !father_designation|| !father_company  || !father_company_address || !father_office_number || !father_annual_income || !mother_name ||!/^[a-zA-Z ]*$/g.test(mother_name) || !mother_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_mob) || !mother_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mother_email_verified_at) || !mother_mother_tongue || !mother_residential_address || !mother_area  || !mother_district ||!/^[a-zA-Z ]*$/g.test(mother_district)|| !mother_state ||!/^[a-zA-Z ]*$/g.test(mother_state) || !mother_country || !mother_pincode ||!/^(\d{4}|\d{6})$/.test(mother_pincode)|| !mother_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_residential_no)   )
+            if(!father_name ||!/^[a-zA-Z ]$/g.test(father_name) || !father_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_mob) || !father_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'+/=?^`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test(father_email_verified_at)|| !father_mother_tongue || !father_residential_address || !father_area|| !father_district ||!/^[a-zA-Z ]$/g.test(father_district) || !father_state ||!/^[a-zA-Z ]$/g.test(father_state) || !father_country || !father_pincode ||!/^(\d{4}|\d{6})$/.test(father_pincode)|| !father_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_residential_no)  || !father_designation|| !father_company  || !father_company_address || !father_office_number || !father_annual_income || !mother_name ||!/^[a-zA-Z ]$/g.test(mother_name) || !mother_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_mob) || !mother_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mother_email_verified_at) || !mother_mother_tongue || !mother_residential_address || !mother_area  || !mother_district ||!/^[a-zA-Z ]$/g.test(mother_district)|| !mother_state ||!/^[a-zA-Z ]$/g.test(mother_state) || !mother_country || !mother_pincode ||!/^(\d{4}|\d{6})$/.test(mother_pincode)|| !mother_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_residential_no)   )
             {
                 if(!father_name)
                 {
@@ -691,7 +523,7 @@
                 {
                     document.getElementById("father_email_verified_at_err").innerHTML = "This is Required Field";
                 }
-                else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at))
+                else if(!/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test(father_email_verified_at))
                 {
                     document.getElementById("father_email_verified_at_err").innerHTML = "Invalid Email ID";
                 }
@@ -864,7 +696,7 @@
                 {
                     document.getElementById("mother_email_verified_at_err").innerHTML = "This is Required Field";
                 }
-                else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mother_email_verified_at))
+                else if(!/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test(mother_email_verified_at))
                 {
                     document.getElementById("mother_email_verified_at_err").innerHTML = "Invalid Email ID";
                 }
@@ -965,8 +797,8 @@
             }
             
           
-            // else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at))
-            // // /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+            // else if(!/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test(father_email_verified_at))
+            // // /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/
             // {
             //     alert("okssss")
             //     document.getElementById("father_email_verified_at").innerHTML = "InValid  Email id";

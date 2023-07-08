@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PaytmWallet;
+use App\Models\Payment;
 
 class PaytmController extends Controller
 {
@@ -32,7 +33,7 @@ class PaytmController extends Controller
      *
      * @return Object
      */
-    public function paytmCallback()
+    public function paytmCallback(Request $request)
     {
         $transaction = PaytmWallet::with('receive');
         
@@ -41,6 +42,14 @@ class PaytmController extends Controller
         
         if($transaction->isSuccessful()){
           //Transaction Successful
+          $payment = new Payment();
+          $payment->order_id = $response['ORDERID'];
+          $payment->transaction_id = $response['TXNID'];
+          $payment->bank_name = $response['BANKNAME'];
+          $payment->transaction_amount = $response['TXNAMOUNT'];
+          $payment->transaction_date = $response['TXNDATE'];
+          // Update other relevant fields based on your requirements
+          $payment->save();
           return view('paytm.paytm-success-page');
         }else if($transaction->isFailed()){
           //Transaction Failed

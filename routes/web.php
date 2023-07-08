@@ -136,9 +136,11 @@ Route::get('students', [CustomAuthController::class, 'application_details']);
 Route::get('create-id', [CustomAuthController::class, 'create_id']);
 
 //Paytm Payment
-Route::get('paytm-payment',[PaytmController::Class, 'paytmPayment'])->name('paytm.payment');
-Route::get('paytm-callback',[PaytmController::Class, 'paytmCallback'])->name('paytm.callback');
+Route::post('paytm-payment',[PaytmController::Class, 'paytmPayment'])->name('paytm.payment');
+Route::post('paytm-callback',[PaytmController::Class, 'paytmCallback'])->name('paytm.callback');
 Route::get('paytm-purchase',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');
+// Route::get('paytm-sucess-page',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');
+
 
 Route::get('/postlogin-otpgenerator', function () {
     $details = [

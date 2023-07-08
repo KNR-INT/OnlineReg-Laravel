@@ -10,6 +10,7 @@ class Student extends Model
 {
     use HasFactory;
     protected $table = 'students';
+    protected $connection = 'secondary';
     protected $fillable =['link_class',
     'name',
     'gender',
