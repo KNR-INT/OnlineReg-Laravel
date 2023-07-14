@@ -14,6 +14,9 @@ class StudentController extends Controller
     {
         return view('onlinereg');
     }
+
+
+    
     public function store(Request $request)
     {
        
@@ -68,13 +71,5 @@ class StudentController extends Controller
         return redirect('/admitted/a?class='.$class."&appli_id=".$appli_id);
         // $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Submitted ' AND `user_id` = '$ses_userid'");
 
-    }
-    public function getUsersFromSecondaryDatabase()
-    {
-        $users = DB::connection('secondary')->table('school')->get();
-
-        // Process the retrieved users as needed
-
-        return view('users', ['users' => $users]);
     }
 }

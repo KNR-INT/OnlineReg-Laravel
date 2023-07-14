@@ -493,7 +493,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
             let transport = document.getElementById("transport").value;
             let sec_language = document.getElementById("sec_language").value;
             let third_language = document.getElementById("third_language").value;
-            if(!name || !/^[a-zA-Z ]$/g.test(name) || !gender || !dob || !class_name || !birth_place || !/^[a-zA-Z ]$/g.test(birth_place) || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport || !sec_language || !third_language)
+            if(!name || !/^[a-zA-Z ]*$/g.test(name) || !gender || !dob || !class_name || !birth_place || !/^[a-zA-Z ]*$/g.test(birth_place) || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport || !sec_language || !third_language)
             {
                 if(!name)
                 {

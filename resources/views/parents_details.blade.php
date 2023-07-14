@@ -323,7 +323,7 @@
         });
 
         $('#father_email_verified_at').on('change', function() {
-            if (/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test($(this).val())) {
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(this).val())) {
                 document.getElementById("father_email_verified_at_err").innerHTML = "";
                 // Contain numbers only
             } else {
@@ -332,7 +332,7 @@
             }
         });
         $('#mother_email_verified_at').on('change', function() {
-            if (/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test($(this).val())) {
+            if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test($(this).val())) {
                 document.getElementById("mother_email_verified_at_err").innerHTML = "";
                 // Contain numbers only
             } else {
@@ -491,7 +491,7 @@
             let mother_annual_income = document.getElementById("mother_annual_income").value;
               
             //   
-            if(!father_name ||!/^[a-zA-Z ]$/g.test(father_name) || !father_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_mob) || !father_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'+/=?^`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test(father_email_verified_at)|| !father_mother_tongue || !father_residential_address || !father_area|| !father_district ||!/^[a-zA-Z ]$/g.test(father_district) || !father_state ||!/^[a-zA-Z ]$/g.test(father_state) || !father_country || !father_pincode ||!/^(\d{4}|\d{6})$/.test(father_pincode)|| !father_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_residential_no)  || !father_designation|| !father_company  || !father_company_address || !father_office_number || !father_annual_income || !mother_name ||!/^[a-zA-Z ]$/g.test(mother_name) || !mother_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_mob) || !mother_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mother_email_verified_at) || !mother_mother_tongue || !mother_residential_address || !mother_area  || !mother_district ||!/^[a-zA-Z ]$/g.test(mother_district)|| !mother_state ||!/^[a-zA-Z ]$/g.test(mother_state) || !mother_country || !mother_pincode ||!/^(\d{4}|\d{6})$/.test(mother_pincode)|| !mother_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_residential_no)   )
+            if(!father_name ||!/^[a-zA-Z ]*$/g.test(father_name) || !father_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_mob) || !father_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at)|| !father_mother_tongue || !father_residential_address || !father_area|| !father_district ||!/^[a-zA-Z ]*$/g.test(father_district) || !father_state ||!/^[a-zA-Z ]*$/g.test(father_state) || !father_country || !father_pincode ||!/^(\d{4}|\d{6})$/.test(father_pincode)|| !father_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(father_residential_no)  || !father_designation|| !father_company  || !father_company_address || !father_office_number || !father_annual_income || !mother_name ||!/^[a-zA-Z ]*$/g.test(mother_name) || !mother_mob ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_mob) || !mother_email_verified_at ||!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mother_email_verified_at) || !mother_mother_tongue || !mother_residential_address || !mother_area  || !mother_district ||!/^[a-zA-Z ]*$/g.test(mother_district)|| !mother_state ||!/^[a-zA-Z ]*$/g.test(mother_state) || !mother_country || !mother_pincode ||!/^(\d{4}|\d{6})$/.test(mother_pincode)|| !mother_residential_no ||!/^(0|91)?[6-9][0-9]{9}$/.test(mother_residential_no)   )
             {
                 if(!father_name)
                 {
@@ -523,7 +523,7 @@
                 {
                     document.getElementById("father_email_verified_at_err").innerHTML = "This is Required Field";
                 }
-                else if(!/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test(father_email_verified_at))
+                else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at))
                 {
                     document.getElementById("father_email_verified_at_err").innerHTML = "Invalid Email ID";
                 }
@@ -696,7 +696,7 @@
                 {
                     document.getElementById("mother_email_verified_at_err").innerHTML = "This is Required Field";
                 }
-                else if(!/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test(mother_email_verified_at))
+                else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mother_email_verified_at))
                 {
                     document.getElementById("mother_email_verified_at_err").innerHTML = "Invalid Email ID";
                 }
@@ -797,8 +797,8 @@
             }
             
           
-            // else if(!/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/.test(father_email_verified_at))
-            // // /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/
+            // else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(father_email_verified_at))
+            // // /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
             // {
             //     alert("okssss")
             //     document.getElementById("father_email_verified_at").innerHTML = "InValid  Email id";

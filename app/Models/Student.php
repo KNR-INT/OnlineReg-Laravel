@@ -10,7 +10,7 @@ class Student extends Model
 {
     use HasFactory;
     protected $table = 'students';
-    protected $connection = 'secondary';
+    // protected $connection = 'secondary';
     protected $fillable =['link_class',
     'name',
     'gender',
@@ -35,7 +35,15 @@ class Student extends Model
     'father_aadhar',
     'birth_cer',
     'mother_aadhar',
-    'pre_year_markcard'
+    'pre_year_markcard',
+    'from_year',
+    'to_year',
+    'from_class',
+    'to_class',
+    'school_name',
+    'country',
+    'city',
+    'state',
 ];
    
 }

@@ -98,7 +98,8 @@
                          ?>
                         <div class="input-field">
                         <label> Upload Previous year Marks Card's *: </label>
-                            <input type="file" id="Previous_year_Marks_Cards" name="Previous_year_Marks_Cards ">
+                            <input type="file" id="Previous_year_Marks_Cards" name="Previous_year_Marks_Cards" onchange="preview4()">
+                            <img id="blah4" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
                             <span id="Previous_year_Marks_Cards_err" style="color:red;"></span>
                         </div>
                     <?php
@@ -111,149 +112,303 @@
             <?php 
                 if($class == '1to9' || $class == '11')
                 {
+                    $users = DB::select("SELECT * FROM `old_school` WHERE `appli_id` = '$id'");
+                    // print_r($users);
+                    if(!empty($users))
+                    {
+                        ?>
+                    
+                <center> <header><b><u><h3>Details of Schooling </h3></u></b></header><button type="button" class="btn btn-outline-warning add-row">Add</button></center>
+                <table class="table table-bordered" id="dynamicAddRemove">
+                <tr>
+                <td>
+                        <?php
+                        foreach ($users as $item):
+                            ?>
+                        <table>
+    <tr>
+        
+        <td>
+        
+            <div class="input-field"> From Year   <br>
+                <input type="date" name="from_year[]"  id="from_year" value="<?php echo $item->from_year; ?>
+" placeholder="From date" required>
+                <span id="from_year_err" style="color:red;"></span>
+            </div>
+        </td>
+        <td>
+            <div class="input-field"> From Class   <br>
+                <select name="from_class[]" id="from_class" class="from-class" required>
+                    <option disabled selected value="">From Class :</option>
+                    <option value="1" <?php if($item->from_class == "1"){ echo "SELECTED";} ?>>Grade1</option>
+                               <option value="2" <?php if($item->from_class == "2"){ echo "SELECTED";} ?>>Grade2</option>
+                               <option value="3" <?php if($item->from_class == "3"){ echo "SELECTED";} ?>>Grade3</option>
+                               <option value="4"<?php if($item->from_class == "4"){ echo "SELECTED";} ?>>Grade4</option>
+                               <option value="5" <?php if($item->from_class == "5"){ echo "SELECTED";} ?>>Grade5</option>
+                               <option value="6"<?php if($item->from_class == "6"){ echo "SELECTED";} ?>>Grade6</option>
+                               <option value="7"<?php if($item->from_class == "7"){ echo "SELECTED";} ?>>Grade7</option>
+                               <option value="8"<?php if($item->from_class == "8"){ echo "SELECTED";} ?>>Grade8</option>
+                               <option value="9"<?php if($item->from_class == "9"){ echo "SELECTED";} ?>>Grade9</option>
+                               <option value="10"<?php if($item->from_class == "10"){ echo "SELECTED";} ?>>Grade10</option>
+                    <!-- Add more options here -->
+                </select>
+                <span id="from_class_err" style="color:red;"></span>
+
+            </div>
+        </td>
+        <td>
+            <div class="input-field">To Year   <br>
+                <input type="date" name="to_year[]" id="to_year"  value="<?php echo $item->to_year; ?>" placeholder="To date" required>
+                <span id="to_date_err" style="color:red;"></span>
+            </div>
+        </td>
+        <td>
+            <div class="input-field">To Class   <br>
+                <select name="to_class[]" id="to_class" required>
+                    <option disabled selected value="">To Class :</option>
+                    <option value="1"<?php if($item->to_class == "1"){ echo "SELECTED";} ?>>Grade1</option>
+                               <option value="2" <?php if($item->to_class == "2"){ echo "SELECTED";} ?>>Grade2</option>
+                               <option value="3"<?php if($item->to_class == "3"){ echo "SELECTED";} ?>>Grade3</option>
+                               <option value="4" <?php if($item->to_class == "4"){ echo "SELECTED";} ?>>Grade4</option>
+                               <option value="5"<?php if($item->to_class == "5"){ echo "SELECTED";} ?>>Grade5</option>
+                               <option value="6"<?php if($item->to_class == "6"){ echo "SELECTED";} ?>>Grade6</option>
+                               <option value="7"<?php if($item->to_class == "7"){ echo "SELECTED";} ?>>Grade7</option>
+                               <option value="8"<?php if($item->to_class == "8"){ echo "SELECTED";} ?>>Grade8</option>
+                               <option value="9"<?php if($item->to_class == "9"){ echo "SELECTED";} ?>>Grade9</option>
+                               <option value="10"<?php if($item->to_class == "10"){ echo "SELECTED";} ?>>Grade10</option>
+                    <!-- Add more options here -->
+                </select>
+                <span id="to_class_err" style="color:red;"></span>
+            </div>
+        </td>
+        </tr>
+        <tr>
+                <td style="width:250px;">
+                    <div class="input-field">School Name <br>  
+                    <input type="text" name="school_name[]" id="school_name"  value="<?php echo $item->school_name; ?>" placeholder="School Name" >
+                <span id="school_name_err" style="color:red;"></span>
+                    </div>
+                </td>
+                <td style="width:250px;">
+                    <div class="input-field">City <br>
+                    <input type="text" name="city[]" id="city"  value="<?php echo $item->city; ?>" placeholder="City"> 
+                <span id="city_err" style="color:red;"></span>
+                    </div>
+                </td>
+                <td style="width:250px;">
+                    <div class="input-field">State  <br>
+                        <input type="text" name="state[]" id="state"  value="<?php echo $item->state; ?>" placeholder="State">
+                <span id="state_err" style="color:red;"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="input-field">Country  <br>
+                        <input type="text" name="country[]" id="country"   value="<?php echo $item->country; ?>" placeholder="Country">
+                <span id="country_err" style="color:red;"></span>
+
+                    </div>
+                </td>
+                <td>
+                <button type="button" class="btn btn-danger" id="remove">Remove</button>
+                </td>
+            </tr>
+            </table>
+                            <?php
+
+                    endforeach;
+                        ?>
+                    </td>
+                    </tr>
+                    </table>
+                        <?php
+                    }
+                    else
+                    {
+
+                
                 ?>
                 <center> <header><b><u><h3>Details of Schooling </h3></u></b></header></center>
-          <center>
+          
           <table class="table table-bordered" id="dynamicAddRemove">
 
-          <table class="table table-bordered" id="dynamicAddRemove">
-    <!-- Table rows for dynamically added data -->
-    <tbody id="dynamicRows">
-        <tr>
-            <td>
-                <div class="input-field"> From Year   <br>
-                    <input type="date" name="from_date[]" placeholder="From date" required>
-                </div>
-            </td>
-            <td>
-                <div class="input-field"> From Class   <br>
-                    <select name="from_class[]" class="from-class" required>
-                        <option disabled selected value="">From Class :</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <!-- Add more options here -->
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div class="input-field">To Year   <br>
-                    <input type="date" name="to_date[]" placeholder="To date" required>
-                </div>
-            </td>
-            <td>
-                <div class="input-field">To Class   <br>
-                    <select name="to_class[]" class="to-class" required>
-                        <option disabled selected value="">To Class :</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <!-- Add more options here -->
-                    </select>
-                </div>
-            </td>
-            <tr>
-                    <td style="width:250px;">
-                        <div class="input-field">School Name <br>  
-                        <input type="text" name="" id="" placeholder="School Name" >
-                        </div>
-                    </td>
-                    <td style="width:250px;">
-                        <div class="input-field">City <br>
-                        <input type="text" name="" id="" placeholder="City">  
-                        </div>
-                    </td>
-                    <td style="width:250px;">
-                        <div class="input-field">State  <br>
-                            <input type="text" name="" id="" placeholder="State">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field">Country  <br>
-                            <input type="text" name="" id="" placeholder="Country">
-                        </div>
-                    </td>
-                </tr>
-            <td>
-                <button type="button" class="btn btn-danger remove-row">Remove</button>
-            </td>
+<!-- Table rows for dynamically added data -->
+    <tr>
+    <td>
+    <table>
+    <tr>
+        
+        <td>
+            <div class="input-field"> From Year   <br>
+                <input type="date" name="from_year[]"  id="from_year" placeholder="From date" required>
+                <span id="from_year_err" style="color:red;"></span>
+            </div>
+        </td>
+        <td>
+            <div class="input-field"> From Class   <br>
+                <select name="from_class[]" id="from_class" class="from-class" required>
+                    <option disabled selected value="">From Class :</option>
+                    <option value="1">Grade1</option>
+                               <option value="2">Grade2</option>
+                               <option value="3">Grade3</option>
+                               <option value="4">Grade4</option>
+                               <option value="5">Grade5</option>
+                               <option value="6">Grade6</option>
+                               <option value="7">Grade7</option>
+                               <option value="8">Grade8</option>
+                               <option value="9">Grade9</option>
+                               <option value="10">Grade10</option>
+                    <!-- Add more options here -->
+                </select>
+                <span id="from_class_err" style="color:red;"></span>
+
+            </div>
+        </td>
+        <td>
+            <div class="input-field">To Year   <br>
+                <input type="date" name="to_year[]" id="to_year"placeholder="To date" required>
+                <span id="to_date_err" style="color:red;"></span>
+            </div>
+        </td>
+        <td>
+            <div class="input-field">To Class   <br>
+                <select name="to_class[]" id="to_class" required>
+                    <option disabled selected value="">To Class :</option>
+                    <option value="1">Grade1</option>
+                               <option value="2">Grade2</option>
+                               <option value="3">Grade3</option>
+                               <option value="4">Grade4</option>
+                               <option value="5">Grade5</option>
+                               <option value="6">Grade6</option>
+                               <option value="7">Grade7</option>
+                               <option value="8">Grade8</option>
+                               <option value="9">Grade9</option>
+                               <option value="10">Grade10</option>
+                    <!-- Add more options here -->
+                </select>
+                <span id="to_class_err" style="color:red;"></span>
+            </div>
+        </td>
         </tr>
-    </tbody>
-    <!-- Button to add new row -->
-    <tfoot>
         <tr>
-            <td colspan="5">
-                <button type="button" class="btn btn-outline-warning add-row">Add</button>
+                <td style="width:250px;">
+                    <div class="input-field">School Name <br>  
+                    <input type="text" name="school_name[]" id="school_name" placeholder="School Name" >
+                <span id="school_name_err" style="color:red;"></span>
+                    </div>
+                </td>
+                <td style="width:250px;">
+                    <div class="input-field">City <br>
+                    <input type="text" name="city[]" id="city" placeholder="City"> 
+                <span id="city_err" style="color:red;"></span>
+                    </div>
+                </td>
+                <td style="width:250px;">
+                    <div class="input-field">State  <br>
+                        <input type="text" name="state[]" id="state" placeholder="State">
+                <span id="state_err" style="color:red;"></span>
+                    </div>
+                </td>
+                <td>
+                    <div class="input-field">Country  <br>
+                        <input type="text" name="country[]" id="country" placeholder="Country">
+                <span id="country_err" style="color:red;"></span>
+
+                    </div>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-outline-warning add-row">Add</button>
+                </td>
+            </tr>
+            </table>
             </td>
-        </tr>
-    </tfoot>
+            </tr>
+    
 </table>
+<?php
+}
+?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function () {
-        // Add row on click of "Add" button
-        $('.add-row').click(function () {
-            var row = '<tr>' +
-                '<td>' +
-                '<div class="input-field"> From Year   <br>' +
-                '<input type="date" name="from_date[]" placeholder="From date" required>' +
-                '</div>' +
-                '</td>' +
-                '<td>' +
-                '<div class="input-field"> From Class   <br>' +
-                '<select name="from_class[]" class="from-class" required>' +
-                '<option disabled selected value="">From Class :</option>' +
-                '<option value="1">1</option>' +
-                '<option value="2">2</option>' +
-                '</select>' +
-                '</div>' +
-                '</td>' +
-                '<td>' +
-                '<div class="input-field">To Year   <br>' +
-                '<input type="date" name="to_date[]" placeholder="To date" required>' +
-                '</div>' +
-                '</td>' +
-                '<td>' +
-                '<div class="input-field">To Class   <br>' +
-                '<select name="to_class[]" class="to-class" required>' +
-                '<option disabled selected value="">To Class :</option>' +
-                '<option value="1">1</option>' +
-                '<option value="2">2</option>' +
-                '</select>' +
-                '</div>' +
-                '</td>' +
-                '<tr></tr>'+
-                '<td>' +
-                '<div class="input-field"> School Name  <br>' +
-                '<input type="text" name="" id="" placeholder="School Name" >' +
-                '</div>' +
-                '</td>' +
-                '<td>' +
-                '<div class="input-field"> City  <br>' +
-                '<input type="text" name="" id="" placeholder="City" >' +
-                '</div>' +
-                '</td>' +
-                '<td>' +
-                '<div class="input-field">State   <br>' +
-                '<input type="text" name="" id="" placeholder="State" >'  +
-                '</div>' +
-                '</td>' +
-                '<td>' +
-                '<div class="input-field">Country  <br>' +
-                '<input type="text" name="" id="" placeholder="Country" >'  +
-                '</div>' +
-                '</td>' +
-                '<td>' +
-                '<button type="button" class="btn btn-danger remove-row">Remove</button>' +
-                '</td>' +
-                '</tr>';  
-                
-            $('#dynamicRows').append(row);
-        });
-
-        // Remove row on click of "Remove" button
-        $(document).on('click', '.remove-row', function () {
-            $(this).closest('tr').remove();
-        });
+$(document).ready(function () {
+    // Add row on click of "Add" button
+    $('.add-row').click(function () {
+        var row = '<tr>' +
+            '<td>' +
+            '<table>' +
+            '<tr class="dynamic-row">' +
+            '<td>' +
+            '<div class="input-field"> From Year   <br>' +
+            '<input type="date" name="from_year[]" id="from_year" placeholder="From date" required>' +
+            '</div>' +
+            '</td>' +
+            '<td>' +
+            '<div class="input-field"> From Class   <br>' +
+            '<select name="from_class[]" id="from_class" class="from-class" required>' +
+            '<option disabled selected value="">From Class :</option>' +
+            '<option value="1">Grade1</option>'+
+            '<option value="2">Grade2</option><option value="3">Grade3</option>'+
+            '<option value="4">Grade4</option>'+
+            '<option value="5">Grade5</option><option value="6">Grade6</option>'+
+            '<option value="7">Grade7</option><option value="8">Grade8</option>'+
+            '<option value="9">Grade9</option><option value="10">Grade10</option>'+
+            '</select>' +
+            '</div>' +
+            '</td>' +
+            '<td>' +
+            '<div class="input-field">To Year   <br>' +
+            '<input type="date" name="to_year[]"  id="to_year" placeholder="To date" required>' +
+            '</div>' +
+            '</td>' +
+            '<td>' +
+            '<div class="input-field">To Class   <br>' +
+            '<select name="to_class[]" id="to_class" class="to-class" required>' +
+            '<option disabled selected value="">To Class :</option>' +
+            '<option value="1">Grade1</option>'+
+            '<option value="2">Grade2</option><option value="3">Grade3</option>'+
+            '<option value="4">Grade4</option>'+
+            '<option value="5">Grade5</option><option value="6">Grade6</option>'+
+            '<option value="7">Grade7</option><option value="8">Grade8</option>'+
+            '<option value="9">Grade9</option><option value="10">Grade10</option>'+
+            '</select>' +
+            '</div>' +
+            '</td>' +
+            '</tr><tr>'+
+            '<td>' +
+            '<div class="input-field"> School Name  <br>' +
+            '<input type="text" name="school_name[]" id="school_name" placeholder="School Name" >' +
+            '</div>' +
+            '</td>' +
+            '<td>' +
+            '<div class="input-field"> City  <br>' +
+            '<input type="text" name="city[]" id="city" placeholder="City" >' +
+            '</div>' +
+            '</td>' +
+            '<td>' +
+            '<div class="input-field">State   <br>' +
+            '<input type="text" name="state[]" id="state" placeholder="State" >'  +
+            '</div>' +
+            '</td>' +
+            '<td>' +
+            '<div class="input-field">Country  <br>' +
+            '<input type="text" name="country[]" id="country" placeholder="Country" >'  +
+            '</div>' +
+            '</td>' +
+            '<td>' +
+            '<button type="button" class="btn btn-danger" id="remove">Remove</button>' +
+            '</td>' +
+            '</tr>'+
+            '</table>' +
+            '</td>' +
+            '</tr>';  
+            
+        $('#dynamicAddRemove').append(row);
     });
+
+    // Remove row on click of "Remove" button
+    $('#dynamicAddRemove').on('click', '#remove', function () {
+$(this).closest('table').remove();
+});
+});   
 </script>
 
             
@@ -273,159 +428,6 @@
             </div>
                 </div> 
                 </div>
-
-                <script type="text/javascript">var i = 0;$("#dynamic-ar").click(function () {++i;
-        $("#dynamicAddRemove").append  <tr>
-                    <td >
-                        <div class="input-field [' + i +
-            '][From Year]"> From Year  <br>
-                            <input type="date" placeholder="From date" required>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field"> From Class   <br>
-                        <select name="drop" id="drop">
-                                   <option disabled selected value="">From Class :</option>
-                                   <option value="1">1</option>
-                                   <option value="2">2</option><option value="3">3</option>
-                                   <option value="4">4</option><option value="4">4</option>
-                                   <option value="5">5</option><option value="6">6</option>
-                                   <option value="7">7</option><option value="8">8</option>
-                                   <option value="9">9</option><option value="10">10</option>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field">To Year   <br>
-                        <input type="date" placeholder="To date" required>
-                        </div>
-                    </td>
-
-                    <td>
-                        <div class="input-field">To Class   <br>
-                           <select name="drop" id="drop">
-                                   <option disabled selected value="">To Class :</option>
-                                   <option value="1">1</option>
-                                   <option value="2">2</option><option value="3">3</option>
-                                   <option value="4">4</option><option value="4">4</option>
-                                   <option value="5">5</option><option value="6">6</option>
-                                   <option value="7">7</option><option value="8">8</option>
-                                   <option value="9">9</option><option value="10">10</option>
-                                   </select>
-                        </div>
-                    </td>
-                </tr>
-                <button type="button" name="add" id="dynamic-ar" class="btn btn-outline-warning">Add</button></td>
-
-                <tr>
-                    <td style="width:250px;">
-                        <div class="input-field">School Name <br>  
-                        <input type="text" name="" id="" placeholder="School Name" >
-                        </div>
-                    </td>
-                    <td style="width:250px;">
-                        <div class="input-field">City <br>
-                        <input type="text" name="" id="" placeholder="City">  
-                        </div>
-                    </td>
-                    <td style="width:250px;">
-                        <div class="input-field">State  <br>
-                            <input type="text" name="" id="" placeholder="State">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-field">Country  <br>
-                            <input type="text" name="" id="" placeholder="Country">
-                        </div>
-                    </td>
-                </tr>
-            </table>
- $(document).on('click', '.remove-input-field', function () {
-        $(this).parents('tr').remove();
-    });
-</script>
-<script>
-    function preview() {
-   blah.src=URL.createObjectURL(event.target.files[0]);
-}
-
-</script>
-<script>
-    function preview1() {
-   blah1.src=URL.createObjectURL(event.target.files[0]);
-}
-
-</script>
-<script>
-    function preview2() {
-   blah2.src=URL.createObjectURL(event.target.files[0]);
-}
-
-</script>
-<script>
-    function preview3() {
-   blah3.src=URL.createObjectURL(event.target.files[0]);
-}
-
-</script>
-<script>
-      function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                       
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah1')
-                        .attr('src', e.target.result);
-                       
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah2')
-                        .attr('src', e.target.result);
-                       
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah3')
-                        .attr('src', e.target.result);
-                       
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-</script>
-
-                <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 document.getElementById('myForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent form submission
@@ -454,26 +456,21 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
    blah.src=URL.createObjectURL(event.target.files[0]);
 }
 
-</script>
-<script>
     function preview1() {
    blah1.src=URL.createObjectURL(event.target.files[0]);
 }
 
-</script>
-<script>
     function preview2() {
    blah2.src=URL.createObjectURL(event.target.files[0]);
 }
 
-</script>
-<script>
     function preview3() {
    blah3.src=URL.createObjectURL(event.target.files[0]);
 }
+function preview4() {
+   blah4.src=URL.createObjectURL(event.target.files[0]);
+}
 
-</script>
-<script>
       function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -522,6 +519,19 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
 
                 reader.onload = function (e) {
                     $('#blah3')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah4')
                         .attr('src', e.target.result);
                        
                 };
@@ -568,13 +578,13 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
         });
         
         $('.btn-submit').click(function(){
-            const Student_Aadhar_card = document.getElementById("Student_Aadhar_card").value;
-            const Fathers_Aadhar_card = document.getElementById("Fathers_Aadhar_card").value;
-            const Birth_Certificate_Of_Student = document.getElementById("Birth_Certificate_Of_Student").value;
-            const Mothers_Aadhar_card = document.getElementById("Mothers_Aadhar_card").value;
+            let Student_Aadhar_card = document.getElementById("Student_Aadhar_card").value;
+            let Fathers_Aadhar_card = document.getElementById("Fathers_Aadhar_card").value;
+            let Birth_Certificate_Of_Student = document.getElementById("Birth_Certificate_Of_Student").value;
+            let Mothers_Aadhar_card = document.getElementById("Mothers_Aadhar_card").value;
          // const Previous_year_Marks_Cards = document.getElementById("Previous_year_Marks_Cards").value;
             // || !Previous_year_Marks_Cards
-            if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card )
+            if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card || !from_year ||!from_class || !to_year || !to_class || !school_name || !city ||!state || !country )
             {
                 if(!Student_Aadhar_card)
                 {
@@ -618,12 +628,139 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
                 // else
                 // {
                 //     document.getElementById("Previous_year_Marks_Cards_err").innerHTML = " ";
-                // } CB 
+                // } 
+                if(!from_year)
+                {
+                    document.getElementById("from_year_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("from_year_err").innerHTML = " ";
+                }
+                if(!from_class)
+                {
+                    document.getElementById("from_class_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("from_class_err").innerHTML = " ";
+                }
+                if(!to_year)
+                {
+                    document.getElementById("to_year_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("to_year_err").innerHTML = " ";
+                }
+                if(!to_class)
+                {
+                    document.getElementById("to_class_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("to_class_err").innerHTML = " ";
+                }
+                if(!school_name)
+                {
+                    document.getElementById("school_name_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("school_name_err").innerHTML = " ";
+                }
+                if(!city)
+                {
+                    document.getElementById("city_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("city_err").innerHTML = " ";
+                }
+                if(!state)
+                {
+                    document.getElementById("state_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("state_err").innerHTML = " ";
+                }
+                if(!country)
+                {
+                    document.getElementById("country_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("country_err").innerHTML = " ";
+                }
                 
             }            
 
         else
             {
+            //     let from_year = [];
+            // $("input:text[name='from_year']").each(function() {
+            //     from_year.push($(this).val());
+            // });
+
+            // let from_class = [];
+            // $("input:text[name='from_class']").each(function() {
+            //     from_class.push($(this).val());
+            // });
+            // let to_year = [];
+            // $("input:text[name='to_year']").each(function() {
+            //     to_year.push($(this).val());
+            // });
+            // let to_class = [];
+            // $("input:text[name='to_class']").each(function() {
+            //     to_class.push($(this).val());
+            // });
+            // let school_name = [];
+            // $("input:text[name='school_name']").each(function() {
+            //     school_name.push($(this).val());
+            // });
+            // let city = [];
+            // $("input:text[name='city']").each(function() {
+            //     city.push($(this).val());
+            // });
+            // let state = [];
+            // $("input:text[name='state']").each(function() {
+            //     state.push($(this).val());
+            // });
+            // let country = [];
+            // $("input:text[name='country']").each(function() {
+            //     country.push($(this).val());
+            // });
+
+
+            // alert(from_year);
+            // for(i=0;i<from_year.length;i++)
+            // {
+            //   let from_year = from_year[i];
+            //   let from_class = from_class[i];
+            //   let to_year = to_year[i];
+            //   let to_class = to_class[i];
+            //   let school_name = school_name[i];
+            //   let city = city[i];
+            //   let state = state[i];
+            //   let country = country[i];
+            //   $.ajax({
+            //         url:"{{ url('storeImage') }}",
+            //         type:"POST",
+            //         data:{from_year:from_year,from_class:from_class,to_year:to_year,to_class:to_class,school_name:school_name,city:city,state:state,country:country,appli_id:appli_id},
+            //         dataType:'html',
+            //         success: function(data){
+            //             swal({
+            //             title:"Success!",
+            //             text:"Database Inserted Successfully",
+            //             icon:"success",
+            //             });  
+            //             // setTimeout(function(){
+            //             // window.location.href = "{{ url('application_details') }}";
+            //             // }, 1000);
+            //         }
+            //   });
+            // }
                 document.getElementById("myForm").submit();
             }
         });  
@@ -792,7 +929,7 @@ body{
     height:100%;
     min-height: 1600px;
     background-color: #fff;
-    // overflow: hidden;
+    overflow: hidden;
 }
 .container form .form{
     position: absolute;

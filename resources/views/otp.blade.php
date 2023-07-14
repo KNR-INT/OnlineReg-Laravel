@@ -130,6 +130,10 @@
     <!-- <p>Document Body</p> -->
 </body>
 
+<?php
+        $session = session()->all();
+       
+        print_r($session);?>
 
           
 @endsection

@@ -195,6 +195,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Anand\LaravelPaytmWallet\PaytmWalletServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
@@ -209,7 +210,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
- 'PaytmWallet' => Anand\LaravelPaytmWallet\Facades\PaytmWallet::class, 
+ 'PaytmWallet' => Anand\LaravelPaytmWallet\Facades\PaytmWallet::class,
+ 'PDF' => Barryvdh\DomPDF\Facade::class, 
     ])->toArray(),
 
 ];

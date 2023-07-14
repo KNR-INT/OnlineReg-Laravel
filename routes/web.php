@@ -19,10 +19,12 @@
     use Illuminate\Mail\Mailer;
     use Illuminate\Http\Request;
     use Symfony\Component\Mime\Address;
-
-
+    use App\Models\Secondary;
+    use Illuminate\Support\Facades\DB;
     use App\Models\Student;
     use App\Models\Parent1;
+    use App\Models\Oldschool;
+    use App\Http\Controllers\PdfGeneratorController;
     
 
 Route::get('/', [CustomAuthController::class, 'home']); 
@@ -112,7 +114,7 @@ Route::get('get-data/{store-parent}', [ParentsController::class, 'edit']);
 Route::get('/add-image',[ImageUploadController::class,'addImage'])->name('images.add');
 
 //For storing an image
-Route::post('/storeImage',[ImageUploadController::class,'storeImage']);
+// Route::post('/storeImage',[ImageUploadController::class,'storeImage']);
 Route::get('/update-applino',[StudentController::class,'updateapplino']);
 
 
@@ -185,26 +187,76 @@ Route::get('/sparkpost', function () {
 
 
 Route::get('/postlogin', function (Request $request) {
-    $email = $request->input('email'); // Assuming the email is sent as a query parameter
+    $email = $request->email;
+                    session()->push('login.email', $email);
+                
+                    $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+                
+                    if (empty($users)) {
+                        $created = date("Y-m-d h:i:s");
+                        $data = array("email" => $email, "created_at" => $created);
+                        DB::table('users')->insert($data);
+                
+                        $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+                        $user_id = $users[0]->id;
+                        session()->push('users.user_id', $user_id);
 
-    $data = [
-        'name' => $email,
-        'otp_number' => mt_rand(100000, 999999),
-    ];
+                        $data = [
+                            'name' => $email,
+                            'otp_number' => mt_rand(100000, 999999),
+                        ];
+                    
+                        Mail::send('emails.test', $data, function (Message $message) use ($email) {
+                            $message->to($email)
+                                ->subject('Test Email');
+                        });
+                    
+                        return view('otp');
+                    } else {
+                        $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
+                        $user_id = $users[0]->id;
+                        session()->push('users.user_id', $user_id);
+                
+                        $data = [
+                            'name' => $email,
+                            'otp_number' => mt_rand(100000, 999999),
+                        ];
+                    
+                        Mail::send('emails.test', $data, function (Message $message) use ($email) {
+                            $message->to($email)
+                                ->subject('Test Email');
+                        });
+                    
+                        return view('otp');
+                    }
 
-    Mail::send('emails.test', $data, function (Message $message) use ($email) {
-        $message->to($email)
-            ->subject('Test Email');
-    });
-
-    // $otp_number = 123456; // Assigning a value to the variable
-
-    // Using the variable
-    echo "The OTP number is: " . $data['otp_number'];
-
-    return view('otp');
+    
 })->name('postlogin');
 
+
+
+ 
+Route::get('/application_details', [PdfGeneratorController::class, 'application_details']);
+
+
+// Route::post('/storeImage', function (Request $request) {
+//     $from_year = $request->from_year;
+//     $from_class = $request->from_class;
+//     $to_year = $request->to_year;
+//     $to_class = $request->to_class;
+//     $school_name = $request->school_name;
+//     $city = $request->city;
+//     $state = $request->state;
+//     $country = $request->country;
+//     $appli_id = $request->appli_id;
+
+   
+//     $data = array(
+//         "from_year" => $from_year,"from_class" => $from_class,"to_year" => $to_year,"to_class" => $to_class,"school_name" => $school_name,"city" => $city,"state" => $state,"country" => $country,"appli_id" => $appli_id
+//     );
+//     DB::table('old_school')->insert($data);
+//     return view('upload_image');
+// })->name('storeImage');
 
 
 

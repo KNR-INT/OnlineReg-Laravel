@@ -22,7 +22,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 &nbsp;&nbsp;&nbsp;&nbsp;
- <section class="step-wizard">
+<section class="step-wizard" style="margin-left: 250px;">
         <ul class="step-wizard-list">
             <li class="step-wizard-item ">
                 <span class="progress-count">1</span>

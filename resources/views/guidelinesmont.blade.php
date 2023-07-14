@@ -76,8 +76,8 @@ body {
        
         <p>6. Parent’s Aadhar Card.</p>
        
-        <p>7. Registration Fee - ₹ 500/- (Online Payment)</p>
-        
+        <p>7. Registration Fee - ₹ {{ $registrationFee }}/- (Online Payment)</p>
+
         <p>We appreciate the interest evinced by the parents seeking admission to National Public School Yeshwanthpur. We would like to inform that we have 
             <br>
         very limited seats available for admission to all of the classes from Montessori, Pre-KG, KG and Classes 1 to 12. The seats will be available
@@ -166,7 +166,7 @@ I Agree
 	$('.btn-submit').click(function() {
         let class_name = document.getElementById("class").value;
         let appli_id = document.getElementById("appli_id").value;
-	//    alert(appli_id);
+	 alert(appli_id);
 		window.location.href = "{{ url('onlinereg') }}/a?class="+class_name+"&appli_id="+appli_id;
     });
 </script>
@@ -185,3 +185,8 @@ I Agree
 
 ?>
 
+
+        <?php
+                $session = session()->all();
+            
+                print_r($session);?>

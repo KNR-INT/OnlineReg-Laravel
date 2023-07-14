@@ -16,15 +16,7 @@ class Image extends Model
     'father_aadhar',
     'birth_cer',
     'mother_aadhar',
-    'pre_year_markcard',
-    'from_year',
-    'to_year',
-    'from_class',
-    'to_class',
-    'school_name',
-    'country',
-    'city',
-    'state',
+    'pre_year_markcard'
 ];
 
 }
