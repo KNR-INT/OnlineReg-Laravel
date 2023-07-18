@@ -326,8 +326,23 @@
 </table>
 <?php
 }
-?>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    }
+                    ?>
+              </center>
+                <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
+                <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+            <br>
+            <br>
+             <center>
+                       <a class="btn btn-back btn-outline-success float-center ">Go Back</a>
+                       <a class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
+                       <div></center>
+                       @include('footer')
+            </div>
+                </form>
+                </div> 
+                </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function () {
     // Add row on click of "Add" button
@@ -412,22 +427,6 @@ $(this).closest('table').remove();
 </script>
 
             
-            <?php
-                    }
-                    ?>
-              </center>
-                <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
-                <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
-            <br>
-            <br>
-             <center>
-                       <a class="btn btn-back btn-outline-success float-center ">Go Back</a>
-                       <a class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
-                       <div></center>
-                       @include('footer')
-            </div>
-                </div> 
-                </div>
 <script>
 document.getElementById('myForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent form submission
@@ -582,9 +581,48 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
             let Fathers_Aadhar_card = document.getElementById("Fathers_Aadhar_card").value;
             let Birth_Certificate_Of_Student = document.getElementById("Birth_Certificate_Of_Student").value;
             let Mothers_Aadhar_card = document.getElementById("Mothers_Aadhar_card").value;
-         // const Previous_year_Marks_Cards = document.getElementById("Previous_year_Marks_Cards").value;
-            // || !Previous_year_Marks_Cards
-            if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card || !from_year ||!from_class || !to_year || !to_class || !school_name || !city ||!state || !country )
+            let appli_id = document.getElementById("appli_id").value;
+            
+            
+
+            if(appli_id == "1to9" || appli_id == "11")
+            {
+
+                let from_year = [];
+            $("input:text[name='from_year']").each(function() {
+                from_year.push($(this).val());
+            });
+
+            let from_class = [];
+            $("input:text[name='from_class']").each(function() {
+                from_class.push($(this).val());
+            });
+            let to_year = [];
+            $("input:text[name='to_year']").each(function() {
+                to_year.push($(this).val());
+            });
+            let to_class = [];
+            $("input:text[name='to_class']").each(function() {
+                to_class.push($(this).val());
+            });
+            let school_name = [];
+            $("input:text[name='school_name']").each(function() {
+                school_name.push($(this).val());
+            });
+            let city = [];
+            $("input:text[name='city']").each(function() {
+                city.push($(this).val());
+            });
+            let state = [];
+            $("input:text[name='state']").each(function() {
+                state.push($(this).val());
+            });
+            let country = [];
+            $("input:text[name='country']").each(function() {
+                country.push($(this).val());
+            });
+   alert(country);
+                if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card || !from_year || !from_class || !to_year || !to_class || !school_name || !city || !state || !country)
             {
                 if(!Student_Aadhar_card)
                 {
@@ -621,14 +659,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
                 {
                     document.getElementById("Mothers_Aadhar_card_err").innerHTML = " ";
                 }
-                // if(!Previous_year_Marks_Cards)
-                // {
-                //     document.getElementById("Previous_year_Marks_Cards_err").innerHTML = "This is Required Field";
-                // }
-                // else
-                // {
-                //     document.getElementById("Previous_year_Marks_Cards_err").innerHTML = " ";
-                // } 
+
                 if(!from_year)
                 {
                     document.getElementById("from_year_err").innerHTML = "This is Required Field";
@@ -677,14 +708,6 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
                 {
                     document.getElementById("city_err").innerHTML = " ";
                 }
-                if(!state)
-                {
-                    document.getElementById("state_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("state_err").innerHTML = " ";
-                }
                 if(!country)
                 {
                     document.getElementById("country_err").innerHTML = "This is Required Field";
@@ -693,76 +716,70 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
                 {
                     document.getElementById("country_err").innerHTML = " ";
                 }
-                
+                if(!state)
+                {
+                    document.getElementById("state_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("state_err").innerHTML = " ";
+                }
             }            
 
         else
             {
-            //     let from_year = [];
-            // $("input:text[name='from_year']").each(function() {
-            //     from_year.push($(this).val());
-            // });
-
-            // let from_class = [];
-            // $("input:text[name='from_class']").each(function() {
-            //     from_class.push($(this).val());
-            // });
-            // let to_year = [];
-            // $("input:text[name='to_year']").each(function() {
-            //     to_year.push($(this).val());
-            // });
-            // let to_class = [];
-            // $("input:text[name='to_class']").each(function() {
-            //     to_class.push($(this).val());
-            // });
-            // let school_name = [];
-            // $("input:text[name='school_name']").each(function() {
-            //     school_name.push($(this).val());
-            // });
-            // let city = [];
-            // $("input:text[name='city']").each(function() {
-            //     city.push($(this).val());
-            // });
-            // let state = [];
-            // $("input:text[name='state']").each(function() {
-            //     state.push($(this).val());
-            // });
-            // let country = [];
-            // $("input:text[name='country']").each(function() {
-            //     country.push($(this).val());
-            // });
-
-
-            // alert(from_year);
-            // for(i=0;i<from_year.length;i++)
-            // {
-            //   let from_year = from_year[i];
-            //   let from_class = from_class[i];
-            //   let to_year = to_year[i];
-            //   let to_class = to_class[i];
-            //   let school_name = school_name[i];
-            //   let city = city[i];
-            //   let state = state[i];
-            //   let country = country[i];
-            //   $.ajax({
-            //         url:"{{ url('storeImage') }}",
-            //         type:"POST",
-            //         data:{from_year:from_year,from_class:from_class,to_year:to_year,to_class:to_class,school_name:school_name,city:city,state:state,country:country,appli_id:appli_id},
-            //         dataType:'html',
-            //         success: function(data){
-            //             swal({
-            //             title:"Success!",
-            //             text:"Database Inserted Successfully",
-            //             icon:"success",
-            //             });  
-            //             // setTimeout(function(){
-            //             // window.location.href = "{{ url('application_details') }}";
-            //             // }, 1000);
-            //         }
-            //   });
-            // }
                 document.getElementById("myForm").submit();
             }
+
+            }
+            else
+            {
+
+            
+            if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card)
+            {
+                if(!Student_Aadhar_card)
+                {
+                    document.getElementById("Student_Aadhar_card_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("Student_Aadhar_card_err").innerHTML = " ";
+                }
+
+                if(!Fathers_Aadhar_card)
+                {
+                    document.getElementById("Fathers_Aadhar_card_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("Fathers_Aadhar_card_err").innerHTML = " ";
+                }
+
+                if(!Birth_Certificate_Of_Student)
+                {
+                    document.getElementById("Birth_Certificate_Of_Student_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("Birth_Certificate_Of_Student_err").innerHTML = " ";
+                }
+
+                if(!Mothers_Aadhar_card)
+                {
+                    document.getElementById("Mothers_Aadhar_card_err").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("Mothers_Aadhar_card_err").innerHTML = " ";
+                }
+            }            
+
+        else
+            {
+                document.getElementById("myForm").submit();
+            }
+        }
         });  
     </script>
 </body>
@@ -898,9 +915,9 @@ body{
 }
 .container{
     position: relative;
-    max-width: 1100px;
-    width: 100%;
-    height: 100%;
+    max-width: 1200px;
+    width: 200%;
+    height: 200%;
     border-radius: 6px;
     padding: 50px;
     margin: 15px;
@@ -927,7 +944,7 @@ body{
     position: relative;
     margin-top: 16px;
     height:100%;
-    min-height: 1600px;
+    min-height: 2000px;
     background-color: #fff;
     overflow: hidden;
 }

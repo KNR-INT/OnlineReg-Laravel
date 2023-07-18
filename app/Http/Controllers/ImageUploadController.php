@@ -17,6 +17,7 @@ class ImageUploadController extends Controller
     {
         $appli_id = $request->input('appli_id');
         $class = $request->input('class');
+        $page_type = $request->input('page_type');
         
         // Retrieve the student object
         $student = Student::find($appli_id);
@@ -38,6 +39,8 @@ class ImageUploadController extends Controller
             }
         }
         $student->update();
+        if($page_type == "1to9" || $page_type == "11")
+        {
         DB::table('old_school')->where("appli_id",$appli_id)->delete();
                     $from_year = $request->input('from_year');
                     $to_year = $request->input('to_year');
@@ -48,13 +51,25 @@ class ImageUploadController extends Controller
                     $city = $request->input('city');
                     $state = $request->input('state');
                     
-                    for($i = 0; $i < count($from_year); $i++)
-                    {
-                        $data = array("from_year" => $from_year[$i],"from_class" => $from_class[$i],"to_year" => $to_year[$i],"to_class" => $to_class[$i],"school_name" => $school_name[$i],"city" => $city[$i],"state" => $state[$i],"country" => $country[$i],"appli_id" => $appli_id);
+                    $count = count($from_year); // Assuming all arrays have the same length
+                    for ($i = 0; $i < $count; $i++) {
+                        $data = array(
+                            "from_year" => isset($from_year[$i]) ? $from_year[$i] : null,
+                            "from_class" => isset($from_class[$i]) ? $from_class[$i] : null,
+                            "to_year" => isset($to_year[$i]) ? $to_year[$i] : null,
+                            "to_class" => isset($to_class[$i]) ? $to_class[$i] : null,
+                            "school_name" => isset($school_name[$i]) ? $school_name[$i] : null,
+                            "city" => isset($city[$i]) ? $city[$i] : null,
+                            "state" => isset($state[$i]) ? $state[$i] : null,
+                            "country" => isset($country[$i]) ? $country[$i] : null,
+                            "appli_id" => $appli_id
+                        );
+                    
                         DB::table('old_school')->insert($data);
                     }
-        $class = $request->input('page_type');
-         return redirect('/application_details/a?class='.$class."&appli_id=".$appli_id); 
+                    
+                }
+         return redirect('/application_details/a?class='.$page_type."&appli_id=".$appli_id); 
                     }
 
         public function upload_doc(){

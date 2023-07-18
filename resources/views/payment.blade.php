@@ -108,13 +108,17 @@
     <th>Application No</th>
     <td><?php echo $student[0]->class; ?>/0<?php echo $student[0]->id; ?></td>
 </tr>
+<tr id="a">
+    <th>Payable amount</th>
+    <td>{{ $registrationFee }}</td>
+</tr>
 </table>
 </div>
 
 <br>
 <div class="justify-content-center">
     
-<button class="btn  btn-submit btn-primary" style="margin-left:750px;" height="100px;" id="btn1" >
+<button class="btn  btn-submit btn-primary" style="margin-left:530px;" height="100px;" id="btn1" >
 Payment</button>
 
 
@@ -125,7 +129,8 @@ Payment</button>
         $('.btn-submit').click(function(){
             document.getElementById("myForm").submit();
         });
-</script></body>  
+</script>
+</body>  
 </html>
 <style>
     .step-wizard {
