@@ -68,7 +68,7 @@ class StudentController extends Controller
         $student->update();
              
         $class = $request->input('page_type');
-        return redirect('/admitted/a?class='.$class."&appli_id=".$appli_id);
+        return redirect('/paytm_appli/a?appli_id='.$appli_id);
         // $student = DB::select("SELECT * FROM `students` WHERE `status` = 'Submitted ' AND `user_id` = '$ses_userid'");
 
     }

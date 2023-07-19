@@ -240,7 +240,9 @@ public function application_details(Request $request)
 
 public function payment()
 {
-    return view('payment');
+    $registrationFee = DB::connection('secondary')->table('application_fee')->value('amount');
+    return view('payment', ['registrationFee' => $registrationFee]);
+    // return view('payment');
 }
 public function admitted(Request $request)
 {
@@ -341,6 +343,14 @@ $sessions = request()->session()->get('users.user_id');
                         return view('otp');
                     }
                 }
-                
+                // 
+       public function paytm_appli()
+       {
+            return view('otpgeneration');
+        }
             
+        public function fee_receipt()
+       {
+            return view('print_fee_receipt');
+        }
   }

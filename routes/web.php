@@ -25,6 +25,8 @@
     use App\Models\Parent1;
     use App\Models\Oldschool;
     use App\Http\Controllers\PdfGeneratorController;
+    use App\Models\Payment;
+
     
 
 Route::get('/', [CustomAuthController::class, 'home']); 
@@ -48,6 +50,8 @@ Route::get('otp', [CustomAuthController::class, 'otp'])->name('otp');
 
 Route::post('otp', [CustomAuthController::class, 'otp'])->name('otp'); 
 
+Route::get('paytm_appli/{id}', [CustomAuthController::class,'paytm_appli'])->name('paytm_appli');
+Route::get('fee_receipt/{id}', [CustomAuthController::class,'fee_receipt'])->name('fee_receipt');
 Route::post('loginWithOtp', [CustomAuthController::class,'loginWithOtp'])->name('loginWithOtp');
 Route::get('loginWithOtp', function () {
     return view('auth/OtpLogin');
@@ -138,7 +142,7 @@ Route::get('students', [CustomAuthController::class, 'application_details']);
 Route::get('create-id', [CustomAuthController::class, 'create_id']);
 
 //Paytm Payment
-Route::post('paytm-payment',[PaytmController::Class, 'paytmPayment'])->name('paytm.payment');
+Route::get('paytm-payment',[PaytmController::Class, 'paytmPayment'])->name('paytm.payment');
 Route::post('paytm-callback',[PaytmController::Class, 'paytmCallback'])->name('paytm.callback');
 Route::get('paytm-purchase',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');
 // Route::get('paytm-sucess-page',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');

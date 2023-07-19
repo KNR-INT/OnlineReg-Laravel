@@ -17,6 +17,7 @@ class ImageUploadController extends Controller
     {
         $appli_id = $request->input('appli_id');
         $class = $request->input('class');
+        $page_type = $request->input('page_type');
         
         // Retrieve the student object
         $student = Student::find($appli_id);
@@ -38,6 +39,8 @@ class ImageUploadController extends Controller
             }
         }
         $student->update();
+        if($page_type == "1to9" || $page_type == "11")
+        {
         DB::table('old_school')->where("appli_id",$appli_id)->delete();
                     $from_year = $request->input('from_year');
                     $to_year = $request->input('to_year');
@@ -53,8 +56,8 @@ class ImageUploadController extends Controller
                         $data = array("from_year" => $from_year[$i],"from_class" => $from_class[$i],"to_year" => $to_year[$i],"to_class" => $to_class[$i],"school_name" => $school_name[$i],"city" => $city[$i],"state" => $state[$i],"country" => $country[$i],"appli_id" => $appli_id);
                         DB::table('old_school')->insert($data);
                     }
-        $class = $request->input('page_type');
-         return redirect('/application_details/a?class='.$class."&appli_id=".$appli_id); 
+                }
+         return redirect('/application_details/a?class='.$page_type."&appli_id=".$appli_id); 
                     }
 
         public function upload_doc(){

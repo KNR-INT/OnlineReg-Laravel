@@ -326,8 +326,23 @@
 </table>
 <?php
 }
-?>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    }
+                    ?>
+              </center>
+                <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
+                <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
+            <br>
+            <br>
+             <center>
+                       <a class="btn btn-back btn-outline-success float-center ">Go Back</a>
+                       <a class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
+                       <div></center>
+                       @include('footer')
+            </div>
+                </form>
+                </div> 
+                </div>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function () {
     // Add row on click of "Add" button
@@ -412,22 +427,6 @@ $(this).closest('table').remove();
 </script>
 
             
-            <?php
-                    }
-                    ?>
-              </center>
-                <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
-                <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
-            <br>
-            <br>
-             <center>
-                       <a class="btn btn-back btn-outline-success float-center ">Go Back</a>
-                       <a class="btn btn-submit btn-outline-success float-center ">Save and Continue <i class="uil uil-navigator"></i></a>
-                       <div></center>
-                       @include('footer')
-            </div>
-                </div> 
-                </div>
 <script>
 document.getElementById('myForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent form submission
@@ -584,7 +583,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
             let Mothers_Aadhar_card = document.getElementById("Mothers_Aadhar_card").value;
          // const Previous_year_Marks_Cards = document.getElementById("Previous_year_Marks_Cards").value;
             // || !Previous_year_Marks_Cards
-            if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card || !from_year ||!from_class || !to_year || !to_class || !school_name || !city ||!state || !country )
+            if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card)
             {
                 if(!Student_Aadhar_card)
                 {
@@ -621,79 +620,6 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
                 {
                     document.getElementById("Mothers_Aadhar_card_err").innerHTML = " ";
                 }
-                // if(!Previous_year_Marks_Cards)
-                // {
-                //     document.getElementById("Previous_year_Marks_Cards_err").innerHTML = "This is Required Field";
-                // }
-                // else
-                // {
-                //     document.getElementById("Previous_year_Marks_Cards_err").innerHTML = " ";
-                // } 
-                if(!from_year)
-                {
-                    document.getElementById("from_year_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("from_year_err").innerHTML = " ";
-                }
-                if(!from_class)
-                {
-                    document.getElementById("from_class_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("from_class_err").innerHTML = " ";
-                }
-                if(!to_year)
-                {
-                    document.getElementById("to_year_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("to_year_err").innerHTML = " ";
-                }
-                if(!to_class)
-                {
-                    document.getElementById("to_class_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("to_class_err").innerHTML = " ";
-                }
-                if(!school_name)
-                {
-                    document.getElementById("school_name_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("school_name_err").innerHTML = " ";
-                }
-                if(!city)
-                {
-                    document.getElementById("city_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("city_err").innerHTML = " ";
-                }
-                if(!state)
-                {
-                    document.getElementById("state_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("state_err").innerHTML = " ";
-                }
-                if(!country)
-                {
-                    document.getElementById("country_err").innerHTML = "This is Required Field";
-                }
-                else
-                {
-                    document.getElementById("country_err").innerHTML = " ";
-                }
-                
             }            
 
         else

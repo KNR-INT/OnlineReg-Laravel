@@ -166,7 +166,7 @@ I Agree
 	$('.btn-submit').click(function() {
         let class_name = document.getElementById("class").value;
         let appli_id = document.getElementById("appli_id").value;
-	 alert(appli_id);
+	//  alert(appli_id);
 		window.location.href = "{{ url('onlinereg') }}/a?class="+class_name+"&appli_id="+appli_id;
     });
 </script>
@@ -186,7 +186,7 @@ I Agree
 ?>
 
 
-        <?php
+        <!-- <?php
                 $session = session()->all();
             
-                print_r($session);?>
+                print_r($session);?> -->

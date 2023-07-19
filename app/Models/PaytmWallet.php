@@ -10,11 +10,15 @@ class PaytmWallet extends Model
     
     protected $table = 'payment';
     protected $fillable = [
-        'order_id',
-        'user_id',
-        'mobile_number',
-        'email',
-        'amount',
-        'status',
+        'id',		
+		'txn_id',	
+		'order_id',	
+		'user_id',	
+		'mobile_no',	
+		'txn_amount',	
+		'status',	
+		'txn_date',		
+		'bank_name',	
+		'appli_id'
     ];
 }
