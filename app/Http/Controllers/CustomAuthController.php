@@ -353,4 +353,18 @@ $sessions = request()->session()->get('users.user_id');
        {
             return view('print_fee_receipt');
         }
+        
+        // public function applicationpdf()
+        // {
+        //      return view('applicationpdf');
+        //  }
+
+         public function applicationpdf()
+         {
+             $online_applications = Student::all(); // Replace YourModel with the actual model representing your online applications
+         
+             return view('applicationpdf', ['online_applications' => $online_applications]);
+         }
+         
+
   }

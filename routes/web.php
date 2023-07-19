@@ -265,6 +265,9 @@ Route::get('/print_fee_receipt-pdf', [PaytmController::class, 'generatePDF']);
 //     return view('upload_image');
 // })->name('storeImage');
 
+Route::get('applicationpdf', [CustomAuthController::class, 'applicationpdf']);
+
+
 
 
 

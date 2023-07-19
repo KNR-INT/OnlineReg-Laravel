@@ -62,7 +62,7 @@
                             <div class="form-group mb-3">                             <div class="col-md-12">
                                 
 <div class="d-flex justify-content-center" style="text-align:center; margin-top:30px;">
-                               <div style="text-align:center"  class="g-recaptcha col-md-13 " data-sitekey="6LeUvnggAAAAABBDr_CIHhs3bKyQ5tNRhjWCGvy_"  data-callback="enableBtn">
+                               <div style="text-align:center"  class="g-recaptcha col-md-13 " data-sitekey=" 6LejEDgnAAAAAJRc8H6Chn8FNh9PGmmbtLFAGhkb"  data-callback="enableBtn">
                               </div>
                                </div>
                                <br>
