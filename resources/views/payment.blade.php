@@ -118,7 +118,7 @@
 <br>
 <div class="justify-content-center">
     
-<button class="btn  btn-submit btn-primary" style="margin-left:750px;" height="100px;" id="btn1" >
+<button class="btn  btn-submit btn-primary" style="margin-left:530px;" height="100px;" id="btn1" >
 Payment</button>
 
 

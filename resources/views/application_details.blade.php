@@ -413,7 +413,7 @@
 </td>
 </tr>
 <tr>
-<td><b>3. Aadhar Passport</b></td>
+<td><b>3. Aadhar/Passport</b></td>
 </td>
 </tr>
 <tr>

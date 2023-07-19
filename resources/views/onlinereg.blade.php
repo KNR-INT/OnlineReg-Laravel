@@ -352,7 +352,9 @@
 
                         <div class="input-field">
                             <label><b> Upload a recent photograph of the Student * :</b></label>
-                            <input type="file" id="upload" name="image"><span id="upload_err" style="color:red;"></span>
+                            <input type="file" id="upload" name="image" onchange="preview4()">
+                            <img id="blah4" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
+                            <span id="upload_err" style="color:red;"></span>
                         </div>
 
 
@@ -369,6 +371,24 @@
         </form>
    </div>   
  </div>
+ <script>
+    function preview4() {
+   blah4.src=URL.createObjectURL(event.target.files[0]);
+}
+function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah4')
+                        .attr('src', e.target.result);
+                       
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+ </script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
 document.getElementById('myForm').addEventListener('submit', function(e) {

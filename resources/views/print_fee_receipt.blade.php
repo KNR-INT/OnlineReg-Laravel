@@ -123,7 +123,6 @@
     ?>
 
                                         <td valign="top">
-                                        <img alt="" src="{{ url('public/Image/logo.png') }}" width="30px;" style="float:left; top:5px">
                                         </td> 
                                             <td valign="top">
                                             <center><font style="font-weight: bold;font-size: 15px;">NATIONAL PUBLIC SCHOOL - YESHWANTHPUR</font><br>

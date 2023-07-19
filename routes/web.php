@@ -26,7 +26,9 @@
     use App\Models\Oldschool;
     use App\Http\Controllers\PdfGeneratorController;
     use App\Models\Payment;
-
+    use Dompdf\Dompdf;
+    use Illuminate\Support\Facades\View;
+    use Illuminate\Support\Facades\Storage;
     
 
 Route::get('/', [CustomAuthController::class, 'home']); 
@@ -241,6 +243,7 @@ Route::get('/postlogin', function (Request $request) {
 
  
 Route::get('/application_details', [PdfGeneratorController::class, 'application_details']);
+Route::get('/print_fee_receipt-pdf', [PaytmController::class, 'generatePDF']);
 
 
 // Route::post('/storeImage', function (Request $request) {
