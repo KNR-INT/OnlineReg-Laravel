@@ -67,9 +67,7 @@ class ImageUploadController extends Controller
                     
                         DB::table('old_school')->insert($data);
                     }
-                    
-                }
-         return redirect('/application_details/a?class='.$page_type."&appli_id=".$appli_id); 
+         return redirect('/application_details/a?class='.$page_type."&appli_id=".$appli_id);
                     }
 
         public function upload_doc(){

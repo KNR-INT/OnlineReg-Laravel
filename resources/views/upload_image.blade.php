@@ -581,7 +581,8 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
             let Fathers_Aadhar_card = document.getElementById("Fathers_Aadhar_card").value;
             let Birth_Certificate_Of_Student = document.getElementById("Birth_Certificate_Of_Student").value;
             let Mothers_Aadhar_card = document.getElementById("Mothers_Aadhar_card").value;
-            let appli_id = document.getElementById("appli_id").value;
+ let appli_id = document.getElementById("appli_id").value;
+           {
             
             
 
