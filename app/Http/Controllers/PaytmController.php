@@ -101,7 +101,7 @@ class PaytmController extends Controller
           }
          
           // Send the email with the attached PDF
-          Mail::send('emails.test', $data, function (Message $message) use ($email, $order_id) {
+          Mail::send('emails.transcation', $data, function (Message $message) use ($email, $order_id) {
               $message->to($email)
                   ->subject('Test Email')
                   ->attach(public_path($order_id . "_fee_receipt"))
