@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Payment;
 use Illuminate\Support\Facades\DB;
 use Anand\LaravelPaytmWallet\Facades\PaytmWallet;
-
+use Barryvdh\DomPDF\PDF;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Mail\Message;
 
 class PaytmController extends Controller
 {
@@ -21,15 +24,15 @@ class PaytmController extends Controller
         $appli_id = $request->input('appli_id');
         // $session = session()->get('login.email');
       //   $ses_email = $session[0];
-      //   $users = DB::select("SELECT * FROM `students` WHERE `email_id` = '$ses_email' ORDER BY `id` DESC LIMIT 1");
+        $users = DB::select("SELECT * FROM `students` WHERE `id` = '$appli_id'");
       //   $user_id = $users[0]->id;
         $payment = PaytmWallet::with('receive');
         // $registrationFee = DB::connection('secondary')->table('application_fee')->value('amount');
         $payment->prepare([
           'order' => $appli_id,
           'user' => rand(10,1000),
-          'mobile_number' => '123456789',
-          'email' => 'paytmtest@gmail.com',
+          'mobile_number' => $users[0]->id,
+          'email' => $users[0]->id,
           'amount' => 1,
           'callback_url' => route('paytm.callback'),
         ]);
@@ -68,9 +71,44 @@ class PaytmController extends Controller
           $users = DB::select("SELECT * FROM `fee_receipt_number` WHERE `appli_id` = '$order_id' ORDER BY `receipt_number` DESC LIMIT 1");
           $fee_receipt_no = "NPSYPR/APPLICATION/000".$users[0]->receipt_number;
           DB::table('students')->where("id",$order_id)->update(["fee_receipt_no"=>$fee_receipt_no,"status"=>"Submitted"]);
-
+          $users = DB::select("SELECT * FROM `students` WHERE `id` = '$order_id'");
           
-          return redirect('fee_receipt/a?appli_id='.$order_id);
+          $email = $users[0]->email_id;
+          $pdf = app('dompdf.wrapper');
+
+          try {
+            $ppp = 'preetam';
+            $pdf_name = $order_id."_fee_receipt";
+            $data = ['appli_id'=>$order_id];
+            $pdf = $pdf->loadView('print_fee_receipt', $data)->save(public_path($order_id."_fee_receipt"));
+            $content = $pdf->download($order_id."_fee_receipt");
+            $publicpath = 'public';
+            Storage::put($publicpath, $content);
+          } catch(Exception $e) {
+             throw new Exception("Error PDF");
+          }
+
+          try {
+            $ppp = 'preetam';
+            $pdf_name = $order_id."_application_form";
+            $data = ['appli_id'=>$order_id];
+            $pdf = $pdf->loadView('application_form', $data)->save(public_path($order_id."_application_form"));
+            $content = $pdf->download($order_id."_application_form");
+            $publicpath = 'public';
+            Storage::put($publicpath, $content);
+          } catch(Exception $e) {
+             throw new Exception("Error PDF");
+          }
+         
+          // Send the email with the attached PDF
+          Mail::send('emails.test', $data, function (Message $message) use ($email, $order_id) {
+              $message->to($email)
+                  ->subject('Test Email')
+                  ->attach(public_path($order_id . "_fee_receipt"))
+                  ->attach(public_path($order_id . "_application_form"));
+          });
+        redirect('fee_receipt/a?appli_id='.$order_id);
+
         }
 
         else if($transaction->isFailed())

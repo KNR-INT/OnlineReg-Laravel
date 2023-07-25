@@ -60,14 +60,18 @@
                             <?php 
                             $id = $_GET['appli_id'];
                             $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
+                            $imageRelativePath = $student[0]->image;
+                            $imageAbsolutePath = public_path('public/' . $student[0]->student_adr);
+
                             ?>
+                            
                             <label>Upload Student Aadhar card * :</label>
-<input type="file" id="Student_Aadhar_card" name="image"  onchange="preview()" >
-                            <img id="blah" src="#"  style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">                            <span id="Student_Aadhar_card_err" style="color:red;"></span>
+                            <input type="file" id="Student_Aadhar_card" name="image"  onchange="preview()" >
+                            <!-- <img id="blah"  src="{{ asset($imageRelativePath) }}" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">  -->
+                            <img id="blah"  src="{{ url('/') }}/public/Image/365_student_aadhar.jpg" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
+                        
+                            <span id="Student_Aadhar_card_err" style="color:red;"></span>
                         </div>
-
-                      
-
 
                         <div class="input-field">
                             <label>Upload Father's Aadhar card * :</label>
@@ -622,7 +626,6 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
             $("input:text[name='country']").each(function() {
                 country.push($(this).val());
             });
-   alert(country);
                 if(!Student_Aadhar_card || !Fathers_Aadhar_card || !Birth_Certificate_Of_Student || !Mothers_Aadhar_card || !from_year || !from_class || !to_year || !to_class || !school_name || !city || !state || !country)
             {
                 if(!Student_Aadhar_card)
@@ -781,6 +784,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
                 document.getElementById("myForm").submit();
             }
         }
+    }
         });  
     </script>
 </body>

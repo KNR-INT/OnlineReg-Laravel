@@ -18,7 +18,7 @@
    
     <div class="container">
         
-<form id="myForm" action="{{ url('store-student') }}" enctype="multipart/form-data">
+<form id="myForm" action="{{ url('store-student') }}"   enctype="multipart/form-data">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
@@ -76,6 +76,7 @@
                         ?>
                         <div class="input-field">
                             <label><b> Class*</b></label>
+                        <input type="hidden" id="class_old" name="class_old" value="<?php if(!empty($student[0]->class)) { echo $student[0]->class; } ?>">
                             <select  id="class" name="class">
                                 <option disabled selected value="">--SELECT--</option>
                                 <?php
@@ -179,122 +180,36 @@
                     </div>
                 </div>
                     <br>
-
-                 <div class="language_mont" hidden>
-                     <div class="fields">
-                         <div class="input-field">
-                            <input type="hidden" id="sec_language" name="sec_language" value=" ">
-                         </div>
-                            <input type="hidden" id="third_language" name="third_language" value=" ">
-                     </div>
+                    <input type="hidden" id="sec_lan_old" name="sec_lan_old" value="<?php if(!empty($student[0]->sec_language)) { echo $student[0]->sec_language; } ?>">
+                    <input type="hidden" id="trd_lan_old" name="trd_lan_old" value="<?php if(!empty($student[0]->third_language)) { echo $student[0]->third_language; } ?>">
+                 <div id="language_mont">
+                    
                 </div> 
-                <div class="language12345" hidden>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label><b>Second Language*</b></label>
-                            <select id="sec_language" name="sec_language">
-                                <option disabled selected value="">--SELECT--</option>
-                                <option value="Hindi">Hindi</option>
-                                <option value="Kannada">Kannada</option>
-                            </select>
-                            <span id="sec_language_err" style="color:red;"></span>
-                        </div>
-                        <div class="input-field">
-                            <label><b>Third Language*</b></label>
-                            <select id="third_language" name="third_language">
-                                <option disabled selected value="">--SELECT--</option>
-                                <option value="Hindi">Hindi</option>
-                                <option value="Kannada">Kannada</option>
-                            </select>
-                            <span id="third_language_err" style="color:red;"></span>
-                        </div>
-                    </div>
+                <div id="language1234">
+                    
                 </div>
 
-                <div class="language6" hidden>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label><b>Second Language*</b></label>
-                            <select id="sec_language" name="sec_language">
-                                <option disabled selected value="">--SELECT--</option>
-                                <option value="Hindi">Hindi</option>
-                                <option value="Kannada">Kannada</option>
-                            </select>
-                            <span id="sec_language_err" style="color:red;"></span>
-                        </div>
-                        <div class="input-field">
-                            <label><b>Third Language*</b></label>
-                            <select id="third_language" name="third_language">
-                                <option disabled selected value="">--SELECT--</option>
-                                <option value="Hindi">Hindi</option>
-                                <option value="Kannada">Kannada</option>
-                                <option value="Sanskrit">Sanskrit</option>
-                            </select>
-                            <span id="third_language_err" style="color:red;"></span>
-                        </div>
-                    </div>
+                <div id="language56">
+                    
                 </div>
-                <div class="language78" hidden>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label><b>Second Language*</b></label>
-                            <select id="sec_language" name="sec_language">
-                                <option disabled selected value="">--SELECT--</option>
-                                <option value="Hindi">Hindi</option>
-                            </select>
-                            <span id="sec_language_err" style="color:red;"></span>
-                        </div>
-                        <div class="input-field">
-                            <label><b>Third Language*</b></label>
-                            <select id="third_language" name="third_language">
-                                <option disabled selected value="">--SELECT--</option>
-                                <option value="Kannada">Kannada</option>
-                                <option value="Sanskrit">Sanskrit</option>
-                            </select>
-                            <span id="third_language_err" style="color:red;"></span>
-                        </div>
-                    </div>
+                <div id="language78" >
+                    
                 </div>
-                <div class="language9" hidden>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label><b>Second Language*</b></label>
-                            <select id="sec_language" name="sec_language">
-                                <option disabled selected value="">--SELECT--</option>
-                                <option value="Hindi">Hindi</option>
-                                <option value="Sanskrit">Sanskrit</option>
-                            </select>
-                            <span id="sec_language_err" style="color:red;"></span>
-                        </div>
-                        <input type="hidden" id="third_language" name="third_language" value=" ">
-                    </div>
+                <div id="language9">
+                   
                 </div>
-                <div class="language11" hidden>
-                    <div class="fields">
-                        <div class="input-field">
-                            <label><b>Second Language(Compulsary Language:English)*</b></label>
-                            <select id="sec_language" name="sec_language">
-                                <option disabled selected value="">--SELECT--</option>
-                                <option value="pcmb" <?php if($student[0]->sec_language == "pcmb"){ echo "SELECTED"; } ?>>Physics, Chemistry, Mathematics, Biology</option>
-                                <option value="pcmc" <?php if($student[0]->sec_language == "pcmc"){ echo "SELECTED"; } ?>>Physics, Chemistry, Mathematics, ComputerScience</option>
-                                <option value="pcme" <?php if($student[0]->sec_language == "pcme"){ echo "SELECTED"; } ?>>Physics, Chemistry, Mathematics, Economics</option>
-                                <option value="pcib" <?php if($student[0]->sec_language == "pcib"){ echo "SELECTED"; } ?>>Physics, Chemistry, Informatics Practices, Biology</option>
-                                <option value="baei" <?php if($student[0]->sec_language == "baei"){ echo "SELECTED"; } ?>>Business Studies, Accountancy, Economics, Informatics Practices</option>
-                                <option value="eaba" <?php if($student[0]->sec_language == "eaba"){ echo "SELECTED"; } ?>>Economics, Accountancy, Business Studies, Applied Mathematics</option>
-                            </select>
-                            <span id="sec_language_err" style="color:red;"></span>
-                        </div>
-                        <input type="hidden" id="third_language" name="third_language" value=" ">
-                    </div>
+                <div id="language11">
+                   
                 </div>
+                        <input type="hidden" id="sibling_change_old" name="sibling_change_old" value="<?php if(!empty($student[0]->sibling_change)) { echo $student[0]->sibling_change; } ?>">
                 <div class="sibling">
                     <span class="title"><b>Sibling currently studying at NPS Yeshwanthpur</b>
                     <div class="fields">
                         <div class="input-field">
                             <select id="sibling_change" name="sibling_change">
                                 <option disabled selected value="">--SELECT--</option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
+                                <option value="Yes" <?php if($student[0]->sibling_change == "Yes"){ echo "SELECTED"; } ?>>Yes</option>
+                                <option value="No" <?php if($student[0]->sibling_change == "No"){ echo "SELECTED"; } ?>>No</option>
                             </select>
                         </div>
                     </div></span>
@@ -352,12 +267,11 @@
 
                         <div class="input-field">
                             <label><b> Upload a recent photograph of the Student * :</b></label>
-                            <input type="file" id="upload" name="image" onchange="preview4()">
+                            <input type="file" id="image" name="image" onchange="preview4()">
                             <img id="blah4" src="#" alt="your image" style="width:150px;height:200px; margin-left:150px;" class="img-fluid img-thumbnail">
-                            <span id="upload_err" style="color:red;"></span>
+                            <span id="image_err" style="color:red;"></span>
                         </div>
-
-
+                 
                         <input type="hidden" id="page_type" name="page_type" value="<?php echo $_GET['class']; ?>">
                         <input type="hidden" id="appli_id" name="appli_id" value="<?php echo $_GET['appli_id']; ?>">
                         
@@ -394,7 +308,7 @@ function readURL(input) {
 document.getElementById('myForm').addEventListener('submit', function(e) {
     e.preventDefault(); 
     var formData = new FormData();
-    var imageFile = document.getElementById('upload').files[0];
+    var imageFile = document.getElementById('image').files[0];
     
     formData.append('image', imageFile);
 
@@ -411,65 +325,370 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
     });
 });
 </script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        $(document).ready(function(){
+            let class_name = document.getElementById("class_old").value;
 
-        $('#class').on('change', function() {
-            let class_name = $(this).val();
-            if(class_name == "Grade 1" || class_name == "Grade 2" || class_name == "Grade 3" || class_name == "Grade 4" || class_name == "Grade 5")
+            if(class_name == "Grade 1" || class_name == "Grade 2" || class_name == "Grade 3" || class_name == "Grade 4")
             {
-                $('div.language_mont').attr('hidden', 'hidden');
-                $('div.language12345').removeAttr('hidden');
-                $('div.language6').attr('hidden', 'hidden');
-                $('div.language78').attr('hidden', 'hidden');
-                $('div.language9').attr('hidden', 'hidden');
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                                '<option value="Kannada">Kannada</option>'+
+                                '</select>'+
+                                '<span id="sec_language_err" style="color:red;"></span>'+
+                                '</div>'+
+                                '<div class="input-field">'+
+                                '<label><b>Third Language*</b></label>'+
+                                '<select id="third_language" name="third_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                                '<option value="Kannada">Kannada</option>'+
+                                '</select>'+
+                                '<span id="third_language_err" style="color:red;"></span>'+
+                                '</div>'+
+                                '</div>';
+
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+                
+                $('#language1234').append(row);
+
+                let sec_lan_old = document.getElementById("sec_lan_old").value;
+                let trd_lan_old = document.getElementById("trd_lan_old").value;
+                document.getElementById('sec_language').value = sec_lan_old;
+                document.getElementById('third_language').value = trd_lan_old;
             }
-            else if(class_name == "Grade 6")
+            else if(class_name == "Grade 6" || class_name == "Grade 5")
             {
-                $('div.language_mont').attr('hidden', 'hidden');
-                $('div.language12345').attr('hidden', 'hidden');
-                $('div.language6').removeAttr('hidden');
-                $('div.language78').attr('hidden', 'hidden');
-                $('div.language9').attr('hidden', 'hidden');
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                                '<option value="Kannada">Kannada</option>'+
+                            '</select>'+
+                            '<span id="sec_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                        '<div class="input-field">'+
+                            '<label><b>Third Language*</b></label>'+
+                            '<select id="third_language" name="third_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                                '<option value="Kannada">Kannada</option>'+
+                                '<option value="Sanskrit">Sanskrit</option>'+
+                            '</select>'+
+                            '<span id="third_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                    '</div>';
+                document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+
+                $('#language56').append(row);
+
+                let sec_lan_old = document.getElementById("sec_lan_old").value;
+                let trd_lan_old = document.getElementById("trd_lan_old").value;
+                document.getElementById('sec_language').value = sec_lan_old;
+                document.getElementById('third_language').value = trd_lan_old;
+
             }
             else if(class_name == "Grade 7" || class_name == "Grade 8")
             {
-                $('div.language_mont').attr('hidden', 'hidden');
-                $('div.language12345').attr('hidden', 'hidden');
-                $('div.language6').attr('hidden', 'hidden');
-                $('div.language78').removeAttr('hidden');
-                $('div.language9').attr('hidden', 'hidden');
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                            '</select>'+
+                            '<span id="sec_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                        '<div class="input-field">'+
+                            '<label><b>Third Language*</b></label>'+
+                            '<select id="third_language" name="third_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Kannada" >Kannada</option>'+
+                                '<option value="Sanskrit" >Sanskrit</option>'+
+                            '</select>'+
+                            '<span id="third_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                    '</div>';
+                document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+
+                $('#language78').append(row);
+                let sec_lan_old = document.getElementById("sec_lan_old").value;
+            let trd_lan_old = document.getElementById("trd_lan_old").value;
+            document.getElementById('sec_language').value = sec_lan_old;
+            document.getElementById('third_language').value = trd_lan_old;
+
             }
             else if(class_name == "Grade 9")
             {
-                $('div.language_mont').attr('hidden', 'hidden');
-                $('div.language12345').attr('hidden', 'hidden');
-                $('div.language6').attr('hidden', 'hidden');
-                $('div.language78').attr('hidden', 'hidden');
-                $('div.language9').removeAttr('hidden');
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi" >Hindi</option>'+
+                                '<option value="Sanskrit" >Sanskrit</option>'+
+                            '</select>'+
+                            '<span id="sec_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                        '<input type="hidden" id="third_language" name="third_language" value=" ">'+
+                    '</div>';
+                document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+
+                $('#language9').append(row);
+                let sec_lan_old = document.getElementById("sec_lan_old").value;
+                document.getElementById('sec_language').value = sec_lan_old;
+
             }
             else if(class_name == "Grade 11")
             {
-                $('div.language_mont').attr('hidden', 'hidden');
-                $('div.language12345').attr('hidden', 'hidden');
-                $('div.language6').attr('hidden', 'hidden');
-                $('div.language78').attr('hidden', 'hidden');
-                $('div.language9').attr('hidden', 'hidden');
-                $('div.language11').removeAttr('hidden');
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language(Compulsary Language:English)*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="pcmb" >Physics, Chemistry, Mathematics, Biology</option>'+
+                                '<option value="pcmc">Physics, Chemistry, Mathematics, ComputerScience</option>'+
+                                '<option value="pcme" >Physics, Chemistry, Mathematics, Economics</option>'+
+                                '<option value="pcib" >Physics, Chemistry, Informatics Practices, Biology</option>'+
+                                '<option value="baei" >Business Studies, Accountancy, Economics, Informatics Practices</option>'+
+                                '<option value="eaba" >Economics, Accountancy, Business Studies, Applied Mathematics</option>'+
+                            '</select>'+
+                            '<span id="sec_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                        '<input type="hidden" id="third_language" name="third_language" value=" ">'+
+                    '</div>';
+                document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+
+                $('#language11').append(row);
+                let sec_lan_old = document.getElementById("sec_lan_old").value;
+            document.getElementById('sec_language').value = sec_lan_old;
             }
             else if(class_name == "Montessori_I"||class_name == "Montessori_II"||class_name == "Montessori_III"||class_name == "PRE-KG"||class_name == "Kindergarten_I"||class_name == "Kindergarten_II")
             {
-                $('div.language12345').attr('hidden', 'hidden');
-                $('div.language6').attr('hidden', 'hidden');
-                $('div.language78').attr('hidden', 'hidden');
-                $('div.language9').attr('hidden', 'hidden');
-                $('div.language11').attr('hidden', 'hidden');
-                $('div.language_mont').removeAttr('hidden');
+                var row = '<div class="fields">'+
+                         '<div class="input-field">'+
+                            '<input type="hidden" id="sec_language" name="sec_language" value=" ">'+
+                         '</div>'+
+                            '<input type="hidden" id="third_language" name="third_language" value=" ">'+
+                     '</div>';
+                     document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+
+                $('#language_mont').append(row);
 
             }
 
-        })
+            
+
+            let sibling_change = document.getElementById("sibling_change_old").value;
+            if(sibling_change == "Yes")
+            {
+                $('div.siblings').removeAttr('hidden');
+            }
+            else if(sibling_change == "No")
+            {
+                $('div.siblings').attr('hidden', 'hidden');
+            }
+        });
+        $('#class').on('change', function() {
+            let class_name = $(this).val();
+        
+            if(class_name == "Grade 1" || class_name == "Grade 2" || class_name == "Grade 3" || class_name == "Grade 4")
+            {
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                                '<option value="Kannada">Kannada</option>'+
+                                '</select>'+
+                                '<span id="sec_language_err" style="color:red;"></span>'+
+                                '</div>'+
+                                '<div class="input-field">'+
+                                '<label><b>Third Language*</b></label>'+
+                                '<select id="third_language" name="third_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                                '<option value="Kannada">Kannada</option>'+
+                                '</select>'+
+                                '<span id="third_language_err" style="color:red;"></span>'+
+                                '</div>'+
+                                '</div>';
+
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+            
+                $('#language1234').append(row);
+            }
+            else if(class_name == "Grade 6" || class_name == "Grade 5")
+            {
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                                '<option value="Kannada">Kannada</option>'+
+                            '</select>'+
+                            '<span id="sec_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                        '<div class="input-field">'+
+                            '<label><b>Third Language*</b></label>'+
+                            '<select id="third_language" name="third_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                                '<option value="Kannada">Kannada</option>'+
+                                '<option value="Sanskrit">Sanskrit</option>'+
+                            '</select>'+
+                            '<span id="third_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                    '</div>';
+                document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+
+                $('#language56').append(row);
+
+            }
+            else if(class_name == "Grade 7" || class_name == "Grade 8")
+            {
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi">Hindi</option>'+
+                            '</select>'+
+                            '<span id="sec_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                        '<div class="input-field">'+
+                            '<label><b>Third Language*</b></label>'+
+                            '<select id="third_language" name="third_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Kannada" >Kannada</option>'+
+                                '<option value="Sanskrit" >Sanskrit</option>'+
+                            '</select>'+
+                            '<span id="third_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                    '</div>';
+                document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+
+                $('#language78').append(row);
+
+            }
+            else if(class_name == "Grade 9")
+            {
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="Hindi" >Hindi</option>'+
+                                '<option value="Sanskrit" >Sanskrit</option>'+
+                            '</select>'+
+                            '<span id="sec_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                        '<input type="hidden" id="third_language" name="third_language" value=" ">'+
+                    '</div>';
+                document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+
+                $('#language9').append(row);
+
+            }
+            else if(class_name == "Grade 11")
+            {
+                var row = '<div class="fields">'+
+                        '<div class="input-field">'+
+                            '<label><b>Second Language(Compulsary Language:English)*</b></label>'+
+                            '<select id="sec_language" name="sec_language">'+
+                                '<option disabled selected value="">--SELECT--</option>'+
+                                '<option value="pcmb" >Physics, Chemistry, Mathematics, Biology</option>'+
+                                '<option value="pcmc">Physics, Chemistry, Mathematics, ComputerScience</option>'+
+                                '<option value="pcme" >Physics, Chemistry, Mathematics, Economics</option>'+
+                                '<option value="pcib" >Physics, Chemistry, Informatics Practices, Biology</option>'+
+                                '<option value="baei" >Business Studies, Accountancy, Economics, Informatics Practices</option>'+
+                                '<option value="eaba" >Economics, Accountancy, Business Studies, Applied Mathematics</option>'+
+                            '</select>'+
+                            '<span id="sec_language_err" style="color:red;"></span>'+
+                        '</div>'+
+                        '<input type="hidden" id="third_language" name="third_language" value=" ">'+
+                    '</div>';
+                document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language_mont").innerHTML = "";
+
+                $('#language11').append(row);
+
+            }
+            else if(class_name == "Montessori_I"||class_name == "Montessori_II"||class_name == "Montessori_III"||class_name == "PRE-KG"||class_name == "Kindergarten_I"||class_name == "Kindergarten_II")
+            {
+                var row = '<div class="fields">'+
+                         '<div class="input-field">'+
+                            '<input type="hidden" id="sec_language" name="sec_language" value=" ">'+
+                         '</div>'+
+                            '<input type="hidden" id="third_language" name="third_language" value=" ">'+
+                     '</div>';
+                     document.getElementById("language1234").innerHTML = "";
+                document.getElementById("language56").innerHTML = "";
+                document.getElementById("language78").innerHTML = "";
+                document.getElementById("language9").innerHTML = "";
+                document.getElementById("language11").innerHTML = "";
+
+                $('#language_mont').append(row);
+
+            }
+        });
 
         $('#name').on('change', function() {
             if (/^[a-zA-Z ]*$/g.test($(this).val())) {
@@ -477,7 +696,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
             } else {
                 document.getElementById("name_err").innerHTML = "Only alphabets are allowed";
             }
-        })
+        });
 
         $('#birth_place').on('change', function() {
             if (/^[a-zA-Z ]*$/g.test($(this).val())) {
@@ -485,7 +704,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
             } else {
                 document.getElementById("birth_place_err").innerHTML = "Only alphabets are allowed";
             }
-        })
+        });
 
         $('#sibling_change').change(function(){
             let sibling_change = $(this).val();
@@ -498,6 +717,7 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
                 $('div.siblings').attr('hidden', 'hidden');
             }
         });
+
         $('.btn-submit').click(function(){
             let name = document.getElementById("name").value;
             let gender = document.getElementById("gender").value;
@@ -513,7 +733,8 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
             let transport = document.getElementById("transport").value;
             let sec_language = document.getElementById("sec_language").value;
             let third_language = document.getElementById("third_language").value;
-            if(!name || !/^[a-zA-Z ]*$/g.test(name) || !gender || !dob || !class_name || !birth_place || !/^[a-zA-Z ]*$/g.test(birth_place) || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport || !sec_language || !third_language)
+            let image = document.getElementById("image").value;
+            if(!name || !/^[a-zA-Z ]*$/g.test(name) || !gender || !dob || !class_name || !birth_place || !/^[a-zA-Z ]*$/g.test(birth_place) || !nationality || !religion || !mother_tongue || !phy_clg || !slp_need || !aadhar || !transport || !sec_language || !third_language || !image)
             {
                 if(!name)
                 {
@@ -647,6 +868,14 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
                 else
                 {
                     document.getElementById("third_language_err").innerHTML = " ";
+                }
+                if(!image)
+                {
+                    document.getElementById("image").innerHTML = "This is Required Field";
+                }
+                else
+                {
+                    document.getElementById("image_err").innerHTML = " ";
                 }
             // name,gender,dob,class,birth_place,nationality,religion,mother_tongue,phy_clg,slp_need,aadhar,transport
             }

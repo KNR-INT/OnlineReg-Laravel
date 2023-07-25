@@ -22,14 +22,14 @@
                                         
 
 
-<tr>
+<!-- <tr>
 <td><img src="/images/carrot.jpg" alt="carrot" width="200"></td>
 
 <td>Name ={{ $item->name }}</td>
 
 
 
-</tr>
+</tr> -->
  
 <tr>
 <td>Class={{ $item->class }}</td> 

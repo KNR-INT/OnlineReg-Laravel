@@ -419,35 +419,34 @@
         });
     
         $('.mother_details').click(function(){
-            if ($(this).is(':checked')) {
-                let father_residential_address = document.getElementById("father_residential_address").value;
-                let father_area = document.getElementById("father_area").value;
-                let father_district = document.getElementById("father_district").value;
-                let father_state = document.getElementById("father_state").value;
-                let father_country = document.getElementById("father_country").value;
-                let father_pincode = document.getElementById("father_pincode").value;
-                let father_residential_no = document.getElementById("father_residential_no").value;
+    if ($(this).is(':checked')) {
+        let father_residential_address = document.getElementById("father_residential_address").value;
+        let father_area = document.getElementById("father_area").value;
+        let father_district = document.getElementById("father_district").value;
+        let father_state = document.getElementById("father_state").value;
+        let father_country = document.getElementById("father_country").value;
+        let father_pincode = document.getElementById("father_pincode").value;
+        let father_residential_no = document.getElementById("father_residential_no").value;
 
-                document.getElementById("mother_residential_address").value = father_residential_address;
-                document.getElementById("mother_area").value = father_area;
-                document.getElementById("mother_district").value = father_district;
-                document.getElementById("mother_state").value = father_state;
-                document.getElementById("mother_country").value = father_country;
-                document.getElementById("mother_pincode").value = father_pincode;
-                document.getElementById("mother_residentail_no").value = father_residential_no;
+        document.getElementById("mother_residential_address").value = father_residential_address;
+        document.getElementById("mother_area").value = father_area;
+        document.getElementById("mother_district").value = father_district;
+        document.getElementById("mother_state").value = father_state;
+        document.getElementById("mother_country").value = father_country;
+        document.getElementById("mother_pincode").value = father_pincode;
+        document.getElementById("mother_residential_no").value = father_residential_no;
 
-            }
+    } else {
+        document.getElementById("mother_residential_address").value = "";
+        document.getElementById("mother_area").value = "";
+        document.getElementById("mother_district").value = "";
+        document.getElementById("mother_state").value = "";
+        document.getElementById("mother_country").value = "";
+        document.getElementById("mother_pincode").value = "";
+        document.getElementById("mother_residential_no").value = "";
+    }
+});
 
-            else{
-                document.getElementById("mother_residential_address").value ="";
-                document.getElementById("mother_area").value ="";
-                document.getElementById("mother_district").value ="";
-                document.getElementById("mother_state").value ="";
-                document.getElementById("mother_country").value ="";
-                document.getElementById("mother_pincode").value ="";
-                document.getElementById("mother_residentail_no").value ="";
-            }
-        });
 
         $('.btn-back').click(function(){
             let page_type = document.getElementById("page_type").value;

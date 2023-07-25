@@ -24,6 +24,7 @@ class Student extends Model
     'sib1_cls_sec',
     'sib2_name',
     'sib2_cls_sec',
+    'sibling_change',
     'phy_clg',
     'slp_need',
     'aadhar',

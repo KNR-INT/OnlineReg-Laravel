@@ -54,6 +54,7 @@ Route::post('otp', [CustomAuthController::class, 'otp'])->name('otp');
 
 Route::get('paytm_appli/{id}', [CustomAuthController::class,'paytm_appli'])->name('paytm_appli');
 Route::get('fee_receipt/{id}', [CustomAuthController::class,'fee_receipt'])->name('fee_receipt');
+Route::get('application_form/{id}', [CustomAuthController::class,'application_form'])->name('application_form');
 Route::post('loginWithOtp', [CustomAuthController::class,'loginWithOtp'])->name('loginWithOtp');
 Route::get('loginWithOtp', function () {
     return view('auth/OtpLogin');
@@ -149,49 +150,6 @@ Route::post('paytm-callback',[PaytmController::Class, 'paytmCallback'])->name('p
 Route::get('paytm-purchase',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');
 // Route::get('paytm-sucess-page',[PaytmController::Class, 'paytmPurchase'])->name('paytm.purchase');
 
-
-Route::get('/postlogin-otpgenerator', function () {
-    $details = [
-        'title' => 'Test Email',
-        'body' => 'This is a test email from Laravel with SMTP configuration.',
-    ];
-
-    try {
-        Mail::to('nikhiln0712@gmail.com')->send(new MyMailable($details));
-
-        return "Test email sent successfully!";
-    } catch (\Exception $e) {
-        return "Failed to send test email. Error: " . $e->getMessage();
-    }
-});
-Route::get('/sparkpost', function () {
-    Mail::send('emails.test', [], function ($message) {
-        $message
-            ->from('from@yourdomain.com', 'Your Name')
-            ->to('to@otherdomain.com', 'Receiver Name')
-            ->subject('From SparkPost with ❤');
-    });
-});
-
-
-// Route::get('postlogin', function (Request $request) {
-//     $email = $request->input('email');
-//     $data = [
-//         'name' => $email,
-//     ];
-
-//     Mail::send('emails.test', $data, function (Message $message) {
-//         $message->to('padmajaac07@gmail.com')
-//             ->subject('Test Email');
-//     });
-
-//     return 'Email sent successfully!';
-// })->name('postlogin');
-
-
-
-
-
 Route::get('/postlogin', function (Request $request) {
     $email = $request->email;
                     session()->push('login.email', $email);
@@ -231,7 +189,9 @@ Route::get('/postlogin', function (Request $request) {
                         Mail::send('emails.test', $data, function (Message $message) use ($email) {
                             $message->to($email)
                                 ->subject('Test Email');
+                                // ->attach(public_path('sample.pdf'));
                         });
+                        
                     
                         return view('otp');
                     }
@@ -239,31 +199,8 @@ Route::get('/postlogin', function (Request $request) {
     
 })->name('postlogin');
 
-
-
- 
 Route::get('/application_details', [PdfGeneratorController::class, 'application_details']);
 Route::get('/print_fee_receipt-pdf', [PaytmController::class, 'generatePDF']);
-
-
-// Route::post('/storeImage', function (Request $request) {
-//     $from_year = $request->from_year;
-//     $from_class = $request->from_class;
-//     $to_year = $request->to_year;
-//     $to_class = $request->to_class;
-//     $school_name = $request->school_name;
-//     $city = $request->city;
-//     $state = $request->state;
-//     $country = $request->country;
-//     $appli_id = $request->appli_id;
-
-   
-//     $data = array(
-//         "from_year" => $from_year,"from_class" => $from_class,"to_year" => $to_year,"to_class" => $to_class,"school_name" => $school_name,"city" => $city,"state" => $state,"country" => $country,"appli_id" => $appli_id
-//     );
-//     DB::table('old_school')->insert($data);
-//     return view('upload_image');
-// })->name('storeImage');
 
 Route::get('applicationpdf', [CustomAuthController::class, 'applicationpdf']);
 

@@ -43,79 +43,6 @@ class CustomAuthController extends Controller
         return view('login');
     }  
 
-    // public function login(Request $request) {    
-    //     $email = $request->email;    
-    //     session()->push('login.email', $email); 
-    //     $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
-
-    //     if(empty($users))
-    //     {
-    //         $created = date("Y-m-d h:i:s");
-    //         $data=array("email"=>$email,"created_at"=>$created);
-    //         DB::table('users')->insert($data);
-
-    //         $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
-    //         $user_id = $users[0]->id;
-    //         session()->push('users.user_id', $user_id);
-
-    //         $otp_number = mt_rand(100000, 999999);
-    //         $data=['name'=>"Dear Parent,",'otp'=>$otp_number];
-    //         $user['to']=$email;
-            // Mail :: send('otpgeneration',$data,function($messages)use($user){
-            //     $messages->to($user['to']);
-            //     $messages->subject('OTP for NPSYPR');
-            // });
-    
-            // Otp::create(['email'=>$email,'otp' => $otp]);
-        //     $otp1 = new Otp;
-        //     $otp1->sendTOEmail($otp_number,'padmajaac07@gmail.com');
-        //     return view('otp');          
-        // }
-        // else
-        // { 
-            // $created = date("Y-m-d h:i:s");
-            // $data=array("email"=>$email,"created_at"=>$created);
-            // DB::table('users')->insert($data);
-
-            // $users = DB::select("SELECT * FROM `users` WHERE `email` = '$email'");
-            // $user_id = $users[0]->id;
-            // session()->push('users.user_id', $user_id);
-
-            // $otp_number = mt_rand(100000, 999999);
-            // $data=['name'=>"Dear Parent,",'otp'=>$otp_number];
-            // $user['to']=$email;
-            // Mail :: send('otpgeneration',$data,function($messages)use($user){
-            //     $messages->to($user['to']);
-            //     $messages->subject('OTP for NPSYPR');
-            // });
-    
-            // Otp::create(['email'=>$email,'otp' => $otp]);
-            // $otp1 = new Otp;
-            // $otp1->sendTOEmail($otp_number,$email);
-            // return view('otp');    
-
-
-
-            // $otp_number = mt_rand(100000, 999999);
-            // $data=['name'=>"Dear Parent,",'otp'=>$otp];
-            // $user['to']=$email;
-            // Mail :: send('otpgeneration',$data,function($messages)use($user){
-            //     $messages->to($user['to']);
-            //     $messages->subject('OTP for NPSYPR');
-            // });
-    
-            // Otp::create(['email'=>$email,'otp' => $otp]);
-            // $otp1 = new Otp;
-            // $otp1->sendTOEmail($otp_number,$email);
-            // return view('otp');
-
-            
-            // $user_id = $users[0]->id;
-            // session()->push('users.user_id', $user_id);
-            // return view('otp');          
-    //     }  
-    // }
-
     public function otp(Request $request)
     {
         $otp = $request->otp;
@@ -353,11 +280,11 @@ $sessions = request()->session()->get('users.user_id');
        {
             return view('print_fee_receipt');
         }
+        public function application_form()
+        {
+             return view('application_form');
+         }
         
-        // public function applicationpdf()
-        // {
-        //      return view('applicationpdf');
-        //  }
 
          public function applicationpdf()
          {

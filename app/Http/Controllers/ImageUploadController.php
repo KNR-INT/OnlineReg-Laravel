@@ -24,7 +24,7 @@ class ImageUploadController extends Controller
         
         if ($student) {
             $request->validate([
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:2048',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:20971520',
             ]);
         
             if ($request->file('image')->isValid()) {
@@ -36,7 +36,11 @@ class ImageUploadController extends Controller
                 $student->birth_cer = $imageName;
                 $student->mother_aadhar = $imageName;
                 $student->pre_year_markcard = $imageName;
+
+                
             }
+
+            
         }
         $student->update();
         if($page_type == "1to9" || $page_type == "11")
@@ -67,9 +71,9 @@ class ImageUploadController extends Controller
                     
                         DB::table('old_school')->insert($data);
                     }
-         return redirect('/application_details/a?class='.$page_type."&appli_id=".$appli_id);
                     }
-
+         return redirect('/application_details/a?class='.$page_type."&appli_id=".$appli_id);
+        }
         public function upload_doc(){
             $imageData= Image::all();
             return view('application_details');

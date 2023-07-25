@@ -4,9 +4,12 @@
     <!-- Include necessary CSS if any -->
 </head>
 <body onload="window.print();">
-    <div style="width: 780px; margin-left: -40px;">
+    <div style="width: 780px; margin-left:40px;">
         <div>
-            <table width="100%" style="border-collapse: collapse;">
+        <div style="margin-top: 20px">
+<img src="{{ url('/') }}/resources/views/photos/logo.jpg">
+</div>
+        <table width="100%" style="border-collapse: collapse;" align="center">
                 <tbody>
                     <tr>
                         <td style="background-color: white; padding: 20px;">
@@ -30,7 +33,7 @@
                                 }
                             $student = DB::select("SELECT * FROM `students` WHERE `id` = '$id'");
                             ?>
-            <table width="100%" style="border-collapse: collapse;">
+             <table width="100%" style="border-collapse: collapse;" align="center">
                 <tbody>
                     <tr>
                         <td style="width: 50%; padding: 10px;">
@@ -74,7 +77,7 @@
                             ?>
                                         
                         <td style="width: 50%; padding: 10px;">
-                            <table style="width: 100%; font-size: 12px; float:right; border-collapse: collapse;">
+                        <table >
                                 <tbody>
                                     <!-- Table rows and cells with data -->
                                     <tr>
@@ -105,7 +108,7 @@ if (!empty($fee_receipt[0])) {
                 </tbody>
             </table>
             <!-- Add more content and tables here -->
-            <table width="100%" style="border-collapse: collapse;">
+            <table style="border: 1px solid black;" width="100%" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                     <tr>
                                             <th style="border-left: none;width: 12%;text-align: center;font-weight:bold;font-size: 14px;padding-top:2px;">Sl no.</th>
@@ -173,7 +176,7 @@ if (!empty($fee_receipt[0])) {
             </div>
             <div style="font-size: 13px;  margin-left: 9px; text-align: left; padding-left: 9px;"><b>Fees for the academic year 2023 - 2024</b></div>
             <br>
-            <table width="100%" style="border-collapse: collapse;">
+            <table style="border: 1px solid black;" width="100%" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                      <tr>
                                             <th style="text-align: center;border-left: none;font-weight:normal;font-size: 14px;padding-top:2px;" colspan="2">Payment Mode</th>
@@ -189,7 +192,7 @@ if (!empty($fee_receipt[0])) {
                 </tbody>
             </table>
             <br>
-            <table style="font-size: 11px; font-weight: bold; text-align: center; border-collapse: collapse;" width="100%;" align="center">
+ <table style="border: 1px solid black;" width="100%" cellspacing="0" cellpadding="0" align="center">
                 <tbody>
                     <tr>
                         <td>This is an electronically generated receipt, hence no signature required.</td>

@@ -34,6 +34,7 @@ class StudentController extends Controller
         $student->sib1_cls_sec = $request->input('sib1_cls_sec');
         $student->sib2_name = $request->input('sib2_name');
         $student->sib2_cls_sec = $request->input('sib2_cls_sec');
+        $student->sibling_change = $request->input('sibling_change');
         $student->phy_clg = $request->input('phy_clg');
         $student->slp_need = $request->input('slp_need');
         $student->aadhar = $request->input('aadhar');
@@ -41,7 +42,38 @@ class StudentController extends Controller
         $student->link_class = $request->input('page_type');
         $student->sec_language = $request->input('sec_language');
         $student->third_language = $request->input('third_language');
+        // $student->image = $request->input('image');
+       
+        // if ($student) {
+        //     $request->validate([
+        //         'image' => 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:20971520',
+        //     ]);
         
+        //     if ($request->file('image')->isValid()) {
+        //         $imageName = $appli_id . '_student_aadhar.' . $request->image->extension();
+        //         $request->image->move(public_path('public\Image'), $imageName);
+                
+        //         $student->image = $imageName;
+               
+
+                
+        //     }
+
+            
+        // }
+        if ($request->hasFile('image')) {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,pdf|max:20971520',
+            ]);
+    
+            if ($request->file('image')->isValid()) {
+                $imageName = $appli_id . '_student_aadhar.' . $request->image->extension();
+                $request->image->move(public_path('public\Image'), $imageName);
+    
+                // Save the image path in the 'image' column of the 'students' table without the 'public' folder part
+                $student->image = 'public\Image/' . $imageName;
+            }
+        }
 
         $student->update();
         
